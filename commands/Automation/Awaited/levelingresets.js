@@ -13,5 +13,12 @@ module.exports = [{
     $resetUserVar[xpLimit;$guildID]
     $resetUserVar[previouslevel;$guildID]
     $setGuildVar[islevelingreset;yes]
-    `
+    `},{
+    name: "forEachMemberID",
+    type: "awaited",
+    code: `
+    $deleteVar[level;{value}_$guildID;main]
+    $deleteVar[previouslevel;{value}_$guildID;main]
+    $deleteVar[xp;{value}_$guildID;main]
+    $deleteVar[xpLimit;{value}_$guildID;main]`
     }]

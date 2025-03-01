@@ -30,10 +30,4 @@ channel.name
 ;true]**;false;* \`Deleted Category\`]
     $endif
 `
-},{
-    name: "autoListRoles",
-    type: "awaited",
-    code: `$if[{value}==none;none;$get[roles]]
-
-$let[roles;$if[$roleExists[{value};$guildID]==true;* <@&{value}>;* \`Deleted Role\`]]`
 }]

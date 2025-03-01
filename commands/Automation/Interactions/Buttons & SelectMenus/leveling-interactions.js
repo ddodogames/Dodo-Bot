@@ -9,7 +9,7 @@ module.exports = [{
     
     **Current Setup**
     * $get[levelingsystem]
-    }{color:$getVar[embedcolor]}}{actionRow:{button:Toggle:2:toggleleveling_$authorID:false:🔄}{button:Settings:4:levelingsettings_$authorID:false}{button:Reset:2:levelingreset_$authorID:false:⚠️}}]
+    }{color:$getVar[embedcolor]}}{actionRow:{button:Toggle:2:toggleleveling_$authorID:false:🔄}{button:Settings:4:levelingsettings_$authorID:false}}]
     
     
     $let[levelingsystem;$advancedReplaceText[$getGuildVar[levelsystem];off;Disabled;on;Enabled]]
@@ -32,7 +32,7 @@ module.exports = [{
     To get started, click on the "Toggle" button! To manage the settings regarding the said feature, press the "Settings" button.
     
     **Current Setup**
-    * $get[levelingsystem]*}{color:$getVar[embedcolor]}}{actionRow:{button:Toggle:2:toggleleveling_$authorID:false:🔄}{button:Settings:4:levelingsettings_$authorID:false}{button:Reset:2:levelingreset_$authorID:false:⚠️}}]
+    * $get[levelingsystem]}{color:$getVar[embedcolor]}}{actionRow:{button:Toggle:2:toggleleveling_$authorID:false:🔄}{button:Settings:4:levelingsettings_$authorID:false}}]
     
     
     $let[levelingsystem;$advancedReplaceText[$getGuildVar[levelsystem];off;Disabled;on;Enabled]]
@@ -97,7 +97,7 @@ $interactionUpdate[The current progress for all members will remain then.]
 **Level up message#COLON#** \`$get[levelupmessage]\`
 }{color:$getVar[embedcolor]}}{actionRow:{selectMenu:levelingotheroptionsmenu_$authorID:Other options:1:1:false:{stringInput:Reset on Leave:resetonleave:Reset user's progress when they leave:false}{stringInput:Exclusions:exclusions:Choose what to exclude from allowing xp:false}}}
 
-    {actionRow:{button:Home:2:levelinghomepage_$authorID:false:🏠}{button:Message:2:levelingsettingmessage_$authorID:false}{button:Placeholders:2:levelingmsgplaceholders_$authorID:false}}
+    {actionRow:{button:Home:2:levelinghomepage_$authorID:false:🏠}{button:Message:2:levelingsettingmessage_$authorID:false}{button:Placeholders:2:levelingmsgplaceholders_$authorID:false}{button:Reset:2:levelingreset_$authorID:false:⚠️}}
 ]
     
     
