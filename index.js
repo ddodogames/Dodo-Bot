@@ -1,5 +1,5 @@
 const { AoiClient } = require("aoi.js"); // Define aoi.js client
-const config = require("./config.json"); // Load the setup options from config
+const { config } = require("./config.js"); // Load the setup options from config
 require('dotenv').config() // Enable env support in local hosting
 
 // Needed for variables handler
@@ -19,7 +19,7 @@ const client = new AoiClient({
     db: require("@aoijs/aoi.db"),
     dbType: "KeyValue",
     tables: ["main"], // tables for the database
-    securityKey: process.env.DBsecurityKey || config.DBsecurityKey // Security Key with either env or config
+    securityKey: config.DBsecurityKey || process.env.DBsecurityKey // Security Key with either config or env
   },
   disableFunctions: ["$clientToken"], // For safety reasons
   mobilePlatform: config.MobileStatus, // Whether or not to enable mobile status
@@ -28,7 +28,7 @@ const client = new AoiClient({
   },
   respondOnEdit: {
    commands: config.respondOnEdit.Enabled,
-   time: config.respondOnEdit.RespondIn
+   time: config.respondOnEdit.RespondUntil
   },
   aoiAutoUpdate: false,
   suppressAllErrors: config.DisableAllErrors // Whether or not to disable errors from aoi.js

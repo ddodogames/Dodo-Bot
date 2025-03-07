@@ -25,7 +25,7 @@ lerna-debug.log*
 database/
 package-lock.json
 yarn.lock
-config.json
+config.js
 node_modules/
 .yarn-integrity
 .node_repl_history
