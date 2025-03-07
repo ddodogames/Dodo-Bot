@@ -1,4 +1,4 @@
-const { config } = require("../config.js");
+const config = require("../config.js");
 
 module.exports = {
   "main": { // This is "table" name, tables can be managed by checking index.js under "tables:" line
@@ -15,7 +15,7 @@ module.exports = {
   versionCodename: "Lighting",
   libraryversiondevcheck: "off",
   buildStatus: "Incomplete",
-  buildDate: "1741357864483",
+  buildDate: "1741358172057",
   buildBranch: "canary",
   buildRevision: "0",
   showbuildinfo: "on",

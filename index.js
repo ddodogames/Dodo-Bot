@@ -1,5 +1,5 @@
 const { AoiClient } = require("aoi.js"); // Define aoi.js client
-const { config } = require("./config.js"); // Load the setup options from config
+const config = require("./config.js"); // Load the setup options from config
 require('dotenv').config() // Enable env support in local hosting
 
 // Needed for variables handler
