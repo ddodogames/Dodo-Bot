@@ -6,7 +6,10 @@
     "DBsecurityKey": "a-32-characters-long-string-here",
     "EnableUserApps": false,
     "DisableAllErrors": false,
-    "respondOnEdit": false,
     "EnableDebugMode": false,
-    "LogCommands": false
+    "LogCommands": false,
+    "respondOnEdit": [{
+    "Enabled": false,
+    "RespondIn": 20000
+    }]
 }

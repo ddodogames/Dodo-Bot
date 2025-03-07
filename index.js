@@ -27,8 +27,8 @@ const client = new AoiClient({
    interpreter: config.EnableDebugMode // Whether or not to enable aoi.js debug mode
   },
   respondOnEdit: {
-   commands: config.respondOnEdit,
-   time: 20000
+   commands: config.respondOnEdit.Enabled,
+   time: config.respondOnEdit.RespondIn
   },
   aoiAutoUpdate: false,
   suppressAllErrors: config.DisableAllErrors // Whether or not to disable errors from aoi.js

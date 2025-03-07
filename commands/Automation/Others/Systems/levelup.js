@@ -14,11 +14,13 @@ $setUserVar[xpLimit;$sum[$getUserVar[xpLimit;$authorID;$guildID];20];$authorID;$
 $setUserVar[level;$sum[$getUserVar[level;$authorID;$guildID];1];$authorID;$guildID]
 $setUserVar[previouslevel;$sum[$getUserVar[previouslevel;$authorID;$guildID];1];$authorID;$guildID]
 
+$disableMentionType[roles]
+$disableMentionType[everyone]
+
 $onlyIf[$isBot==false;]
 $onlyIf[$getUserVar[xp]==$getUserVar[xpLimit];]
 $onlyIf[$getGuildVar[levelsystem]==on;]
-$disableMentionType[roles]
-$disableMentionType[everyone]`
+`
 },{
     name: "$alwaysExecute",
     code: `
