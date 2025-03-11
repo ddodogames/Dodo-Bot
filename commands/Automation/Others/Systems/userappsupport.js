@@ -6,7 +6,7 @@ module.exports = [{
     name: "createuserapps",
     type: "awaited",
     code: `
-$createApplicationCommand[global;randomcolor;Returns random color you can use;sendmessages;user;all;slash]
+$createApplicationCommand[global;randomcolor;Returns a random color that you can use.;sendmessages;user;all;slash]
 $createApplicationCommand[global;invite;Returns a link to invite the bot;sendmessages;user;all;slash]
 $createApplicationCommand[global;report;Returns a link to report issues on Dodo-Bot's GitHub repo;sendmessages;user;all;slash]
 $createApplicationCommand[global;about;Returns information about Dodo-Bot;sendmessages;user;all;slash]
@@ -33,7 +33,7 @@ $createApplicationCommand[global;avatar;Returns your/users profile picture.;send
 ]]
 
 
-$createApplicationCommand[global;reverse;Let's you reverse text;sendmessages;user;all;slash;[
+$createApplicationCommand[global;reverse;Let's you reverse text!;sendmessages;user;all;slash;[
   {
     "type": 3,
     "name": "text",
@@ -62,7 +62,7 @@ $createApplicationCommand[global;8ball;Ask a question to 8ball;sendmessages;user
 
 $djsEval[const chalk = require('chalk')
 
-console.log(chalk.green("Successfully created user apps! Restart your Discord to see them!"))
+console.log(chalk.green("Successfully created user apps! Add the bot to your Discord account to see them!"))
 ]
 
 $setVar[isuserappsalreadysetup;yes]

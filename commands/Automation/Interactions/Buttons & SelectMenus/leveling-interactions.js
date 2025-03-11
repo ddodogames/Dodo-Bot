@@ -97,7 +97,7 @@ $interactionUpdate[The current progress for all members will remain then.]
 **Level up message#COLON#** \`$get[levelupmessage]\`
 }{color:$getVar[embedcolor]}}{actionRow:{selectMenu:levelingotheroptionsmenu_$authorID:Other options:1:1:false:{stringInput:Reset on Leave:resetonleave:Reset user's progress when they leave:false}{stringInput:Exclusions:exclusions:Choose what to exclude from allowing xp:false}}}
 
-    {actionRow:{button:Home:2:levelinghomepage_$authorID:false:🏠}{button:Message:2:levelingsettingmessage_$authorID:false}{button:Placeholders:2:levelingmsgplaceholders_$authorID:false}{button:Reset:2:levelingreset_$authorID:false:⚠️}}
+    {actionRow:{button:Home:2:levelinghomepage_$authorID:false:🏠}{button:Message:2:levelingsettingmessage_$authorID:false}{button:Placeholders:2:levelingmsgplaceholders_$authorID:false}{button:Reset:4:levelingreset_$authorID:false:⚠️}}
 ]
     
     
@@ -283,7 +283,7 @@ Press the "Toggle" button to enable/disable the Level up Message or use the othe
     $get[content]
     ]
     
-    $let[content;$advancedReplaceText[$nonEscape[$getGuildVar[levelmessage]];<newlevel>;$getUserVar[level];<mention>;<@$authorID>;<username>;$username;<oldlevel>;$getUserVar[previouslevel];<Displayname>;$userDisplayName]]
+    $let[content;$advancedReplaceText[$nonEscape[$getGuildVar[levelmessage]];<newlevel>;$getUserVar[level];<mention>;<@$authorID>;<username>;$username;<oldlevel>;$getUserVar[previouslevel];<Displayname>;$userDisplayName;<globalname>;$userGlobalName]]
     
     $onlyIf[$hasPermsInChannel[$getGuildVar[levelingmessagechannel];$clientID;sendmessages;viewchannel]==true;Hmm. Seems like i don't have the right permissions there. Please ensure that i have the following permissions for the channel <#$getGuildVar[levelingmessagechannel]>:
     \`ViewChannel\`
@@ -526,6 +526,7 @@ $autoList[$nonEscape[$getGuildVar[levelingexcludedcategories]];, ;autoListCatego
         code: `$interactionUpdate[{newEmbed:{title:Placeholders}{description:Placeholders allows you to make your custom Level up message unique. Use the current ones available in this list!}{field:Member-related:
     \`<username>\` - Returns the member's username
     \`<Displayname>\` - Returns the member's displayname
+    \`<globalname>\` - Returns the member's global name
     \`<mention>\` - Pings the member
     }{field:Leveling-related:
     \`<newlevel>\` - Returns the new level of the member
