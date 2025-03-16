@@ -10,7 +10,7 @@ module.exports = {
 $title[$commandInfo[$get[cmdname];name]]
 $description[$commandInfo[$get[cmdname];info.description]]
 $addField[Aliases;$get[aliases]]
-$addField[Permissions needed;$arrayJoin[perms;, ]]
+$addField[Permission(s);$arrayJoin[perms;, ]]
 $color[$getVar[embedcolor]]
 $if[$commandInfo[$toLowerCase[$message];info.flags]!=]
 $addButton[1;Flags;2;viewcommandflags_$authorID_$commandInfo[$nonEscape[$get[cmdname]];name];false]
