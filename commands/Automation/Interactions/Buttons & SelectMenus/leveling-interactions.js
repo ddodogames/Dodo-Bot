@@ -527,7 +527,7 @@ $autoList[$nonEscape[$getGuildVar[levelingexcludedcategories]];, ;autoListCatego
         code: `$interactionUpdate[{newEmbed:{title:Placeholders}{description:Placeholders allows you to make your custom Level up message unique. Use the current ones available in this list!}{field:Member-related:
     \`<username>\` - Returns the member's username
     \`<Displayname>\` - Returns the member's displayname
-    \`<globalname>\` - Returns the member's global name
+    \`<globalname>\` - Returns the member's global name (or username if there isn't any)
     \`<mention>\` - Pings the member
     }{field:Leveling-related:
     \`<newlevel>\` - Returns the new level of the member

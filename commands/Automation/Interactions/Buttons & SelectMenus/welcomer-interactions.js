@@ -332,7 +332,7 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==welcomertestmessageb
 \`<username>\` - Returns the member's username
 \`<mention>\` - Pings the new member
 \`<Displayname>\` - Returns the member's displayname
-\`<globalname>\` - Returns the member's global name
+\`<globalname>\` - Returns the member's global name (or username if there isn't any)
 \`<id>\` - Returns the new member's id
 \`<creationdate>\` - Returns the date when the member joined Discord
 \`<position>\` - Returns the join position of the member

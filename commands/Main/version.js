@@ -46,8 +46,8 @@ $addField[General;
 * **Dodo-Bot**: v$getVar[version]
 * **Codename**: $getVar[versionCodename]
 * **Build Branch**: $getVar[buildBranch]
-* **Revision**: $getVar[buildRevision]
 * **Build number**: $getVar[buildNumber]
+* **Revision**: $getVar[buildRevision]
 ;true]
 $color[$getVar[embedcolor]]
 
