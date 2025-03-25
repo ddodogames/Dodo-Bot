@@ -10,7 +10,6 @@ $author[$guildName;$get[serverimage]]
 $title[Leaderboard]
 $description[$get[leaderboard]]
 $footer[Page $get[page]/10 - To switch the page, enter a number.]
-$addTimestamp
 $color[$getVar[embedcolor]]
 
 $onlyIf[$get[leaderboard]!=;Leaderboard is currently not available. The following reasons are being:
