@@ -9,7 +9,7 @@ module.exports = [{
 * Added \`<globalname>\` for **Welcomer**, **Leave** and **Leveling**
 * Added a new command called \`morse\`
 
-For those running the [source code](https#COLON#//github.com/ddodogames/Dodo-Bot) on their own#COLON#
+### For those running the [source code](https#COLON#//github.com/ddodogames/Dodo-Bot) on their own#COLON#
 * Added a option to use random hex codes in \`$getGuildVar[prefix]dev-panel\` command
 }{color:$getVar[embedcolor]}$nonEscape[$get[devbuild]]}{actionRow:{button:Home:2:homebutton_$authorID:false:🏠}{button:Changes:2:versionchanges_$authorID:true}{button:Bug Fixes:2:versionbugfixes_$authorID:false}{button:Other:2:versionother_$authorID:false}}{actionRow:{button:Changelog history:5:https#COLON#//github.com/ddodogames/Dodo-Bot/releases:false:📜}}]
 
