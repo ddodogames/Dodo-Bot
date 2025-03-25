@@ -14,7 +14,7 @@ To get started, click on the "Toggle" button! To manage the settings regarding t
 * $get[welcomersystem]
 ]
 $color[$getVar[embedcolor]]
-$addButton[1;Settings;4;welsettings_$authorID;false]
+$addButton[1;Settings;1;welsettings_$authorID;false]
 $addButton[1;Toggle;2;togglewel_$authorID;false;🔄]
 
 $let[welcomersystem;$advancedReplaceText[$getGuildVar[welcomesystem];off;Disabled;on;Enabled]]

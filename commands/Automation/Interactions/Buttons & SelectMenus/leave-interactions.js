@@ -9,7 +9,7 @@ To get started, click on the "Toggle" button! To manage the settings regarding t
 **Current Setup**
 * $get[leavesystem]
 
-}{color:$getVar[embedcolor]}}{actionRow:{button:Toggle:2:toggleleave_$authorID:false:🔄}{button:Settings:4:leavesettings_$authorID:false}}]
+}{color:$getVar[embedcolor]}}{actionRow:{button:Toggle:2:toggleleave_$authorID:false:🔄}{button:Settings:1:leavesettings_$authorID:false}}]
 
 $let[leavesystem;$advancedReplaceText[$getGuildVar[leavesystem];off;Disabled;on;Enabled]]
 
@@ -34,7 +34,7 @@ To get started, click on the "Toggle" button! To manage the settings regarding t
 **Current Setup**
 * $get[leavesystem]
 
-}{color:$getVar[embedcolor]}}{actionRow:{button:Toggle:2:toggleleave_$authorID:false:🔄}{button:Settings:4:leavesettings_$authorID:false}}]
+}{color:$getVar[embedcolor]}}{actionRow:{button:Toggle:2:toggleleave_$authorID:false:🔄}{button:Settings:1:leavesettings_$authorID:false}}]
 
 
 $let[leavesystem;$advancedReplaceText[$getGuildVar[leavesystem];off;Leave is currently disabled;on;Leave is currently enabled]]

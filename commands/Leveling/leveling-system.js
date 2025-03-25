@@ -14,7 +14,7 @@ To get started, click on the "Toggle" button! To manage the settings regarding t
 * $get[levelingsystem]
 ]
 $color[$getVar[embedcolor]]
-$addButton[1;Settings;4;levelingsettings_$authorID;false]
+$addButton[1;Settings;1;levelingsettings_$authorID;false]
 $addButton[1;Toggle;2;toggleleveling_$authorID;false;🔄]
 
 $let[levelingsystem;$advancedReplaceText[$getGuildVar[levelsystem];off;Disabled;on;Enabled]]

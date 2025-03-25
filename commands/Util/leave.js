@@ -13,7 +13,7 @@ To get started, click on the "Toggle" button! To manage the settings regarding t
 * $get[leavesystem]
 ]
 $color[$getVar[embedcolor]]
-$addButton[1;Settings;4;leavesettings_$authorID;false]
+$addButton[1;Settings;1;leavesettings_$authorID;false]
 $addButton[1;Toggle;2;toggleleave_$authorID;false;🔄]
 
 $let[leavesystem;$advancedReplaceText[$getGuildVar[leavesystem];off;Disabled;on;Enabled]]
