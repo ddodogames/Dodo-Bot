@@ -37,7 +37,7 @@ To get started, click on the "Toggle" button! To manage the settings regarding t
 }{color:$getVar[embedcolor]}}{actionRow:{button:Toggle:2:toggleleave_$authorID:false:🔄}{button:Settings:1:leavesettings_$authorID:false}}]
 
 
-$let[leavesystem;$advancedReplaceText[$getGuildVar[leavesystem];off;Leave is currently disabled;on;Leave is currently enabled]]
+$let[leavesystem;$advancedReplaceText[$getGuildVar[leavesystem];off;Disabled;on;Enabled]]
 $let[resultmessage;$advancedReplaceText[$checkCondition[$getGuildVar[leavesystem]==on];true;Successfully enabled Leave!;false;Successfully disabled Leave!]]
 
 $setGuildVar[leavesystem;$get[newtoggledsetting];$guildID]

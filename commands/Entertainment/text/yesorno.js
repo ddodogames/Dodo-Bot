@@ -2,6 +2,7 @@ module.exports = {
 name: "yesorno",
 info: {
     description: "Randomly returns either `yes` or `no`.",
+    usage: "yesorno <text>",
     perms: ["`SendMessages`"]
 },
 code: `> $message

@@ -10,8 +10,10 @@ module.exports = {
 $title[$commandInfo[$get[cmdname];name]]
 $description[$commandInfo[$get[cmdname];info.description]]
 $addField[Aliases;$get[aliases]]
+$addField[Usage;\`$get[usagechecker]\`]
 $addField[Permission(s);$arrayJoin[perms;, ]]
 $color[$getVar[embedcolor]]
+$footer[() - optional parameter | <> - required parameter]
 $if[$commandInfo[$toLowerCase[$message];info.flags]!=]
 $addButton[1;Flags;2;viewcommandflags_$authorID_$commandInfo[$nonEscape[$get[cmdname]];name];false]
 $endif
@@ -22,6 +24,8 @@ $let[aliaseschecker;$advancedReplaceText[$nonEscape[$commandInfo[$get[cmdname];a
 
 $createArray[perms;$nonEscape[$get[permschecker]]]
 $let[permschecker;$advancedReplaceText[$nonEscape[$commandInfo[$get[cmdname];info.perms]];,;#SEMI#]]
+
+$let[usagechecker;$advancedReplaceText[$checkCondition[$nonEscape[$commandInfo[$get[cmdname];info.usage]]==];true;*Has no parameters*;false;$nonEscape[$commandInfo[$get[cmdname];info.usage]]]]
 
 $onlyIf[$commandInfo[$get[cmdname];info.dev]==;Viewing Developer commands is unsupported.]
 $onlyIf[$commandExists[$get[cmdname]]==true;The command specified does not appear to exist. Try entering a command that exists within the bot itself.]

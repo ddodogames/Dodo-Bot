@@ -2,6 +2,7 @@ module.exports = [{
   name: "clap",
   info: {
     description: "Makes 👏 the 👏 text 👏 look 👏 like 👏 this",
+    usage: "clap <text>",
     perms: ["`SendMessages`"]
 },
   code: `$ifAwaited[$checkContains[$noMentionMessage; ]==true;{execute:spaceclap};{execute:nonspaceclap}]

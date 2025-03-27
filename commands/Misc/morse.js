@@ -2,6 +2,7 @@ module.exports = {
     name: "morse",
     info: {
         description: "Converts provided text to morse code!",
+        usage: "morse <text>",
         perms: ["`SendMessages`"]
     },
     code: `$getObjectProperty[api;morse]

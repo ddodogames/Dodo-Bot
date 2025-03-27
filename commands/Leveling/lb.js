@@ -2,6 +2,7 @@ module.exports = {
     name: "leaderboard",
     info: {
         description: `Returns Leveling's leaderboard for this server (if enabled).\n\nTo view a page, add a number within the command's argument.`,
+        usage: "leaderboard (page)",
         perms: ["`SendMessages`"]
     },
     aliases: ["lb", "leveling-lb", "level-leaderboard"],
@@ -9,7 +10,8 @@ module.exports = {
 $author[$guildName;$get[serverimage]]
 $title[Leaderboard]
 $description[$get[leaderboard]]
-$footer[Page $get[page]/10 - To switch the page, enter a number.]
+$footer[Page $get[page]/10]
+$addTimeStamp
 $color[$getVar[embedcolor]]
 
 $onlyIf[$get[leaderboard]!=;Leaderboard is currently not available. The following reasons are being:

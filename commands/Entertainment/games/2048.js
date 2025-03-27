@@ -2,6 +2,7 @@ module.exports = {
   name: "2048",
   info: {
     description: "Starts a random game of 2048.",
+    usage: "2048 <user>",
     perms: ["`SendMessages`"]
   },
   code: `$djsEval[const { TwoZeroFourEight } = require('discord-gamecord');

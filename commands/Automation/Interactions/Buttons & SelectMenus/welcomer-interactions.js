@@ -37,7 +37,7 @@ To get started, click on the "Toggle" button! To manage the settings regarding t
 }{color:$getVar[embedcolor]}}{actionRow:{button:Toggle:2:togglewel_$authorID:false:🔄}{button:Settings:1:welsettings_$authorID:false}}]
 
 
-$let[welcomersystem;$advancedReplaceText[$getGuildVar[welcomesystem];off;Welcomer is currently disabled;on;Welcomer is currently enabled]]
+$let[welcomersystem;$advancedReplaceText[$getGuildVar[welcomesystem];off;Disabled;on;Enabled]]
 $let[resultmessage;$advancedReplaceText[$checkCondition[$getGuildVar[welcomesystem]==on];true;Successfully enabled Welcomer!;false;Successfully disabled Welcomer!]]
 
 $setGuildVar[welcomesystem;$get[newtoggledsetting];$guildID]

@@ -2,6 +2,7 @@ module.exports ={
     name: "rank",
     info: {
         description: "View your or someone's current level.",
+        usage: "rank (user)",
         perms: ["`SendMessages`"]
     },
     aliases: ["level", "lvl"],

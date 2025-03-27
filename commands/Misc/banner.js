@@ -2,6 +2,7 @@ module.exports = {
     name: "banner",
     info: {
         description: "Returns your/users profile banner.",
+        usage: "banner (user)",
         perms: ["`SendMessages`"]
     },
     aliases: ["userbanner","usrbanner"],

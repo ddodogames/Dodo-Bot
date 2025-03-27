@@ -2,6 +2,7 @@ module.exports = [{
   name: "flood",
   info: {
     description: "Starts a game of Flood (pass the flag \`--settings\` to open up the settings).",
+    usage: "flood (flag)",
     perms: ["`SendMessages`"],
     flags: ["`--settings`"]
   },

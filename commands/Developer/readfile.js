@@ -2,6 +2,7 @@ module.exports = {
     name: "readfile",
     info: {
       description: "Returns the contents of the file specified.",
+      usage: "readfile <path to file>",
       perms: ["`SendMessages`"],
       dev: "true"
     },

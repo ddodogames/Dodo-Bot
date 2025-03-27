@@ -2,6 +2,7 @@ module.exports = {
 name: "8ball",
 info: {
  description: "Ask a question to 8ball and it will answer it.",
+ usage: "8ball <text>",
  perms: "`SendMessages`"
 },
 code: `

@@ -2,6 +2,7 @@ module.exports = [{
     name: "shutdown",
     info: {
       description: "Brings up a confirmation before shutting down the bot.",
+      usage: "shutdown (flag)",
       perms: ["`SendMessages`"],
       flags: ["`--now`"],
       dev: "true"

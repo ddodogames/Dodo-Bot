@@ -3,7 +3,7 @@ name: "suggest-set",
 info: {
     description: "Setup suggestions.",
     perms: ["`SendMessages`", "`ManageChannels`"],
-    usage: "suggest-set channel-name/channel ID or <#channel ID>",
+    usage: "suggest-set <channel-name/channel ID or mention>",
 },
 aliases: "suggestion-set",
 code: `
@@ -41,6 +41,7 @@ Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[3s;user;suggest-reset
     name: "suggest",
     info: {
         description: "Starts a suggestion in this server (if the feature is setup).",
+        usage: "suggest <title/description>"
         perms: ["`SendMessages`", "`AddReactions`"]
     },
     code: `

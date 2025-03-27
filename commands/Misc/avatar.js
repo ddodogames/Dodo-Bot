@@ -2,6 +2,7 @@ module.exports = {
   name: "avatar",
   info: {
     description: "Returns your/users profile picture.",
+    usage: "avatar (user)",
     perms: ["`SendMessages`"]
 },
   aliases: ["av","userav"],

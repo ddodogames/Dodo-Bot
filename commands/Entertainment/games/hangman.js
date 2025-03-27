@@ -2,6 +2,7 @@ module.exports = [{
 name: "hangman",
 info: {
     description: "Starts a hangman game (pass the flag \`--themes\` to change the current theme).",
+    usage: "hangman (flag)",
     perms: ["`SendMessages`"],
     flags: ["`--themes`", "`--settings` (alias)"]
   },
