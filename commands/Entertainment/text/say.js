@@ -2,7 +2,7 @@ module.exports = [{
   name: "say",
   info: {
     description: "Makes the bot say whatever you want (alongside with optional embed mode).",
-    usage: "say <text> (flag)\n\n-# Only applies after running the command first",
+    usage: "`say <text> (flag)`\n\n-# Execute the command first before specifying parameters.",
     perms: ["`SendMessages`"],
     flags: ["`--embed`"]
 },

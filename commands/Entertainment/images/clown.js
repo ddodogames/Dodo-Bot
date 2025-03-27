@@ -2,7 +2,7 @@ module.exports = {
     name: "clown",
     info: {
         description: "Puts your/user's profile picture on a cut-scene from Teen Titans Go.",
-        usage: "clown (user)",
+        usage: "`clown (user)`",
         perms: ["`SendMessages`", "`AttachFiles`"]
     },
     code: `$attachment[$get[apilink];clown.png;URL]

@@ -2,7 +2,7 @@ module.exports = {
     name: "gun",
     info: {
         description: "Adds a hand holding gun into user's profile picture.",
-        usage: "gun (user)",
+        usage: "`gun (user)`",
         perms: ["`SendMessages`", "`AttachFiles`"]
     },
     code: `$attachment[$get[apilink];gun.png;URL]

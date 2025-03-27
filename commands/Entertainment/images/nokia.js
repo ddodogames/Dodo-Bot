@@ -2,7 +2,7 @@ module.exports = {
     name: "nokia",
     info: {
         description: "Puts your/user's profile picture on a nokia phone.",
-        usage: "nokia (user)",
+        usage: "`nokia (user)`",
         perms: ["`SendMessages`", "`AttachFiles`"]
     },
     code: `$attachment[$get[apilink];nokia.png;URL]

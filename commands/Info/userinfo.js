@@ -2,7 +2,7 @@ module.exports = {
 name: "userinfo",
 info: {
     description: "Returns your/user's information.",
-    usage: "userinfo (user)",
+    usage: "`userinfo (user)`",
     perms: ["`SendMessages`"]
 },
 $if: "old",

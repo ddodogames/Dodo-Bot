@@ -2,7 +2,7 @@ module.exports = {
     name: "wanted",
     info: {
         description: "Adds a wanted poster into user's profile picture.",
-        usage: "wanted (user)",
+        usage: "`wanted (user)`",
         perms: ["`SendMessages`", "`AttachFiles`"]
     },
     code: `$attachment[$get[apilink];wanted.png;URL]

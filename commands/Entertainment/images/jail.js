@@ -2,7 +2,7 @@ module.exports = {
     name: "jail",
     info: {
         description: "Puts your/user's profile picture behind the bars.",
-        usage: "jail (user)",
+        usage: "`jail (user)`",
         perms: ["`SendMessages`", "`AttachFiles`"]
     },
     code: `$attachment[$get[apilink];jail.png;URL]

@@ -2,7 +2,7 @@ module.exports = [{
   name: "trivia",
   info: {
     description: "Starts a random Trivia game (pass the flag \`--settings\` to open up the settings).",
-    usage: "trivia (flag)",
+    usage: "`trivia (flag)`",
     perms: ["`SendMessages`"],
     flags: ["`--settings`"]
   },

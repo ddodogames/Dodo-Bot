@@ -2,7 +2,7 @@ module.exports = {
     name: "leaderboard",
     info: {
         description: `Returns Leveling's leaderboard for this server (if enabled).\n\nTo view a page, add a number within the command's argument.`,
-        usage: "leaderboard (page)",
+        usage: "`leaderboard (page)`",
         perms: ["`SendMessages`"]
     },
     aliases: ["lb", "leveling-lb", "level-leaderboard"],

@@ -2,7 +2,7 @@ module.exports = {
 name: "would-you-rather",
 info: {
     description: "Starts a game of two options to choose from.",
-    usage: "would-you-rather (flag)",
+    usage: "`would-you-rather (flag)`",
     perms: ["`SendMessages`", "`AddReactions` (if using `--usereactions` flag)"],
     flags: ["`--usereactions`"]
 },

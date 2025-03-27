@@ -2,7 +2,7 @@ module.exports = {
     name: "owoify",
     info: {
         description: "Makes text OWOifed.",
-        usage: "owoify <text>",
+        usage: "`owoify <text>`",
         perms: ["`SendMessages`"]
     },
     code: `$owoify[$message]

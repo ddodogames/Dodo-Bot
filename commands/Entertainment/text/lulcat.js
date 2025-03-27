@@ -2,7 +2,7 @@ module.exports = {
     name: "lulcat",
     info: {
         description: "Makes your text look cursed using lul cat language.",
-        usage: "lulcat <text>",
+        usage: "`lulcat <text>`",
         perms: ["`SendMessages`"]
     },
     aliases: "lolcat",

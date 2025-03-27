@@ -2,7 +2,7 @@ module.exports = {
     name: "mock",
     info: {
         description: "Adds mockery style to your text.",
-        usage: "mock <text>",
+        usage: "`mock <text>`",
         perms: ["`SendMessages`"]
     },
     code: `$getObjectProperty[api;text]

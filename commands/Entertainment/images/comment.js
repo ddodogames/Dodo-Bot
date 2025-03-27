@@ -2,7 +2,7 @@ module.exports = {
 name: "comment",
 info: {
     description: "Generates a parody image of YouTube comment with your username and profile picture.",
-    usage: "comment <text>",
+    usage: "`comment <text>`",
     perms: ["`SendMessages`", "`AttachFiles`"]
 },
 aliases: "ytcomment",

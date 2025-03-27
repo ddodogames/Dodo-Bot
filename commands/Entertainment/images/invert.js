@@ -2,7 +2,7 @@ module.exports = {
     name: "invert",
     info: {
         description: "Adds invert effect to a image.",
-        usage: "invert (user)",
+        usage: "`invert (user)`",
         perms: ["`SendMessages`", "`AttachFiles`"]
     },
     code: `$attachment[$get[apilink];invert.png;URL]

@@ -2,7 +2,7 @@ module.exports = {
     name: "ad",
     info: {
         description: "Make someone's avatar (or yours) a ad.",
-        usage: "ad (user)",
+        usage: "`ad (user)`",
         perms: ["`SendMessages`", "`AttachFiles`"]
     },
     code: `$attachment[$get[apilink];ad.png;URL]
