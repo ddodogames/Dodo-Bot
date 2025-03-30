@@ -2,6 +2,7 @@ module.exports = [{
 name: "poll-set",
 info: {
     description: "Setup polls.",
+    usage: "`poll-set <channel-name/channel ID or mention>`",
     perms: ["`SendMessages`", "`ManageChannels`"]
 },
 aliases: ["set-poll", "setpoll", "pollset"],
@@ -45,8 +46,8 @@ Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[2s;user;poll-reset;$a
     name: "poll",
     info: {
         description: "Start a poll in this server (if setup).",
+        usage: "`poll content/choice 1/choice 2`",
         perms: ["`SendMessages`", "`ManageMessages`", "`AddReactions`"],
-        usage: "poll content/choice 1/choice 2"
     },
     aliases: ["createpoll", "startpoll"],
     code: `
@@ -76,7 +77,7 @@ For staff server, please run \`poll-set\` to set a channel.
 $onlyIf[$charCount[$splitText[1]]<=3570||$charCount[$splitText[2]]<=200||$charCount[$splitText[3]]<=200;Your Poll content cannot be longer than 3570 characters. Choice 1 and Choice 2 cannot also be longer than 200 characters]
 $onlyIf[$or[$splitText[1]==;$splitText[2]==;$splitText[3]==]==false;Hey there! Your usage seems to be incorrect.
 
-A example of a usage should be \`$getGuildVar[prefix]$nonEscape[$commandInfo[poll;info.usage]]\`]
+A example of a usage should be $commandInfo[poll;info.usage]]
 $textSplit[$message;/]
 $onlyPerms[managemessages;You need to have \`ManageMessages\` permission to use this.]
 $cooldown[5s; Slow down! Don't spam the command!

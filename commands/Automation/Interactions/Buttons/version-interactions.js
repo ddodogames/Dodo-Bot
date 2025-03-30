@@ -21,6 +21,7 @@ $let[devbuild;$if[$getVar[pre_release]==on;{footer:Testing is recommended:https#
     $interactionUpdate[{newEmbed:{title:Bug Fixes}{description:
 * Fixed "Current Setup" setting being inconsistent in \`welcomer\` and \`leave\` when pressing the \`Toggle\` button
 * Fixed the user app invite link seen in \`invite\` (if enabled by bot owner) not working
+* Improved the grammar of empty leaderboard error seen in \`leaderboard\` cmd
 }{color:$getVar[embedcolor]}$nonEscape[$get[devbuild]]}{actionRow:{button:Home:2:homebutton_$authorID:false:🏠}{button:Changes:2:versionchanges_$authorID:false}{button:Bug Fixes:2:versionbugfixes_$authorID:true}{button:Other:2:versionother_$authorID:false}}{actionRow:{button:Changelog history:5:https#COLON#//github.com/ddodogames/Dodo-Bot/releases:false:📜}}]
 
 $let[devbuild;$if[$getVar[pre_release]==on;{footer:Testing is recommended:https#COLON#//us-east-1.tixte.net/uploads/dodogames.wants.solutions/refreshedredwarning2.png};]]

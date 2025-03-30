@@ -2,7 +2,7 @@ module.exports = [{
 name: "rock-paper-scissors",
 info: {
   description: "Play rps with your opponent (or optionally play against yourself)!",
-  usage: "`rock-paper-scissors <user/mention yourself>`",
+  usage: "`rock-paper-scissors <user or mention yourself>`",
   perms: ["`SendMessages`"]
 },
 aliases: "rps",

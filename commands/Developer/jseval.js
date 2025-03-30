@@ -2,7 +2,7 @@ module.exports = {
     name: "jseval",
     info: {
       description: "Executes codes for testing (in discord.js only)",
-      usage: "jseval <code>",
+      usage: "`jseval <code>`",
       perms: ["`SendMessages`"],
       flags: ["`--return`"],
       dev: "true"
