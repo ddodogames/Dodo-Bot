@@ -2,6 +2,7 @@ module.exports = {
     name: "commandinfo",
     info: {
             description: "The command says it all. What else do you expect?",
+            usage: "`commandinfo <cmdname>`",
             perms: "`SendMessages`"
         },
     $if: "old",

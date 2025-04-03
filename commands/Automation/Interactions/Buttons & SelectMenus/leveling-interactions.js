@@ -280,12 +280,9 @@ Press the "Toggle" button to enable/disable the Level up Message or use the othe
     $interactionReply[Successfully sent the message to the Level up channel for testing!;all;true]
     $channelSendMessage[$getGuildVar[levelingmessagechannel];
     **This is a test Level up message! Please, ignore this!**
-    $get[content]
+    $levelUpMessage[$nonEscape[$getGuildVar[levelmessage]]]
     ]
     
-    $let[content;$advancedReplaceText[$nonEscape[$getGuildVar[levelmessage]];<newlevel>;$getUserVar[level];<mention>;<@$authorID>;<username>;$username;<oldlevel>;$getUserVar[previouslevel];<Displayname>;$userDisplayName;<globalname>;$get[globalname]]]
-
-    $let[globalname;$advancedReplaceText[$checkCondition[$userGlobalName[$authorID]==];true;$username[$authorID];false;$userGlobalName[$authorID]]]
 
     $onlyIf[$hasPermsInChannel[$getGuildVar[levelingmessagechannel];$clientID;sendmessages;viewchannel]==true;Hmm. Seems like i don't have the right permissions there. Please ensure that i have the following permissions for the channel <#$getGuildVar[levelingmessagechannel]>:
     \`ViewChannel\`

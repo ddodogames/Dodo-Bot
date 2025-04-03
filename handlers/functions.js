@@ -39,6 +39,35 @@ $let[userInput;{userID}]`
 $createArray[returnlist;$nonEscape[$get[createlist]]]
 $let[createlist;$advancedReplaceText[{text};{seperator};#SEMI#]]`
   },{
+    name: "$welcomerMessage",
+    type: "aoi.js",
+    params: ["content"],
+    code: `$advancedReplaceText[$get[content];<server.totalMembers>;$membersCount;<username>;$get[username];<mention>;<@$authorID>;<id>;$authorID;<owner.username>;$username[$guildOwnerID];<server.name>;$guildName;<owner.id>;$guildOwnerID;<server.id>;$guildID;<creationdate>;$creationDate[$authorID;date];<position>;$ordinal[$memberJoinPosition];<Displayname>;$userDisplayName;<globalname>;$get[globalname]]
+
+    $let[username;$advancedReplaceText[$checkCondition[$hasUserTag[$authorID]==false];true;$username[$authorID];false;$userTag[$authorID]]]
+    $let[globalname;$advancedReplaceText[$checkCondition[$userGlobalName[$authorID]==];true;$username[$authorID];false;$userGlobalName[$authorID]]]
+    $let[content;{content}]
+    `
+  },{
+    name: "$leaveMessage",
+    type: "aoi.js",
+    params: ["content"],
+    code: `$advancedReplaceText[$get[content];<server.totalMembers>;$membersCount;<username>;$get[username];<mention>;<@$authorID>;<id>;$authorID;<owner.username>;$username[$guildOwnerID];<server.name>;$guildName;<owner.id>;$guildOwnerID;<server.id>;$guildID;<creationdate>;$creationDate[$authorID;date];<position>;$ordinal[$memberJoinPosition];<leave.time>;<t:$truncate[$divide[$datestamp;1000]]:f>;<Displayname>;$userDisplayName;<globalname>;$get[globalname]]
+
+    $let[username;$advancedReplaceText[$checkCondition[$hasUserTag[$authorID]==false];true;$username[$authorID];false;$userTag[$authorID]]]
+    $let[globalname;$advancedReplaceText[$checkCondition[$userGlobalName[$authorID]==];true;$username[$authorID];false;$userGlobalName[$authorID]]]
+    $let[content;{content}]
+    `
+  },{
+    name: "$levelUpMessage",
+    type: "aoi.js",
+    params: ["content"],
+    code: `$advancedReplaceText[$get[content];<newlevel>;$getUserVar[level];<mention>;<@$authorID>;<username>;$username;<oldlevel>;$getUserVar[previouslevel];<Displayname>;$userDisplayName;<globalname>;$get[globalname]]
+
+    $let[globalname;$advancedReplaceText[$checkCondition[$userGlobalName[$authorID]==];true;$username[$authorID];false;$userGlobalName[$authorID]]]
+    $let[content;{content}]
+    `
+  },{
   name: "$createProgressBar",
   type: "djs",
   code: async d => {

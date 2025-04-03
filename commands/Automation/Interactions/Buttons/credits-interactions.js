@@ -7,7 +7,7 @@ module.exports = [{
 * **@aoijs/aoi.db** - Database used in the bot
 * **discord-gamecord** - Mostly used in game commands such as \`minesweeper\`, \`snake\`, etc.
 * **chalk** - For colored texts on console especially the bot's custom message
-* **dotenv** - Adds support for environment variables in local hosting
+* **@dotenvx/dotenvx** - Adds support for environment variables in local hosting
 }{color:$getVar[embedcolor]}}{actionRow:{button:Main Credits:2:maincredits_$authorID:false}{button:Packages used:2:packagesused_$authorID:true}{button:Use of source code:2:useofsource_$authorID:false}}]
 
     $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];This interaction is not for you.

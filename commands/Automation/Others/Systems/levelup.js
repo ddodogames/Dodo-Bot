@@ -1,8 +1,7 @@
 module.exports = [{
     name: "$alwaysExecute",
     code: `
-$get[content]
-$let[content;$advancedReplaceText[$nonEscape[$getGuildVar[levelmessage]];<newlevel>;$getUserVar[level];<mention>;<@$authorID>;<username>;$username;<oldlevel>;$getUserVar[previouslevel];<Displayname>;$userDisplayName;<globalname>;$get[globalname]]]
+$levelUpMessage[$nonEscape[$getGuildVar[levelmessage]]]
 $useChannel[$getGuildVar[levelingmessagechannel]]
 
 $onlyIf[$hasPermsInChannel[$getGuildVar[levelingmessagechannel];$clientID;viewchannel;sendmessages]==true;]
@@ -16,7 +15,6 @@ $setUserVar[previouslevel;$sum[$getUserVar[previouslevel;$authorID;$guildID];1];
 
 $disableMentionType[roles]
 $disableMentionType[everyone]
-$let[globalname;$advancedReplaceText[$checkCondition[$userGlobalName[$authorID]==];true;$username[$authorID];false;$userGlobalName[$authorID]]]
 $onlyIf[$isBot==false;]
 $onlyIf[$getUserVar[xp]==$getUserVar[xpLimit];]
 $onlyIf[$getGuildVar[levelsystem]==on;]
