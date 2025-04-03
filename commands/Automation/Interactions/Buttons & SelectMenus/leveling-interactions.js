@@ -102,8 +102,8 @@ $interactionUpdate[The current progress for all members will remain then.]
     
     
 
-    $let[levelupchannel;$advancedReplaceText[$checkCondition[$getGuildVar[levelingmessagechannel]==none];true;none;false;<#$getGuildVar[levelingmessagechannel]> (\`$getGuildVar[levelingmessagechannel]\`)]]
-    $let[levelupmessage;$advancedReplaceText[$checkCondition[$getGuildVar[levelmessagefeature]==on];true;Enabled;false;Disabled]]
+    $let[levelupchannel;$advancedReplaceText[$checkCondition[$getGuildVar[levelupmessagechannel]==none];true;none;false;<#$getGuildVar[levelupmessagechannel]> (\`$getGuildVar[levelupmessagechannel]\`)]]
+    $let[levelupmessage;$advancedReplaceText[$checkCondition[$getGuildVar[levelupmessagefeature]==on];true;Enabled;false;Disabled]]
 
     
     $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];This interaction is not for you.
@@ -123,8 +123,8 @@ Press the "Toggle" button to enable/disable the Level up Message or use the othe
 * **Level up message#COLON#** \`$get[levelupmessage]\`
 }{color:$getVar[embedcolor]}}{actionRow:{button:Go back:2:levelingsettings_$authorID:false:↩️}{button:Toggle:2:enablelevelingmessage_$authorID:false:🔄}{button:Set Channel:2:levelingchannelsetup_$authorID:false}{button:Set Message:2:levelingsetmsgmodal_$authorID:false}}{actionRow:{button:Test Message:2:levelingtestmessage_$authorID:false}}]
     
-    $let[levelupchannel;$advancedReplaceText[$checkCondition[$getGuildVar[levelingmessagechannel]==none];true;none;false;<#$getGuildVar[levelingmessagechannel]> (\`$getGuildVar[levelingmessagechannel]\`)]]
-    $let[levelupmessage;$advancedReplaceText[$checkCondition[$getGuildVar[levelmessagefeature]==on];true;Enabled;false;Disabled]]
+    $let[levelupchannel;$advancedReplaceText[$checkCondition[$getGuildVar[levelupmessagechannel]==none];true;none;false;<#$getGuildVar[levelupmessagechannel]> (\`$getGuildVar[levelupmessagechannel]\`)]]
+    $let[levelupmessage;$advancedReplaceText[$checkCondition[$getGuildVar[levelupmessagefeature]==on];true;Enabled;false;Disabled]]
     
     $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];This interaction is not for you.
     {ephemeral}
@@ -144,13 +144,13 @@ Press the "Toggle" button to enable/disable the Level up Message or use the othe
 * **Level up message#COLON#** \`$get[levelupmessage]\`
 }{color:$getVar[embedcolor]}}{actionRow:{button:Go back:2:levelingsettings_$authorID:false:↩️}{button:Toggle:2:enablelevelingmessage_$authorID:false:🔄}{button:Set Channel:2:levelingchannelsetup_$authorID:false}{button:Set Message:2:levelingsetmsgmodal_$authorID:false}}{actionRow:{button:Test Message:2:levelingtestmessage_$authorID:false}}]
     
-    $let[levelupchannel;$advancedReplaceText[$checkCondition[$getGuildVar[levelingmessagechannel]==none];true;none;false;<#$getGuildVar[levelingmessagechannel]> (\`$getGuildVar[levelingmessagechannel]\`)]]
-    $let[levelupmessage;$advancedReplaceText[$checkCondition[$getGuildVar[levelmessagefeature]==on];true;Enabled;false;Disabled]]
+    $let[levelupchannel;$advancedReplaceText[$checkCondition[$getGuildVar[levelupmessagechannel]==none];true;none;false;<#$getGuildVar[levelupmessagechannel]> (\`$getGuildVar[levelupmessagechannel]\`)]]
+    $let[levelupmessage;$advancedReplaceText[$checkCondition[$getGuildVar[levelupmessagefeature]==on];true;Enabled;false;Disabled]]
     
     
-    $let[resultmessage;$advancedReplaceText[$checkCondition[$getGuildVar[levelmessagefeature]==on];true;From now on, Level up messages will be sent by the bot!;false;From now on, Level up messages will no longer be sent by the bot]]
-    $setGuildVar[levelmessagefeature;$get[newtoggledsetting]]
-    $let[newtoggledsetting;$advancedReplaceText[$checkCondition[$getGuildVar[levelmessagefeature]==on];true;off;false;on]]
+    $let[resultmessage;$advancedReplaceText[$checkCondition[$getGuildVar[levelupmessagefeature]==on];true;From now on, Level up messages will be sent by the bot!;false;From now on, Level up messages will no longer be sent by the bot]]
+    $setGuildVar[levelupmessagefeature;$get[newtoggledsetting]]
+    $let[newtoggledsetting;$advancedReplaceText[$checkCondition[$getGuildVar[levelupmessagefeature]==on];true;off;false;on]]
     
     $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];This interaction is not for you.
     {ephemeral}
@@ -164,7 +164,7 @@ Press the "Toggle" button to enable/disable the Level up Message or use the othe
         prototype: "button",
         code: `$interactionModal[Set Message;levelingsetmsgresult;
     {actionRow:
-        {textInput:Message to use:2:textInput:true:e.g, <username> has Leveled up!:0:200:$getGuildVar[levelmessage]}
+        {textInput:Message to use:2:textInput:true:e.g, <username> has Leveled up!:0:200:$getGuildVar[levelupmessage]}
       }]
     
     $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];This interaction is not for you.
@@ -178,7 +178,7 @@ Press the "Toggle" button to enable/disable the Level up Message or use the othe
         name: "levelingsetmsgresult",
         type: "interaction",
         prototype: "modal",
-        code: `$setGuildVar[levelmessage;$textInputValue[textInput]]
+        code: `$setGuildVar[levelupmessage;$textInputValue[textInput]]
     $interactionReply[Successfully set the Level up message!;all;true]
     `
     },{
@@ -191,7 +191,7 @@ Press the "Toggle" button to enable/disable the Level up Message or use the othe
 * $get[levelupchannel]
 }{color:$getVar[embedcolor]}}{actionRow:{selectMenu:levelingchannelmenusetup_$authorID:Select a channel to use.:1:1:false:{channelInput:Text:Announcement}}}{actionRow:{button:Go back:2:levelingsettingmessage_$authorID:false:↩️}{button:Reset:2:levelingresetchannel_$authorID:false}}]
     
-    $let[levelupchannel;$advancedReplaceText[$checkCondition[$getGuildVar[levelingmessagechannel]==none];true;none;false;<#$getGuildVar[levelingmessagechannel]> (\`$getGuildVar[levelingmessagechannel]\`)]]
+    $let[levelupchannel;$advancedReplaceText[$checkCondition[$getGuildVar[levelupmessagechannel]==none];true;none;false;<#$getGuildVar[levelupmessagechannel]> (\`$getGuildVar[levelupmessagechannel]\`)]]
     
     $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];This interaction is not for you.
     {ephemeral}
@@ -212,9 +212,9 @@ Press the "Toggle" button to enable/disable the Level up Message or use the othe
 * $get[levelupchannel]
 }{color:$getVar[embedcolor]}}{actionRow:{selectMenu:levelingchannelmenusetup_$authorID:Select a channel to use.:1:1:false:{channelInput:Text:Announcement}}}{actionRow:{button:Go back:2:levelingsettingmessage_$authorID:false:↩️}{button:Reset:2:levelingresetchannel_$authorID:false}}]
     
-    $let[levelupchannel;$advancedReplaceText[$checkCondition[$getGuildVar[levelingmessagechannel]==none];true;none;false;<#$getGuildVar[levelingmessagechannel]> (\`$getGuildVar[levelingmessagechannel]\`)]]
+    $let[levelupchannel;$advancedReplaceText[$checkCondition[$getGuildVar[levelupmessagechannel]==none];true;none;false;<#$getGuildVar[levelupmessagechannel]> (\`$getGuildVar[levelupmessagechannel]\`)]]
     
-    $setGuildVar[levelingmessagechannel;$getSelectMenuValues[all]]
+    $setGuildVar[levelupmessagechannel;$getSelectMenuValues[all]]
     
     $onlyIf[$hasPermsInChannel[$getSelectMenuValues[all];$clientID;sendmessages;viewchannel]==true;Hmm. Seems like i don't have the right permissions there. Please ensure that i have the following permissions for the channel <#$getSelectMenuValues[all]>:
     \`ViewChannel\`
@@ -223,7 +223,7 @@ Press the "Toggle" button to enable/disable the Level up Message or use the othe
     {interaction}
     ]
     
-    $onlyIf[$getSelectMenuValues[all]!=$getGuildVar[levelingmessagechannel];
+    $onlyIf[$getSelectMenuValues[all]!=$getGuildVar[levelupmessagechannel];
     This channel is already used for Level up messages. Please, set a different channel instead.
     {ephemeral}
     {interaction}
@@ -255,11 +255,11 @@ Press the "Toggle" button to enable/disable the Level up Message or use the othe
 * $get[levelupchannel]
 }{color:$getVar[embedcolor]}}{actionRow:{selectMenu:levelingchannelmenusetup_$authorID:Select a channel to use.:1:1:false:{channelInput:Text:Announcement}}}{actionRow:{button:Go back:2:levelingsettingmessage_$authorID:false:↩️}{button:Reset:2:levelingresetchannel_$authorID:false}}]
 
-    $let[levelupchannel;$advancedReplaceText[$checkCondition[$getGuildVar[levelingmessagechannel]==none];true;none;false;<#$getGuildVar[levelingmessagechannel]> (\`$getGuildVar[levelingmessagechannel]\`)]]
+    $let[levelupchannel;$advancedReplaceText[$checkCondition[$getGuildVar[levelupmessagechannel]==none];true;none;false;<#$getGuildVar[levelupmessagechannel]> (\`$getGuildVar[levelupmessagechannel]\`)]]
 
-    $deleteVar[levelingmessagechannel;$guildID;main]
+    $deleteVar[levelupmessagechannel;$guildID;main]
 
-    $onlyIf[$getGuildVar[levelingmessagechannel]!=none;
+    $onlyIf[$getGuildVar[levelupmessagechannel]!=none;
     There's no channel to reset.
     {ephemeral}
     {interaction}
@@ -278,26 +278,26 @@ Press the "Toggle" button to enable/disable the Level up Message or use the othe
         prototype: "button",
         code: `
     $interactionReply[Successfully sent the message to the Level up channel for testing!;all;true]
-    $channelSendMessage[$getGuildVar[levelingmessagechannel];
+    $channelSendMessage[$getGuildVar[levelupmessagechannel];
     **This is a test Level up message! Please, ignore this!**
-    $levelUpMessage[$nonEscape[$getGuildVar[levelmessage]]]
+    $levelUpMessage[$nonEscape[$getGuildVar[levelupmessage]]]
     ]
     
 
-    $onlyIf[$hasPermsInChannel[$getGuildVar[levelingmessagechannel];$clientID;sendmessages;viewchannel]==true;Hmm. Seems like i don't have the right permissions there. Please ensure that i have the following permissions for the channel <#$getGuildVar[levelingmessagechannel]>:
+    $onlyIf[$hasPermsInChannel[$getGuildVar[levelupmessagechannel];$clientID;sendmessages;viewchannel]==true;Hmm. Seems like i don't have the right permissions there. Please ensure that i have the following permissions for the channel <#$getGuildVar[levelupmessagechannel]>:
     \`ViewChannel\`
     \`SendMessages\`
     {ephemeral}
     {interaction}
     ]
     
-    $onlyIf[$guildChannelExists[$guildID;$getGuildVar[levelingmessagechannel]]==true;The channel used for Level up message seems to be deleted.
+    $onlyIf[$guildChannelExists[$guildID;$getGuildVar[levelupmessagechannel]]==true;The channel used for Level up message seems to be deleted.
     Cancelled sending the message as a result. Please set a new channel to fix this.
     {ephemeral}
     {interaction}
     ]
     
-    $onlyIf[$getGuildVar[levelingmessagechannel]!=none;There is no channel set to test the Level up message.
+    $onlyIf[$getGuildVar[levelupmessagechannel]!=none;There is no channel set to test the Level up message.
     Please set a new channel first.
     {ephemeral}
     {interaction}

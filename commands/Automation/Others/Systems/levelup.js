@@ -1,13 +1,13 @@
 module.exports = [{
     name: "$alwaysExecute",
     code: `
-$levelUpMessage[$nonEscape[$getGuildVar[levelmessage]]]
-$useChannel[$getGuildVar[levelingmessagechannel]]
+$levelUpMessage[$nonEscape[$getGuildVar[levelupmessage]]]
+$useChannel[$getGuildVar[levelupmessagechannel]]
 
-$onlyIf[$hasPermsInChannel[$getGuildVar[levelingmessagechannel];$clientID;viewchannel;sendmessages]==true;]
-$onlyIf[$guildChannelExists[$guildID;$getGuildVar[levelingmessagechannel]]==true;]
-$onlyIf[$getGuildVar[levelingmessagechannel]!=none;]
-$onlyIf[$getGuildVar[levelmessagefeature]==on;]
+$onlyIf[$hasPermsInChannel[$getGuildVar[levelupmessagechannel];$clientID;viewchannel;sendmessages]==true;]
+$onlyIf[$guildChannelExists[$guildID;$getGuildVar[levelupmessagechannel]]==true;]
+$onlyIf[$getGuildVar[levelupmessagechannel]!=none;]
+$onlyIf[$getGuildVar[levelupmessagefeature]==on;]
 
 $setUserVar[xpLimit;$sum[$getUserVar[xpLimit;$authorID;$guildID];20];$authorID;$guildID]
 $setUserVar[level;$sum[$getUserVar[level;$authorID;$guildID];1];$authorID;$guildID]
