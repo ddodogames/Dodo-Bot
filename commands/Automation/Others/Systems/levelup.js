@@ -1,7 +1,7 @@
 module.exports = [{
     name: "$alwaysExecute",
     code: `
-$levelUpMessage[$nonEscape[$getGuildVar[levelupmessage]]]
+$levelUpMessage[$getGuildVar[levelupmessage]]
 $useChannel[$getGuildVar[levelupmessagechannel]]
 
 $onlyIf[$hasPermsInChannel[$getGuildVar[levelupmessagechannel];$clientID;viewchannel;sendmessages]==true;]

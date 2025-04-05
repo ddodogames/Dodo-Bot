@@ -280,7 +280,7 @@ Press the "Toggle" button to enable/disable the Level up Message or use the othe
     $interactionReply[Successfully sent the message to the Level up channel for testing!;all;true]
     $channelSendMessage[$getGuildVar[levelupmessagechannel];
     **This is a test Level up message! Please, ignore this!**
-    $levelUpMessage[$nonEscape[$getGuildVar[levelupmessage]]]
+    $levelUpMessage[$getGuildVar[levelupmessage]]
     ]
     
 
