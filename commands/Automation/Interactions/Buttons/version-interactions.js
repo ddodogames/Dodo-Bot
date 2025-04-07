@@ -37,6 +37,8 @@ $let[devbuild;$if[$getVar[pre_release]==on;{footer:Testing is recommended:https#
     prototype: "button",
     code: `$interactionUpdate[{newEmbed:{title:Other}{description:
 * (Source Code) Replaced the package \`dotenv\` with \`@dotenvx/dotenvx\` for better Env support
+* Messages from \`leveling\`, \`welcomer\` and \`leave\` are now fully consistent between test and normal ones
+* \`--buildinfo\` for \`version\`#COLON#: Make the displayed build branch hyperlinked
  }{color:$getVar[embedcolor]}$nonEscape[$get[devbuild]]}{actionRow:{button:Home:2:homebutton_$authorID:false:🏠}{button:Changes:2:versionchanges_$authorID:false}{button:Bug Fixes:2:versionbugfixes_$authorID:false}{button:Other:2:versionother_$authorID:true}}{actionRow:{button:Changelog history:5:https#COLON#//github.com/ddodogames/Dodo-Bot/releases:false:📜}}]
 
 $let[devbuild;$if[$getVar[pre_release]==on;{footer:Testing is recommended:https#COLON#//us-east-1.tixte.net/uploads/dodogames.wants.solutions/refreshedredwarning2.png};]]
