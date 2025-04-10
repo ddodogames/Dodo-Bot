@@ -7,7 +7,7 @@ info: {
 },
 aliases: "ytcomment",
 code: `$attachment[$get[apilink];comment.png;URL]
-$onlyIf[$IsValidImageLink[$get[apilink]]==true;It looks like there're issues with processing the image. Please, try again later if possible.]
+$onlyIf[$IsValidImageLink[$get[apilink]]==true;Looks like there are issues with processing the image. Please try again later if possible.]
 $onlyIf[$charCount[$message]<=56;Your comment can't be longer than 56 characters!]
 $onlyIf[$hasPermsInChannel[$channelID;$clientID;attachfiles]==true;I must have \`AttachFiles\` permission in order to proceed in this channel. Please grant me the permission and try again.]
 $let[apilink;https://some-random-api.com/canvas/misc/youtube-comment?username=$uri[$username;encode]&avatar=$get[pfphandler]&comment=$uri[$message;encode]]
