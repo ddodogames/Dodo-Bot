@@ -14,7 +14,7 @@ $addField[Aliases;$get[aliases]]
 $addField[Permission(s);$arrayJoin[perms;, ]]
 $addField[Usage;$get[usagechecker]]
 $color[$getVar[embedcolor]]
-$footer[() - optional parameter | <> - required parameter]
+$footer[<> - required parameter | () - optional parameter]
 $if[$commandInfo[$toLowerCase[$message];info.flags]!=]
 $addButton[1;Flags;2;viewcommandflags_$authorID_$commandInfo[$nonEscape[$get[cmdname]];name];false]
 $endif
