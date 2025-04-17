@@ -21,7 +21,7 @@
     "aoi.js": "^6.9.0",
     "@aoijs/aoi.db": "^0.0.0",
     "discord-gamecord": "^4.4.2",
-    "@dotenvx/dotenvx": "^1.39.1"
+    "@dotenvx/dotenvx": "^1.40.1"
   },
   "devDependencies": {
     "chalk": "^4.1.2"
