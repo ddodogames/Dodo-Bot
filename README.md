@@ -1,6 +1,13 @@
 # Dodo-bot
 A personal bot project made in aoi.js v6 aiming to both entertain and provide users some features to use.
 
+# What does it include?
+* Simple leveling system 
+* Fun commands (Text, Image and Games like tictactoe for example)
+* Welcomer/Leave system
+* Suggestion and Polls
+* Logging Setup (like ban logs)
+
 # It's no longer multi-purpose?
 When I first started the Dodo-Bot Project, I thought everything was easy, but I was wrong. Maintaining Dodo-Bot v1 was absolutely painful, since you have to fix the APIs not working in the commands most of the time, which can be truly annoying if there is only one person working on a huge bot project.
 
