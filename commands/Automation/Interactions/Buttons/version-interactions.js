@@ -3,9 +3,7 @@ module.exports = [{
     prototype: "button",
     code: `
     $interactionUpdate[{newEmbed:{title:Changes}{description:
-* Added command usage section for \`commandinfo\`
-* The buttons for moving the Snake in \`snake\` should now be easier to see
-* Increased page limit in \`leaderboard\` to 20
+* Allow downloading the user's avatar in \`avatar\` under 3 image formats as button links
 }{color:$getVar[embedcolor]}$nonEscape[$get[devbuild]]}{actionRow:{button:Home:2:homebutton_$authorID:false:🏠}{button:Changes:2:versionchanges_$authorID:true}{button:Bug Fixes:2:versionbugfixes_$authorID:false}{button:Other:2:versionother_$authorID:false}}{actionRow:{button:Changelog history:5:https#COLON#//github.com/ddodogames/Dodo-Bot/releases:false:📜}}]
 
 $let[devbuild;$if[$getVar[pre_release]==on;{footer:Testing is recommended:https#COLON#//us-east-1.tixte.net/uploads/dodogames.wants.solutions/refreshedredwarning2.png};]]
@@ -21,10 +19,7 @@ $let[devbuild;$if[$getVar[pre_release]==on;{footer:Testing is recommended:https#
     prototype: "button",
     code: `
     $interactionUpdate[{newEmbed:{title:Bug Fixes}{description:
-* Fixed "Current Setup" setting being inconsistent in \`welcomer\` and \`leave\` when pressing the "Toggle" button
-* Fixed the user app invite link seen in \`invite\` (if enabled by bot owner) not working
-* Fixed a issue where sometimes some commands like \`wyr\` will simply return "dead" as a response rather than the actual error
-* Improved the grammar of empty leaderboard error seen in \`leaderboard\` cmd
+*No Bug fixes have been added yet*
 }{color:$getVar[embedcolor]}$nonEscape[$get[devbuild]]}{actionRow:{button:Home:2:homebutton_$authorID:false:🏠}{button:Changes:2:versionchanges_$authorID:false}{button:Bug Fixes:2:versionbugfixes_$authorID:true}{button:Other:2:versionother_$authorID:false}}{actionRow:{button:Changelog history:5:https#COLON#//github.com/ddodogames/Dodo-Bot/releases:false:📜}}]
 
 $let[devbuild;$if[$getVar[pre_release]==on;{footer:Testing is recommended:https#COLON#//us-east-1.tixte.net/uploads/dodogames.wants.solutions/refreshedredwarning2.png};]]
@@ -39,9 +34,8 @@ $let[devbuild;$if[$getVar[pre_release]==on;{footer:Testing is recommended:https#
       type: "interaction",
     prototype: "button",
     code: `$interactionUpdate[{newEmbed:{title:Other}{description:
-* (Source Code) Replaced the package \`dotenv\` with \`@dotenvx/dotenvx\` for better Env support
-* Messages from \`welcomer\`, \`leave\` and \`leveling\` are now fully consistent between test and normal ones
-* \`--buildinfo\` for \`version\`#COLON# Make the displayed build branch hyperlinked
+* Added Green Apple as part of the foods to catch in \`snake\` command
+* (Source code) Bumped \`@dotenvx/dotenvx\` package to version \`1.41.0\`
  }{color:$getVar[embedcolor]}$nonEscape[$get[devbuild]]}{actionRow:{button:Home:2:homebutton_$authorID:false:🏠}{button:Changes:2:versionchanges_$authorID:false}{button:Bug Fixes:2:versionbugfixes_$authorID:false}{button:Other:2:versionother_$authorID:true}}{actionRow:{button:Changelog history:5:https#COLON#//github.com/ddodogames/Dodo-Bot/releases:false:📜}}]
 
 $let[devbuild;$if[$getVar[pre_release]==on;{footer:Testing is recommended:https#COLON#//us-east-1.tixte.net/uploads/dodogames.wants.solutions/refreshedredwarning2.png};]]

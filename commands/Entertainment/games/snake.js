@@ -24,7 +24,7 @@ const Game = new Snake({
     right: '👉',
   },
   snake: { head: '🟢', body: '🟩', tail: '🟢', over: '💀' },
-  foods: ['🍎', '🍇', '🍊', '🫐', '🥕', '🥝', '🌽'],
+  foods: ['🍎', '🍇', '🍊', '🫐', '🥕', '🥝', '🌽', '🍏'],
   buttonStyle: "SECONDARY",
   stopButton: 'Stop',
   timeoutTime: 60000,
