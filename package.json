@@ -8,7 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "setup": "npm install",
     "start": "node index.js",
-    "startWithoutDeprecation": "node index.js -- --no-deprecation",
+    "startWithoutDeprecations": "node index.js -- --no-deprecation",
     "UpdateandStart": "git pull && node index.js"
   },
   "engines": {
@@ -21,7 +21,7 @@
     "aoi.js": "^6.9.0",
     "@aoijs/aoi.db": "^0.0.0",
     "discord-gamecord": "^4.4.2",
-    "@dotenvx/dotenvx": "^1.41.0"
+    "@dotenvx/dotenvx": "^1.42.2"
   },
   "devDependencies": {
     "chalk": "^4.1.2"
