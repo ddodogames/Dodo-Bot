@@ -35,7 +35,9 @@ $let[devbuild;$if[$getVar[pre_release]==on;{footer:Testing is recommended:https#
     prototype: "button",
     code: `$interactionUpdate[{newEmbed:{title:Other}{description:
 * Added Green Apple as part of the foods to catch in \`snake\` command
-* (Source code) Bumped \`@dotenvx/dotenvx\` package to version \`1.42.2\`
+* (Source code) Bumped \`@dotenvx/dotenvx\` package to version \`1.43.0\`
+* Made it so that the error for non existing banners in \`banner\` refers to you if no one was mentioned
+* (Source code) Make Development warning on console stand out
  }{color:$getVar[embedcolor]}$nonEscape[$get[devbuild]]}{actionRow:{button:Home:2:homebutton_$authorID:false:🏠}{button:Changes:2:versionchanges_$authorID:false}{button:Bug Fixes:2:versionbugfixes_$authorID:false}{button:Other:2:versionother_$authorID:true}}{actionRow:{button:Changelog history:5:https#COLON#//github.com/ddodogames/Dodo-Bot/releases:false:📜}}]
 
 $let[devbuild;$if[$getVar[pre_release]==on;{footer:Testing is recommended:https#COLON#//us-east-1.tixte.net/uploads/dodogames.wants.solutions/refreshedredwarning2.png};]]
