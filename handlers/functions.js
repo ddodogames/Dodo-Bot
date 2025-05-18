@@ -91,6 +91,11 @@ $let[createlist;$advancedReplaceText[{text};{seperator};#SEMI#]]`
   params: ["text"],
   code: `$removeContains[{text};+;-;/;%;&;!;?;@;^;*;<;>;$;#;.;_;=;~;|;';,]`
 },{
+  name: '$isNegative',
+  params: ['value'],
+  type: 'aoi.js',
+  code: '$checkCondition[$isNumber[{value}]==true&&{value}<0]'
+},{
   name: "$randomColor", // Exclusive to user apps for now
   type: "djs",
   code: async (d) => {
