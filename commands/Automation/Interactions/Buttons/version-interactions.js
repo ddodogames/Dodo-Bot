@@ -5,7 +5,7 @@ module.exports = [{
     $interactionUpdate[{newEmbed:{title:Changes}{description:
 * Bumped aoi.js to version \`6.10.3\`
 * Allow downloading the user's avatar in \`avatar\` under 3 image formats as button links
-* Added a command called \`pet\`
+* Added 2 new commands called \`pet\` and \`periodic-table\`
 }{color:$getVar[embedcolor]}$nonEscape[$get[devbuild]]}{actionRow:{button:Home:2:homebutton_$authorID:false:🏠}{button:Changes:2:versionchanges_$authorID:true}{button:Bug Fixes:2:versionbugfixes_$authorID:false}{button:Other:2:versionother_$authorID:false}}{actionRow:{button:Changelog history:5:https#COLON#//github.com/ddodogames/Dodo-Bot/releases:false:📜}}]
 
 $let[devbuild;$if[$getVar[pre_release]==on;{footer:Testing is recommended:https#COLON#//us-east-1.tixte.net/uploads/dodogames.wants.solutions/refreshedredwarning2.png};]]
@@ -21,7 +21,7 @@ $let[devbuild;$if[$getVar[pre_release]==on;{footer:Testing is recommended:https#
     prototype: "button",
     code: `
     $interactionUpdate[{newEmbed:{title:Bug Fixes}{description:
-* Fixed a issue where \`2048\` has a issue despite the command not even having one at all
+* Fixed a issue where \`2048\` has usage in \`commandinfo\` despite the command not even having one at all
 }{color:$getVar[embedcolor]}$nonEscape[$get[devbuild]]}{actionRow:{button:Home:2:homebutton_$authorID:false:🏠}{button:Changes:2:versionchanges_$authorID:false}{button:Bug Fixes:2:versionbugfixes_$authorID:true}{button:Other:2:versionother_$authorID:false}}{actionRow:{button:Changelog history:5:https#COLON#//github.com/ddodogames/Dodo-Bot/releases:false:📜}}]
 
 $let[devbuild;$if[$getVar[pre_release]==on;{footer:Testing is recommended:https#COLON#//us-east-1.tixte.net/uploads/dodogames.wants.solutions/refreshedredwarning2.png};]]
