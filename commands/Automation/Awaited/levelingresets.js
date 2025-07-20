@@ -15,7 +15,7 @@ module.exports = [{
     $setGuildVar[islevelingreset;yes]
     `}]
 
-   /* In a future version!
+   /* Maybe at some point in the future...
 
     {
     name: "forEachMemberID",
