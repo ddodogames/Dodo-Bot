@@ -12,15 +12,15 @@ module.exports = {
     **About $getObjectProperty[api;message.name]**
     $getObjectProperty[api;message.summary]
     ]
-    $addField[General;
-* **Phase**: $getObjectProperty[api;message.phase]
-* **atomic number**: $getObjectProperty[api;message.atomic_number]
-* **atomic mass**: $getObjectProperty[api;message.atomic_mass]
-    ;true]
     $addField[Other;
 * **Symbol**: $getObjectProperty[api;message.symbol]
 * **Period**: $getObjectProperty[api;message.period]
 * **Discovered by**: $getObjectProperty[api;message.discovered_by]
+    ;true]
+    $addField[General;
+* **Phase**: $getObjectProperty[api;message.phase]
+* **atomic number**: $getObjectProperty[api;message.atomic_number]
+* **atomic mass**: $getObjectProperty[api;message.atomic_mass]
     ;true]
     $thumbnail[$getObjectProperty[api;message.image]]
     $color[$getVar[embedcolor]]

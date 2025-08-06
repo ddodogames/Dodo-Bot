@@ -25,7 +25,7 @@ module.exports = [{
 * $username[738856854892839022] - For Leveling setup
 * $username[769525910164471821] - For \`guess-the-pokemon\` code (and some ideas as well)
 * aoi.js server - For a lot of help
-* [discordicon.com](https#COLON#//discordicon.com/icons-editor) - For most of the icons used in commands
+* [discotools.xyz](https#COLON#//discotools.xyz/icons-editor) - For most of the icons used in commands
 }{color:$getVar[embedcolor]}}{actionRow:{button:Main Credits:2:maincredits_$authorID:true}{button:Packages used:2:packagesused_$authorID:false}{button:Use of source code:2:useofsource_$authorID:false}}]
 
     $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];This interaction is not for you.
@@ -41,7 +41,7 @@ module.exports = [{
 When using the source code for development purposes, it is recommended to give credits to the original work done on the bot itself, which can be done by including the username \`dodogames\` in your project.
 
 **For public bots**
-It is not recommended to claim that you fully made the bot yourself and even advertise it to the public. It is fine if you used the source code but then made it slightly different that doesn't result in being too smiliar to the original bot.
+It is not recommended to claim that you fully made the bot yourself and even advertise it to the public. It is fine if you used the source code but then made it different that doesn't result in being too smiliar to the original bot.
 
 A modified instance of Dodo-Bot should be normally allowed as long as the credit for the original work is included (or when permission is given to do so).
 

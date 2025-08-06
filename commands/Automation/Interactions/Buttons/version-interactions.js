@@ -3,9 +3,7 @@ module.exports = [{
     prototype: "button",
     code: `
     $interactionUpdate[{newEmbed:{title:Changes}{description:
-* Bumped aoi.js to version \`6.10.3\`
-* Allow downloading the user's avatar in \`avatar\` under 3 image formats as button links
-* Added 2 new commands called \`pet\` and \`periodic-table\`
+*No changes have been added yet*
 }{color:$getVar[embedcolor]}$nonEscape[$get[devbuild]]}{actionRow:{button:Home:2:homebutton_$authorID:false:🏠}{button:Changes:2:versionchanges_$authorID:true}{button:Bug Fixes:2:versionbugfixes_$authorID:false}{button:Other:2:versionother_$authorID:false}}{actionRow:{button:Changelog history:5:https#COLON#//github.com/ddodogames/Dodo-Bot/releases:false:📜}}]
 
 $let[devbuild;$if[$getVar[pre_release]==on;{footer:Testing is recommended:https#COLON#//us-east-1.tixte.net/uploads/dodogames.wants.solutions/refreshedredwarning2.png};]]
@@ -21,7 +19,7 @@ $let[devbuild;$if[$getVar[pre_release]==on;{footer:Testing is recommended:https#
     prototype: "button",
     code: `
     $interactionUpdate[{newEmbed:{title:Bug Fixes}{description:
-* Fixed a issue where \`2048\` has usage in \`commandinfo\` despite the command not even having one at all
+* Fixed weird formatting in "General" section on \`periodic-table\` command
 }{color:$getVar[embedcolor]}$nonEscape[$get[devbuild]]}{actionRow:{button:Home:2:homebutton_$authorID:false:🏠}{button:Changes:2:versionchanges_$authorID:false}{button:Bug Fixes:2:versionbugfixes_$authorID:true}{button:Other:2:versionother_$authorID:false}}{actionRow:{button:Changelog history:5:https#COLON#//github.com/ddodogames/Dodo-Bot/releases:false:📜}}]
 
 $let[devbuild;$if[$getVar[pre_release]==on;{footer:Testing is recommended:https#COLON#//us-east-1.tixte.net/uploads/dodogames.wants.solutions/refreshedredwarning2.png};]]
@@ -36,10 +34,7 @@ $let[devbuild;$if[$getVar[pre_release]==on;{footer:Testing is recommended:https#
       type: "interaction",
     prototype: "button",
     code: `$interactionUpdate[{newEmbed:{title:Other}{description:
-* Added Green Apple as part of the foods to catch in \`snake\` command
-* (Source code) Bumped \`@dotenvx/dotenvx\` package to version \`1.48.1\`
-* Made it so that the error for non existing banners in \`banner\` refers to you if no one was mentioned
-* (Source code) Make Development warning on console stand out
+*No changes have been added yet*
  }{color:$getVar[embedcolor]}$nonEscape[$get[devbuild]]}{actionRow:{button:Home:2:homebutton_$authorID:false:🏠}{button:Changes:2:versionchanges_$authorID:false}{button:Bug Fixes:2:versionbugfixes_$authorID:false}{button:Other:2:versionother_$authorID:true}}{actionRow:{button:Changelog history:5:https#COLON#//github.com/ddodogames/Dodo-Bot/releases:false:📜}}]
 
 $let[devbuild;$if[$getVar[pre_release]==on;{footer:Testing is recommended:https#COLON#//us-east-1.tixte.net/uploads/dodogames.wants.solutions/refreshedredwarning2.png};]]
