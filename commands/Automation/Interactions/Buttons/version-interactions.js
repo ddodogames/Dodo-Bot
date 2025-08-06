@@ -46,8 +46,9 @@ $let[devbuild;$if[$getVar[pre_release]==on;{footer:Testing is recommended:https#
 * Replaced the package \`dotenv\` with \`@dotenvx/dotenvx\` for better env support
 * Messages from \`welcomer\`, \`leave\` and \`leveling\` are now fully consistent between test and normal ones
 * (Pre-release only) \`--buildinfo\` for \`version\`#COLON# Make the displayed build branch hyperlinked
+  * (Source code) Make Development warning on console stand out
 * Made it so that the error for non existing banners in \`banner\` refers to you if no one was mentioned
-* (Source code) Make Development warning on console stand out and updated main credits on last one
+* Updated main credits in \`credits\` command on last one
  }{color:$getVar[embedcolor]}$nonEscape[$get[devbuild]]}{actionRow:{button:Home:2:homebutton_$authorID:false:🏠}{button:Changes:2:versionchanges_$authorID:false}{button:Bug Fixes:2:versionbugfixes_$authorID:false}{button:Other:2:versionother_$authorID:true}}{actionRow:{button:Changelog history:5:https#COLON#//github.com/ddodogames/Dodo-Bot/releases:false:📜}}]
 
 $let[devbuild;$if[$getVar[pre_release]==on;{footer:Testing is recommended:https#COLON#//us-east-1.tixte.net/uploads/dodogames.wants.solutions/refreshedredwarning2.png};]]
