@@ -17,8 +17,6 @@ module.exports = {
     $let[username;$advancedReplaceText[$checkCondition[$hasUserTag[$get[user]]==false];true;$username[$get[user]];false;$userTag[$get[user]]]]
     $let[user;$advancedReplaceText[$checkCondition[$slashOption[user]==];true;$authorID;false;$slashOption[user]]]
 
-
-
     $onlyIf[$getVar[userapps]==true;User apps are currently disabled.
     {ephemeral}
     {interaction}

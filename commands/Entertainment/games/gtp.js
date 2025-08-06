@@ -11,8 +11,9 @@ $editMessage[$get[id];{attachment:question-image.png:$getObjectProperty[api;data
 
 $createObject[api;$nonEscape[$get[jsonresponse]]]
 $let[id;$sendMessage[Please wait...;true]]
-$onlyIf[$isValidObject[$nonEscape[$get[jsonresponse]]]==true;Unable to fetch Pokemon data.]
-$let[jsonresponse;$httpRequest[https://api.gamecord.xyz/pokemon;GET;;;dead]]
+$onlyIf[$isValidObject[$nonEscape[$get[jsonresponse]]]==true;$get[error]]
+$let[jsonresponse;$httpRequest[https://api.gamecord.xyz/pokemon;GET;;;$get[error]]]
+$let[error;Unable to fetch Pokemon data. Please try again later.]
 $cooldown[5s; Slow down! Don't spam the command!
     Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[5s;user;guess-the-pokemon;$authorID];$dateStamp];1000]]:R>]
 `

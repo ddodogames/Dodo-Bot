@@ -2,6 +2,7 @@ module.exports = [{
   name: "version",
   info: {
     description: "Returns the current version of Dodo-Bot (with it's changelog).",
+    usage: "`version (flag)`",
     perms: "`SendMessages`",
     flags: ["`--buildinfo`"]
 },
@@ -45,7 +46,7 @@ $getVar[buildStatus]
 $addField[General;
 * **Dodo-Bot**: v$getVar[version]
 * **Codename**: $getVar[versionCodename]
-* **Build Branch**: $getVar[buildBranch]
+* **Build Branch**: [**$getVar[buildBranch]**](https://github.com/ddodogames/Dodo-Bot/tree/$getVar[buildBranch])
 * **Build number**: $getVar[buildNumber]
 * **Revision**: $getVar[buildRevision]
 ;true]

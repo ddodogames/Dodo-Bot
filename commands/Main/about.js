@@ -1,4 +1,4 @@
-module.exports = [{
+module.exports = {
 name: "about",
 info: {
     description: "Returns information about Dodo-Bot.",
@@ -15,5 +15,6 @@ $color[$getVar[embedcolor]]
 $addButton[1;Source Code;5;https://github.com/ddodogames/Dodo-Bot;false]
 $thumbnail[https://us-east-1.tixte.net/uploads/dodogames.wants.solutions/dodo-bot-logo.png]
 $cooldown[2s;Slow down! Don't spam the command!
-Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[2s;user;about;$authorID];$dateStamp];1000]]:R>]`
-}]
+Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[2s;user;about;$authorID];$dateStamp];1000]]:R>]
+`
+}

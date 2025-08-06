@@ -2,8 +2,8 @@ module.exports = [{
 name: "suggest-set",
 info: {
     description: "Setup suggestions.",
+    usage: "`suggest-set <channel-name/channel ID or mention>`",
     perms: ["`SendMessages`", "`ManageChannels`"],
-    usage: "suggest-set channel-name/channel ID or <#channel ID>",
 },
 aliases: "suggestion-set",
 code: `
@@ -20,7 +20,8 @@ $onlyIf[$guildChannelExists[$guildID;$get[channeltarget]]==true;Either you have 
 
 $let[channeltarget;$findGuildChannel[$message;false]]
 $onlyIf[$message!=;Please set an channel.
-Usage: \`$getGuildVar[prefix]$nonEscape[$commandInfo[suggestion-set;info.usage]]\`]
+Usage: $commandInfo[suggest-set;info.usage]
+]
 $onlyPerms[managechannels;You do not have \`ManageChannels\` permission to use this.]
 $cooldown[3s; Slow down! Don't spam the command!
 Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[3s;user;suggest-set;$authorID];$dateStamp];1000]]:R>]
@@ -41,6 +42,7 @@ Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[3s;user;suggest-reset
     name: "suggest",
     info: {
         description: "Starts a suggestion in this server (if the feature is setup).",
+        usage: "`suggest <title/description>`",
         perms: ["`SendMessages`", "`AddReactions`"]
     },
     code: `
@@ -65,7 +67,7 @@ For staff server, please run \`suggest-set\` to set a channel.
 $onlyIf[$charCount[$splitText[1]]<=160||$charCount[$splitText[2]]<=3950;You can only add up to 160 characters for a title and 3950 characters for a description of the suggestion.]
 $onlyIf[$or[$splitText[1]==;$splitText[2]==]==false;Hey there! Your usage seems to be wrong. Make sure it's correct
 
-A example of usage should be \`$getGuildVar[prefix]suggest title/description\`.]
+A example of usage should be something like $commandInfo[suggest;info.usage].]
 $textSplit[$message;/]
 $cooldown[4s;Slow down! Don't spam the command!
 Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[4s;user;suggest;$authorID];$dateStamp];1000]]:R>]

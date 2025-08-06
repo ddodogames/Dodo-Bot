@@ -18,7 +18,10 @@ lerna-debug.log*
 .env.development.local
 .env.test.local
 .env.production.local
+.env.production
 .env.local
+.env.keys
+.env.missing
 
 
 # Main stuff to ignore
@@ -29,6 +32,7 @@ config.js
 node_modules/
 .yarn-integrity
 .node_repl_history
+*.sh
 
 
 

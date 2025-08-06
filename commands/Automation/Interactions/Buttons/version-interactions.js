@@ -3,14 +3,12 @@ module.exports = [{
     prototype: "button",
     code: `
     $interactionUpdate[{newEmbed:{title:Changes}{description:
-* Moved the "Reset" button in \`leveling\` command into it's settings page
-* **Welcomer** & **Leave**#COLON# make \`<username>\` return usernames with discriminator for bots
-* Added a button for User app invite (which appears if it's enabled by bot owner) in \`invite\` command
-* Added \`<globalname>\` for **Welcomer**, **Leave** and **Leveling**
-* Added a new command called \`morse\`
-
-### For those running the [source code](https#COLON#//github.com/ddodogames/Dodo-Bot) on their own#COLON#
-* Added a option to use random hex codes in \`dev-panel\` command
+* Bumped aoi.js to version \`6.10.3\`
+* Allow downloading the user's avatar in \`avatar\` under 3 image formats as button links
+* Added 2 new commands called \`pet\` and \`periodic-table\`
+* Added command usage section for \`commandinfo\`
+* The buttons for moving the Snake in \`snake\` should now be easier to see
+* Increased page limit in \`leaderboard\` to 20
 }{color:$getVar[embedcolor]}$nonEscape[$get[devbuild]]}{actionRow:{button:Home:2:homebutton_$authorID:false:🏠}{button:Changes:2:versionchanges_$authorID:true}{button:Bug Fixes:2:versionbugfixes_$authorID:false}{button:Other:2:versionother_$authorID:false}}{actionRow:{button:Changelog history:5:https#COLON#//github.com/ddodogames/Dodo-Bot/releases:false:📜}}]
 
 $let[devbuild;$if[$getVar[pre_release]==on;{footer:Testing is recommended:https#COLON#//us-east-1.tixte.net/uploads/dodogames.wants.solutions/refreshedredwarning2.png};]]
@@ -26,9 +24,10 @@ $let[devbuild;$if[$getVar[pre_release]==on;{footer:Testing is recommended:https#
     prototype: "button",
     code: `
     $interactionUpdate[{newEmbed:{title:Bug Fixes}{description:
-* Fixed internal issues related to updating "user app" commands
-* Fixed grammar of a error message seen in \`suggest-set\` and \`poll-set\`
-* Fixed "Current Setup" design in \`leveling\`, \`welcomer\` and \`leave\` changing after pressing "Toggle" button
+* Fixed "Current Setup" setting being inconsistent in \`welcomer\` and \`leave\` when pressing the "Toggle" button
+* Fixed the user app invite link seen in \`invite\` (if enabled by bot owner) not working
+* Fixed a issue where sometimes some commands like \`wyr\` will simply return "dead" as a response rather than the actual error
+* Improved the grammar of empty leaderboard error seen in \`leaderboard\` cmd
 }{color:$getVar[embedcolor]}$nonEscape[$get[devbuild]]}{actionRow:{button:Home:2:homebutton_$authorID:false:🏠}{button:Changes:2:versionchanges_$authorID:false}{button:Bug Fixes:2:versionbugfixes_$authorID:true}{button:Other:2:versionother_$authorID:false}}{actionRow:{button:Changelog history:5:https#COLON#//github.com/ddodogames/Dodo-Bot/releases:false:📜}}]
 
 $let[devbuild;$if[$getVar[pre_release]==on;{footer:Testing is recommended:https#COLON#//us-east-1.tixte.net/uploads/dodogames.wants.solutions/refreshedredwarning2.png};]]
@@ -43,13 +42,12 @@ $let[devbuild;$if[$getVar[pre_release]==on;{footer:Testing is recommended:https#
       type: "interaction",
     prototype: "button",
     code: `$interactionUpdate[{newEmbed:{title:Other}{description:
-* Shortened "Permissions needed" to just "Permission(s)" in cmd \`commandinfo\`
-* Slightly updated the ordering of sections in \`stats\` command
-* (Source code) Removed a old leftover code for listing roles
-* (Source code) The setup file has been rewritten in JavaScript
-* (Source code) Added a setup option to configure "responding to edited messages" duration
-* Updated the list of excluded special characters for \`leaderboard\` command
-* Added several wording changes to some command descriptions
+* Added Green Apple as part of the foods to catch in \`snake\` command
+* Replaced the package \`dotenv\` with \`@dotenvx/dotenvx\` for better env support
+* Messages from \`welcomer\`, \`leave\` and \`leveling\` are now fully consistent between test and normal ones
+* (Pre-release only) \`--buildinfo\` for \`version\`#COLON# Make the displayed build branch hyperlinked
+* Made it so that the error for non existing banners in \`banner\` refers to you if no one was mentioned
+* (Source code) Make Development warning on console stand out and updated main credits on last one
  }{color:$getVar[embedcolor]}$nonEscape[$get[devbuild]]}{actionRow:{button:Home:2:homebutton_$authorID:false:🏠}{button:Changes:2:versionchanges_$authorID:false}{button:Bug Fixes:2:versionbugfixes_$authorID:false}{button:Other:2:versionother_$authorID:true}}{actionRow:{button:Changelog history:5:https#COLON#//github.com/ddodogames/Dodo-Bot/releases:false:📜}}]
 
 $let[devbuild;$if[$getVar[pre_release]==on;{footer:Testing is recommended:https#COLON#//us-east-1.tixte.net/uploads/dodogames.wants.solutions/refreshedredwarning2.png};]]
