@@ -1,6 +1,6 @@
 module.exports = [{
   name: "Startup Message (Console)",
-  type: "ready",
+  type: "clientReady",
   channel: "",
   code: `
 $djsEval[const chalk = require('chalk')
@@ -17,7 +17,7 @@ $ifAwaited[$getVar[pre_release]==on;{execute:showdevwarning}]
 `
 },{
  name: "Startup Message (Channel)",
- type: "ready",
+ type: "clientReady",
  channel: "",
  code: `
 $title[Ready!]
