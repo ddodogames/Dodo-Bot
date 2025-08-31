@@ -2,7 +2,7 @@ module.exports = [{
   name: "prefix",
   info: {
     description: "View or change current prefix of the bot in this server.",
-    usage: "`prefix <new prefix>`",
+    usage: "`prefix (new prefix)`",
     perms: ["`SendMessages`", "`ManageGuild` (when changing prefix)"],
 },
   code: `

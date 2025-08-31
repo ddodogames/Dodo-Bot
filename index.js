@@ -14,6 +14,7 @@ const client = new AoiClient({
   events: ["onMessage", "onInteractionCreate", "onJoin", "onLeave", "onMessageDelete", "onMessageUpdate", "onBanAdd", "onBanRemove", "onGuildJoin", "onFunctionError"], // Setup aoi.js events
   aoiLogs: false, // Don't show aoi.js default console message
   aoiWarning: false, // Disable aoi.js update warning
+  aoiAutoUpdate: false, // Do not autoupdate aoi.js (this is dealt with via new Dodo-Bot releases instead)
   database: { // Use aoi.db as the default database for storing data
     type: "aoi.db",
     db: require("@aoijs/aoi.db"),
@@ -30,7 +31,6 @@ const client = new AoiClient({
    commands: config.respondOnEdit.Enabled,
    time: config.respondOnEdit.RespondUntil
   },
-  aoiAutoUpdate: false,
   suppressAllErrors: config.DisableAllErrors // Whether or not to disable errors from aoi.js
 });
 
