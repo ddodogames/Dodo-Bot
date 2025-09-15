@@ -1,4 +1,4 @@
-# Dodo-bot
+# Dodo-bot v3
 A personal bot project made in aoi.js v6 aiming to both entertain and provide users some features to use.
 
 # What does it include?
