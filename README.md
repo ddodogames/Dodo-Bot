@@ -1,4 +1,4 @@
-# Dodo-bot v3
+# Dodo-bot 
 A personal bot project made in aoi.js v6 aiming to both entertain and provide users some features to use.
 
 # What does it include?
@@ -39,3 +39,4 @@ Dodo-Bot allows you to change some options before turning it on. To do this, che
 Most of code belongs to me (besides the ones credited in credits command). You can also credit me using my discord username: "dodogames".
 
 In case of using my code for development purposes, you may agree to not claim that you made the bot; otherwise, I may ask you for credit. Further information about the use of source code is explained in the credits command.
+
