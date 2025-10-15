@@ -22,6 +22,7 @@ $let[devbuild;$if[$getVar[pre_release]==on;{footer:Testing is recommended:https#
 * Fixed weird formatting in "General" section on \`periodic-table\` command
 * Fixed \`prefix\` usage part in \`commandinfo\` where \`new prefix\` parameter was "required" despite it being optional
 * (Devs only) Fixed grammar in \`refreshuserapps\` error for when user apps are already created
+* (Source code) Make dotenvx look for \`.env\` or \`.env.local\` to avoid potential problems
 }{color:$getVar[embedcolor]}$nonEscape[$get[devbuild]]}{actionRow:{button:Home:2:homebutton_$authorID:false:🏠}{button:Changes:2:versionchanges_$authorID:false}{button:Bug Fixes:2:versionbugfixes_$authorID:true}{button:Other:2:versionother_$authorID:false}}{actionRow:{button:Changelog history:5:https#COLON#//github.com/ddodogames/Dodo-Bot/releases:false:📜}}]
 
 $let[devbuild;$if[$getVar[pre_release]==on;{footer:Testing is recommended:https#COLON#//us-east-1.tixte.net/uploads/dodogames.wants.solutions/refreshedredwarning2.png};]]
