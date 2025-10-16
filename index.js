@@ -8,7 +8,7 @@ const vars = require('./handlers/variables.js');
 
 // Setting up Client
 const client = new AoiClient({
-  token: process.env.BotToken || config.BotToken, // Token with either env or config
+  token: process.env.BotToken || config.BotToken, // Enter the bot token either via env or config
   prefix: "$getGuildVar[prefix]", // By default, it uses custom prefix system (default prefix used: d!).
   intents: ["MessageContent", "Guilds", "GuildMessages", "GuildMembers", "GuildPresences", "GuildModeration", "GuildEmojisAndStickers"], // Discord.js intents (v14)
   events: ["onMessage", "onInteractionCreate", "onJoin", "onLeave", "onMessageDelete", "onMessageUpdate", "onBanAdd", "onBanRemove", "onGuildJoin", "onFunctionError"], // Setup aoi.js events
