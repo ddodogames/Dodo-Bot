@@ -1,7 +1,7 @@
 module.exports = {
     name: "refreshuserapps",
     info: {
-        description: "Updates user apps to the latest change done to them",
+        description: "Updates user apps to the latest change done to them.",
         perms: ["`SendMessages`"],
         dev: "true"
     },

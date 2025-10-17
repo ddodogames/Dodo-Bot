@@ -1,7 +1,7 @@
 module.exports = {
     name: "setcustomstatus",
     info: {
-      description: "Sets a custom status for the bot",
+      description: "Sets a custom status for the bot.",
       usage: "`setcustomstatus <text> or (flag)`",
       perms: ["`SendMessages`"],
       flags: ["`--reset`"],
