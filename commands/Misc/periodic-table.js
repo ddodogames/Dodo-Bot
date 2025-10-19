@@ -18,9 +18,9 @@ module.exports = {
 * **Discovered by**: $getObjectProperty[api;message.discovered_by]
     ;true]
     $addField[General;
-    * **Phase**: $getObjectProperty[api;message.phase]
-    * **atomic number**: $getObjectProperty[api;message.atomic_number]
-    * **atomic mass**: $getObjectProperty[api;message.atomic_mass]
+* **Phase**: $getObjectProperty[api;message.phase]
+* **atomic number**: $getObjectProperty[api;message.atomic_number]
+* **atomic mass**: $getObjectProperty[api;message.atomic_mass]
     ;true]
     $thumbnail[$getObjectProperty[api;message.image]]
     $color[$getVar[embedcolor]]

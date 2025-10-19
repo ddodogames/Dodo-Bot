@@ -19,7 +19,7 @@ $thumbnail[$clientAvatar]
 $color[$getVar[embedcolor]]
 
 $let[uptime;<t:$round[$divide[$sub[$datestamp;$uptime[ms]];1000]]:R>]
-$let[aoijsversion;$advancedReplaceText[$checkCondition[$getVar[libraryversiondevcheck]==on];true;\`v$packageVersion\` (Dev);false;\`v$packageVersion\`]]
+$let[aoijsversion;$advancedReplaceText[$checkCondition[$getVar[libraryversiondevcheck]==on];true;\`v$advancedTextSplit[$packageVersion;-;1]\` (Dev);false;\`v$packageVersion\`]]
 $let[dodobotversion;$advancedReplaceText[$checkCondition[$getVar[pre_release]==on];true;\`v$getVar[version]\` (Dev);false;\`v$getVar[version]\`]]
 $cooldown[2s; Slow down! Don't spam the command!
 Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[2s;user;stats;$authorID];$dateStamp];1000]]:R>]

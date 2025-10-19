@@ -2,7 +2,7 @@ module.exports = [{
   name: "prefix",
   info: {
     description: "View or change current prefix of the bot in this server.",
-    usage: "`prefix <new prefix>`",
+    usage: "`prefix (new prefix)`",
     perms: ["`SendMessages`", "`ManageGuild` (when changing prefix)"],
 },
   code: `
@@ -22,7 +22,7 @@ Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[2s;user;prefix;$autho
 },{
     name: "prefix-reset",
     info: {
-      description: "Resets the prefix to it's default state in this server.",
+      description: "Resets the prefix back to it's default state in this server.",
       perms: ["`SendMessages`", "`ManageGuild`"]
   },
     aliases: "reset-prefix",

@@ -11,12 +11,6 @@ $if[{value}==none;none;* {value}]
 * $guildName[{value}] - {value}
     `
 },{
-    name: "autoListSelectedMembers",
-    type: "awaited",
-    code: `
-* <@{value}> (\`{value}\`)
-    `
-},{
     name: "autoListChannels",
     type: "awaited",
     code: `$if[{value}==none;none;$get[channels]]

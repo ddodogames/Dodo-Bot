@@ -1,4 +1,9 @@
 module.exports = [{
+  name: "$dodoAvatar",
+  type: "aoi.js",
+  params: [],
+  code: `$userAvatar[632607624742961153]`
+},{
     name: "$clientAvatar",
     type: "aoi.js",
     params: [],
@@ -132,11 +137,6 @@ $let[createlist;$advancedReplaceText[{text};{seperator};#SEMI#]]`
 /* Disabled
 
 {
-name: "$dodoAvatar",
-type: "aoi.js",
-params: [],
-code: `$userAvatar[632607624742961153]`
-},{
 name: "$fallbackAttachment",
 type: "aoi.js",
 params: ["url", "fallbacktoUse"],

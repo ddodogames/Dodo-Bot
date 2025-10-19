@@ -1,6 +1,6 @@
 module.exports = [{
     name: "Userapps support",
-    type: "ready",
+    type: "clientReady",
     code: `$ifAwaited[$getVar[userapps]==true;{execute:createuserapps}]`
 },{
     name: "createuserapps",

@@ -1,6 +1,6 @@
 const { AoiClient } = require("aoi.js"); // Define aoi.js client
 const config = require("./config.js"); // Load the setup options from config
-require('@dotenvx/dotenvx').config({ignore: ['MISSING_ENV_FILE'], strict: false, quiet: true}) // Enable env support in local hosting
+require('@dotenvx/dotenvx').config({path: ['.env.local', '.env'], ignore: ['MISSING_ENV_FILE'], strict: false, quiet: true, opsOff: true}) // Enable env support in local hosting
 
 // Needed for variables handler
 const vars = require('./handlers/variables.js');
@@ -8,12 +8,13 @@ const vars = require('./handlers/variables.js');
 
 // Setting up Client
 const client = new AoiClient({
-  token: process.env.BotToken || config.BotToken, // Token with either env or config
+  token: process.env.BotToken || config.BotToken, // Enter the bot token either via env or config
   prefix: "$getGuildVar[prefix]", // By default, it uses custom prefix system (default prefix used: d!).
   intents: ["MessageContent", "Guilds", "GuildMessages", "GuildMembers", "GuildPresences", "GuildModeration", "GuildEmojisAndStickers"], // Discord.js intents (v14)
   events: ["onMessage", "onInteractionCreate", "onJoin", "onLeave", "onMessageDelete", "onMessageUpdate", "onBanAdd", "onBanRemove", "onGuildJoin", "onFunctionError"], // Setup aoi.js events
   aoiLogs: false, // Don't show aoi.js default console message
   aoiWarning: false, // Disable aoi.js update warning
+  aoiAutoUpdate: false, // Do not autoupdate aoi.js (this is dealt with via new Dodo-Bot releases instead)
   database: { // Use aoi.db as the default database for storing data
     type: "aoi.db",
     db: require("@aoijs/aoi.db"),
@@ -30,7 +31,6 @@ const client = new AoiClient({
    commands: config.respondOnEdit.Enabled,
    time: config.respondOnEdit.RespondUntil
   },
-  aoiAutoUpdate: false,
   suppressAllErrors: config.DisableAllErrors // Whether or not to disable errors from aoi.js
 });
 

@@ -1,6 +1,6 @@
 module.exports = [{
     name: "Set Pre-release mode",
-    type: "ready",
+    type: "clientReady",
     code: `
     $ifAwaited[$getVar[pre_release]==on;{execute:Enable-pre-release};{execute:Disable-pre-release}]
 

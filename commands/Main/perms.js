@@ -4,6 +4,7 @@ info: {
         description: "Shows permissions the bot requires.",
         perms: "`SendMessages`"
     },
+aliases: ["botperms"],
 code: `
 $title[Permissions]
 $description[Confused on what perms the bot should have? This list should help you decide the right permissions for the bot!
