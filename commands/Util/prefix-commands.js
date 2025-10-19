@@ -22,7 +22,7 @@ Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[2s;user;prefix;$autho
 },{
     name: "prefix-reset",
     info: {
-      description: "Resets the prefix back to \`$getGuildVar[originalprefix]\` in this server.",
+      description: "Resets the prefix back to it's default state in this server.",
       perms: ["`SendMessages`", "`ManageGuild`"]
   },
     aliases: "reset-prefix",
