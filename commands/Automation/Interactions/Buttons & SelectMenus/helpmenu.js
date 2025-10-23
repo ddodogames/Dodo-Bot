@@ -60,7 +60,7 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==helpmenu;]
   prototype: "selectMenu",
   code: `
 
-$interactionUpdate[{newEmbed:{title:Developer}{field:**Tools**:\`eval\`, \`jseval\`, \`refreshuserapps\`, \`serverlist\`, \`readfile\`, \`exec\`, \`update\`}{field:**Management**:\`dev-panel\`, \`shutdown\`, \`setcustomstatus\`}{color:$getVar[embedcolor]}}{actionRow:{selectMenu:helpmenu_$authorID:Select a module:1:1:false:{stringInput:Main:main:Explore commands from Main module:false}{stringInput:Entertainment:entertainment:Explore commands from Entertainment module:false}{stringInput:Leveling:leveling:Explore commands from Leveling module:false}{stringInput:Util:util:Explore commands from Util module:false}$nonEscape[$get[devmodule]]}}]
+$interactionUpdate[{newEmbed:{title:Developer}{field:**Tools**:\`eval\`, \`jseval\`, \`refreshuserapps\`, \`serverlist\`, \`readfile\`, \`exec\`, \`refreshmembercache\`, \`update\`}{field:**Management**:\`dev-panel\`, \`shutdown\`, \`setcustomstatus\`}{color:$getVar[embedcolor]}}{actionRow:{selectMenu:helpmenu_$authorID:Select a module:1:1:false:{stringInput:Main:main:Explore commands from Main module:false}{stringInput:Entertainment:entertainment:Explore commands from Entertainment module:false}{stringInput:Leveling:leveling:Explore commands from Leveling module:false}{stringInput:Util:util:Explore commands from Util module:false}$nonEscape[$get[devmodule]]}}]
 
 $let[devmodule;$if[$checkContains[$clientOwnerIDs[| ];$authorID]==true;{stringInput:Developer:dev:Explore commands from Developer module:false};]]
 

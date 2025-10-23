@@ -8,12 +8,11 @@ module.exports = {
     aliases: ["restartslash", "refreshslash", "refreshapps", "restartuserapps", "restartapps"],
     code: `
     $editMessage[$get[messageID];Successfully refreshed user apps!]
-    $deleteVar[isuserappsalreadysetup;;main]
     $awaitExecute[createuserapps]
     $wait[2s]
-    $setVar[isuserappsalreadysetup;no]
+    $deleteVar[isuserappsalreadysetup;;main]
     $let[messageID;$sendMessage[Refreshing user apps...;true]]
-    $onlyIf[$getVar[isuserappsalreadysetup]==yes;User apps are already created.]
+    $onlyIf[$getVar[isuserappsalreadysetup]==yes;Make sure user apps are created already.]
     $onlyIf[$getVar[userapps]==true;You must have the setup option \`EnableUserApps\` enabled in order to use this.]
     $onlyIf[$checkContains[$clientOwnerIDs[| ];$authorID]==true;]
     `
