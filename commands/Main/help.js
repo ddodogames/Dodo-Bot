@@ -4,6 +4,7 @@ module.exports = {
     description: "View all available commands of the bot.",
     perms: ["`SendMessages`"]
 },
+  aliases: ["h"],
   code: `$title[Help Menu]
 $description[To view commands, select one of the modules from the dropdown menu below!]
 $footer[Made with ❤️ by $username[632607624742961153]]
