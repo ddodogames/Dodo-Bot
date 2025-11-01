@@ -13,7 +13,7 @@ $color[$getObjectProperty[api;hex]]
 $thumbnail[$getObjectProperty[api;color_image]]
 $createObject[api;$nonEscape[$get[jsonresponse]]]
 $onlyIf[$isValidObject[$nonEscape[$get[jsonresponse]]]==true;$get[error]]
-$let[jsonresponse;$httpRequest[https://api.popcat.xyz/color/$randomColor;GET;;;$get[error]]]
+$let[jsonresponse;$httpRequest[https://api.popcat.xyz/v2/color/$randomColor;GET;;;$get[error]]]
 $let[error;Unable to generate a random color. Please try again later.]
 $cooldown[5s;Slow down! Don't spam the command!
 Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[5s;user;randomcolor;$authorID];$dateStamp];1000]]:R>]
