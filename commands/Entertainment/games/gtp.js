@@ -14,6 +14,7 @@ $let[id;$sendMessage[Please wait...;true]]
 $onlyIf[$isValidObject[$nonEscape[$get[jsonresponse]]]==true;$get[error]]
 $let[jsonresponse;$httpRequest[https://api.gamecord.xyz/pokemon;GET;;;$get[error]]]
 $let[error;Unable to fetch Pokemon data. Please try again later.]
+$onlyIf[disabled!=disabled;This command has been temporarily disabled due to issues.]
 $cooldown[5s; Slow down! Don't spam the command!
     Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[5s;user;guess-the-pokemon;$authorID];$dateStamp];1000]]:R>]
 `
