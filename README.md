@@ -32,7 +32,7 @@ You can host Dodo-Bot on any hosting as long as the following Requirements are m
 * Node.js v20 and later is required as older versions are not supported
 * A host ready to handle Bot's Features (obviously)
 
-# config.js
+# Configuration
 Dodo-Bot allows you to change some options before turning it on. To do this, check out the `config.js` file present in the source code itself which contains available options to change from!
 
 # Credits
