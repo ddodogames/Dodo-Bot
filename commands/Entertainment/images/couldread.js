@@ -7,7 +7,7 @@ module.exports = {
     },
     code: `$attachment[$get[apilink];couldread.png;URL]
     $onlyIf[$IsValidImageLink[$get[apilink]]==true;Looks like there are issues with processing the image. Please try again later if possible.]
-    $onlyIf[$charCount[$message]<=56;Your message can't be longer than 56 characters!]
+    $onlyIf[$charCount[$message]<=86;Your message can't be longer than 86 characters!]
     $onlyIf[$hasPermsInChannel[$channelID;$clientID;attachfiles]==true;I must have \`AttachFiles\` permission in order to proceed in this channel. Please grant me the permission and try again.]
     $let[apilink;https://api.popcat.xyz/v2/couldread?text=$uri[$message;encode]]
     $onlyIf[$message!=;Please Type something.]
