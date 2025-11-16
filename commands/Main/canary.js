@@ -10,7 +10,7 @@ $addField[How to test?;For those who want to host them on their bots. You can do
 
 Alternatively, you can invite Dodo Canary (using the button below) to a server to directly test latest pre-release build (prefix: \`d?\`).
 ]
-$addField[Introduction;Canary is a way to test pre-release builds of upcoming versions of Dodo-Bot before they eventually release as a stable version.
+$addField[Introduction;Canary is a way to test pre-release builds of upcoming versions of Dodo-Bot before they released as a stable version.
 
 Builds released in this state are incomplete and may have bugs as a result, so it is not recommended to use them for production purposes.
 ]
