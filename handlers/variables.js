@@ -15,7 +15,7 @@ module.exports = {
   versionCodename: "Fiery Stars",
   libraryversiondevcheck: "off",
   buildStatus: "Incomplete",
-  buildDate: "1763323943332",
+  buildDate: "1763324294596",
   buildBranch: "Canary",
   buildRevision: "0",
   showbuildinfo: "on",
@@ -29,7 +29,7 @@ module.exports = {
   // Feature variables
   suggestionchannel: "none",
   pollchannel: "none",
-  welcomemessage: "Welcome to the server <username>!",
+  welcomemessage: "Welcome to the server, <username>!",
   welcomechannel: "none",
   welcometype: "text",
   welcomemessageembedcolor: "#1F8B4C",
