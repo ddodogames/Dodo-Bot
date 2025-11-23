@@ -11,6 +11,8 @@ module.exports = {
     $forEachGuild[2s;{};refreshmembercache;]
     $wait[2s]
     $let[messageID;$sendMessage[Refreshing member cache...;true]]
+    $cooldown[2s;Slow down! Don't spam the command!
+    Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[2s;user;refreshmembercache;$authorID];$dateStamp];1000]]:R>]
     $onlyIf[$checkContains[$clientOwnerIDs[| ];$authorID]==true;]
     `
 }
