@@ -1,7 +1,7 @@
 module.exports = [{
     name: "guess-the-pokemon",
     info: {
-      description: "Starts a game of guessing a Pokemon character.",
+      description: "Starts a game of guessing a Pokemon character. (currently disabled)",
       perms: ["`SendMessages`"]
     },
     aliases: "gtp",
