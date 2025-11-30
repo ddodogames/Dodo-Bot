@@ -3,6 +3,7 @@ module.exports = [{
     prototype: "button",
     code: `
     $interactionUpdate[{newEmbed:{title:Changes}{description:
+* Added \`couldread\` command
 * (Devs only) Added a way to easily refresh member cache of all servers
 * (Devs only) Allow deleting user apps directly through a command
 * Added alias \`h\` for \`help\`
@@ -39,6 +40,7 @@ $let[devbuild;$if[$getVar[pre_release]==on;{footer:Testing is recommended:https#
     prototype: "button",
     code: `$interactionUpdate[{newEmbed:{title:Other}{description:
 * Temporarily disable \`guess-the-pokemon\` command (as it stopped working)
+* The "Cpu" part in \`stats\` command now also counts host's cpu resources
 * (Source code) Bumped \`@dotenvx/dotenvx\` to version \`1.51.1\`
  }{color:$getVar[embedcolor]}$nonEscape[$get[devbuild]]}{actionRow:{button:Home:2:homebutton_$authorID:false:🏠}{button:Changes:2:versionchanges_$authorID:false}{button:Bug Fixes:2:versionbugfixes_$authorID:false}{button:Other:2:versionother_$authorID:true}}{actionRow:{button:Changelog history:5:https#COLON#//github.com/ddodogames/Dodo-Bot/releases:false:📜}}]
 
