@@ -19,7 +19,7 @@ const client = new AoiClient({
     type: "aoi.db",
     db: require("@aoijs/aoi.db"),
     dbType: "KeyValue",
-    tables: ["main"], // tables for the database
+    tables: ["main"], // Tables for the database, "main" is used for everything by default.
     securityKey: config.DBsecurityKey || process.env.DBsecurityKey // Security Key with either config or env
   },
   disableFunctions: ["$clientToken"], // For safety reasons
@@ -28,8 +28,8 @@ const client = new AoiClient({
    interpreter: config.EnableDebugMode // Whether or not to enable aoi.js debug mode
   },
   respondOnEdit: {
-   commands: config.respondOnEdit.Enabled,
-   time: config.respondOnEdit.RespondUntil
+   commands: config.respondOnEdit.Enabled, // Whether or not to enable responding to edited messages
+   time: config.respondOnEdit.RespondUntil // Time limit for responding to edited messages before they become ignored.
   },
   suppressAllErrors: config.DisableAllErrors // Whether or not to disable errors from aoi.js
 });
