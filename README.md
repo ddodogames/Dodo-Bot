@@ -21,12 +21,16 @@ The purpose of this version is to keep Dodo-Bot alive without relying on aoi.js 
 
 This bot purely exists just because i got sick of some verified bot but you can use this project and also learn from it if you happen to be a person using ForgeScript!
 
+### What about v2?
+V2 has been discontinued following the eol of aoi.js because there doesn't seem to be a good reason to still maintain it if the package it's relying on is left to rot. It just creates issues nobody would want and it means missing out on any improvements and fixes for any breaking changes caused by Discord itself.
+
+You can still use it but being discontinued means it won't be updated and any bugs will remain unfixed. It can also eventually break in the future since outdated stuff do break by some major changes.
 
 # Versions
 | Release | Description | Status |
 | :------- | :------: | -------: |
 | [**v1**](https://github.com/ddodogames/Dodo-Bot/tree/v1)  | The discontinued version of Dodo-Bot. It had a bad start with bunch of bugs due to me being newbie in aoi.js at the time.  | Discontinued  |
-| [**v2**](https://github.com/ddodogames/Dodo-Bot/tree/v2)  | The version 2 of the bot, maintained with lot of bug fixes and has ok-ish features.  | Discontinued  |
+| [**v2**](https://github.com/ddodogames/Dodo-Bot/tree/v2)  | The version 2 of the bot. Based on aoi.js v6!  | Discontinued  |
 | [**v3 (current)**](https://github.com/ddodogames/Dodo-Bot/tree/v3)  | The current version of the bot. Gets both fixes and improvements!  | Maintained  |
 | [**canary**](https://github.com/ddodogames/Dodo-Bot/tree/canary)  | Development builds of v3. Not recommended for general use. More information can be found [here](https://ddodogames.github.io/dodo-bot-site/advanced/canary/).  | Maintained  |
 
@@ -41,10 +45,10 @@ Dodo-Bot allows you to change some options before turning it on. To do this, che
 If you're confused, here are descriptions about each option:
 | Option | Description | Default |
 | :------- | :------: | -------: |
-| prefix  | Prefix to use to execute any bot commands.  | `d!`  |
+| prefix  | Prefix to use to execute any bot command.  | `d!`  |
 | prefixCaseInsensitive  | Whether or not to type prefix as case-sensitive (e.g `d!` can be also typed as `D!` if this is enabled).   | `true`  |
 | BotToken  | Token of the bot to use to run the project.   | none (obviously)  |
-| Embedcolor  | Color to use for the majority of commands returning embed.   | `#1c253b`  |
+| Embedcolor  | Color to use for the majority of commands returning embed.   | `#404060`  |
 | MobileStatus  | Sets the online icon of the bot to the mobile variant whenever it starts.   | `false`  |
 | disableConsoleErrors  | Whether or not disable console errors.   | `false`  |
 | AllowBotManagers  | Allows `Admin` and `Developer` members from developer portal to manage the bot if set to `true`.   | `false`  |

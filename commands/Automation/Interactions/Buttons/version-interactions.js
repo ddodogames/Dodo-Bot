@@ -12,7 +12,7 @@ $title[Changes]
 $description[
 * Removed all references to Rebase (it has been renamed to v3)
 * Added 2 new topics to \`randomtopic\` command
-* Added \`couldread\` command
+* Ported \`couldread\` command from v2 to here
 ]
 $if[$getGlobalVar[pre_release]==on;
 $attachment[./assets/warning.png;warning.png]
@@ -68,7 +68,7 @@ $title[Other]
 $description[
 * Updated credits in \`credits\` command
 * (Source code) Refresh the readme file
-* Updated the embed color to \`#1c253b\` (might be changed again if i deem it not perfect)
+* Updated the embed color to \`#404060\` (might be changed again if i deem it not perfect)
 ]
 $if[$getGlobalVar[pre_release]==on;
 $attachment[./assets/warning.png;warning.png]

@@ -2,7 +2,7 @@ module.exports = {
     prefix: "d!",
     prefixCaseInsensitive: true,
     BotToken: "",
-    Embedcolor: "#1c253b",
+    Embedcolor: "#404060",
     MobileStatus: false,
     disableConsoleErrors: false,
     AllowBotManagers: false,
