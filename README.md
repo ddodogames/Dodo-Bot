@@ -26,7 +26,7 @@ This bot purely exists just because i got sick of some verified bot but you can 
 | Release | Description | Status |
 | :------- | :------: | -------: |
 | [**v1**](https://github.com/ddodogames/Dodo-Bot/tree/v1)  | The discontinued version of Dodo-Bot. It had a bad start with bunch of bugs due to me being newbie in aoi.js at the time.  | Discontinued  |
-| [**v2**](https://github.com/ddodogames/Dodo-Bot/tree/v2)  | The version 2 of the bot, maintained with lot of bug fixes and has ok-ish features.  | Maintained (in LTS-like state)  |
+| [**v2**](https://github.com/ddodogames/Dodo-Bot/tree/v2)  | The version 2 of the bot, maintained with lot of bug fixes and has ok-ish features.  | Discontinued  |
 | [**v3 (current)**](https://github.com/ddodogames/Dodo-Bot/tree/v3)  | The current version of the bot. Gets both fixes and improvements!  | Maintained  |
 | [**canary**](https://github.com/ddodogames/Dodo-Bot/tree/canary)  | Development builds of v3. Not recommended for general use. More information can be found [here](https://ddodogames.github.io/dodo-bot-site/advanced/canary/).  | Maintained  |
 

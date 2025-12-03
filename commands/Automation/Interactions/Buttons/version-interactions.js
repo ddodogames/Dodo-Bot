@@ -65,7 +65,7 @@ $ephemeral
 $interactionUpdate[
 $title[Other]
 $description[
-*No changes have been added yet*
+* Updated credits in \`credits\` command
 ]
 $if[$getGlobalVar[pre_release]==on;
 $attachment[./assets/warning.png;warning.png]
