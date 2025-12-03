@@ -38,6 +38,18 @@ You can host v3 on any host as long as you meet the following Requirements:
 # Configuration
 Dodo-Bot allows you to change some options before turning it on. To do this, check out the `config.js` file present in the source code itself which contains available options to change from!
 
+If you're confused, here are descriptions about each option:
+| Option | Description | Default |
+| :------- | :------: | -------: |
+| prefix  | Prefix to use to execute any bot commands.  | d!  |
+| prefixCaseInsensitive  | Whether or not to type prefix as case-sensitive (e.g d! can be also typed as D! if this is enabled).   | true  |
+| BotToken  | Token of the bot to use to run the project.   | none (obviously)  |
+| Embedcolor  | Color to use for the majority of commands returning embed.   | #1c253b  |
+| MobileStatus  | Sets as the online icon of the bot to the mobile variant whenever it starts.   | false  |
+| disableConsoleErrors  | Whether or not disable console errors.   | false  |
+| AllowBotManagers  | Allows `Admin` and `Developer` members from developer portal to manage the bot if set to true.   | false  |
+| respondOnEdit  | Allow responding to edited messages.   | false  |
+
 # Credits
 Most of code belongs to me (besides the ones credited in credits command). You can also credit me using my discord username: "dodogames".
 

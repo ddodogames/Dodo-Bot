@@ -66,6 +66,8 @@ $interactionUpdate[
 $title[Other]
 $description[
 * Updated credits in \`credits\` command
+* (Source code) Refresh the readme file
+* Updated the embed color to \`#1c253b\` (might be changed again if i deem it not perfect)
 ]
 $if[$getGlobalVar[pre_release]==on;
 $attachment[./assets/warning.png;warning.png]
