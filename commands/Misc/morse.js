@@ -1,17 +1,17 @@
 module.exports = {
     name: "morse",
     info: {
-        description: "Converts provided text to morse code!",
+        description: "Converts provided text to morse code.",
         usage: "`morse <text>`",
         perms: ["`SendMessages`"]
     },
-    code: `$getObjectProperty[api;morse]
-    $createObject[api;$nonEscape[$get[jsonresponse]]]
-    $onlyIf[$isValidObject[$nonEscape[$get[jsonresponse]]]==true;$get[error]]
-    $let[jsonresponse;$httpRequest[https://api.popcat.xyz/v2/texttomorse?text=$uri[$message;encode];GET;;;$get[error]]]
-    $let[error;Unable to generate the output. Please try again later.]
+    type: "messageCreate",
+    code: `$userCooldown[morsecmd;3s;Cooldown has been triggered! Please, wait!
+    Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[morsecmd]];1000]]:R>]
+    $disableAllMentions
     $onlyIf[$message!=;Please provide a text.]
-    $cooldown[3s; Slow down! Don't spam the command!
-    Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[3s;user;morse;$authorID];$dateStamp];1000]]:R>]
-    $disableMentionType[all]`
+    $let[status;$httpRequest[https://api.popcat.xyz/v2/texttomorse?text=$encodeURI[$message];get]]
+    $onlyIf[$get[status]==200;Unable to generate the result. Please try again later.]
+    $httpResult[morse]
+    `
 }

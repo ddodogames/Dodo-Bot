@@ -1,57 +1,56 @@
-module.exports = [{
-  name: "version",
-  info: {
-    description: "Returns the current version of Dodo-Bot (with it's changelog).",
-    usage: "`version (flag)`",
-    perms: "`SendMessages`",
-    flags: ["`--buildinfo`"]
-},
-  aliases: ["ver", "changelog", "updates"],
-  $if: "old",
-  code: `$ifAwaited[$checkContains[$message;--buildinfo;—buildinfo]==true;{execute:versionbuildinfo};{execute:currentversion}]
+module.exports = {
+    name: "version",
+    info: {
+        description: "View the current version of Dodo-Bot (along with it's changelog)",
+        usage: "`version (flag)`",
+        perms: ["`SendMessages`"],
+        flags: ["`--buildinfo`"]
+    },
+    aliases: ["ver", "changelog", "release"],
+    type: "messageCreate",
+    code: `
+$userCooldown[versioncmd;2s;Cooldown has been triggered! Please, wait!
+Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[versioncmd]];1000]]:R>]
 
+$let[releasedatetype;$advancedReplace[$checkCondition[$getGlobalVar[pre_release]==on];true;Last updated on;false;Released on]]
 
-$cooldown[2s; Slow down! Don't spam the command!
-Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[2s;user;version;$authorID];$dateStamp];1000]]:R>]
-  `
-},{
-  name: "currentversion",
-  $if: "old",
-  type: "awaited",
-  code: `$title[Dodo-Bot version]
-$description[
-* **Version**: $getVar[version]$get[Revision]
-* **Release type**: $getVar[release_type]
-* **$get[releasedatetype]**: <t:$truncate[$divide[$getVar[buildDate];1000]]:f>
+$if[$checkContains[$message;--buildinfo;—buildinfo]==true;
+$onlyIf[$getGlobalVar[showbuildinfo]==on;
+Viewing build information is currently unavailable.
 ]
-$color[$getVar[embedcolor]]
-$if[$getVar[pre_release]==on]
-$footer[Testing is recommended;https://us-east-1.tixte.net/uploads/dodogames.wants.solutions/refreshedredwarning2.png]
-$endif
-$addButton[2;Changelog history;5;https://github.com/ddodogames/Dodo-Bot/releases;false;📜]
-$addButton[1;Other;2;versionother_$authorID;false]
-$addButton[1;Bug Fixes;2;versionbugfixes_$authorID;false]
-$addButton[1;Changes;2;versionchanges_$authorID;false]
 
-$let[Revision;$advancedReplaceText[$checkCondition[$getVar[buildRevision]!=0];true; (Revision $getVar[buildRevision]);false; ]]
-$let[releasedatetype;$advancedReplaceText[$checkCondition[$getVar[showbuildinfo]==on];true;Last updated on;false;Released on]]
-`
-},{
-  name: "versionbuildinfo",
-  type: "awaited",
-  code: `$title[Build Info]
+$title[Build info]
+$addField[About the build;
+* **Dodo-Bot**: v$getGlobalVar[version]
+* **Codename**: $getGlobalVar[versionCodename]
+* **Build Branch**: $hyperlink[**$getGlobalVar[buildBranch]**;https://github.com/ddodogames/Dodo-Bot/tree/$getGlobalVar[buildBranch]]
+* **Build number**: $getGlobalVar[buildNumber]
+* **Revision**: $getGlobalVar[buildRevision]
+;true]
 $addField[Progress;
-$getVar[buildStatus]
+$getGlobalVar[buildStatus]
 ;true]
-$addField[General;
-* **Dodo-Bot**: v$getVar[version]
-* **Codename**: $getVar[versionCodename]
-* **Build Branch**: [**$getVar[buildBranch]**](https://github.com/ddodogames/Dodo-Bot/tree/$getVar[buildBranch])
-* **Build number**: $getVar[buildNumber]
-* **Revision**: $getVar[buildRevision]
-;true]
-$color[$getVar[embedcolor]]
+$color[$getGlobalVar[embedcolor]]
 
-$onlyIf[$getVar[showbuildinfo]==on;Viewing build information is currently unavailable.]
+
+;
+$title[Dodo-Bot version]
+    $description[
+* **Version**: $getGlobalVar[version]$if[$getGlobalVar[buildRevision]!=0; (Revision $getGlobalVar[buildRevision])]
+* **Release type**: $getGlobalVar[release_type]
+* **$get[releasedatetype]**: <t:$trunc[$divide[$getGlobalVar[buildDate];1000]]:f>
+    ]
+$if[$getGlobalVar[pre_release]==on;
+$attachment[./assets/warning.png;warning.png]
+$footer[Testing is recommended;attachment://warning.png]
+]
+    $color[$getGlobalVar[embedcolor]]
+    $addActionRow
+    $addButton[versionchanges_$authorID;Changes;Secondary]
+    $addButton[versionbugfixes_$authorID;Bug Fixes;Secondary]
+    $addButton[versionother_$authorID;Other;Secondary]
+    $addActionRow
+    $addButton[https://github.com/ddodogames/Dodo-Bot/releases;Changelog history;Link;📜]
+]
 `
-}]
+}

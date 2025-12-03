@@ -1,15 +1,16 @@
 module.exports = {
 name: "randomtopic",
 info: {
-    description: "Start a random topic in this server.",
-    perms: ["`SendMessages`"]
+        description: "Start a randomtopic in this server.",
+        perms: ["`SendMessages`"]
 },
-aliases: ["newtopic", "topic"],
-code: `$title[Random topic]
-$description[$randomTopic]
-$footer[Started by $username;$authorAvatar]
-$color[$getVar[embedcolor]]
-$addTimestamp
-$cooldown[2s; Slow down! Don't spam the command!
-Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[2s;user;randomtopic;$authorID];$dateStamp];1000]]:R>]`
+aliases: ["topic", "newtopic"],
+type: "messageCreate",
+code: `$userCooldown[randomtopic-cmd;3s;Cooldown has been triggered! Please, wait!
+Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[randomtopic-cmd]];1000]]:R>]
+$title[Random Topic]
+$description[$callFunction[randomtopic]]
+$color[$getGlobalVar[embedcolor]]
+$footer[Started by $username;$userAvatar]
+`
 }

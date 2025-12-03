@@ -5,12 +5,8 @@ module.exports = {
         perms: ["`SendMessages`"],
         dev: "true"
     },
-    aliases: "guildlist",
-    code: `
-$editMessage[$get[id];{file:allservers.md:$autoList[$nonEscape[$guildIDs[, ]];, ;autoListServers]}]
-$wait[2s]
-$let[id;$sendMessage[Please wait.. Getting the list..;true]]
-$onlyIf[$hasPermsInChannel[$channelID;$clientID;attachfiles]==true;I must have \`AttachFiles\` permission in order to proceed in this channel. Please grant me the permission and try again.]
-$onlyIf[$checkContains[$clientOwnerIDs[| ];$authorID]==true;]
-    `
+    aliases: ["guildlist"],
+    type: "messageCreate",
+    code: `$callFunction[Devsonly]
+    $attachment[$callFunction[autoListServers;$serverIDs;, ];allservers.md;true]`
 }

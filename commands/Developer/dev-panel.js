@@ -1,21 +1,31 @@
 module.exports = {
-  name: "dev-panel",
-  info: {
-    description: "Special settings dedicated to devs. Allows the user to change stuff!",
+name: "dev-panel",
+info: {
+    description: "Allows you to access Developer panel!",
     perms: ["`SendMessages`"],
     dev: "true"
-  },
-  aliases: ["developer-panel", "dev-settings", "devpanel"],
-  code: `$title[Developer panel]
-$description[This panel allows you to change some things the bot operates behind the scenes.
-    
-To change a option, use the select menu below to do so.]
+},
+aliases: ["devpanel", "developer-panel", "dev-settings"],
+type: "messageCreate",
+code: `$callFunction[Devsonly]
+$title[Developer panel]
+$description[Welcome to Developer panel! This panel allows you to change some stuff in the bot!
+
+To change something such as Embed color, use the select menu below.]  
 $color[Yellow]
-$thumbnail[https://us-east-1.tixte.net/uploads/dodo-bot.wants.solutions/devsettings.png]
-$addSelectMenu[1;string;devmenu_$authorID;Select a option;1;1;false;Bot Invitation Message:Whether or not the bot should greet new servers.:botwelcome:false:👋;Error Logging:Send errors to specific channel.:errorlog:false:📢;Embed color:Change the current embed color used in all commands.:botembedcolor:false:🎨;Pre-release:Whether or not to enable Pre-release mode.:botdevmode:false:🚧;Startup:Choose a channel for bot's startup msgs to be sent.:botstartup:false:🚦;Show build info:Whether or not to display build info in version cmd:showbuildinfo:false:🛠️;Member requirement:How much members are required for new servers:memberrequirement:false:📋]
-$addButton[2;Leave a server;2;leaveserverbutton_$authorID;false]
-$cooldown[2s;Slow down! Don't spam the command!
-Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[2s;user;dev-panel;$authorID];$dateStamp];1000]]:R>]
-$onlyIf[$checkContains[$clientOwnerIDs[| ];$authorID]==true;]
-  `
-  }
+$attachment[./assets/devsettings.png;devsettings.png]
+$thumbnail[attachment://devsettings.png]
+$addActionRow
+$addStringSelectMenu[devmenu_$authorID;Select a option;false;1;1]
+$addOption[Bot Invitation Message;Whether or not to greet servers the bot gets added to;botinvitationmessageoption;👋;false]
+$addOption[Error logging;Log errors to specific channel;errorloggingoption;📢;false]
+$addOption[Embed color;Change the current embed color used in all cmds;embedcoloroption;🎨;false]
+$addOption[Pre-release;Whether or not to mark the current build as Pre-release;prereleaseoption;⚠️;false]
+$addOption[Startup;Send messages that the bot is ready to specific channel;startupoption;🚦;false]
+$addOption[Show build info;Whether or not to display build info in version cmd;showbuildinfooption;🛠️;false]
+$addOption[Member requirement;How much members are required for new servers;memberrequirementoption;📋;false]
+$addActionRow
+$addButton[generatedatabasebackup_$authorID;Backup Database;Secondary]
+$addButton[leaveaserverbutton_$authorID;Leave a server;Secondary]
+`
+}

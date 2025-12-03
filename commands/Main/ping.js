@@ -1,16 +1,19 @@
 module.exports = {
 name: "ping",
 info: {
-    description: "Returns the bot's Latency.",
-    perms: ["`SendMessages`"]
+        description: "Returns the bot's Latency",
+        perms: ["`SendMessages`"]
 },
-code: `
-Pong! 🏓
-$editIn[3s;Ping: $pingms
-Message Ping: $messagePingms
-Database Ping: $roundTenth[$databasePing;1]
-Last Restart: <t:$truncate[$divide[$readyTimestamp;1000]]:f>
+type: "messageCreate",
+code: `$userCooldown[pingcmd;3s;Cooldown has been triggered! Please, wait!
+Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[pingcmd]];1000]]:R>]
+
+$let[restart;<t:$round[$divide[$sub[$getTimestamp;$uptime];1000]]:R>]
+$let[messageID;$sendMessage[$channelID;Pong! 🏓;true]]
+$wait[3000]
+$!editMessage[$channelID;$get[messageID];
+Ping: $pingms
+Last restart: $get[restart]
 ]
-$cooldown[3s;Slow down! Don't spam the command!
-Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[3s;user;ping;$authorID];$dateStamp];1000]]:R>]`
+`
 }

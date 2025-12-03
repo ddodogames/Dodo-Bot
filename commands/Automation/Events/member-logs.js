@@ -1,35 +1,45 @@
 module.exports = [{
-name: "Welcomer message",
-type: "join",
-channel: "$getGuildVar[welcomechannel]",
-code: `$ifAwaited[$charCount[$getGuildVar[welcomemessage]]>=2000||$getGuildVar[welcometype]==embed;{execute:welcomerembedmode};{execute:welcomertextmode}]
+    name: "Welcomer",
+    type: "guildMemberAdd",
+    allowBots: true,
+    code: `
+$disableEveryoneMention
+$disableRoleMentions
+    $onlyIf[$getGuildVar[welcomersystem]==on;]
+    $onlyIf[$getGuildVar[welcomerchannel]!=;]
+    $onlyIf[$guildChannelExists[$guildID;$getGuildVar[welcomerchannel]]==true;]
+    $onlyIf[$channelHasPerms[$getGuildVar[welcomerchannel];$clientID;ViewChannel;SendMessages]==true;]
+    
+    $let[content;$callFunction[Welcomemessage;$getGuildVar[welcomermessage]]]
+    $let[servericon;$advancedReplace[$checkCondition[$guildIcon==];true;$userAvatar[$clientID];false;$guildIcon]]
 
-
-$onlyIf[$hasPermsInChannel[$getGuildVar[welcomechannel];$clientID;viewchannel;sendmessages]==true;]
-$onlyIf[$guildChannelExists[$guildID;$getGuildVar[welcomechannel]]==true;]
-$onlyIf[$getGuildVar[welcomechannel]!=none;]
-
-$let[content;$welcomerMessage[$getGuildVar[welcomemessage]]]
-
-$onlyIf[$getGuildVar[welcomesystem]==on;]
-$disableMentionType[roles]
-$disableMentionType[everyone]
-$onlyIf[$guildID==$guildID;]`
+    $sendMessage[$getGuildVar[welcomerchannel];$if[$or[$charCount[$getGuildVar[welcomermessage]]>=2000;$getGuildVar[welcomertype]==embed]==true;
+    $author[Member joined!;$get[servericon]]
+    $description[$get[content]]
+    $thumbnail[$userAvatar]
+    $color[$getGuildVar[welcomermessageembedcolor]]
+    ;$get[content]]
+    ]`
 },{
-    name: "Leave message",
-    type: "leave",
-    channel: "$getGuildVar[leavechannel]",
-    code: `$ifAwaited[$charCount[$getGuildVar[leavemessage]]>=2000||$getGuildVar[leavetype]==embed;{execute:leaveembedmode};{execute:leavetextmode}]
+    name: "Leave",
+    type: "guildMemberRemove",
+    allowBots: true,
+    code: `
+$disableEveryoneMention
+$disableRoleMentions
+    $onlyIf[$getGuildVar[leavesystem]==on;]
+    $onlyIf[$getGuildVar[leavechannel]!=;]
+    $onlyIf[$guildChannelExists[$guildID;$getGuildVar[leavechannel]]==true;]
+    $onlyIf[$channelHasPerms[$getGuildVar[leavechannel];$clientID;ViewChannel;SendMessages]==true;]
+    
+    $let[content;$callFunction[Leavemessage;$getGuildVar[leavemessage]]]
+    $let[servericon;$advancedReplace[$checkCondition[$guildIcon==];true;$userAvatar[$clientID];false;$guildIcon]]
 
-
-$onlyIf[$hasPermsInChannel[$getGuildVar[leavechannel];$clientID;viewchannel;sendmessages]==true;]
-$onlyIf[$guildChannelExists[$guildID;$getGuildVar[leavechannel]]==true;]
-$onlyIf[$getGuildVar[leavechannel]!=none;]
-
-$let[content;$leaveMessage[$getGuildVar[leavemessage]]]
-
-$onlyIf[$getGuildVar[leavesystem]==on;]
-$disableMentionType[roles]
-$disableMentionType[everyone]
-$onlyIf[$guildID==$guildID;]`
+    $sendMessage[$getGuildVar[leavechannel];$if[$or[$charCount[$getGuildVar[leavemessage]]>=2000;$getGuildVar[leavetype]==embed]==true;
+    $author[Member left!;$get[servericon]]
+    $description[$get[content]]
+    $thumbnail[$userAvatar]
+    $color[$getGuildVar[leavemessageembedcolor]]
+    ;$get[content]]
+    ]`
 }]

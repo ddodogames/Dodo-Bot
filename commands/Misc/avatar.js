@@ -1,20 +1,25 @@
 module.exports = {
-  name: "avatar",
-  info: {
-    description: "Returns your/users profile picture.",
-    usage: "`avatar (user)`",
-    perms: ["`SendMessages`"]
+name: "avatar",
+info: {
+        description: "Returns your/users profile picture.",
+        usage: "`avatar (user)`",
+        perms: ["`SendMessages`"]
 },
-  aliases: ["av","userav"],
-  code: `$title[$get[username]'s Avatar]
-$image[$userAvatar[$get[user]]]
-$color[$getVar[embedcolor]]
-$addButton[1;WEBP;5;$nonEscape[$userAvatar[$get[user];4096;true;webp]];false]
-$addButton[1;JPG;5;$nonEscape[$userAvatar[$get[user];4096;true;jpg]];false]
-$addButton[1;PNG;5;$nonEscape[$userAvatar[$get[user];4096;true;png]];false]
-$let[username;$advancedReplaceText[$checkCondition[$hasUserTag[$get[user]]==false];true;$username[$get[user]];false;$userTag[$get[user]]]]
-$let[user;$findUser[$message[1];true]]
-$cooldown[3s; Slow down! Don't spam the command!
-Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[3s;user;avatar;$authorID];$dateStamp];1000]]:R>]
-  `
+type: "messageCreate",
+aliases: ["av", "useravatar", "pfp"],
+disableConsoleErrors: true,
+code: `$userCooldown[avatarcmd;3s;Cooldown has been triggered! Please, wait!
+Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[avatarcmd]];1000]]:R>]
+
+$let[user;$findUser[$message;true]]
+$let[username;$advancedReplace[$checkCondition[$callFunction[hasusertag;$get[user]]==true];true;$userTag[$get[user]];false;$username[$get[user]]]]
+$title[$get[username]'s avatar]
+$image[$userAvatar[$get[user];2048;png]]
+$color[$getGlobalVar[embedcolor]]
+$addActionRow
+$addButton[$userAvatar[$get[user];2048;png];PNG;Link]
+$addButton[$userAvatar[$get[user];2048;jpg];JPG;Link]
+$addButton[$userAvatar[$get[user];2048;webp];WEBP;Link]
+
+`
 }

@@ -1,17 +1,20 @@
 module.exports = {
-  name: "2048",
-  info: {
-    description: "Starts a random game of 2048.",
-    perms: ["`SendMessages`"]
-  },
-  code: `$djsEval[const { TwoZeroFourEight } = require('discord-gamecord');
+name: "2048",
+info: {
+        description: "Starts a random game of 2048.",
+        perms: ["`SendMessages`"]
+},
+type: "messageCreate",
+code: `$userCooldown[2048cmd;3s;Cooldown has been triggered! Please, wait!
+Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[2048cmd]];1000]]:R>]
+$!djsEval[const { TwoZeroFourEight } = require('discord-gamecord');
 
 const Game = new TwoZeroFourEight({
-  message: message,
+  message: ctx.message,
   isSlashGame: false,
   embed: {
     title: '2048',
-    color: '$getVar[embedcolor]'
+    color: '$getGlobalVar[embedcolor]'
   },
   emojis: {
     up: '⬆️',
@@ -25,8 +28,5 @@ const Game = new TwoZeroFourEight({
 });
 
 Game.startGame();
-]
-$cooldown[3s; Slow down! Don't spam the command!
-Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[3s;user;2048;$authorID];$dateStamp];1000]]:R>]
-`
+]`
 }

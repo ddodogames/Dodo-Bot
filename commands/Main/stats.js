@@ -1,28 +1,29 @@
 module.exports = {
-name: "stats",
-info: {
-    description: "Returns statistics about the bot.",
-    perms: "`SendMessages`"
-},
-aliases: "botstats",
-code: `$title[$username[$clientID]'s Stats]
-$addField[**Dodo-Bot**;$get[dodobotversion];true]
-$addField[**Node.js**;\`$nodeVersion\`;true]
-$addField[**Aoi.js**;$get[aoijsversion];true]
-$addField[**Servers**;$guildCount;true]
-$addField[**Uptime**;$get[uptime];true]
-$addField[**Ping**;$pingms;true]
-$addField[**CPU Usage**;$roundTenth[$get[cpu];2];true]
-$addField[**RAM Usage**;$round[$ram]MB;true]
-$addField[**Users**;$numberSeparator[$allMembersCount;,];true]
-$thumbnail[$clientAvatar]
-$color[$getVar[embedcolor]]
+    name: "stats",
+    info: {
+        description: "Checks the current statistics while the bot is running (like RAM Usage).",
+        perms: ["`SendMessages`"]
+    },
+    aliases: ["botstats", "statistics"],
+    type: "messageCreate",
+    code: `
+$userCooldown[statscmd;2s;Cooldown has been triggered! Please, wait!
+Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[statscmd]];1000]]:R>]
+$let[uptime;<t:$round[$divide[$sub[$getTimestamp;$uptime];1000]]:R>]
+$let[fsversion;$advancedReplace[$checkCondition[$getGlobalVar[libraryversiondevcheck]==on];true;\`v$version\` (Dev);false;\`v$version\`]]
+$let[dodobotversion;$advancedReplace[$checkCondition[$getGlobalVar[pre_release]==on];true;\`v$getGlobalVar[version]\` (Dev);false;\`v$getGlobalVar[version]\`]]
 
-$let[cpu;$sum[$cpu[process];$cpu[os]]]
-$let[uptime;<t:$round[$divide[$sub[$datestamp;$uptime[ms]];1000]]:R>]
-$let[aoijsversion;$advancedReplaceText[$checkCondition[$getVar[libraryversiondevcheck]==on];true;\`v$advancedTextSplit[$packageVersion;-;1]\` (Dev);false;\`v$packageVersion\`]]
-$let[dodobotversion;$advancedReplaceText[$checkCondition[$getVar[pre_release]==on];true;\`v$getVar[version]\` (Dev);false;\`v$getVar[version]\`]]
-$cooldown[2s; Slow down! Don't spam the command!
-Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[2s;user;stats;$authorID];$dateStamp];1000]]:R>]
+$title[$username[$clientID]'s Stats]
+$thumbnail[$userAvatar[$clientID]]
+$addField[**Users**;$separateNumber[$userCount;,];true]
+$addField[**RAM Usage**;$round[$ram]MB;true]
+$addField[**CPU Usage**;$round[$divide[$cpu;1000]]%;true]
+$addField[**Ping**;$pingms;true]
+$addField[**Uptime**;$get[uptime];true]
+$addField[**Servers**;$guildCount;true]
+$addField[**ForgeScript**;$get[fsversion];true]
+$addField[**Node.js**;\`$nodeVersion\`;true]
+$addField[**Dodo-Bot**;$get[dodobotversion];true]
+$color[$getGlobalVar[embedcolor]]
 `
-} 
+}

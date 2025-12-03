@@ -1,7 +1,7 @@
 {
   "name": "Dodo-Bot",
-  "version": "2.2.6",
-  "description": "A personal bot project made in aoi.js v6 aiming to both entertain and provide users some features to use.",
+  "version": "3.0.2-build.2407",
+  "description": "A personal bot project made in ForgeScript aiming to both entertain and provide users some features to use.",
   "main": "index.js",
   "homepage": "https://github.com/ddodogames/Dodo-Bot",
   "scripts": {
@@ -12,19 +12,19 @@
     "UpdateandStart": "git pull && node index.js"
   },
   "engines": {
-    "node": ">=20.x"
+    "node": ">=18.x"
   },
   "keywords": [],
   "author": "dodoGames",
   "license": "Apache-2.0",
   "dependencies": {
-    "aoi.js": "^6.11.1",
-    "@aoijs/aoi.db": "^0.0.0",
+    "@tryforge/forge.db": "^2.1.1",
+    "@tryforge/forgescript": "^2.5.0",
     "discord-gamecord": "^4.4.2",
-    "@dotenvx/dotenvx": "^1.51.1"
+    "@dotenvx/dotenvx": "^1.51.1",
+    "better-sqlite3": "^9.6.0"
   },
   "devDependencies": {
-    "chalk": "^4.1.2"
+    "typescript": "^5.5.4"
   }
 }
-

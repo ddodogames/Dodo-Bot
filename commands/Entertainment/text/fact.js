@@ -1,14 +1,14 @@
 module.exports = {
-  name: "fact",
-  info: {
-    description: "Returns random facts.",
-    perms: ["`SendMessages`"]
+name: "fact",
+info: {
+        description: "Returns random facts.",
+        perms: ["`SendMessages`"]
 },
-  code: `$getObjectProperty[api;fact]
-  $createObject[api;$nonEscape[$get[jsonresponse]]]
-$onlyIf[$isValidObject[$nonEscape[$get[jsonresponse]]]==true;$get[error]]
-$let[jsonresponse;$httpRequest[https://api.popcat.xyz/v2/fact;GET;;;$get[error]]]
-$let[error;Unable to fetch data for fact. Please try again later.]
-$cooldown[3s; Slow down! Don't spam the command!
-Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[3s;user;fact;$authorID];$dateStamp];1000]]:R>]`
+type: "messageCreate",
+code: `$userCooldown[factcmd;3s;Cooldown has been triggered! Please, wait!
+Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[factcmd]];1000]]:R>]
+$let[status;$httpRequest[https://api.popcat.xyz/v2/fact;get]]
+$onlyIf[$get[status]==200;Unable to fetch data for fact. Please try again later.]
+$httpResult[fact]
+`
 }

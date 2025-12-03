@@ -1,41 +1,50 @@
-module.exports = [{
+module.exports = {
     name: "guess-the-pokemon",
     info: {
-      description: "Starts a game of guessing a Pokemon character. (currently disabled)",
-      perms: ["`SendMessages`"]
+        description: "Starts a game of Guess The Pokemon. (currently disabled)",
+        perms: ["`SendMessages`"]
     },
-    aliases: "gtp",
-    code: `$awaitMessages[$channelID;$authorID;60s;everything;gtpawaited;{execute:gtptimeout}]
-$editMessage[$get[id];{attachment:question-image.png:$getObjectProperty[api;data.questionImage]}
-{newEmbed:{author:$username:$authorAvatar}{title: Who's the Pokemon?}{field:Types:$djsEval[$getObjectProperty[api;data.types].join(", ");true]:true}{field:Abilities:$djsEval[$getObjectProperty[api;data.abilities].join(", ");true]:true}{image:attachment://question-image.png}{color:$getVar[embedcolor]}}]
+    type: "messageCreate",
+    disableConsoleErrors: true,
+    aliases: ["gtp"],
+    code: `
+    $userCooldown[gtpcmd;3s;Cooldown has been triggered! Please, wait!
+    Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[gtpcmd]];1000]]:R>]
+    $onlyIf[disabled!=disabled;This command has been temporarily disabled due to issues.]
 
-$createObject[api;$nonEscape[$get[jsonresponse]]]
-$let[id;$sendMessage[Please wait...;true]]
-$onlyIf[$isValidObject[$nonEscape[$get[jsonresponse]]]==true;$get[error]]
-$let[jsonresponse;$httpRequest[https://api.gamecord.xyz/pokemon;GET;;;$get[error]]]
-$let[error;Unable to fetch Pokemon data. Please try again later.]
-$onlyIf[disabled!=disabled;This command has been temporarily disabled due to issues.]
-$cooldown[5s; Slow down! Don't spam the command!
-    Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[5s;user;guess-the-pokemon;$authorID];$dateStamp];1000]]:R>]
-`
-}, 
-{
-name: "gtptimeout", 
-type: "awaited", 
-code: `
-$editMessage[$get[id];Better luck next time! It was a $getObjectProperty[api;data.name].]
-`
-}, 
-{
-name: "gtpawaited", 
-type: "awaited", 
-$if: "old", 
-code: `
-$if[$message[1]==$getObjectProperty[api;data.name]]
-$editMessage[$get[id];You guessed it right! It was a $getObjectProperty[api;data.name]. {attachment:answer-image.png:$getObjectProperty[api;data.answerImage]}
-{newEmbed:{author:$username:$authorAvatar}{title: Who's the Pokemon?}{field:Types:$djsEval[$getObjectProperty[api;data.types].join(", ");true]:true}{field:Abilities:$djsEval[$getObjectProperty[api;data.abilities].join(", ");true]:true}{image:attachment://answer-image.png}{color:$getVar[embedcolor]}}]
-$else
-$editMessage[$get[id];Better luck next time! It was a $getObjectProperty[api;data.name].]
-$endif
-`
-}]
+    $let[status;$httpRequest[https://api.gamecord.xyz/pokemon;get]]
+    $onlyIf[$get[status]==200;Unable to fetch data for Pokemon. Please try again later.]
+
+    $let[questionMessage;$sendMessage[$channelID;Loading... Please wait...;true]]
+    $wait[3000]
+    $!editMessage[$channelID;$get[questionMessage];
+    $author[$username;$userAvatar]
+    $title[Who's the Pokemon?]
+    $addField[Types;$djsEval[$httpResult[data;types].join(", ")];true]
+    $addField[Abilities;$djsEval[$httpResult[data;abilities].join(", ")];true]
+    $attachment[$httpResult[data;questionImage];questionImage.png]
+    $image[attachment://questionImage.png]
+    $color[$getGlobalVar[embedcolor]]
+    ]
+
+    $let[id;$awaitMessage[$channelID;msg;$authorID==$getMessage[$channelID;$env[msg];authorID];60s]]
+    $onlyIf[$get[id]!=;$!editMessage[$channelID;$get[questionMessage];Better luck next time! It was a $httpResult[data;name]]]
+
+
+    $if[$getMessage[$channelID;$get[id];content]==$httpResult[data;name];
+    $!editMessage[$channelID;$get[questionMessage];
+    You guessed it right! It was a $httpResult[data;name].
+    $author[$username;$userAvatar]
+    $title[Who's the Pokemon?]
+    $addField[Types;$djsEval[$httpResult[data;types].join(", ")];true]
+    $addField[Abilities;$djsEval[$httpResult[data;abilities].join(", ")];true]
+    $attachment[$httpResult[data;answerImage];answerImage.png]
+    $image[attachment://answerImage.png]
+    $color[$getGlobalVar[embedcolor]]
+    ]
+    ;
+    $!editMessage[$channelID;$get[questionMessage];Better luck next time! It was a $httpResult[data;name]]
+    ]
+
+    `
+}

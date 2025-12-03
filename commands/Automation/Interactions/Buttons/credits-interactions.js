@@ -1,58 +1,76 @@
 module.exports = [{
-    type: "interaction",
-    prototype: "button",
-    code: `$interactionUpdate[{newEmbed:{title:Packages used}{description:
-        Some stuff in Dodo-Bot were made possible using certain packages. This page aims to credit all of the packages to respect their owners.}{field:Packages:
-* **aoi.js** - The entire bot basically. Dodo-Bot is made using aoi.js!
-* **@aoijs/aoi.db** - Database used in the bot
-* **discord-gamecord** - Mostly used in game commands such as \`minesweeper\`, \`snake\`, etc.
-* **chalk** - For colored texts on console especially the bot's custom message
-* **@dotenvx/dotenvx** - Adds support for environment variables in local hosting
-}{color:$getVar[embedcolor]}}{actionRow:{button:Main Credits:2:maincredits_$authorID:false}{button:Packages used:2:packagesused_$authorID:true}{button:Use of source code:2:useofsource_$authorID:false}}]
+    type: "interactionCreate",
+    allowedInteractionTypes: ["button"],
+    code: `
+    $onlyIf[$advancedTextSplit[$customID;_;0]==credits;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
-    $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];This interaction is not for you.
-  {ephemeral}
-{interaction}
-  ]
-  $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==packagesused;]
-  `
-},{
-    type: "interaction",
-    prototype: "button",
-    code: `$interactionUpdate[{newEmbed:{title:Dodo-Bot Credits}{description:
+
+$interactionUpdate[
+$title[Dodo-Bot Credits]
+$description[
 * $username[632607624742961153] - Developer of the bot
 * $username[431749535656837130] - Inspiration to improve some commands
-* $username[738856854892839022] - For Leveling setup
-* $username[769525910164471821] - For \`guess-the-pokemon\` code (and some ideas as well)
-* aoi.js server - For a lot of help
-* [discotools.xyz](https#COLON#//discotools.xyz/icons-editor) - For most of the icons used in commands
-}{color:$getVar[embedcolor]}}{actionRow:{button:Main Credits:2:maincredits_$authorID:true}{button:Packages used:2:packagesused_$authorID:false}{button:Use of source code:2:useofsource_$authorID:false}}]
-
-    $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];This interaction is not for you.
-  {ephemeral}
-{interaction}
-  ]
-  $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==maincredits;]
-  `
+* $username[769525910164471821] - For some ideas
+* BotForge server - For a lot of help
+* $hyperlink[discotools.xyz;https://discotools.xyz/icons-editor] - For most of the icons used in commands
+]
+$color[$getGlobalVar[embedcolor]]
+$addActionRow
+$addButton[credits_$authorID;Main Credits;Secondary;;true]
+$addButton[packages_$authorID;Packages;Secondary]
+$addButton[useofsourcecode_$authorID;Use of Source Code;Secondary]
+]
+`
 },{
-    type: "interaction",
-    prototype: "button",
-    code: `$interactionUpdate[{newEmbed:{title:Use of source code}{description:
-When using the source code for development purposes, it is recommended to give credits to the original work done on the bot itself, which can be done by including the username \`dodogames\` in your project.
+type: "interactionCreate",
+allowedInteractionTypes: ["button"],
+code: `
+$onlyIf[$advancedTextSplit[$customID;_;0]==packages;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
-**For public bots**
-It is not recommended to claim that you fully made the bot yourself and even advertise it to the public. It is fine if you used the source code but then made it different that doesn't result in being too smiliar to the original bot.
+$interactionUpdate[
+$title[Packages]
+$description[
+* **@tryforge/forgescript** - The entire project basically! Dodo-Bot is made in fs!
+* **@tryforge/forge.db** - For enabling variables in fs.
+* **discord-gamecord** - Most of the game commands were made using this package
+* **better-sqlite3** - Database used in the bot.
+* **@dotenvx/dotenvx** - For enabling environment variables support in local hosting
+]
+$color[$getGlobalVar[embedcolor]]
+$addActionRow
+$addButton[credits_$authorID;Main Credits;Secondary;;false]
+$addButton[packages_$authorID;Packages;Secondary;;true]
+$addButton[useofsourcecode_$authorID;Use of Source Code;Secondary;;false]
+]`
 
-A modified instance of Dodo-Bot should be normally allowed as long as the credit for the original work is included (or when permission is given to do so).
+},{
+    type: "interactionCreate",
+    allowedInteractionTypes: ["button"],
+    code: `
+$onlyIf[$advancedTextSplit[$customID;_;0]==useofsourcecode;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
-**For private bots**
-The rule of using the source code is not strict in this case. If it's used to try the bot then you do not need to do anything. You may give credit if the said private bot was designed for a server in case of modifying it.
-}{color:$getVar[embedcolor]}}{actionRow:{button:Main Credits:2:maincredits_$authorID:false}{button:Packages used:2:packagesused_$authorID:false}{button:Use of source code:2:useofsource_$authorID:true}}]
+$interactionUpdate[
+$title[Use of Source code]
+$addField[For public bots;If creating a modified instance of Dodo-Bot that is public, then it is recommended to give credit to the original work done by me in this project. 
 
-    $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];This interaction is not for you.
-  {ephemeral}
-{interaction}
-  ]
-  $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==useofsource;]
-  `
+While that may not stop you from claiming that the work is supposedly done by yours, it would be respectful for me as a person spending his time coding on his personal project.]
+$addField[For private bots;If you're going to host Dodo-Bot (or have a modified instance) for specific private servers, then giving credit is optional as private bots aren't a big deal to me (using the project for also learning is fine). 
+
+You may still give credit in cases where you claim it's your work.]
+$color[$getGlobalVar[embedcolor]]
+$addActionRow
+$addButton[credits_$authorID;Main Credits;Secondary;;false]
+$addButton[packages_$authorID;Packages;Secondary;;false]
+$addButton[useofsourcecode_$authorID;Use of Source Code;Secondary;;true]
+]
+`
 }]

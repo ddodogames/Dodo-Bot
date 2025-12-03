@@ -1,21 +1,27 @@
 module.exports = {
 name: "connect4",
 info: {
-  description: "Play connect4 with your opponent!",
-  usage: "`connect4 <user>`",
-  perms: ["`SendMessages`"]
+        description: "Starts a connect4 game.",
+        usage: "`connect4 <user>`",
+        perms: ["`SendMessages`"]
 },
 aliases: ["c4", "connectfour"],
-code: `$djsEval[const { Connect4 } = require('discord-gamecord');
+type: "messageCreate",
+code: `$userCooldown[c4cmd;3s;Cooldown has been triggered! Please, wait!
+Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[c4cmd]];1000]]:R>]
+$onlyIf[$mentioned[0]!=;Please mention a opponent to play with.]
+$onlyIf[$isBot[$mentioned[0]]==false;You cannot play with bots!]
+$onlyIf[$mentioned[0]!=$authorID;You cannot play with yourself.]
+$!djsEval[const { Connect4 } = require('discord-gamecord');
 
 const Game = new Connect4({
-  message: message,
+  message: ctx.message,
   isSlashGame: false,
-  opponent: message.mentions.users.first(),
+  opponent: ctx.message.mentions.users.first(),
   embed: {
     title: 'Connect4 Game',
     statusTitle: 'Status',
-    color: '$getVar[embedcolor]'
+    color: '$getGlobalVar[embedcolor]'
   },
   emojis: {
     board: '⚪',
@@ -31,11 +37,7 @@ const Game = new Connect4({
   timeoutMessage: 'The Game went unfinished! No one won the Game!',
   playerOnlyMessage: 'Only {player} and {opponent} can use these buttons.'
 });
+
 Game.startGame();
-]
-$onlyIf[$isBot[$mentioned[1;true]]==false;You cannot play with bots!]
-$onlyIf[$mentioned[1;true]!=$authorID;Please mention a opponent to play with!]
-$cooldown[3s;Slow down! Don't spam the command!
-Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[3s;user;connect4;$authorID];$dateStamp];1000]]:R>]
-`
+]`
 }

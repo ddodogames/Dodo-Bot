@@ -1,66 +1,82 @@
 module.exports = [{
-type: "interaction",
-prototype: "button",
-code: `
-$interactionUpdate[{newEmbed:{author:Server information:$nonEscape[$get[serverimage]]}{title:Information for $get[username]}{url:$nonEscape[$userURL[$get[user]]]}{field:**General**:
-* **Joined the server on#COLON#** <t:$truncate[$divide[$memberJoinDate[$get[user];$guildID];1000]]:f>
-* **Booster#COLON#** $get[boosterchecker]
-* **Status#COLON#** $userStatus[$guildID;$get[user]]
-:true}{field:**Roles**:
-* **Total amount of roles#COLON#** $userRolesCount[$get[user];$guildID]
-* **Highest Role#COLON#** $get[highestrole]
-* **Lowest Role#COLON#** $get[lowestrole]
-:true}{thumbnail:$userAvatar[$get[user]]}{color:$getVar[embedcolor]}}{actionRow:{button:General info:2:mainmeminfo_$authorID_$get[user]:false}{button:Member's Server info:2:memberservinfo_$authorID_$get[user]:true}}]
+type: "interactionCreate",
+allowedInteractionTypes: ["button"],
+code: `$onlyIf[$advancedTextSplit[$customID;_;0]==memberservinfo;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
+
+$let[user;$advancedTextSplit[$customID;_;2]]
+$let[servericon;$advancedReplace[$checkCondition[$guildIcon==];true;$userDefaultAvatar[$clientID];false;$guildIcon]]
+$let[username;$advancedReplace[$checkCondition[$callFunction[hasusertag;$get[user]]==true];true;$userTag[$get[user]];false;$username[$get[user]]]]
+$let[nickname;$advancedReplace[$checkCondition[$callFunction[hasnickname;$guildID;$get[user]]==false];true;none;false;$nickname[$guildID;$get[user]]]]
+$arrayLoad[amountofroles;/;$memberRoles[$guildID;$get[user];/]]
+
+$let[highestrole;$advancedReplace[$checkCondition[$memberHighestRoleID[$guildID;$get[user]]==$guildID];true;none;false;$roleName[$guildID;$memberHighestRoleID[$guildID;$get[user]]]]]
+$let[lowestrole;$advancedReplace[$checkCondition[$memberLowestRoleID[$guildID;$get[user]]==$guildID];true;none;false;$roleName[$guildID;$memberLowestRoleID[$guildID;$get[user]]]]]
+$let[booster;$advancedReplace[$checkCondition[$isBoosting[$guildID;$get[user]]==true];true;Yes;false;No]]
 
 
-$let[username;$advancedReplaceText[$checkCondition[$hasUserTag[$get[user]]==false];true;$username[$get[user]];false;$userTag[$get[user]]]]
-$let[lowestrole;$advancedReplaceText[$checkCondition[$userLowestRole[$get[user];$guildID]==$guildID];true;None;false;$roleName[$userLowestRole[$get[user];$guildID]]]]
-$let[highestrole;$advancedReplaceText[$checkCondition[$userHighestRole[$get[user];$guildID;id]==$guildID];true;None;false;$userHighestRole[$get[user];$guildID;name]]]
-$let[serverimage;$advancedReplaceText[$checkCondition[$guildIcon==];false;$guildIcon;true;$userDefaultAvatar[$clientID]]]
-$let[boosterchecker;$advancedReplaceText[$checkCondition[$isBoosting[$get[user];$guildID]==true];true;Yes;false;No]]
+$onlyIf[$memberExists[$guildID;$get[user]]==true;
+$interactionReply[
+This user appears to have left the server. As a result, their server information will no longer be displayed until they join this server again.
+$ephemeral
+]]
 
-$onlyIf[$memberExists[$get[user];$guildID]==true;
-The user appears to have left the server. The ablity to view their server information has been temporarily disabled until they re-join again
-{ephemeral}
-{interaction}
+$interactionUpdate[
+$author[Server information;$get[servericon]]
+$title[$get[username]'s information;$callFunction[userURL;$get[user]]]
+$addField[**General**;
+* **Joined the server on:** <t:$trunc[$divide[$memberJoinedAt[$guildID;$get[user]];1000]]:f>
+* **Booster:** $get[booster]
+* **Amount of roles:** $arrayLength[amountofroles]
+* **Nickname:** $get[nickname]
+;true]
+$addField[**Other**;
+* **Platforms:** $if[$memberPlatforms[$guildID;$get[user]]==;Unavailable;$toTitleCase[$memberPlatforms[$guildID;$get[user]]]]
+* **Highest Role:** $get[highestrole]
+* **Lowest Role:** $get[lowestrole]
+* **Status:** $if[$status[$guildID;$get[user]]==;None;$status[$guildID;$get[user]]]
+;true]
+$thumbnail[$userAvatar[$get[user]]]
+$color[$getGlobalVar[embedcolor]]
+$addActionRow
+$addButton[generalmeminfo_$authorID_$get[user];General info;Secondary]
+$addButton[memberservinfo_$authorID_$get[user];Member's Server info;Secondary;;true]
 ]
-
-$let[user;$advancedTextSplit[$interactionData[customId];_;3]]
-
-$onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];This interaction is not for you.
- {ephemeral}
-{interaction} 
-  ]
-$onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==memberservinfo;]
-  
 `
 },{
-type: "interaction",
-prototype: "button",
-code: `
-$interactionUpdate[{newEmbed:{title:Information for $get[username]}{url:$nonEscape[$userURL[$get[user]]]}{field:**General**:
-* **Joined Discord on#COLON#** <t#COLON#$truncate[$divide[$creationDate[$get[user];ms];1000]]#COLON#f>
-* **Bot account#COLON#** $get[botchecker]
-* **ID#COLON#** $get[user]
-:true}{field:**Other**:
-* **Avatar#COLON#** [link]($userAvatar[$get[user]])
-* **DMs#COLON#** $get[userdms]
-:true}{thumbnail:$userAvatar[$get[user]]}{color:$getVar[embedcolor]}}{actionRow:{button:General info:2:mainmeminfo_$authorID_$get[user]:true}{button:Member's Server info:2:memberservinfo_$authorID_$get[user]:false}}]
+type: "interactionCreate",
+allowedInteractionTypes: ["button"],
+code: `$onlyIf[$advancedTextSplit[$customID;_;0]==generalmeminfo;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
+$let[user;$advancedTextSplit[$customID;_;2]]
+$let[username;$advancedReplace[$checkCondition[$callFunction[hasusertag;$get[user]]==true];true;$userTag[$get[user]];false;$username[$get[user]]]]
+$let[accounttype;$advancedReplace[$checkCondition[$isBot[$get[user]]==true];true;Bot;false;Human]]
+$let[dmsstatus;$advancedReplace[$checkCondition[$isUserDMEnabled[$get[user]]==true];true;Enabled;false;Disabled]]
+$let[botverified;$advancedReplace[$checkCondition[$isBotVerified[$get[user]]==true];true;Yes;false;No]]
 
-
-$let[username;$advancedReplaceText[$checkCondition[$hasUserTag[$get[user]]==false];true;$username[$get[user]];false;$userTag[$get[user]]]]
-$let[botchecker;$advancedReplaceText[$checkCondition[$isBot[$get[user]]==true];true;Yes;false;No]]
-$let[userdms;$advancedReplaceText[$checkCondition[$isUserDmEnabled[$get[user]]==true];true;Enabled;false;Disabled]]
-
-$let[user;$advancedTextSplit[$interactionData[customId];_;3]]
-
-$onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];This interaction is not for you.
-{ephemeral}
-{interaction}
+$interactionUpdate[
+$title[$get[username]'s information;$callFunction[userURL;$get[user]]]
+$addField[**General**;
+* **Joined Discord on:** <t:$trunc[$divide[$userCreatedAt[$get[user]];1000]]:f>
+* **Account type:** $get[accounttype]$if[$isBot[$get[user]]==true;
+* **Bot Verified:** $get[botverified]]
+* **ID:** $get[user]
+;true]
+$addField[**Other**;
+* **Avatar:** $hyperlink[link;$userAvatar[$get[user]]]$if[$userBanner[$get[user]]!=;
+* **Banner:** $hyperlink[link;$userBanner[$get[user]]]]
+* **DMS:** $get[dmsstatus]
+;true]
+$thumbnail[$userAvatar[$get[user]]]
+$color[$getGlobalVar[embedcolor]]
+$addActionRow
+$addButton[generalmeminfo_$authorID_$get[user];General info;Secondary;;true]
+$addButton[memberservinfo_$authorID_$get[user];Member's Server info;Secondary]
 ]
-
-$onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==mainmeminfo;]
-  
 `
 }]

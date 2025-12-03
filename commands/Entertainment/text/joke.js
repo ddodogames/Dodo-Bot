@@ -1,28 +1,20 @@
-module.exports = [{
-  name: "joke",
-  info: {
-    description: "Returns random jokes.",
-    perms: ["`SendMessages`"]
+module.exports = {
+name: "joke",
+info: {
+        description: "Returns random jokes.",
+        perms: ["`SendMessages`"]
 },
-  aliases: "jokes",
-  code: `$ifAwaited[$getObjectProperty[api;joke]==;{execute:twopart};{execute:single}]
-  $createObject[api;$nonEscape[$get[jsonresponse]]]
-$onlyIf[$isValidObject[$nonEscape[$get[jsonresponse]]]==true;$get[error]]
-$let[jsonresponse;$httpRequest[https://v2.jokeapi.dev/joke/Any?blacklistFlags=nsfw,religious,political,racist,sexist,explicit&safe-mode;GET;;;$get[error]]]
-$let[error;Unable to fetch data for jokes. Please try again later.]
-$cooldown[3s; Slow down! Don't spam the command!
-Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[3s;user;joke;$authorID];$dateStamp];1000]]:R>]`
-},{
-name: "twopart",
-type: "awaited",
-code: `
-Setup: $getObjectProperty[api;setup]
-Delivery: $getObjectProperty[api;delivery]
+type: "messageCreate",
+aliases: ["jokes"],
+code: `$userCooldown[jokecmd;3s;Cooldown has been triggered! Please, wait!
+Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[jokecmd]];1000]]:R>]
+$let[status;$httpRequest[https://v2.jokeapi.dev/joke/Any?blacklistFlags=nsfw,religious,political,racist,sexist,explicit&safe-mode;get]]
+$onlyIf[$get[status]==200;Unable to fetch data for jokes. Please try again later.]
+$if[$httpResult[joke]==;
+Setup: $httpResult[setup]
+Delivery: $httpResult[delivery]
+;
+$httpResult[joke]
+]
 `
-},{
-name: "single",
-type: "awaited",
-code: `
-$getObjectProperty[api;joke]
-`
-}]
+}

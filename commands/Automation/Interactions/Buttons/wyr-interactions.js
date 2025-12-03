@@ -1,51 +1,57 @@
 module.exports = [{
-    name: "wyr1-votebutton",
-    type: "interaction",
-    $if: "old",
-    prototype: "button",
-    code: `$interactionUpdate[{newEmbed:{title:Would you rather...}{field:**Option 1**:$get[question1]}{field:**Option 2**:$get[question2]}{color:$getVar[embedcolor]}}{actionRow:{button:$getObjectProperty[wyrdata;upvotes]:2:wyr1-votebutton:false:1️⃣}{button:$getObjectProperty[wyrdata;downvotes]:2:wyr2-votebutton:false:2️⃣}}]
-    
+type: "interactionCreate",
+allowedInteractionTypes: ["button"],
+code: `
+$onlyIf[$customID==wyr-ops1;]
+$onlyIf[$getMessageVar[wyr-hasuservoted-$authorID;$messageID;no]==no;
+$interactionReply[
+$ephemeral
+You have already voted.
+]]
 
-    $setMessageVar[wyr;$getObject[wyrdata];$interactionData[message.id]]
-    $setObjectProperty[wyrdata;upvotes;$sum[$getObjectProperty[wyrdata;upvotes];1]]
-    $createObject[wyrdata;$getMessageVar[wyr;$interactionData[message.id]]]
-    
-    $setMessageVar[wyr_hasuservoted_$authorID;true;$interactionData[message.id]]
-    
-    $onlyIf[$getMessageVar[wyr_hasuservoted_$authorID;$interactionData[message.id]]==false;
-    You have already voted.
-    {interaction}
-    {ephemeral}
-    ]
-    
-    $let[question2;$getEmbed[$channelID;$interactionData[message.id];1;field2.value]]
-    $let[question1;$getEmbed[$channelID;$interactionData[message.id];1;field1.value]]
-    $if[$isVariableExist[wyr_hasuservoted_$authorID;main]==false]
-    $createTemporaryVar[main;wyr_hasuservoted_$authorID:false]
-    $endif`
-    },{
-    name: "wyr2-votebutton",
-    type: "interaction",
-    $if: "old",
-    prototype: "button",
-    code: `$interactionUpdate[{newEmbed:{title:Would you rather...}{field:**Option 1**:$get[question1]}{field:**Option 2**:$get[question2]}{color:$getVar[embedcolor]}}{actionRow:{button:$getObjectProperty[wyrdata;upvotes]:2:wyr1-votebutton:false:1️⃣}{button:$getObjectProperty[wyrdata;downvotes]:2:wyr2-votebutton:false:2️⃣}}]
-    
-    
-    $setMessageVar[wyr;$getObject[wyrdata];$interactionData[message.id]]
-    $setObjectProperty[wyrdata;downvotes;$sum[$getObjectProperty[wyrdata;downvotes];1]]
-    $createObject[wyrdata;$getMessageVar[wyr;$interactionData[message.id]]]
-    
-    $setMessageVar[wyr_hasuservoted_$authorID;true;$interactionData[message.id]]
-    
-    $onlyIf[$getMessageVar[wyr_hasuservoted_$authorID;$interactionData[message.id]]==false;
-    You have already voted.
-    {interaction}
-    {ephemeral}
-    ]
-    
-    $let[question2;$getEmbed[$channelID;$interactionData[message.id];1;field2.value]]
-    $let[question1;$getEmbed[$channelID;$interactionData[message.id];1;field1.value]]
-    $if[$isVariableExist[wyr_hasuservoted_$authorID]==false]
-    $createTemporaryVar[main;wyr_hasuservoted_$authorID:false]
-    $endif`
-    }]
+$jsonLoad[wyrdata;$getMessageVar[wyr;$messageID]]
+$!jsonSet[wyrdata;upvotes;$sum[$env[wyrdata;upvotes];1]]
+$setMessageVar[wyr;$env[wyrdata];$messageID]
+
+$let[wyr1-votes;$env[wyrdata;upvotes]]
+$let[wyr2-votes;$env[wyrdata;downvotes]]
+
+
+$interactionUpdate[
+$fetchEmbeds[$channelID;$messageID;0]
+$addActionRow
+$addButton[wyr-ops1;$get[wyr1-votes];Secondary;1️⃣]
+$addButton[wyr-ops2;$get[wyr2-votes];Secondary;2️⃣]
+]
+
+$setMessageVar[wyr-hasuservoted-$authorID;yes;$messageID]
+`
+},{
+type: "interactionCreate",
+allowedInteractionTypes: ["button"],
+code: `
+$onlyIf[$customID==wyr-ops2;]
+$onlyIf[$getMessageVar[wyr-hasuservoted-$authorID;$messageID;no]==no;
+$interactionReply[
+$ephemeral
+You have already voted.
+]]
+
+$jsonLoad[wyrdata;$getMessageVar[wyr;$messageID]]
+$!jsonSet[wyrdata;downvotes;$sum[$env[wyrdata;downvotes];1]]
+$setMessageVar[wyr;$env[wyrdata];$messageID]
+
+$let[wyr1-votes;$env[wyrdata;upvotes]]
+$let[wyr2-votes;$env[wyrdata;downvotes]]
+
+
+$interactionUpdate[
+$fetchEmbeds[$channelID;$messageID;0]
+$addActionRow
+$addButton[wyr-ops1;$get[wyr1-votes];Secondary;1️⃣]
+$addButton[wyr-ops2;$get[wyr2-votes];Secondary;2️⃣]
+]
+
+$setMessageVar[wyr-hasuservoted-$authorID;yes;$messageID]
+`
+}]

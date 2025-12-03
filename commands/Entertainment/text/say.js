@@ -1,38 +1,37 @@
-module.exports = [{
-  name: "say",
-  info: {
-    description: "Makes the bot say whatever you want (alongside with optional embed mode).",
-    usage: "`say <text> (flag)`\n\n-# Execute the command first before specifying parameters.",
-    perms: ["`SendMessages`"],
-    flags: ["`--embed`"]
-},
-aliases: ["talk","repeat"],
-  code: `$awaitMessages[$channelID;$authorID;30s;everything;awaitedsay;Time ran out! You didn't make me say anything!]
-What do you want me to say?
-
-**Tip:** To use embed mode, make sure your message contains the flag \`--embed\` to do so.
-$cooldown[3s; Slow down! Don't spam the command!
-Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[3s;user;say;$authorID];$dateStamp];1000]]:R>]
-  `
-},{
-    name: "awaitedsay",
-    $if: "old",
-    type: "awaited",
+module.exports = {
+    name: "say",
+    info: {
+        description: "Makes the bot say whatever you want.",
+        usage: "`say <text> (flag)`\n\n-# Execute the command first before specifying parameters.",
+        perms: ["`SendMessages`"],
+        flags: ["`--embed`"]
+    },
+    type: "messageCreate",
+    disableConsoleErrors: true,
     code: `
-$if[$checkContains[$message;--embed;—embed]==true||$charCount[$message]>=2000]
-$author[$username;$userAvatar;$userURL[$authorID]]
-$title[Say Cmd!;$nonEscape[$get[links]]]
-$description[$get[content]]
-$color[#$randomColor]
-$addTimeStamp
-$else
-$message
+    $userCooldown[saycmd;3s;Cooldown has been triggered! Please, wait!
+    Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[saycmd]];1000]]:R>]
 
-- From [\`$username\`](<$userURL[$authorID]>)
-$endif
-$disableMentionType[all]
-$onlyIf[$get[content]!=;You cannot activate embed mode without providing a text first.]
-$let[content;$removeContains[$message;--embed;—embed]]
-$let[links;$randomText[$getClientInvite[sendmessages;viewchannel;addreactions;attachfiles;viewauditlog];https://www.youtube.com/watch?v=dQw4w9WgXcQ]]
-`
-}]
+    $disableAllMentions
+    $sendMessage[$channelID;What do you want me to say?
+
+**Tip:** To use embed mode, make sure your message contains the flag \`--embed\` to do so.]
+    $let[id;$awaitMessage[$channelID;msg;$authorID==$getMessage[$channelID;$env[msg];authorID];30s]]
+    $onlyIf[$get[id]!=;Time ran out! You didn't make me say anything!]
+    $let[content;$getMessage[$channelID;$get[id];content]]
+    $let[clearembedmodewords;$callFunction[filterembedflag;$get[content]]]
+
+    $let[links;$randomText[https://www.youtube.com/watch?v=dQw4w9WgXcQ;$clientInvite[36032]]]
+    $onlyIf[$get[clearembedmodewords]!=;You cannot activate embed mode without providing a text first.]
+
+    $sendMessage[$channelID;$if[$or[$checkContains[$get[content];--embed;—embed]==true;$charCount[$get[content]]>=2000];
+    $author[$username;$userAvatar;$callFunction[userURL;$authorID]]
+    $title[Say cmd;$get[links]]
+    $description[$get[clearembedmodewords]]
+    $color[$callFunction[randomColor]]
+    ;$get[clearembedmodewords]
+
+From $hyperlink[\`$username\`;<$callFunction[userURL;$authorID]>]
+    ]]
+    `
+}

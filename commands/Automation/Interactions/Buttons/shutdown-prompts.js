@@ -1,36 +1,48 @@
 module.exports = [{
-    type: "interaction",
-    prototype: "button",
-    code: `
-    $shutdown
-    $wait[2s]
-    $interactionFollowUp[Done!]
-    $wait[3s]
-    $interactionUpdate[{newEmbed:{title:Please wait}{description:$username[$clientID] is shutting down...}{color:Green}}]
+type: "interactionCreate",
+allowedInteractionTypes: ["button"],
+code: `
+$onlyIf[$advancedTextSplit[$customID;_;0]==shutdownconfirm;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
-
-    $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];This interaction is not for you.
-  {ephemeral}
-{interaction}
-  ]
-  $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==shutdownconfirm;]
+$interactionUpdate[
+$title[Please wait..]
+$description[$username[$clientID] is shutting down...]
+$color[Yellow]
+]
+$wait[5000]
+$interactionReply[
+    $title[Done!]
+    $description[The bot has been successfully shutdown!]
+    $color[DarkGreen]
+    $attachment[./assets/checkmark.png;checkmark.png]
+    $thumbnail[attachment://checkmark.png]
+]
+$wait[3000]
+$clientDestroy
 `
 },{
-    type: "interaction",
-    prototype: "button",
+    type: "interactionCreate",
+    allowedInteractionTypes: ["button"],
     code: `
-    $interactionFollowUp[The bot will continue to operate then.]
-    $interactionUpdate[{newEmbed:{title:$get[embedtitle]}{description:$get[embeddescription]}{thumbnail:https#COLON#//us-east-1.tixte.net/uploads/dodo-bot.wants.solutions/warning.png}{color:Red}}{actionRow:{button:Yes:2:shutdownconfirm_$authorID:true}{button:No:2:shutdowndeny$authorID:true}}]
+$onlyIf[$advancedTextSplit[$customID;_;0]==shutdowndeny;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 
-$let[embeddescription;$getEmbed[$channelID;$interactionData[message.id];1;description]]
-$let[embedtitle;$getEmbed[$channelID;$interactionData[message.id];1;title]]
-
-$onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];This interaction is not for you.
-{ephemeral}
-{interaction}
+$interactionUpdate[
+$fetchEmbeds[$channelID;$messageID;0]
+$footer[Cancelled the confirmation]
+$addActionRow
+$addButton[shutdownconfirm_$authorID;Yes;Secondary;;true]
+$addButton[shutdowndeny_$authorID;No;Secondary;;true]
 ]
 
-  $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==shutdowndeny;]
+$interactionFollowUp[Alright, the bot will continue to operate then.
+$ephemeral
+]
 `
 }]

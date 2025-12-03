@@ -1,19 +1,24 @@
 module.exports = {
-  name: "snake",
-  info: {
-    description: "Starts a snake game.",
-    perms: ["`SendMessages`"]
-  },
-  aliases: "snek",
-  code: `$djsEval[const { Snake } = require('discord-gamecord');
+name: "snake",
+info: {
+        description: "Starts a game of snake.",
+        perms: ["`SendMessages`"]
+},
+type: "messageCreate",
+aliases: ["snek"],
+code: `$userCooldown[snakecmd;3s;Cooldown has been triggered! Please, wait!
+Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[snakecmd]];1000]]:R>]
+
+
+$!djsEval[const { Snake } = require('discord-gamecord');
 
 const Game = new Snake({
-  message: message,
+  message: ctx.message,
   isSlashGame: false,
   embed: {
     title: 'Snake Game',
     overTitle: 'Game Over',
-    color: '$getVar[embedcolor]'
+    color: '$getGlobalVar[embedcolor]'
   },
   emojis: {
     board: '⬛',
@@ -23,9 +28,8 @@ const Game = new Snake({
     left: '👈',
     right: '👉',
   },
-  snake: { head: '🟢', body: '🟩', tail: '🟢', over: '💀' },
-  foods: ['🍎', '🍇', '🍊', '🫐', '🥕', '🥝', '🌽', '🍏'],
-  buttonStyle: "SECONDARY",
+  snake: { head: '🟢', body: '🟩', tail: '🟢', skull: '💀'},
+  foods: \\['🍎', '🍇', '🍊', '🫐', '🥕', '🥝', '🌽', '🍏'\\],
   stopButton: 'Stop',
   timeoutTime: 60000,
   playerOnlyMessage: 'Only {player} can use these buttons.'
@@ -33,6 +37,6 @@ const Game = new Snake({
 
 Game.startGame();
 ]
-$cooldown[3s; Slow down! Don't spam the command!
-Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[3s;user;snake;$authorID];$dateStamp];1000]]:R>]`
+
+`
 }

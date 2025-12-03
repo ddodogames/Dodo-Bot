@@ -1,17 +1,21 @@
-module.exports = [{
-  name:"findtheflag",
-  info: {
-    description: "Starts a game of Find the flag.",
-    perms: ["`SendMessages`"]
-  },
-aliases:"ftf",
-code:`
-$awaitComponents[$channelID;$get[messageID];$authorID;ftf1,ftf2,ftf3;ftfresults1,ftfresults2,ftfresults3;ftftimeout;1;30s]
+module.exports = {
+    name: "findtheflag",
+    info: {
+        description: "Starts a game of Find the flag.",
+        perms: ["`SendMessages`"]
+    },
+    aliases: ["ftf", "find-the-flag"],
+    type: "messageCreate",
+    code: `
+$userCooldown[ftfcmd;2s;Cooldown has been triggered! Please, wait!
+Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[ftfcmd]];1000]]:R>]
 
-$let[messageID;$sendMessage[{newEmbed:{title:🚩 | Find the flag!}{description:There is a hidden flag somewhere around 1-3, where you think the flag is on?}{color:$getVar[embedcolor]}}
-
-{actionRow:{button: :2:ftf1:false:1️⃣}{button: :2:ftf2:false:2️⃣}{button: :2:ftf3:false:3️⃣}}
-;true]]
-$cooldown[3s; Slow down! Don't spam the command!
-Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[3s;user;findtheflag;$authorID];$dateStamp];1000]]:R>]`
-}]
+$title[🚩 | Find the flag!]
+$description[There is a hidden flag somewhere around 1-3, where you think the flag is on?]
+$color[$getGlobalVar[embedcolor]]
+$addActionRow
+$addButton[ftf1_$authorID;;Secondary;1️⃣]
+$addButton[ftf2_$authorID;;Secondary;2️⃣]
+$addButton[ftf3_$authorID;;Secondary;3️⃣]
+    `
+}

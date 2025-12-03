@@ -1,49 +1,48 @@
 module.exports = [{
-    name: "Ban Logs",
-    type: "banAdd",
-    channel: "$getGuildVar[banneduserschannel]",
+    name: "Ban logs",
+    type: "guildBanAdd",
+    allowBots: true,
     code: `
-    $author[Member banned!;$userAvatar;$userAvatar]
+    $onlyIf[$getGuildVar[banlogschannel]!=;]
+    $onlyIf[$guildChannelExists[$guildID;$getGuildVar[banlogschannel]]==true;]
+    $onlyIf[$channelHasPerms[$getGuildVar[banlogschannel];$clientID;ViewChannel;SendMessages]==true;]
+    $onlyIf[$hasPerms[$guildID;$clientID;ViewAuditLog]==true;]
+$let[reason;$advancedReplace[$checkCondition[$fetchAuditLog[$guildID;MemberBanAdd;reason;0]==];true;none;false;$fetchAuditLog[$guildID;MemberBanAdd;reason;0]]]
+$let[staffdetails;$username[$fetchAuditLog[$guildID;MemberBanAdd;executorID;0]]  <@$fetchAuditLog[$guildID;MemberBanAdd;executorID;0]>]
+$let[condition;$and[$getGuildVar[anonymous]==on;$isBot[$fetchAuditLog[$guildID;MemberBanAdd;executorID;0]]==false]]
+$let[getmoderatorname;$advancedReplace[$checkCondition[$get[condition]==true];true;Unknown;false;$get[staffdetails]]]
+$let[accounttype;$advancedReplace[$checkCondition[$isBot==false];true;Member;false;Bot]]
+    $sendMessage[$getGuildVar[banlogschannel];
+    $author[Member banned!;$userAvatar]
     $description[
 **$get[accounttype]:** $username <@$authorID>
-**Moderator:** $get[moderatorchecker]
+**Moderator:** $get[getmoderatorname]
 **Reason:** $get[reason]
-    ]
-    $footer[ID: $authorID]
-    $addTimeStamp
+]
     $color[Red]
-    $let[moderatorchecker;$advancedReplaceText[$checkCondition[$isBot[$get[staff]]==false&&$getGuildVar[anonymous]==on];true;Unknown;false;$username[$get[staff]] <@$get[staff]>]]
-    $let[reason;$advancedReplaceText[$checkCondition[$getAuditLogs[$guildID;;1;22;{reason}]==null];true;none;false;$getAuditLogs[$guildID;;1;22;{reason}]]]
-    $let[staff;$getAuditLogs[$guildID;;1;22;{executor.id}]]
-    $let[accounttype;$advancedReplaceText[$checkCondition[$isBot==true];true;Bot;false;User]]
-    $onlyIf[$hasPerms[$guildID;$clientID;viewauditlog]==true;In order to have ban logs work, i must have \`ViewAuditLog\` permission!]
-    $onlyIf[$hasPermsInChannel[$getGuildVar[banneduserschannel];$clientID;viewchannel;sendmessages]==true;]
-    $onlyIf[$guildChannelExists[$guildID;$getGuildVar[banneduserschannel]]==true;]
-    $onlyIf[$getGuildVar[banneduserschannel]!=none;]
-    $onlyIf[$guildID==$guildID;]
+    ]
     `
     },{
-        name: "Un-Ban Logs",
-        type: "banRemove",
-        channel: "$getGuildVar[unbanneduserschannel]",
-        code: `$author[Member unbanned!;$userAvatar;$userAvatar]
+    name: "un-Ban logs",
+    type: "guildBanRemove",
+    allowBots: true,
+    code: `
+    $onlyIf[$getGuildVar[unbanlogschannel]!=;]
+    $onlyIf[$guildChannelExists[$guildID;$getGuildVar[unbanlogschannel]]==true;]
+    $onlyIf[$channelHasPerms[$getGuildVar[unbanlogschannel];$clientID;ViewChannel;SendMessages]==true;]
+    $onlyIf[$hasPerms[$guildID;$clientID;ViewAuditLog]==true;]
+$let[reason;$fetchAuditLog[$guildID;MemberBanRemove;reason;0]]
+$let[moderator;$username[$fetchAuditLog[$guildID;MemberBanRemove;executorID;0]] <@$fetchAuditLog[$guildID;MemberBanRemove;executorID;0]>]
+$let[accounttype;$advancedReplace[$checkCondition[$isBot==false];true;Member;false;Bot]]
+    $sendMessage[$getGuildVar[unbanlogschannel];
+    $author[Member unbanned!;$userAvatar]
     $description[
 **$get[accounttype]:** $username <@$authorID>
-**Moderator:** $get[moderator] $if[$getAuditLogs[$guildID;;1;23;{reason}]!=null;
-**Reason:** $getAuditLogs[$guildID;;1;23;{reason}]
+**Moderator:** $get[moderator] $if[$get[reason]!=;
+**Reason:** $get[reason]]
 ]
-    ]
-    $footer[ID: $authorID]
-    $addTimeStamp
     $color[DarkGreen]
-    $let[moderator;$username[$get[staff]] <@$get[staff]>]
-    $let[staff;$getAuditLogs[$guildID;;1;23;{executor.id}]]
-    $let[accounttype;$advancedReplaceText[$checkCondition[$isBot==true];true;Bot;false;User]]
-    $onlyIf[$hasPerms[$guildID;$clientID;viewauditlog]==true;In order to have un-ban logs work, i must have \`ViewAuditLog\` permission!]
-    $onlyIf[$hasPermsInChannel[$getGuildVar[unbanneduserschannel];$clientID;viewchannel;sendmessages]==true;]
-    $onlyIf[$guildChannelExists[$guildID;$getGuildVar[unbanneduserschannel]]==true;]
-    $onlyIf[$getGuildVar[unbanneduserschannel]!=none;]
-    $onlyIf[$guildID==$guildID;]
-    
+    ]
     `
     }]
+    

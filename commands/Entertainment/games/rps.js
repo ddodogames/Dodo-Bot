@@ -1,67 +1,62 @@
-module.exports = [{
-name: "rock-paper-scissors",
+module.exports = {
+name: "rps",
 info: {
-  description: "Play rps with your opponent (or optionally play against yourself)!",
-  usage: "`rock-paper-scissors <user or mention yourself>`",
-  perms: ["`SendMessages`"]
+        description: "Start a rps match with your opponent (you can also ping yourself to play against the bot).",
+        usage: "`rps <user or ping yourself>`",
+        perms: ["`SendMessages`"]
 },
-aliases: "rps",
-code: `$ifAwaited[$mentioned[1;false]==$authorID;{execute:rpsoneplayer};{execute:rpstwoplayer}]
+aliases: ["rock-paper-scissors"],
+type: "messageCreate",
+code: `$userCooldown[rpscmd;2s;Cooldown has been triggered! Please, wait!
+Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[rpscmd]];1000]]:R>]
+$onlyIf[$mentioned[0]!=;Please mention a opponent to play with.
 
+**Tip:** You can also play without any opponent by mentioning yourself.]
+$onlyIf[$isBot[$mentioned[0]]==false;You cannot play with bots!]
 
-$onlyIf[$isBot[$mentioned[1;true]]==false;You cannot play with bots!]
-$onlyIf[$mentioned[1;false]!=undefined;Please mention a opponent to play with!
+$if[$mentioned[0]==$authorID;
+$title[RPS]
+$description[The game has been started. What are you going to choose against the bot?]
+$color[$getGlobalVar[embedcolor]]
+$addActionRow
+$addButton[rock_$authorID;Rock;Secondary;🌑;false]
+$addButton[paper_$authorID;Paper;Secondary;📰;false]
+$addButton[scissors_$authorID;Scissors;Secondary;✂️;false]
 
-**Tip:** Want to play against yourself? Mention yourself to do so!
-]
-$cooldown[3s; Slow down! Don't spam the command!
-Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[3s;user;rock-paper-scissors;$authorID];$dateStamp];1000]]:R>]
-`
-},{
-  name: "rpsoneplayer",
-  type: "awaited",
-  code: `
-$awaitComponents[$channelID;$get[messageID];$authorID;rpsrockbutton,rpspaperbutton,rpsscissorsbutton;rpsgameresults1,rpsgameresults2,rpsgameresults3;rpstimeout;1;30s]
-
-$let[messageID;$sendMessage[{newEmbed:{title:Rock Paper Scissors}{description:The game has started!, What will you choose?}{color:$getVar[embedcolor]}}
-
-{actionRow:{button:Rock:2:rpsrockbutton:false:🌑}{button:Paper:2:rpspaperbutton:false:📰}{button:Scissors:2:rpsscissorsbutton:false:✂️}}
-;true]]
-`
-},{
-  name: "rpstwoplayer",
-  type: "awaited",
-  code: `$djsEval[const { RockPaperScissors } = require('discord-gamecord');
+;
+$!djsEval[const { RockPaperScissors } = require('discord-gamecord');
 
 const Game = new RockPaperScissors({
-  message: message,
+  message: ctx.message,
   isSlashGame: false,
-  opponent: message.mentions.users.first(),
+  opponent: ctx.message.mentions.users.first(),
   embed: {
-    title: "Rock Paper Scissors",
-    color: "$getVar[embedcolor]",
-    description: "Press a button below to make a choice."
+    title: 'Rock Paper Scissors',
+    color: '$getGlobalVar[embedcolor]',
+    description: 'Press a button below to make a choice.'
   },
   buttons: {
-    rock: "Rock",
-    paper: "Paper",
-    scissors: "Scissors"
+    rock: 'Rock',
+    paper: 'Paper',
+    scissors: 'Scissors'
   },
   emojis: {
-    rock: "🌑",
-    paper: "📰",
-    scissors: "✂️"
+    rock: '🌑',
+    paper: '📰',
+    scissors: '✂️'
   },
   mentionUser: true,
   timeoutTime: 60000,
-  buttonStyle: "SECONDARY",
-  pickMessage: "You choose {emoji}.",
-  winMessage: "**{player}** won the Game! Congratulations!",
-  tieMessage: "The Game tied! No one won the Game!",
-  timeoutMessage: "The Game went unfinished! No one won the Game!",
-  playerOnlyMessage: "Only {player} and {opponent} can use these buttons."
+  buttonStyle: 'SECONDARY',
+  pickMessage: 'You choose {emoji}.',
+  winMessage: '**{player}** won the Game! Congratulations!',
+  tieMessage: 'The Game tied! No one won the Game!',
+  timeoutMessage: 'The Game went unfinished! No one won the Game!',
+  playerOnlyMessage: 'Only {player} and {opponent} can use these buttons.'
 });
 
-Game.startGame()
-]`
-}]
+Game.startGame();
+]
+]
+`
+}

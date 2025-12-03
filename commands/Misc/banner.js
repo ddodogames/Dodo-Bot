@@ -1,22 +1,26 @@
 module.exports = {
     name: "banner",
     info: {
-        description: "Returns your/users profile banner.",
+        description: "Returns your/users banner.",
         usage: "`banner (user)`",
         perms: ["`SendMessages`"]
     },
-    aliases: ["userbanner","usrbanner"],
-    code: `$title[$get[username]'s Banner]
-    $image[$userBanner[$get[user]]]
-    $color[$getVar[embedcolor]]
-    $addButton[1;Download;5;$nonEscape[$userBanner[$get[user]]];false]
-    $onlyIf[$userBanner[$get[user]]!=null;$get[error]]
+    type: "messageCreate",
+    aliases: ["userbanner"],
+    disableConsoleErrors: true,
+    code: `$userCooldown[avatarcmd;3s;Cooldown has been triggered! Please, wait!
+    Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[avatarcmd]];1000]]:R>]
 
-    $let[error;$advancedReplaceText[$checkCondition[$get[user]==$authorID];true;You don't have a banner.;false;This user does not have a banner attached to their profile.]]
-    $let[username;$advancedReplaceText[$checkCondition[$hasUserTag[$get[user]]==false];true;$username[$get[user]];false;$userTag[$get[user]]]]
-    $let[user;$findUser[$message[1];true]]
+    $let[user;$findUser[$message;true]]
+    $let[username;$advancedReplace[$checkCondition[$callFunction[hasusertag;$get[user]]==true];true;$userTag[$get[user]];false;$username[$get[user]]]]
+    $let[error;$advancedReplace[$checkCondition[$get[user]==$authorID];true;You don't have a banner.;false;This user does not have a banner attached to their profile.]]
+    $onlyIf[$userBanner[$get[user]]!=;$get[error]]
 
-    $cooldown[3s; Slow down! Don't spam the command!
-    Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[3s;user;avatar;$authorID];$dateStamp];1000]]:R>]
+    $title[$get[username]'s banner]
+    $image[$userBanner[$get[user];;png]]
+    $color[$getGlobalVar[embedcolor]]
+    $addActionRow
+    $addButton[$userBanner[$get[user];;png];Open in browser;Link]
+
     `
 }

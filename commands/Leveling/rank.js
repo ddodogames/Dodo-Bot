@@ -1,25 +1,30 @@
-module.exports ={
+module.exports = {
     name: "rank",
+    type: "messageCreate",
     info: {
-        description: "View your or someone's current level.",
+        description: "View your/someone's current level.",
         usage: "`rank (user)`",
         perms: ["`SendMessages`"]
     },
     aliases: ["level", "lvl"],
-    code: `
+    disableConsoleErrors: true,
+    code: `$userCooldown[rankcmd;2s;Cooldown has been triggered! Please, wait!
+Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[rankcmd]];1000]]:R>]
+ $onlyIf[$getGuildVar[levelingsystem]==on;Leveling is not enabled currently.]
+
+$let[user;$findMember[$guildID;$message;true]]
+$onlyIf[$isBot[$get[user]]==false;Bots don't have Levels.]
 $title[$username[$get[user]]'s Rank]
 $addField[Progress;
-Level: \`$getUserVar[level;$get[user]]\`
-Experience: \`$getUserVar[xp;$get[user]]\`/\`$getUserVar[xpLimit;$get[user]]\`
-\`($createProgressBar[$getUserVar[xp;$get[user]];$getUserVar[xpLimit;$get[user]]])\`
+* **Level:** \`$getMemberVar[level;$get[user]]\`
+* **Experience:** \`$getMemberVar[xp;$get[user]]\`/\`$getMemberVar[xpLimit;$get[user]]\`
+\`($bar[$getMemberVar[xp;$get[user]];$getMemberVar[xpLimit;$get[user]];15;=;-])\`
+]
+$if[$getMemberLeaderboardValue[level;asc;$get[user]]!=0;
+$footer[Rank on LB: #$getMemberLeaderboardValue[level;asc;$get[user]]]
 ]
 $thumbnail[$userAvatar[$get[user]]]
-$color[$getVar[embedcolor]]
-
-$onlyIf[$isBot[$get[user]]==false;Bots do not have Levels.]
-$let[user;$findMember[$message;true]]
-$onlyIf[$getGuildVar[levelsystem]==on;Leveling is not enabled currently.]
-$cooldown[2s;Slow down! Don't spam the command!
-Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[2s;user;rank;$authorID];$dateStamp];1000]]:R>]
+$color[$getGlobalVar[embedcolor]]
 `
 }
+

@@ -1,20 +1,18 @@
 module.exports = {
-  name: "execute",
-  info: {
+name: "execute",
+info: {
     description: "Runs terminal commands directly in Discord.",
-    usage: "`execute <code>`",
+    usage: "`execute <command>`",
     perms: ["`SendMessages`"],
     dev: "true"
-  },
-  $if: "old",
-  aliases: "exec",
-  code: `$if[$charCount[$exec[$message]]>=2000]
-$createFile[$exec[$message];result.txt]
-$else
-\`\`\`$exec[$message]\`\`\`
-$endif
-$onlyIf[$message!=;Please send a terminal command to be executed.]
-$onlyIf[$checkContains[$clientOwnerIDs[| ];$authorID]==true;]
-
-  `
+},
+aliases: ["exec"],
+type: "messageCreate",
+code: `$callFunction[Devsonly]
+$onlyIf[$message!=;Please provide a command.]
+$if[$charCount[$exec[$message]]>=2000;
+$attachment[$exec[$message];output.txt;true]
+;
+$codeBlock[$exec[$message]]
+]`
 }

@@ -1,20 +1,20 @@
 module.exports = {
-    name: "readfile",
-    info: {
-      description: "Returns the contents of the file specified.",
-      usage: "`readfile <path to file>`",
-      perms: ["`SendMessages`"],
-      dev: "true"
-    },
-    aliases: ["viewfile", "readcontent", "viewcontent"],
-    $if: "old",
-    code: `$if[$charCount[$readFile[$message]]>=2000]
-$createFile[$readFile[$message];output.js]
-$else
-\`\`\`$readFile[$message]\`\`\`
-$endif
-$onlyIf[$fileExists[$message]==true;This file doesn't seem to exist.]
-$onlyIf[$message!=;You need to specify a path of the file to view.]
-$onlyIf[$checkContains[$clientOwnerIDs[| ];$authorID]==true;]
-    `
-  }
+name: "readfile",
+info: {
+    description: "Returns the contents of a file.",
+    usage: "`readfile <path>`",
+    perms: ["`SendMessages`"],
+    dev: "true"
+},
+aliases: ["viewfile"],
+type: "messageCreate",
+code: `$callFunction[Devsonly]
+$onlyIf[$message!=;Please enter the file path.]
+$onlyIf[$fileExists[$message]==true;You must specify a file that exists!]
+$if[$charCount[$readFile[$message]]>=2000;
+$attachment[$readFile[$message];output.js;true]
+;
+$codeBlock[$readFile[$message];js]
+]
+`
+}

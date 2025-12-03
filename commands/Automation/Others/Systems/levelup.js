@@ -1,35 +1,42 @@
 module.exports = [{
-    name: "$alwaysExecute",
-    code: `
-$levelUpMessage[$getGuildVar[levelupmessage]]
-$useChannel[$getGuildVar[levelupmessagechannel]]
+type: "messageCreate",
+code: `
+$onlyIf[$getGuildVar[levelingsystem]==on;]
 
-$onlyIf[$hasPermsInChannel[$getGuildVar[levelupmessagechannel];$clientID;viewchannel;sendmessages]==true;]
-$onlyIf[$guildChannelExists[$guildID;$getGuildVar[levelupmessagechannel]]==true;]
-$onlyIf[$getGuildVar[levelupmessagechannel]!=none;]
-$onlyIf[$getGuildVar[levelupmessagefeature]==on;]
-
-$setUserVar[xpLimit;$sum[$getUserVar[xpLimit;$authorID;$guildID];20];$authorID;$guildID]
-$setUserVar[level;$sum[$getUserVar[level;$authorID;$guildID];1];$authorID;$guildID]
-$setUserVar[previouslevel;$sum[$getUserVar[previouslevel;$authorID;$guildID];1];$authorID;$guildID]
-
-$disableMentionType[roles]
-$disableMentionType[everyone]
-$onlyIf[$isBot==false;]
-$onlyIf[$getUserVar[xp]==$getUserVar[xpLimit];]
-$onlyIf[$getGuildVar[levelsystem]==on;]
-`
-},{
-    name: "$alwaysExecute",
-    code: `
-$setUserVar[xp;$sum[$getUserVar[xp];1];$authorID;$guildID]
-$setGuildVar[islevelingreset;no]
-
+$let[memberroles;$advancedReplace[$checkCondition[$memberRoles==];true;Nothing;false;$memberRoles]]
+$let[channelcategory;$advancedReplace[$checkCondition[$channelCategoryID==];true;Nothing;false;$channelCategoryID]]
 $onlyIf[$checkContains[$getGuildVar[levelingexcludedchannels];$channelID]==false;]
 $onlyIf[$checkContains[$getGuildVar[levelingexcludedcategories];$get[channelcategory]]==false;]
-$let[channelcategory;$advancedReplaceText[$checkCondition[$channelCategoryID==];true;Nothing;false;$channelCategoryID]]
+$onlyIf[$checkContains[$get[memberroles];$getGuildVar[levelingexcludedroles]]==false;]
 
-$cooldown[2s;]
-$onlyIf[$isBot==false;]
-$onlyIf[$getGuildVar[levelsystem]==on;]`
+$memberCooldown[autoxpgain;2s]
+$setMemberVar[xp;$sum[$getMemberVar[xp;$authorID];1];$authorID]
+
+`
+},{
+type: "messageCreate",
+code: `
+$disableEveryoneMention
+$disableRoleMentions
+
+$onlyIf[$getGuildVar[levelingsystem]==on;]
+$onlyIf[$getMemberVar[xp]==$getMemberVar[xpLimit];]
+$setMemberVar[xpLimit;$sum[$getMemberVar[xpLimit;$authorID];20];$authorID]
+$setMemberVar[level;$sum[$getMemberVar[level;$authorID];1];$authorID]
+$setMemberVar[previouslevel;$sum[$getMemberVar[previouslevel;$authorID];1];$authorID]
+
+$onlyIf[$getGuildVar[levelingmessagefeature]==on;]
+$onlyIf[$getGuildVar[levelupmessagechannel]!=;]
+$onlyIf[$guildChannelExists[$guildID;$getGuildVar[levelupmessagechannel]]==true;]
+$onlyIf[$channelHasPerms[$getGuildVar[levelupmessagechannel];$clientID;ViewChannel;SendMessages]==true;]
+
+
+
+$sendMessage[$getGuildVar[levelupmessagechannel];
+$callFunction[Levelingmessage;$getGuildVar[levelingmessage]]
+]
+
+
+
+`
 }]

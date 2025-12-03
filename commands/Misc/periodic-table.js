@@ -2,35 +2,32 @@ module.exports = {
     name: "periodic-table",
     info: {
         description: "Returns random periodic table.",
-        perms: "`SendMessages`"
+        perms: ["`SendMessages`"]
     },
+    type: "messageCreate",
     aliases: ["pt"],
-    code: `
+    code: `$userCooldown[periodictablecmd;3s;Cooldown has been triggered! Please, wait!
+    Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[periodictablecmd]];1000]]:R>]
+    $let[status;$httpRequest[https://api.popcat.xyz/v2/periodic-table/random;get]]
+    $onlyIf[$get[status]==200;Unable to fetch data for periodic table. Please try again later.]
 
-    $title[$getObjectProperty[api;message.name]]
+    $title[$httpResult[message;name]]
     $description[
-    **About $getObjectProperty[api;message.name]**
-    $getObjectProperty[api;message.summary]
+    **About $httpResult[message;name]**
+    $httpResult[message;summary]
     ]
-    $addField[Other;
-* **Symbol**: $getObjectProperty[api;message.symbol]
-* **Period**: $getObjectProperty[api;message.period]
-* **Discovered by**: $getObjectProperty[api;message.discovered_by]
-    ;true]
     $addField[General;
-* **Phase**: $getObjectProperty[api;message.phase]
-* **atomic number**: $getObjectProperty[api;message.atomic_number]
-* **atomic mass**: $getObjectProperty[api;message.atomic_mass]
+* **Phase**: $httpResult[message;phase]
+* **atomic number**: $httpResult[message;atomic_number]
+* **atomic mass**: $httpResult[message;atomic_mass]
     ;true]
-    $thumbnail[$getObjectProperty[api;message.image]]
-    $color[$getVar[embedcolor]]
+    $addField[Other;
+* **Symbol**: $httpResult[message;symbol]
+* **Period**: $httpResult[message;period]
+* **Discovered by**: $httpResult[message;discovered_by]
+    ;true]
+    $thumbnail[$httpResult[message;image]]
+    $color[$getGlobalVar[embedcolor]]
 
-    $createObject[api;$nonEscape[$get[jsonresponse]]]
-    $onlyIf[$isValidObject[$nonEscape[$get[jsonresponse]]]==true;$get[error]]
-    $let[jsonresponse;$httpRequest[https://api.popcat.xyz/v2/periodic-table/random;GET;;;$get[error]]]
-    $let[error;Unable to fetch data for periodic-table. Please try again later.]
-
-    $cooldown[3s; Slow down! Don't spam the command!
-    Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[3s;user;periodic-table;$authorID];$dateStamp];1000]]:R>]
     `
 }

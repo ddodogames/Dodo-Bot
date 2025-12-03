@@ -1,34 +1,40 @@
 module.exports = {
 name: "userinfo",
 info: {
-    description: "Returns your/user's information.",
-    usage: "`userinfo (user)`",
-    perms: ["`SendMessages`"]
+description: "Returns information about you (or the user if mentioned).",
+usage: "`userinfo (user)`",
+perms: ["`SendMessages`"]
 },
-$if: "old",
-aliases: ["user", "user-info"],
-code: `$title[Information for $get[username];$userURL[$get[user]]]
-$addField[**Other**;
-* **Avatar:** [link]($userAvatar[$get[user]])
-* **DMs:** $get[userdms]
-;true]
+type: "messageCreate",
+aliases: ["user", "usrinfo"],
+disableConsoleErrors: true,
+code: `$userCooldown[userinfocmd;2s;Cooldown has been triggered! Please, wait!
+Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[userinfocmd]];1000]]:R>]
+
+$let[user;$findUser[$message;true]]
+$let[username;$advancedReplace[$checkCondition[$callFunction[hasusertag;$get[user]]==true];true;$userTag[$get[user]];false;$username[$get[user]]]]
+$let[accounttype;$advancedReplace[$checkCondition[$isBot[$get[user]]==true];true;Bot;false;Human]]
+$let[dmsstatus;$advancedReplace[$checkCondition[$isUserDMEnabled[$get[user]]==true];true;Enabled;false;Disabled]]
+$let[botverified;$advancedReplace[$checkCondition[$isBotVerified[$get[user]]==true];true;Yes;false;No]]
+
+$title[$get[username]'s information;$callFunction[userURL;$get[user]]]
 $addField[**General**;
-* **Joined Discord on:** <t:$truncate[$divide[$creationDate[$get[user];ms];1000]]:f>
-* **Bot account:** $get[botchecker]
+* **Joined Discord on:** <t:$trunc[$divide[$userCreatedAt[$get[user]];1000]]:f>
+* **Account type:** $get[accounttype]$if[$isBot[$get[user]]==true;
+* **Bot Verified:** $get[botverified]]
 * **ID:** $get[user]
 ;true]
-$color[$getVar[embedcolor]]
+$addField[**Other**;
+* **Avatar:** $hyperlink[link;$userAvatar[$get[user]]]$if[$userBanner[$get[user]]!=;
+* **Banner:** $hyperlink[link;$userBanner[$get[user]]]]
+* **DMS:** $get[dmsstatus]
+;true]
 $thumbnail[$userAvatar[$get[user]]]
-$if[$memberExists[$findUser[$message[1;true]];$guildID]==true]
-$addButton[1;Member's Server info;2;memberservinfo_$authorID_$get[user];false]
-$addButton[1;General info;2;mainmeminfo_$authorID_$get[user];true]
-$endif
-
-$let[username;$advancedReplaceText[$checkCondition[$hasUserTag[$get[user]]==false];true;$username[$get[user]];false;$userTag[$get[user]]]]
-$let[botchecker;$advancedReplaceText[$checkCondition[$isBot[$get[user]]==true];true;Yes;false;No]]
-$let[userdms;$advancedReplaceText[$checkCondition[$isUserDmEnabled[$get[user]]==true];true;Enabled;false;Disabled]]
-$let[user;$findUser[$message[1];true]]
-$cooldown[2s; Slow down! Don't spam the command!
-Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[2s;user;user;$authorID];$dateStamp];1000]]:R>]
+$color[$getGlobalVar[embedcolor]]
+$if[$memberExists[$guildID;$get[user]]==true;
+$addActionRow
+$addButton[generalmeminfo_$authorID_$get[user];General info;Secondary;;true]
+$addButton[memberservinfo_$authorID_$get[user];Member's Server info;Secondary]
+]
 `
 }
