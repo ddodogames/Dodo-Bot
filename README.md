@@ -21,10 +21,6 @@ The purpose of this version is to keep Dodo-Bot alive without relying on aoi.js 
 
 This bot purely exists just because i got sick of some verified bot but you can use this project and also learn from it if you happen to be a person using ForgeScript!
 
-## What about v2?
-V2 will be kept alive for a while for those that prefer using the aoi.js version but keep in mind that i barely have interest in adding new features to it anymore. It should be also noted that it can eventually break if aoi.js never got updated to follow up some changes djs had done in a new release.
-
-Most of the releases of v2 at this point will be small ones mostly dedicated to fixing bugs found in the code there (small changes are possible tho). There's currently no ETA for when it will go EOL so no need to panic!
 
 # Versions
 | Release | Description | Status |
