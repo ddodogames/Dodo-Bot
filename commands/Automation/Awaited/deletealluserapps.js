@@ -11,5 +11,6 @@ module.exports = {
     $deleteApplicationCommand[global;$getApplicationCommandID[randomcolor;global]]
     $deleteApplicationCommand[global;$getApplicationCommandID[reverse;global]]
     $deleteApplicationCommand[global;$getApplicationCommandID[owoify;global]]
-    $deleteApplicationCommand[global;$getApplicationCommandID[invite;global]]`
+    $deleteApplicationCommand[global;$getApplicationCommandID[invite;global]]
+    `
 }
