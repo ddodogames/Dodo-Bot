@@ -3,8 +3,10 @@ module.exports = [{
     prototype: "button",
     code: `
     $interactionUpdate[{newEmbed:{title:Changes}{description:
-* Bumped aoi.js to version \`6.11.1\`
-* Added alias \`botperms\` for \`perms\`
+* Added \`couldread\` command
+* (Devs only) Added a way to easily refresh member cache of all servers
+* (Devs only) Allow deleting user apps directly through a command
+* Added alias \`h\` for \`help\`
 }{color:$getVar[embedcolor]}$nonEscape[$get[devbuild]]}{actionRow:{button:Home:2:homebutton_$authorID:false:🏠}{button:Changes:2:versionchanges_$authorID:true}{button:Bug Fixes:2:versionbugfixes_$authorID:false}{button:Other:2:versionother_$authorID:false}}{actionRow:{button:Changelog history:5:https#COLON#//github.com/ddodogames/Dodo-Bot/releases:false:📜}}]
 
 $let[devbuild;$if[$getVar[pre_release]==on;{footer:Testing is recommended:https#COLON#//us-east-1.tixte.net/uploads/dodogames.wants.solutions/refreshedredwarning2.png};]]
@@ -20,9 +22,9 @@ $let[devbuild;$if[$getVar[pre_release]==on;{footer:Testing is recommended:https#
     prototype: "button",
     code: `
     $interactionUpdate[{newEmbed:{title:Bug Fixes}{description:
-* Fixed weird formatting in "General" section on \`periodic-table\` command
-* Fixed \`prefix\` usage part in \`commandinfo\` where \`new prefix\` parameter was "required" despite it being optional
-* (Source code) Make dotenvx look for \`.env\` or \`.env.local\` to avoid potential problems
+* (Devs only) Fixed inconsistent description of "Show build info" option in \`dev-panel\`
+* Made \`wyr\` command work again
+  * The error message when the command fails is also now less confusing
 }{color:$getVar[embedcolor]}$nonEscape[$get[devbuild]]}{actionRow:{button:Home:2:homebutton_$authorID:false:🏠}{button:Changes:2:versionchanges_$authorID:false}{button:Bug Fixes:2:versionbugfixes_$authorID:true}{button:Other:2:versionother_$authorID:false}}{actionRow:{button:Changelog history:5:https#COLON#//github.com/ddodogames/Dodo-Bot/releases:false:📜}}]
 
 $let[devbuild;$if[$getVar[pre_release]==on;{footer:Testing is recommended:https#COLON#//us-east-1.tixte.net/uploads/dodogames.wants.solutions/refreshedredwarning2.png};]]
@@ -37,9 +39,9 @@ $let[devbuild;$if[$getVar[pre_release]==on;{footer:Testing is recommended:https#
       type: "interaction",
     prototype: "button",
     code: `$interactionUpdate[{newEmbed:{title:Other}{description:
-* (Pre-release only) Incomplete builds will now refer to themselves as "Canary" rather than "Pre-release"
-  * Released ones will still retain the "Pre-release" type
-* (Source code) Bumped \`@dotenvx/dotenvx\` to version \`1.51.0\`
+* Temporarily disable \`guess-the-pokemon\` command (as it stopped working)
+* The "Cpu" part in \`stats\` command now also counts host's cpu resources
+* (Source code) Bumped \`@dotenvx/dotenvx\` to version \`1.51.1\`
  }{color:$getVar[embedcolor]}$nonEscape[$get[devbuild]]}{actionRow:{button:Home:2:homebutton_$authorID:false:🏠}{button:Changes:2:versionchanges_$authorID:false}{button:Bug Fixes:2:versionbugfixes_$authorID:false}{button:Other:2:versionother_$authorID:true}}{actionRow:{button:Changelog history:5:https#COLON#//github.com/ddodogames/Dodo-Bot/releases:false:📜}}]
 
 $let[devbuild;$if[$getVar[pre_release]==on;{footer:Testing is recommended:https#COLON#//us-east-1.tixte.net/uploads/dodogames.wants.solutions/refreshedredwarning2.png};]]

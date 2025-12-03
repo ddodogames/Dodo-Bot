@@ -9,8 +9,8 @@ info: {
 $if: "old",
 aliases: "wyr",
 code: `$title[Would you rather...]
-$addField[**Option 2**;$getObjectProperty[api;data.option2]]
-$addField[**Option 1**;$getObjectProperty[api;data.option1]]
+$addField[**Option 2**;$getObjectProperty[api;message.ops2]]
+$addField[**Option 1**;$getObjectProperty[api;message.ops1]]
 $color[$getVar[embedcolor]]
 
 $if[$checkContains[$message;--usereactions;—usereactions]==true]
@@ -25,8 +25,8 @@ $endif
 
 $createObject[api;$nonEscape[$get[jsonresponse]]]
 $onlyIf[$isValidObject[$nonEscape[$get[jsonresponse]]]==true;$get[error]]
-$let[jsonresponse;$httpRequest[https://api.gamecord.xyz/wyr;GET;;;$get[error]]]
-$let[error;Unable to fetch question data for wyr. Please try again later.]
+$let[jsonresponse;$httpRequest[https://api.popcat.xyz/v2/wyr;GET;;;$get[error]]]
+$let[error;Unable to fetch data for wyr. Please try again later.]
 $cooldown[4s; Slow down! Don't spam the command!
 Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[4s;user;would-you-rather;$authorID];$dateStamp];1000]]:R>]
 `
