@@ -11,6 +11,7 @@ $interactionUpdate[
 $title[Changes]
 $description[
 * Removed all references to Rebase (it has been renamed to v3)
+* Added 2 new topics to \`randomtopic\` command
 * Added \`couldread\` command
 ]
 $if[$getGlobalVar[pre_release]==on;
