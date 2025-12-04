@@ -4,7 +4,7 @@ module.exports = {
 // Main variables (don't touch unless you know what you're doing)
 version: "3.0.2",
 versionCodename: "Quiet Tree",
-libraryversiondevcheck: "off",
+islibraryversiondev: "off",
 pre_release: "on",
 release_type: "Stable",
 DevReleaseTypeToSet: "Canary",
@@ -26,6 +26,7 @@ embedcolor: config.Embedcolor,
 originalembedcolor: config.Embedcolor,
 // Feature variables
 suggestionchannel: "",
+pollchannel: "",
 msglogdeletechannel: "",
 msglogeditchannel: "",
 banlogschannel: "",

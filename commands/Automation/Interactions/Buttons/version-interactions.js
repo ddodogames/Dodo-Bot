@@ -11,6 +11,7 @@ $interactionUpdate[
 $title[Changes]
 $description[
 * Removed all references to Rebase (it has been renamed to v3)
+* Re-added the polls feature (I'm stupid for not noticing this)
 * Added 2 new topics to \`randomtopic\` command
 * Ported \`couldread\` command from v2 to here
 ]
@@ -68,7 +69,7 @@ $title[Other]
 $description[
 * Updated credits in \`credits\` command
 * (Source code) Refresh the readme file
-* Updated the embed color to \`#404060\` (might be changed again if i deem it not perfect)
+* Updated the embed color to \`#404060\` as the replacement for v2's one
 ]
 $if[$getGlobalVar[pre_release]==on;
 $attachment[./assets/warning.png;warning.png]

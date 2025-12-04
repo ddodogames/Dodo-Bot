@@ -94,12 +94,12 @@ $ephemeral
     $interactionUpdate[
     $title[Utility]
     $addField[**Management**;
-\`suggest-setup\`, \`setup-logs\`, \`welcomer\`, \`leave\`, \`prefix\`, \`reset-prefix\`
+\`suggest-setup\`, \`poll-set\`, \`setup-logs\`, \`welcomer\`, \`leave\`, \`prefix\`, \`reset-prefix\`
     ]
 $addField[**Info**;
 \`userinfo\`, \`serverinfo\`]
 $addField[**Miscellaneous**;
-\`randomcolor\`, \`avatar\`, \`banner\`, \`morse\`, \`aur\`, \`periodic-table\`, \`suggest\`]
+\`randomcolor\`, \`avatar\`, \`banner\`, \`morse\`, \`aur\`, \`periodic-table\`, \`suggest\`, \`poll\`]
     $color[$getGlobalVar[embedcolor]]
     $addActionRow
     $addStringSelectMenu[helpmenu_$authorID;Select a module;false;1;1]

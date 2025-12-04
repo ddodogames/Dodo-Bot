@@ -10,7 +10,7 @@ module.exports = {
 $userCooldown[statscmd;2s;Cooldown has been triggered! Please, wait!
 Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[statscmd]];1000]]:R>]
 $let[uptime;<t:$round[$divide[$sub[$getTimestamp;$uptime];1000]]:R>]
-$let[fsversion;$advancedReplace[$checkCondition[$getGlobalVar[libraryversiondevcheck]==on];true;\`v$version\` (Dev);false;\`v$version\`]]
+$let[fsversion;$advancedReplace[$checkCondition[$getGlobalVar[islibraryversiondev]==on];true;\`v$version\` (Dev);false;\`v$version\`]]
 $let[dodobotversion;$advancedReplace[$checkCondition[$getGlobalVar[pre_release]==on];true;\`v$getGlobalVar[version]\` (Dev);false;\`v$getGlobalVar[version]\`]]
 
 $title[$username[$clientID]'s Stats]
