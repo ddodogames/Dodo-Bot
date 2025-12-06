@@ -69,7 +69,7 @@ $title[Other]
 $description[
 * Updated credits in \`credits\` command
 * (Source code) Refresh the readme file
-* Updated the embed color to \`#404060\` as the replacement for v2's one
+* Updated the embed color to \`#404060\` as the replacement for v2 one
 ]
 $if[$getGlobalVar[pre_release]==on;
 $attachment[./assets/warning.png;warning.png]

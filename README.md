@@ -42,11 +42,11 @@ You can host v3 on any host as long as you meet the following Requirements:
 # Configuration
 Dodo-Bot allows you to change some options before turning it on. To do this, check out the `config.js` file present in the source code itself which contains available options to change from!
 
-If you're confused, here are descriptions about each option:
+If you're confused about the options, here is a description about what each option does:
 | Option | Description | Default |
 | :------- | :------: | -------: |
 | prefix  | Prefix to use to execute any bot command.  | `d!`  |
-| prefixCaseInsensitive  | Whether or not to type prefix as case-sensitive (e.g `d!` can be also typed as `D!` if this is enabled).   | `true`  |
+| prefixCaseInsensitive  | Whether or not to type prefix as case-insensitive (e.g `d!` can be also typed as `D!` if this is enabled).   | `true`  |
 | BotToken  | Token of the bot to use to run the project.   | none (obviously)  |
 | Embedcolor  | Color to use for the majority of commands returning embed.   | `#404060`  |
 | MobileStatus  | Sets the online icon of the bot to the mobile variant whenever it starts.   | `false`  |

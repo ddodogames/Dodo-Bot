@@ -46,7 +46,7 @@ $let[message;$arrayAt[message;1]]
 $onlyIf[$or[$get[title]==;$get[message]==]==false;You need to type something to send a suggestion in this server.
 
 Here's the usage:
-\`$getGuildVar[prefix]suggest title/description\`
+\`$getGuildVar[prefix]suggest <title/description>\`
 ]
 
 $onlyIf[$getGuildVar[suggestionchannel]!=;

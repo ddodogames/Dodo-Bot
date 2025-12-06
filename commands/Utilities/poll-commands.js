@@ -40,6 +40,53 @@ module.exports = [{
     code: `$userCooldown[pollcmd;4s;Cooldown has been triggered! Please, wait!
     Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[pollcmd]];1000]]:R>]
 
-    $onlyIf[disabled!=disabled;Not yet.]`
+    $arrayLoad[message;/;$message]
+    $let[content;$arrayAt[message;0]]
+    $let[choice1;$arrayAt[message;1]]
+    $let[choice2;$arrayAt[message;2]]
+
+    $onlyIf[$or[$get[content]==;$get[choice1]==;$get[choice2]==]==false;You need to type something to send a poll in this server.
+
+    Here's the usage:
+    \`$getGuildVar[prefix]poll <content/choice 1/choice 2>\`
+    ]
+
+    $onlyIf[$getGuildVar[pollchannel]!=;
+    There's no channel set for polls currently.
+
+    Until then, the server staff must set a channel for polls to work.
+    ]
+
+    $onlyIf[$guildChannelExists[$guildID;$getGuildVar[suggestionchannel]]==true;
+    The channel used for polls doesn't seem to exist anymore.
+
+    Until then, the server staff must set a new channel for polls to work once again.
+    ]
+
+    $onlyIf[$channelHasPerms[$getGuildVar[pollchannel];$clientID;SendMessages;ViewChannel;AddReactions]==true;
+    I do not have permissions to either send messages or view the polls channel.
+
+    In order to send your suggestion there, the server staff must give me the following:
+    \`AddReactions\`
+    \`SendMessages\`
+    \`ViewChannel\`
+    ]
+
+    $onlyIf[$charCount[$get[content]]<=3570;
+    You can only insert up to 3570 characters for content.
+    ]
+    $onlyIf[$charCount[$get[choice1]]<=200;
+    You can only insert up to 200 characters for choice 1.
+    ]
+    $onlyIf[$charCount[$get[choice2]]<=200;
+    You can only insert up to 3000 characters for choice 2.
+    ]
+
+    $onlyIf[disabled!=disabled;Not yet.]
+
+    $sendMessage[$channelID;
+    Alright, your poll has been sent to <#$getGuildVar[pollchannel]>
+    ]
+`
 
 }]
