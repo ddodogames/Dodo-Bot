@@ -78,7 +78,7 @@ You can only insert up to 3000 characters for description
 ]
 
 $sendMessage[$channelID;
-Alright, your suggestion has been sent to <#$getGuildVar[suggestionchannel]>
+Alright, your suggestion has been sent to <#$getGuildVar[suggestionchannel]>!
 ]
 
 $let[messageID;$sendMessage[$getGuildVar[suggestionchannel];

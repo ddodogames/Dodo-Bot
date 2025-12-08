@@ -22,7 +22,7 @@ The purpose of this version is to keep Dodo-Bot alive without relying on aoi.js 
 This bot purely exists just because i got sick of some verified bot but you can use this project and also learn from it if you happen to be a person using ForgeScript!
 
 ### What about v2?
-V2 has been discontinued following the eol of aoi.js because there doesn't seem to be a good reason to still maintain it if the package it's relying on is left to rot. It just creates issues nobody would want and it means missing out on any improvements and fixes for any breaking changes caused by Discord itself.
+V2 has been discontinued following the eol of aoi.js because there doesn't seem to be a good reason to still maintain it if the package it's relying on is left to rot. It just creates issues nobody wants and it means missing out on improvements and fixes for any breaking changes caused by Discord itself.
 
 You can still use it because nothing is stopping you from doing so but being discontinued means it won't be updated and any bugs will remain unfixed. It can also eventually break in the future since outdated stuff do break by some major changes.
 

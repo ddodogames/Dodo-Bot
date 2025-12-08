@@ -82,11 +82,24 @@ module.exports = [{
     You can only insert up to 3000 characters for choice 2.
     ]
 
-    $onlyIf[disabled!=disabled;Not yet.]
-
     $sendMessage[$channelID;
-    Alright, your poll has been sent to <#$getGuildVar[pollchannel]>
+    Alright, your poll has been sent to <#$getGuildVar[pollchannel]>!
     ]
+
+    $let[messageID;$sendMessage[$getGuildVar[pollchannel];
+    $author[Poll by $username;$userAvatar;$callFunction[userURL;$authorID]]
+    $description[$get[content]
+
+    1️⃣: **$get[choice1]**
+
+    2️⃣: **$get[choice2]**
+    ]
+    $footer[Poll started since]
+    $timestamp
+    $color[$getGlobalVar[embedcolor]]
+    ;true]]
+
+    $!addMessageReactions[$getGuildVar[pollchannel];$get[messageID];1️⃣;2️⃣]
 `
 
 }]
