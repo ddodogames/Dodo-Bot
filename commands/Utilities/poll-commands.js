@@ -79,7 +79,7 @@ module.exports = [{
     You can only insert up to 200 characters for choice 1.
     ]
     $onlyIf[$charCount[$get[choice2]]<=200;
-    You can only insert up to 3000 characters for choice 2.
+    You can only insert up to 200 characters for choice 2.
     ]
 
     $sendMessage[$channelID;
