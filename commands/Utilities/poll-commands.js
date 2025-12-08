@@ -57,7 +57,7 @@ module.exports = [{
     Until then, the server staff must set a channel for polls to work.
     ]
 
-    $onlyIf[$guildChannelExists[$guildID;$getGuildVar[suggestionchannel]]==true;
+    $onlyIf[$guildChannelExists[$guildID;$getGuildVar[pollchannel]]==true;
     The channel used for polls doesn't seem to exist anymore.
 
     Until then, the server staff must set a new channel for polls to work once again.
