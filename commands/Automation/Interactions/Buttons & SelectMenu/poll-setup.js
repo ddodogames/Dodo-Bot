@@ -15,7 +15,7 @@ module.exports = [{
     ]
 
     $onlyIf[$channelHasPerms[$selectMenuValues;$clientID;ViewChannel;SendMessages;AddReactions]==true;
-    $interactionReply[You selected a channel that i do not have the required permissions for. To set a channel for suggestions, i must have the following permissions for the selected channel:
+    $interactionReply[You selected a channel that i do not have the required permissions for. To set a channel for polls, i must have the following permissions for the selected channel:
     \`AddReactions\`
     \`SendMessages\`
     \`ViewChannel\`
