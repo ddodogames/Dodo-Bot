@@ -43,7 +43,7 @@ $arrayLoad[message;/;$message]
 $let[title;$arrayAt[message;0]]
 $let[message;$arrayAt[message;1]]
 
-$onlyIf[$or[$get[title]==;$get[message]==]==false;You need to type something to send a suggestion in this server.
+$onlyIf[$or[$get[title]==;$get[message]==]==false;Hey there! Your usage seems to be wrong. Make sure it's correct!
 
 Here's the usage:
 \`$getGuildVar[prefix]suggest <title/description>\`

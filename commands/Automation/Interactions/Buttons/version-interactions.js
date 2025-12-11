@@ -41,6 +41,7 @@ $interactionUpdate[
 $title[Bug Fixes]
 $description[
 * Did some rewording to fix grammar
+* \`guess-the-pokemon\` command now works again
 ]
 $if[$getGlobalVar[pre_release]==on;
 $attachment[./assets/warning.png;warning.png]
@@ -70,6 +71,7 @@ $description[
 * Updated credits in \`credits\` command
 * (Source code) Refresh the readme file
 * Updated the embed color to \`#404060\` as the replacement for v2 one
+* (Source code) Bumped \`discord-gamecord\` to version \`4.4.4\`
 ]
 $if[$getGlobalVar[pre_release]==on;
 $attachment[./assets/warning.png;warning.png]

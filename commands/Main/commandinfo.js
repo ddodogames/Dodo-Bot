@@ -26,7 +26,7 @@ $let[usage;$advancedReplace[$checkCondition[$env[cmdinfo;info;usage]==];true;Has
 $onlyIf[$env[cmdinfo;info;dev]==;Viewing developer commands is unsupported.]
 
 $attachment[./assets/magnifying-glass-tilted-left.png;magnifying-glass.png]
-$author[Command info looker;attachment://magnifying-glass.png]
+$author[Command info;attachment://magnifying-glass.png]
 $title[$get[actualname]]
 $description[$env[cmdinfo;info;description]]
 $addField[Usage;$get[usage]]

@@ -10,7 +10,6 @@ module.exports = {
     code: `
     $userCooldown[gtpcmd;3s;Cooldown has been triggered! Please, wait!
     Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[gtpcmd]];1000]]:R>]
-    $onlyIf[disabled!=disabled;This command has been temporarily disabled due to issues.]
 
     $let[status;$httpRequest[https://api.gamecord.xyz/pokemon;get]]
     $onlyIf[$get[status]==200;Unable to fetch data for Pokemon. Please try again later.]
