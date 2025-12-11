@@ -11,7 +11,7 @@ module.exports = {
     $userCooldown[gtpcmd;3s;Cooldown has been triggered! Please, wait!
     Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[gtpcmd]];1000]]:R>]
 
-    $let[status;$httpRequest[https://api.gamecord.xyz/pokemon;get]]
+    $let[status;$httpRequest[https://api-gamecord-e0cd45547eef.herokuapp.com/pokemon;get]]
     $onlyIf[$get[status]==200;Unable to fetch data for Pokemon. Please try again later.]
 
     $let[questionMessage;$sendMessage[$channelID;Loading... Please wait...;true]]
