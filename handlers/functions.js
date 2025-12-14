@@ -2,7 +2,7 @@ module.exports = [{
     name: "randomtopic",
     params: [],
     code: `
-$let[topics;$randomText[Did you go out today?;What did you eat today?;What are you currently worried about?;What game have you spent the most hours playing?;What game have you spent the most hours playing?;What movie can you watch over and over without ever getting tired of?;What are you interested in that most people aren't?;How do you judge a person?;What do you think you are much better at than you actually are?;Do you enjoy spicy food?;Do you usually get bored most of the time?;What do you think about technology?;What do you think about AI?;Are you afraid of the future?;What are you looking forward to in the future?]]
+$let[topics;$randomText[Did you go out today?;What did you eat today?;What are you currently worried about?;What game have you spent the most hours playing?;What game have you spent the most hours playing?;What movie can you watch over and over without ever getting tired of?;What are you interested in that most people aren't?;How do you judge a person?;What do you think you are much better at than you actually are?;Do you enjoy spicy food?;Do you usually get bored most of the time?;What do you think about technology?;What do you think about AI?;Are you afraid of the future?;What are you looking forward to in the future?;What year do you miss the most and wish to go back to it?]]
 
     $return[$get[topics]]
     `
@@ -15,25 +15,25 @@ $let[topics;$randomText[Did you go out today?;What did you eat today?;What are y
 `
   },{
     name: "filterembedflag",
-    params: ["content"],
+    params: ["text"],
     code: `
-$let[message;$advancedReplace[$env[content];--embed;;—embed;]]
+$let[message;$advancedReplace[$env[text];--embed;;—embed;]]
     $return[$get[message]]
     `
   },{
     name: "hasusertag",
-    params: ["query"],
+    params: ["userID"],
     code: `
-$let[user;$findUser[$env[query];true]]
+$let[user;$findUser[$env[userID];true]]
 $let[result;$checkCondition[$charCount[$discriminator[$get[user]]]!=1]]
 
     $return[$get[result]]
     `
   },{
     name: "hasnickname",
-    params: ["guildID", "query"],
+    params: ["guildID", "userID"],
     code: `
-$let[user;$findUser[$env[query];true]]
+$let[user;$findUser[$env[userID];true]]
 $let[result;$checkCondition[$nickname[$env[guildID];$get[user]]!=$userDisplayName[$get[user]]]]
 
     $return[$get[result]]

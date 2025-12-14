@@ -23,6 +23,7 @@ module.exports = {
     $addField[Abilities;$djsEval[$httpResult[data;abilities].join(", ")];true]
     $attachment[$httpResult[data;questionImage];questionImage.png]
     $image[attachment://questionImage.png]
+    $footer[Height: $httpResult[data;height] | Weight: $httpResult[data;weight]]
     $color[$getGlobalVar[embedcolor]]
     ]
 
@@ -39,6 +40,7 @@ module.exports = {
     $addField[Abilities;$djsEval[$httpResult[data;abilities].join(", ")];true]
     $attachment[$httpResult[data;answerImage];answerImage.png]
     $image[attachment://answerImage.png]
+    $footer[Height: $httpResult[data;height] | Weight: $httpResult[data;weight]]
     $color[$getGlobalVar[embedcolor]]
     ]
     ;

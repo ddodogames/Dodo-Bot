@@ -12,7 +12,7 @@ $title[Changes]
 $description[
 * Removed all references to Rebase (it has been renamed to v3)
 * Re-added the polls feature (I'm stupid for not noticing this)
-* Added 2 new topics to \`randomtopic\` command
+* Added 3 new topics to \`randomtopic\` command
 * Ported \`couldread\` command from v2 to here
 ]
 $if[$getGlobalVar[pre_release]==on;
@@ -69,9 +69,9 @@ $interactionUpdate[
 $title[Other]
 $description[
 * Updated credits in \`credits\` command
-* (Source code) Refresh the readme file
+* Added weight and height information to \`guess-the-pokemon\` command
+* (Source code) Refresh the readme file and bumped 2 packages
 * Updated the embed color to \`#404060\` as the replacement for v2 one
-* (Source code) Bumped \`discord-gamecord\` to version \`4.4.4\`
 ]
 $if[$getGlobalVar[pre_release]==on;
 $attachment[./assets/warning.png;warning.png]
