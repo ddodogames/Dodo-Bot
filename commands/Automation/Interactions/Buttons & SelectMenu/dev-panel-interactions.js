@@ -325,9 +325,9 @@ $ephemeral
 
     $interactionReply[
         $title[Embed color Preview]
-        $description[This is how it will appear!]
+        $description[This is how it will look!]
         $color[$getGlobalVar[embedcolor]]
-        $footer[Pretty cool right?]
+        $footer[Pretty cool, right?]
         $ephemeral
     ]`
 },{
@@ -342,7 +342,7 @@ $let[pre_release;$advancedReplace[$getGlobalVar[pre_release];off;Disabled;on;Ena
 
 $interactionReply[
 $title[Pre-release]
-$description[This option let's you decide on whether or not the current build should be marked as pre-release build. By default, it is commonly enabled for development builds.
+$description[This option let's you decide on whether or not the current build should be marked as pre-release build. By default, it is enabled for development builds.
 
 Disabling this option will cause all sorts of pre-release stuff to be absent such as the development warning on the console!]
 $addField[Current Setup;$get[pre_release]]
