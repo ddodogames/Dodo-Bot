@@ -12,7 +12,8 @@ $title[Changes]
 $description[
 * Removed all references to Rebase (it has been renamed to v3)
 * Re-added the polls feature (I'm stupid for not noticing this)
-* Added 3 new topics to \`randomtopic\` command
+* Added 6 new topics to \`randomtopic\` command
+* Added a custom Arch logo to \`aur\` command
 * Ported \`couldread\` command from v2 to here
 ]
 $if[$getGlobalVar[pre_release]==on;
@@ -71,6 +72,8 @@ $description[
 * Updated credits in \`credits\` command
 * Added weight and height information to \`guess-the-pokemon\` command
 * (Source code) Refresh the readme file and bumped 2 packages
+* (Source code) Updated \`better-sqlite3\` to version \`12.5.0\` to support newer Node.js releases
+  * This also means that Node.js v20 or later is now required again to use Dodo-Bot after previously sitting on v18 from 3.0.1
 * Updated the embed color to \`#404060\` as the replacement for v2 one
 ]
 $if[$getGlobalVar[pre_release]==on;
