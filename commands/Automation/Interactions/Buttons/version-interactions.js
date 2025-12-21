@@ -12,7 +12,7 @@ $title[Changes]
 $description[
 * Removed all references to Rebase (it has been renamed to v3)
 * Re-added the polls feature (I'm stupid for not noticing this)
-* Added 10 new topics to \`randomtopic\` command
+* Added a bunch of new topics to \`randomtopic\` command
 * Added a custom Arch logo to \`aur\` command
 * Ported \`couldread\` command from v2 to here
 ]
