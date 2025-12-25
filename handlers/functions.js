@@ -202,4 +202,18 @@ $let[message;$replace[$replace[$replace[$replace[$replace[$replace[$replace[$rep
 
 
     `
+},{
+    name: "isCustomEmoji",
+    params: ["query"],
+    code: `
+    $let[a;$replaceRegex[$trim[$env[query]];<a?:\\[^:\\]+:\\\\\d{18,19}>;gu;]]
+    $return[$and[$charCount[$trim[$env[query]]]!=0;$charCount[$get[a]]==0]]
+    `
+},{
+    name: "isUnicodeEmoji",
+    params: ["query"],
+    code: `
+    $let[a;$replaceRegex[$trim[$env[query]];\\\\\p{Extended_Pictographic};gu;]]
+    $return[$and[$charCount[$trim[$env[query]]]!=0;$charCount[$get[a]]==0]]
+    `
 }]
