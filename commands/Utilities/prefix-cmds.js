@@ -19,7 +19,7 @@ $onlyIf[$hasPerms[$guildID;$authorID;ManageGuild]==true;
 This command requires you to have \`ManageGuild\` permission!
 ]
 
-$onlyIf[$checkContains[$message;<@;<@!;<@&;<#;@;<#!]==false;Why would i do that? I don't want to disturb people! o(TヘTo)]
+$onlyIf[$checkContains[$message;<@;<@!;<@&;<#;@;<#!;<:;<a:;<t:;</]==false;Why would i do that? I don't want to disturb people! o(TヘTo)]
 $onlyIf[$charCount[$message]<=5;Prefix cannot be longer than 5 characters.]
 
 $let[newprefix;$message]

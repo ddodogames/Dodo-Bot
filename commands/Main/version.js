@@ -35,22 +35,22 @@ $color[$getGlobalVar[embedcolor]]
 
 ;
 $title[Dodo-Bot version]
-    $description[
+$description[
 * **Version**: $getGlobalVar[version]$if[$getGlobalVar[buildRevision]!=0; (Revision $getGlobalVar[buildRevision])]
 * **Release type**: $getGlobalVar[release_type]
 * **$get[releasedatetype]**: <t:$trunc[$divide[$getGlobalVar[buildDate];1000]]:f>
-    ]
+]
 $if[$getGlobalVar[pre_release]==on;
 $attachment[./assets/warning.png;warning.png]
 $footer[Testing is recommended;attachment://warning.png]
 ]
-    $color[$getGlobalVar[embedcolor]]
-    $addActionRow
-    $addButton[versionchanges_$authorID;Changes;Secondary]
-    $addButton[versionbugfixes_$authorID;Bug Fixes;Secondary]
-    $addButton[versionother_$authorID;Other;Secondary]
-    $addActionRow
-    $addButton[https://github.com/ddodogames/Dodo-Bot/releases;Changelog history;Link;📜]
+$color[$getGlobalVar[embedcolor]]
+$addActionRow
+$addButton[versionchanges_$authorID;Changes;Secondary]
+$addButton[versionbugfixes_$authorID;Bug Fixes;Secondary]
+$addButton[versionother_$authorID;Other;Secondary]
+$addActionRow
+$addButton[https://github.com/ddodogames/Dodo-Bot/releases;Changelog history;Link;📜]
 ]
 `
 }

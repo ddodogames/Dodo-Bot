@@ -9,18 +9,18 @@ module.exports = {
     type: "messageCreate",
     code: `$callFunction[Devsonly]
 
-    $if[$checkContains[$message;--now;—now]==true
-    $wipeDB
-    Done!
-    ;
-    $title[Delete the database]
-    $description[Are you sure you want to reset the database? You cannot undo this action once you do it.]
-    $attachment[./assets/dangerous-sign.png;dangerous-sign.png]
-    $thumbnail[attachment://dangerous-sign.png]
-    $color[Red]
-    $addActionRow
-    $addButton[wipedbconfirm_$authorID;Yes;Secondary]
-    $addButton[wipedbdeny_$authorID;No;Secondary]
-    ]
+$if[$checkContains[$message;--now;—now]==true
+$wipeDB
+Done!
+;
+$title[Delete the database]
+$description[Are you sure you want to reset the database? You cannot undo this action once you do it.]
+$attachment[./assets/dangerous-sign.png;dangerous-sign.png]
+$thumbnail[attachment://dangerous-sign.png]
+$color[Red]
+$addActionRow
+$addButton[wipedbconfirm_$authorID;Yes;Secondary]
+$addButton[wipedbdeny_$authorID;No;Secondary]
+]
     `
 }

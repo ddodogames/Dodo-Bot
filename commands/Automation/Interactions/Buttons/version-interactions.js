@@ -43,6 +43,8 @@ $title[Bug Fixes]
 $description[
 * Did some rewording to fix grammar
 * \`guess-the-pokemon\` command now works again
+* Block more ways used to show things like slash cmds when setting prefix in \`prefix\` command
+* Fixed some commands like \`fact\` not working
 ]
 $if[$getGlobalVar[pre_release]==on;
 $attachment[./assets/warning.png;warning.png]

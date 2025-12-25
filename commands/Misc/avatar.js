@@ -13,6 +13,7 @@ Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[avatar
 
 $let[user;$findUser[$message;true]]
 $let[username;$advancedReplace[$checkCondition[$callFunction[hasusertag;$get[user]]==true];true;$userTag[$get[user]];false;$username[$get[user]]]]
+
 $title[$get[username]'s avatar]
 $image[$userAvatar[$get[user];2048;png]]
 $color[$getGlobalVar[embedcolor]]

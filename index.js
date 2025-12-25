@@ -10,7 +10,7 @@ require('@dotenvx/dotenvx').config({path: ['.env.local', '.env'], ignore: ['MISS
     prefixes: ["$getGuildVar[prefix]"], // Custom prefix system
     events: ["clientReady", "error", "interactionCreate", "messageCreate", "messageDelete", "messageUpdate", "guildMemberAdd", "guildMemberRemove", "guildBanAdd", "guildBanRemove", "guildCreate"], // Setup ForgeScript events
     extensions: [ // Load extensions
-    new ForgeDB({
+    new ForgeDB({ // Setup database with better-sqlite3
     type: "better-sqlite3"
     })
     ],

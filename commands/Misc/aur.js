@@ -8,7 +8,7 @@ module.exports = {
     type: "messageCreate",
     aliases: ["aur-search", "aursearch"],
     code: `$userCooldown[aurcmd;3s;Cooldown has been triggered! Please, wait!
-    Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[aurcmd]];1000]]:R>]
+Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[aurcmd]];1000]]:R>]
 
 
 $onlyIf[$message!=;Please type a package name to search in AUR.]
