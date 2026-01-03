@@ -17,12 +17,16 @@ This version of the bot aka v3 is based on the (now abandoned and silently disco
 # History of v3
 During the early days of the development (while at the same time 2.1.0 was being worked on), v3 was originally going to replace v2 once it's released but this was later delayed and it got renamed to "Rebase". This was finally reversed in 3.0.2 as it became clear that things had to eventually change.
 
-The purpose of this version is to keep Dodo-Bot alive without relying on aoi.js given that it's pretty much now in eol state. Being based on ForgeScript, advanced stuff can finally be done in the bot as it was previously not possible in v2 and older.
+The purpose of this version is to keep Dodo-Bot alive without relying on aoi.js given that it's pretty much now in "not so good" state. Being based on ForgeScript, advanced stuff can finally be done in the bot as it was previously not possible in v2 and older.
 
 This bot purely exists just because i got sick of some verified bot but you can use this project and also learn from it if you happen to be using ForgeScript!
 
 ### What about v2?
-V2 has been discontinued following the eol of aoi.js because there doesn't seem to be a good reason to still maintain it if the package it's relying on is left to rot. It just creates issues nobody wants and it means missing out on improvements and fixes for any breaking changes caused by Discord itself.
+When aoi.js was originally announced to be EOL on 3th December 2025 by one of it's devs, v3 became the default version as a way to make the bot not fall in the dead list.
+
+Apparently however, this was reversed later on 27th December of the same year above by the main owner of aoi.js which seemed pretty weird to me. As someone who saw aoi.js in a dying state constantly, i began to notice a weird pattern where it's like it desperately tries to stay alive while at the same time it fails doing so. By then, it was already too late for me to reverse my decision on making v3 the default and reviving v2.
+
+Also, if aoi.js revival actually led to anywhere then it would have still contained breaking changes from say, some major version (like v7) that would make it still useless to maintain Dodo-Bot v2 because it relies on aoi.js v6 to offer the bot's features to users.
 
 You can still use it because nothing is stopping you from doing so but being discontinued means it won't be updated and any bugs will remain unfixed. It can also eventually break in the future since outdated stuff do break by some major changes.
 
