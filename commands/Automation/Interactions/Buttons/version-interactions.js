@@ -10,7 +10,7 @@ $ephemeral
 $interactionUpdate[
 $title[Changes]
 $description[
-*No changes have been added yet*
+* Added a image command called \`jokeoverhead\`
 ]
 $if[$getGlobalVar[pre_release]==on;
 $attachment[./assets/warning.png;warning.png]
@@ -64,7 +64,7 @@ $ephemeral
 $interactionUpdate[
 $title[Other]
 $description[
-*No changes have been added yet*
+* (Source code) update aoi EOL mentions in readme to include the sudden revival
 ]
 $if[$getGlobalVar[pre_release]==on;
 $attachment[./assets/warning.png;warning.png]

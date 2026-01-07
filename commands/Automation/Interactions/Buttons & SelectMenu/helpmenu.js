@@ -44,7 +44,7 @@ $ephemeral
 \`howgamer\`, \`whoasked\`, \`8ball\`, \`say\`, \`reverse\`, \`randomtopic\`, \`joke\`, \`clap\`, \`mock\`, \`yesorno\`, \`lulcat\`, \`fact\`
 ]
     $addField[**Images**;
-\`gun\`, \`jail\`, \`couldread\`, \`nokia\`, \`ad\`, \`drip\`, \`invert\`, \`pet\`, \`wanted\`, \`comment\`, \`whereiseveryone\`, \`clown\`
+\`gun\`, \`jail\`, \`couldread\`, \`nokia\`, \`jokeoverhead\`, \`ad\`, \`drip\`, \`invert\`, \`pet\`, \`wanted\`, \`comment\`, \`whereiseveryone\`, \`clown\`
 ]
     $color[$getGlobalVar[embedcolor]]
     $addActionRow
