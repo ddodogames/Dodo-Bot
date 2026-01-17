@@ -22,7 +22,11 @@ $let[message;$advancedReplace[$env[text];--embed;;—embed;]]
     `
   },{
     name: "hasusertag",
-    params: ["userID"],
+    params: [{
+        'name': 'userID',
+        'type': 'String',
+        'required': false
+    }],
     code: `
 $let[user;$findUser[$env[userID];true]]
 $let[result;$checkCondition[$charCount[$discriminator[$get[user]]]!=1]]
@@ -31,7 +35,15 @@ $let[result;$checkCondition[$charCount[$discriminator[$get[user]]]!=1]]
     `
   },{
     name: "hasnickname",
-    params: ["guildID", "userID"],
+    params: [{
+        'name': 'guildID',
+        'type': 'String',
+        'required': true
+    },{
+        'name': 'userID',
+        'type': 'String',
+        'required': false
+    }],
     code: `
 $let[user;$findUser[$env[userID];true]]
 $let[result;$checkCondition[$nickname[$env[guildID];$get[user]]!=$userDisplayName[$get[user]]]]
@@ -42,7 +54,7 @@ $let[result;$checkCondition[$nickname[$env[guildID];$get[user]]!=$userDisplayNam
     name: "excludespecialchars",
     params: ["content"],
     code: `
-$let[message;$replace[$replace[$replace[$replace[$replace[$replace[$replace[$replace[$replace[$replace[$replace[$replace[$replace[$env[content];+;];-;];/;];%;];&;];$;];#;];^;];(;];);];*;];!;];?;]]
+$let[message;$advancedReplace[$env[content];+;;-;;/;;%;;&;;$;;#;;^;;(;;);;*;;!;;?;]]
 
     $return[$get[message]]
     `
@@ -142,8 +154,13 @@ $let[message;$replace[$replace[$replace[$replace[$replace[$replace[$replace[$rep
     `
 },{
    name: "userURL",
-   params: ["userID"],
-   code: `$return[https://discord.com/users/$env[userID]]`
+   params: [{
+       'name': 'userID',
+       'type': 'String',
+       'required': false
+   }],
+   code: `$let[ID;$advancedReplace[$checkCondition[$env[userID]==];true;$authorID;false;$env[userID]]]
+   $return[https://discord.com/users/$get[ID]]`
 },{
     name: "randomColor",
     params: [],

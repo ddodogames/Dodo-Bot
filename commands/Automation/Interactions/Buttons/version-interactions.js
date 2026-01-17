@@ -10,7 +10,8 @@ $ephemeral
 $interactionUpdate[
 $title[Changes]
 $description[
-* Added a image command called \`jokeoverhead\`
+* Added 2 new commands called \`jokeoverhead\` and \`showerthoughts\`
+* Bumped ForgeScript to version \`2.6.0\`
 ]
 $if[$getGlobalVar[pre_release]==on;
 $attachment[./assets/warning.png;warning.png]

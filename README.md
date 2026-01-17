@@ -15,7 +15,11 @@ This version of the bot aka v3 is based on the (now abandoned and silently disco
 * Logging stuff (like ban logs)
 
 # History of v3
-During the early days of the development (while at the same time 2.1.0 was being worked on), v3 was originally going to replace v2 once it's released but this was later delayed and it got renamed to "Rebase". This was finally reversed in 3.0.2 as it became clear that things had to eventually change.
+Before late 2023, v3 was initially just a thought to find a way to not rely on aoi.js. This included private test builds for this version that led to nowhere as there was no clear vision at all at the time except for the main idea of killing reliance on aoi.
+
+It wasn't until towards the final months of 2023 that i discovered a fitting alternative for aoi.js called "ForgeScript" and i went ahead to start working on test builds with it which eventually became v3 after it initially evolved into "Rebase" (which is explained below).
+
+During the early days of development (while at the same time 2.1.0 was being worked on), v3 was originally going to replace v2 once it's released but this was later delayed and it got renamed to "Rebase". This was finally reversed around the release of 3.0.2 as it became clear that things had to eventually change.
 
 The purpose of this version is to keep Dodo-Bot alive without relying on aoi.js given that it's pretty much now in "not so good" state. Being based on ForgeScript, advanced stuff can finally be done in the bot as it was previously not possible in v2 and older.
 
