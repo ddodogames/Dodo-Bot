@@ -10,7 +10,7 @@ $ephemeral
 $interactionUpdate[
 $title[Changes]
 $description[
-* Added 2 new commands called \`jokeoverhead\` and \`showerthoughts\`
+* Added 2 new commands called \`greyscale\` and \`showerthoughts\`
 * Bumped ForgeScript to version \`2.6.0\`
 ]
 $if[$getGlobalVar[pre_release]==on;
