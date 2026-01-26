@@ -65,7 +65,8 @@ $ephemeral
 $interactionUpdate[
 $title[Other]
 $description[
-* (Source code) update aoi EOL mentions in readme to include the sudden revival
+* (Source code) Slight changes to README such as replacing aoi EOL mentions with the sudden revival
+* (Source code) Bumped \`@dotenvx/dotenvx\` to version \`1.52.0\`
 ]
 $if[$getGlobalVar[pre_release]==on;
 $attachment[./assets/warning.png;warning.png]
