@@ -38,7 +38,8 @@ $ephemeral
 $interactionUpdate[
 $title[Bug Fixes]
 $description[
-*No bug fixes have been added yet*
+* Fixed how pre-releases are made by following $hyperlink[Versioning specification;https://semver.org/]
+  * This also makes version string in source code less confusing
 ]
 $if[$getGlobalVar[pre_release]==on;
 $attachment[./assets/warning.png;warning.png]

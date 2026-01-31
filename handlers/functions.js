@@ -38,7 +38,7 @@ $let[result;$checkCondition[$charCount[$discriminator[$get[user]]]!=1]]
     params: [{
         'name': 'guildID',
         'type': 'String',
-        'required': true
+        'required': false
     },{
         'name': 'userID',
         'type': 'String',
@@ -46,7 +46,8 @@ $let[result;$checkCondition[$charCount[$discriminator[$get[user]]]!=1]]
     }],
     code: `
 $let[user;$findUser[$env[userID];true]]
-$let[result;$checkCondition[$nickname[$env[guildID];$get[user]]!=$userDisplayName[$get[user]]]]
+$let[serverID;$advancedReplace[$checkCondition[$env[guildID]==];true;$guildID;false;$env[guildID]]]
+$let[result;$checkCondition[$nickname[$get[serverID];$get[user]]!=$userDisplayName[$get[user]]]]
 
     $return[$get[result]]
     `
