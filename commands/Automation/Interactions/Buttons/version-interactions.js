@@ -64,7 +64,7 @@ $ephemeral
 $interactionUpdate[
 $title[Other]
 $description[
-*No changes have been added yet*
+* (Pre-release only) Display version string on console instead of just the version number
 ]
 $if[$getGlobalVar[pre_release]==on;
 $attachment[./assets/warning.png;warning.png]

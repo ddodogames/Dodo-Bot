@@ -1,10 +1,11 @@
 const config = require("../config.js");
+const { version } = require('../package.json');
 
 module.exports = {
 // Main variables (don't touch unless you know what you're doing)
 version: "3.0.3",
 versionCodename: "Mercury",
-versionString: "3.0.3-canary",
+versionString: version,
 islibraryversiondev: "off",
 release_type: "Stable",
 pre_release: "on",
@@ -12,7 +13,7 @@ DevReleaseTypeToSet: "Canary",
 buildNumber: "2413",
 buildStatus: "Incomplete",
 buildBranch: "canary",
-buildDate: "1769888378778",
+buildDate: "1769889048360",
 showbuildinfo: "on",
 AllowBotManagers: config.AllowBotManagers,
 prefix: config.prefix,
