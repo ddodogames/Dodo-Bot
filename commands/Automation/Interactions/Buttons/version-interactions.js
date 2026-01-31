@@ -37,7 +37,7 @@ $ephemeral
 $interactionUpdate[
 $title[Bug Fixes]
 $description[
-* Fixed "Last updated on" text being displayed for released pre-releases builds like Alpha 0
+* Fixed "Last updated on" text being displayed for released pre-releases builds like Alpha 0 in \`version\` command
 ]
 $if[$getGlobalVar[pre_release]==on;
 $attachment[./assets/warning.png;warning.png]
