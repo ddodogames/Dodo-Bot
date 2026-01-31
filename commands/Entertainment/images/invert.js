@@ -12,4 +12,4 @@ $let[apilink;https://api.popcat.xyz/v2/invert?image=$get[pfphandler]]
 $let[pfphandler;$advancedReplaceText[$userAvatar[$mentioned[1;true]];.webp;.png;.gif;.png]]
 $cooldown[5s; Slow down! Don't spam the command!
 Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[5s;user;invert;$authorID];$dateStamp];1000]]:R>]`
-    }
+}

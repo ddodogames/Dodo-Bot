@@ -5,7 +5,7 @@ module.exports = {
         usage: "`morse <text>`",
         perms: ["`SendMessages`"]
     },
-    code: `$getObjectProperty[api;morse]
+    code: `$getObjectProperty[api;message.morse]
     $createObject[api;$nonEscape[$get[jsonresponse]]]
     $onlyIf[$isValidObject[$nonEscape[$get[jsonresponse]]]==true;$get[error]]
     $let[jsonresponse;$httpRequest[https://api.popcat.xyz/v2/texttomorse?text=$uri[$message;encode];GET;;;$get[error]]]

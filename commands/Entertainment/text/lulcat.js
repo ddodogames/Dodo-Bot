@@ -6,7 +6,7 @@ module.exports = {
         perms: ["`SendMessages`"]
     },
     aliases: "lolcat",
-    code: `$getObjectProperty[api;text]
+    code: `$getObjectProperty[api;message.text]
 $createObject[api;$nonEscape[$get[jsonresponse]]]
 $onlyIf[$isValidObject[$nonEscape[$get[jsonresponse]]]==true;$get[error]]
 $let[jsonresponse;$httpRequest[https://api.popcat.xyz/v2/lulcat?text=$uri[$message;encode];GET;;;$get[error]]]

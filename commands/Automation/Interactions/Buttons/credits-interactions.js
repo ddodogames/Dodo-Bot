@@ -24,6 +24,7 @@ module.exports = [{
 * $username[431749535656837130] - Inspiration to improve some commands
 * $username[738856854892839022] - For Leveling setup
 * $username[769525910164471821] - For \`guess-the-pokemon\` code (and some ideas as well)
+* $username[1096717977304453160] - For the Dodo-Bot logo
 * aoi.js server - For a lot of help
 * [discotools.xyz](https#COLON#//discotools.xyz/icons-editor) - For most of the icons used in commands
 }{color:$getVar[embedcolor]}}{actionRow:{button:Main Credits:2:maincredits_$authorID:true}{button:Packages used:2:packagesused_$authorID:false}{button:Use of source code:2:useofsource_$authorID:false}}]

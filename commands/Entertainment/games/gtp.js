@@ -12,7 +12,7 @@ $editMessage[$get[id];{attachment:question-image.png:$getObjectProperty[api;data
 $createObject[api;$nonEscape[$get[jsonresponse]]]
 $let[id;$sendMessage[Please wait...;true]]
 $onlyIf[$isValidObject[$nonEscape[$get[jsonresponse]]]==true;$get[error]]
-$let[jsonresponse;$httpRequest[https://api.gamecord.xyz/pokemon;GET;;;$get[error]]]
+$let[jsonresponse;$httpRequest[https://api-gamecord-e0cd45547eef.herokuapp.com/pokemon;GET;;;$get[error]]]
 $let[error;Unable to fetch Pokemon data. Please try again later.]
 $onlyIf[disabled!=disabled;This command has been temporarily disabled due to issues.]
 $cooldown[5s; Slow down! Don't spam the command!
