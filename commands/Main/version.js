@@ -12,7 +12,7 @@ module.exports = {
 $userCooldown[versioncmd;2s;Cooldown has been triggered! Please, wait!
 Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[versioncmd]];1000]]:R>]
 
-$let[releasedatetype;$advancedReplace[$checkCondition[$getGlobalVar[pre_release]==on];true;Last updated on;false;Released on]]
+$let[releasedatetype;$advancedReplace[$checkCondition[$getGlobalVar[showbuildinfo]==on];true;Last updated on;false;Released on]]
 
 $if[$checkContains[$message;--buildinfo;—buildinfo]==true;
 $onlyIf[$getGlobalVar[showbuildinfo]==on;
@@ -25,7 +25,6 @@ $addField[About the build;
 * **Codename**: $getGlobalVar[versionCodename]
 * **Build Branch**: $hyperlink[**$getGlobalVar[buildBranch]**;https://github.com/ddodogames/Dodo-Bot/tree/$getGlobalVar[buildBranch]]
 * **Build number**: $getGlobalVar[buildNumber]
-* **Revision**: $getGlobalVar[buildRevision]
 ;true]
 $addField[Progress;
 $getGlobalVar[buildStatus]
@@ -36,7 +35,7 @@ $color[$getGlobalVar[embedcolor]]
 ;
 $title[Dodo-Bot version]
 $description[
-* **Version**: $getGlobalVar[version]$if[$getGlobalVar[buildRevision]!=0; (Revision $getGlobalVar[buildRevision])]
+* **Version**: $getGlobalVar[version]
 * **Release type**: $getGlobalVar[release_type]
 * **$get[releasedatetype]**: <t:$trunc[$divide[$getGlobalVar[buildDate];1000]]:f>
 ]

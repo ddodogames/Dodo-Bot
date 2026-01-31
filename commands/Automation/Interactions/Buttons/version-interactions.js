@@ -10,8 +10,7 @@ $ephemeral
 $interactionUpdate[
 $title[Changes]
 $description[
-* Added 2 new commands called \`greyscale\` and \`showerthoughts\`
-* Bumped ForgeScript to version \`2.6.0\`
+*No changes have been added yet*
 ]
 $if[$getGlobalVar[pre_release]==on;
 $attachment[./assets/warning.png;warning.png]
@@ -38,8 +37,7 @@ $ephemeral
 $interactionUpdate[
 $title[Bug Fixes]
 $description[
-* Fixed how pre-releases are made by following $hyperlink[Versioning specification;https://semver.org/]
-  * This also makes version string in source code less confusing
+* Fixed "Last updated on" text being displayed for released pre-releases builds like Alpha 0
 ]
 $if[$getGlobalVar[pre_release]==on;
 $attachment[./assets/warning.png;warning.png]
@@ -66,8 +64,7 @@ $ephemeral
 $interactionUpdate[
 $title[Other]
 $description[
-* (Source code) Slight changes to README such as replacing aoi EOL mentions with the sudden revival
-* (Source code) Bumped \`@dotenvx/dotenvx\` to version \`1.52.0\`
+*No changes have been added yet*
 ]
 $if[$getGlobalVar[pre_release]==on;
 $attachment[./assets/warning.png;warning.png]
@@ -96,7 +93,7 @@ $let[releasedatetype;$advancedReplace[$checkCondition[$getGlobalVar[pre_release]
 $interactionUpdate[
 $title[Dodo-Bot version]
     $description[
-* **Version**: $getGlobalVar[version]$if[$getGlobalVar[buildRevision]!=0; (Revision $getGlobalVar[buildRevision])]
+* **Version**: $getGlobalVar[version]
 * **Release type**: $getGlobalVar[release_type]
 * **$get[releasedatetype]**: <t:$trunc[$divide[$getGlobalVar[buildDate];1000]]:f>
     ]
