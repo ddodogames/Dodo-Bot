@@ -15,7 +15,7 @@ module.exports = {
   versionCodename: "Cerium",
   libraryversiondevcheck: "on",
   buildStatus: "Incomplete",
-  buildDate: "1769962319391",
+  buildDate: "1769963917201",
   buildBranch: "v2",
   buildRevision: "0",
   showbuildinfo: "on",
@@ -23,7 +23,7 @@ module.exports = {
   embedcolor: config.Embedcolor,
   originalembedcolor: config.Embedcolor,
   release_type: "Stable (LTS)",
-  DevReleaseTypeToSet: "Beta",
+  DevReleaseTypeToSet: "RC",
   prefix: config.prefix,
   originalprefix: config.prefix,
   // Feature variables

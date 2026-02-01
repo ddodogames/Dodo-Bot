@@ -4,7 +4,7 @@ info: {
  description: "Ask a question to 8ball and it will answer it.",
  usage: "`8ball <text>`",
  perms: "`SendMessages`"
-},
+    },
 code: `
 $title[8ball]
 $addField[Answer;$8ballanswers]
