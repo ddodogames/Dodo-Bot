@@ -12,7 +12,7 @@ module.exports = {
     $createObject[api;$nonEscape[$get[jsonresponse]]]
     $onlyIf[$isValidObject[$nonEscape[$get[jsonresponse]]]==true;$get[error]]
     $let[jsonresponse;$httpRequest[https://api.popcat.xyz/v2/showerthoughts;GET;;;$get[error]]]
-    $let[error;Unable to fetch data for fact. Please try again later.]
+    $let[error;Unable to fetch data for Shower Thoughts. Please try again later.]
     $cooldown[3s; Slow down! Don't spam the command!
     Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[3s;user;showerthoughts;$authorID];$dateStamp];1000]]:R>]
     `
