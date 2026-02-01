@@ -32,13 +32,14 @@ Apparently however, this was reversed later on 27th December of the same year ab
 
 Also, if aoi.js revival actually led to anywhere then it would have still contained breaking changes from say, some major version (like v7) that would make it still useless to maintain Dodo-Bot v2 because it relies on aoi.js v6 to offer the bot's features to users.
 
-You can still use it because nothing is stopping you from doing so but being discontinued means it won't be updated and any bugs will remain unfixed. It can also eventually break in the future since outdated stuff do break by some major changes.
+Despite this however, v2 will be temporarily maintained for a period of time since apparently the migration to other alternatives were not instant.
+
 
 # Versions
 | Release | Description | Status |
 | :------- | :------: | -------: |
 | [**v1**](https://github.com/ddodogames/Dodo-Bot/tree/v1)  | The discontinued version of Dodo-Bot. It had a bad start with bunch of bugs due to me being newbie in aoi.js at the time.  | Discontinued  |
-| [**v2**](https://github.com/ddodogames/Dodo-Bot/tree/v2)  | The version 2 of the bot. Based on aoi.js v6!  | Discontinued  |
+| [**v2**](https://github.com/ddodogames/Dodo-Bot/tree/v2)  | The version 2 of the bot. Based on aoi.js v6!  | Maintained, sorta of (in LTS state)  |
 | [**v3 (current)**](https://github.com/ddodogames/Dodo-Bot/tree/v3)  | The current version of the bot. Gets both fixes and improvements!  | Maintained  |
 | [**canary**](https://github.com/ddodogames/Dodo-Bot/tree/canary)  | Development builds of v3. Not recommended for general use. More information can be found [here](https://ddodogames.github.io/dodo-bot-site/advanced/canary/).  | Maintained  |
 
