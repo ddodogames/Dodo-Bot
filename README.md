@@ -20,7 +20,7 @@ v2 was supposed to be based on discord.js, but due to some issues, it has been m
 
 This version of the bot is likely made for you to learn as well as enjoy it; it's probably the first aoi.js v6 bot to be open-sourced here. Note that I'm trying my best to make this a stable release as much as possible, but at least you get to try the new stuff v2 has in store for you!
 
-As of now, v2 is currently in LTS state temporarily for a period of time since it seems that the migration to other alternatives to aoi was not instant at all. Every now and then, there will be bug fixes and maybe some small changes but do not expect any major changes as those will be done instead in v3.
+As of now, v2 is currently in LTS state temporarily for a period of time since it seems that the migration to other alternatives to aoi were not instant at all. Every now and then, there will be bug fixes and maybe some small changes but do not expect any major changes as those will be done instead in v3.
 
 # Versions
 * **[V1](https://github.com/ddodogames/Dodo-Bot/tree/v1)**: The discontinued version of Dodo-Bot. It had a bad start with bunch of bugs due to me being newbie in aoi.js at the time.
