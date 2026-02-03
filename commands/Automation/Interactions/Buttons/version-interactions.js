@@ -65,6 +65,8 @@ $interactionUpdate[
 $title[Other]
 $description[
 * (Pre-release only) Display version string on console instead of just the version number
+  * Build numbers will also no longer show up for released builds
+* Completely remove version revisions in favor of small hotfix releases
 ]
 $if[$getGlobalVar[pre_release]==on;
 $attachment[./assets/warning.png;warning.png]

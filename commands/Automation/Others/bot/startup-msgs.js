@@ -6,7 +6,7 @@ Using Development builds are not recommended for public usage as they may contai
 ]
 $wait[2000]
 $let[version;$advancedReplace[$checkCondition[$getGlobalVar[pre_release]==on];true;$getGlobalVar[versionString];false;$getGlobalVar[version]]]
-$log[Dodo-Bot v$get[version]$if[$getGlobalVar[pre_release]==on; (build $getGlobalVar[buildNumber])] is ready to be used on the client $userTag[$clientID]!]
+$log[Dodo-Bot v$get[version]$if[$getGlobalVar[showbuildinfo]==on; (build $getGlobalVar[buildNumber])] is ready to be used on the client $userTag[$clientID]!]
 
 $chalkLog[Tip: Found an issue? Report it here: https://github.com/ddodogames/Dodo-Bot/issues/new/choose;yellow]
 
