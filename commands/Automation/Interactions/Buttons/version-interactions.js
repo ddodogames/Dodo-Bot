@@ -38,6 +38,7 @@ $interactionUpdate[
 $title[Bug Fixes]
 $description[
 * Fixed "Last updated on" text being displayed for released pre-releases builds like Alpha 0 in \`version\` command
+* (Devs only) Fixed outdated description of "Show build info" option seen in \`dev-panel\` command
 ]
 $if[$getGlobalVar[pre_release]==on;
 $attachment[./assets/warning.png;warning.png]

@@ -565,7 +565,7 @@ $let[showbuildinfo;$advancedReplace[$getGlobalVar[showbuildinfo];off;Disabled;on
 
 $interactionReply[
 $title[Show build info]
-$description[When enabled, a button labeled "Build Info" will show up in \`stats\` command. By default, this is enabled for Pre-release builds besides Beta ones.
+$description[When enabled, \`--buildinfo\` flag for \`version\` command will be enabled which displays information about build such as it's number, GitHub branch and other. It will also show the build number on console. This is enabled by default for "Canary" version.
 
 If you don't want it enabled then press the "Toggle" button to disable it (if it was enabled by default).]
 $addField[Current Setup;$get[showbuildinfo]]
