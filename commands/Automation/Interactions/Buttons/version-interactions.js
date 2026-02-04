@@ -10,7 +10,7 @@ $ephemeral
 $interactionUpdate[
 $title[Changes]
 $description[
-*No changes have been added yet*
+* Display banners as GIF if detected in \`banner\` command
 ]
 $if[$getGlobalVar[pre_release]==on;
 $attachment[./assets/warning.png;warning.png]
