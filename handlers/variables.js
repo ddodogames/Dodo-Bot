@@ -13,9 +13,9 @@ module.exports = {
   includebots: "on",
   version: "2.2.8",
   versionCodename: "Cerium",
-  libraryversiondevcheck: "on",
+  libraryversiondevcheck: "off",
   buildStatus: "Incomplete",
-  buildDate: "1769963917201",
+  buildDate: "1770327785159",
   buildBranch: "v2",
   buildRevision: "0",
   showbuildinfo: "on",
@@ -67,6 +67,7 @@ module.exports = {
   servermemberrequirement: "0",
   userapps: config.EnableUserApps,
   isuserappsalreadysetup: "no",
-  errorsdisabled: config.DisableAllErrors
+  errorsdisabled: config.DisableAllErrors,
+  isfirstrun: "yes"
   }
 }
