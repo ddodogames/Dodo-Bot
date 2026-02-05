@@ -3,7 +3,7 @@ module.exports = [{
     type: "clientReady",
     channel: "",
     code: `$setVar[isfirstrun;no]
-    $writeFile[./node_modules/aoi.js/src/functions/misc/createApplicationCommand.js;$readFile[./handler/fixes/createApplicationCommand.js]]
+    $writeFile[./node_modules/aoi.js/src/functions/misc/createApplicationCommand.js;$readFile[./handlers/fixes/createApplicationCommand.js]]
 
 
     $onlyIf[$getVar[isfirstrun]==yes;]`
