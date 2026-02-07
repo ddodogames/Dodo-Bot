@@ -2,7 +2,7 @@ module.exports = {
     name: "credits",
     info: {
         description: "Returns people who're credited in the bot.",
-        perms: ["`SendMessages`"]
+        perms: ["`SendMessages`", "`EmbedLinks`"]
     },
     type: "messageCreate",
     code: `$userCooldown[creditscmd;2s;Cooldown has been triggered! Please, wait!

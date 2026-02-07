@@ -2,7 +2,7 @@ module.exports = [{
     name: "poll-setup",
     info: {
         description: "Setup polls.",
-        perms: ["`SendMessages`", "`ManageChannels`"]
+        perms: ["`SendMessages`", "`EmbedLinks`", "`ManageChannels`"]
     },
     type: "messageCreate",
     aliases: ["poll-set"],
@@ -34,7 +34,7 @@ $addButton[pollresetbutton_$authorID;Reset;Secondary]
     info: {
         description: "Starts a poll in this server (if the feature is setup).",
         usage: "`poll <content/choice 1/choice 2>`",
-        perms: ["`SendMessages`", "`AddReactions`"]
+        perms: ["`SendMessages`", "`EmbedLinks`", "`AddReactions`"]
     },
     type: "messageCreate",
     code: `$userCooldown[pollcmd;4s;Cooldown has been triggered! Please, wait!

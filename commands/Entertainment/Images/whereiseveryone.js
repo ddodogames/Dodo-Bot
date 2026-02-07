@@ -3,7 +3,7 @@ name: "whereiseveryone",
 type: "messageCreate",
 info: {
  description: "Starts a short recreation of a cut-scene from Shrek movie.",
- perms: ["`SendMessages`"]
+ perms: ["`SendMessages`", "`EmbedLinks`"]
 },
 code: `
 $userCooldown[whereiseveryonecmd;2s;Cooldown has been triggered! Please, wait!

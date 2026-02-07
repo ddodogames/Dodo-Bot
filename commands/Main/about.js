@@ -2,7 +2,7 @@ module.exports = {
     name: "about",
     info: {
         description: "Returns information about Dodo-Bot.",
-        perms: ["`SendMessages`"]
+        perms: ["`SendMessages`", "`EmbedLinks`"]
     },
     aliases: ["info"],
     type: "messageCreate",

@@ -3,7 +3,7 @@ module.exports = {
     type: "messageCreate",
     info: {
         description: "Returns a link to report issues on Dodo-Bot's GitHub repo.",
-        perms: ["`SendMessages`"]
+        perms: ["`SendMessages`", "`EmbedLinks`"]
     },
     aliases: ["bugreport"],
     code: `$userCooldown[reportbugcmd;2s;Cooldown has been triggered! Please, wait!

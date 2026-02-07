@@ -1,4 +1,5 @@
 module.exports = {
+name: "Reset on leave",
 type: "guildMemberRemove",
 allowBots: false,
 code: `

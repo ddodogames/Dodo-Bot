@@ -3,7 +3,7 @@ name: "readfile",
 info: {
     description: "Returns the contents of a file.",
     usage: "`readfile <path>`",
-    perms: ["`SendMessages`"],
+    perms: ["`SendMessages`", "`AttachFiles`"],
     dev: "true"
 },
 aliases: ["viewfile"],

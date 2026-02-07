@@ -3,7 +3,7 @@ name: "gun",
 info: {
         description: "Makes the user's profile picture hold a gun straight at you.",
         usage: "`gun (user)`",
-        perms: ["`SendMessages`","`AttachFiles`"]
+        perms: ["`SendMessages`", "`AttachFiles`"]
 },
 type: "messageCreate",
 code: `$userCooldown[guncmd;3s;Cooldown has been triggered! Please, wait!

@@ -4,7 +4,7 @@ type: "messageCreate",
 info: {
     description: `Returns Leveling's leaderboard for this server (if enabled).`,
     usage: "`leaderboard (page)`",
-    perms: ["`SendMessages`"]
+    perms: ["`SendMessages`", "`EmbedLinks`"]
     },
 aliases: ["lb", "leveling-lb", "leveling-leaderboard"],
 code: `$userCooldown[leveling-lbcmd;2s;Cooldown has been triggered! Please, wait!

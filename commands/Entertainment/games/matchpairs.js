@@ -2,7 +2,7 @@ module.exports = {
 name: "matchpairs",
 info: {
         description: "Starts a game of Match Pairs.",
-        perms: ["`SendMessages`"]
+        perms: ["`SendMessages`", "`EmbedLinks`"]
 },
 type: "messageCreate",
 aliases: ["match-pairs", "mp"],

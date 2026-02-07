@@ -3,7 +3,7 @@ name: "serverinfo",
 type: "messageCreate",
 info: {
 description: "Returns information about this server",
-perms: ["`SendMessages`"]
+perms: ["`SendMessages`", "`EmbedLinks`"]
 },
 aliases: ["guild", "guildinfo", "server", "si"],
 code: `$userCooldown[serverinfocmd;3s;Cooldown has been triggered! Please, wait!

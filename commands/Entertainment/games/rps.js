@@ -3,7 +3,7 @@ name: "rps",
 info: {
         description: "Start a rps match with your opponent (you can also ping yourself to play against the bot).",
         usage: "`rps <user or ping yourself>`",
-        perms: ["`SendMessages`"]
+        perms: ["`SendMessages`", "`EmbedLinks`"]
 },
 aliases: ["rock-paper-scissors"],
 type: "messageCreate",

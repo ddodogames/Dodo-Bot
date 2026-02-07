@@ -3,7 +3,7 @@ name: "howgamer",
 info: {
         description: "Rates a user on how Gamer they're from 0 to 100 percent.",
         usage: "`howgamer (user)`",
-        perms: ["`SendMessages`"]
+        perms: ["`SendMessages`", "`EmbedLinks`"]
 },
 type: "messageCreate",
 code: `$userCooldown[howgamercmd;3s;Cooldown has been triggered! Please, wait!

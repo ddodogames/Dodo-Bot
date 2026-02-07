@@ -3,7 +3,7 @@ name: "flood",
 info: {
         description: "Starts a game of Flood (pass the flag `--settings` to open the settings).",
         usage: "`flood (flag)`",
-        perms: ["`SendMessages`"],
+        perms: ["`SendMessages`", "`EmbedLinks`"],
         flags: ["`--settings`"]
 },
 type: "messageCreate",

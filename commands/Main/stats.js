@@ -2,7 +2,7 @@ module.exports = {
     name: "stats",
     info: {
         description: "Checks the current statistics while the bot is running (like RAM Usage).",
-        perms: ["`SendMessages`"]
+        perms: ["`SendMessages`", "`EmbedLinks`"]
     },
     aliases: ["botstats", "statistics"],
     type: "messageCreate",

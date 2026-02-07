@@ -3,7 +3,7 @@ name: "drip",
 info: {
         description: "Puts your/user's profile picture on a joke image.",
         usage: "`drip (user)`",
-        perms: ["`SendMessages`","`AttachFiles`"]
+        perms: ["`SendMessages`", "`AttachFiles`"]
 },
 type: "messageCreate",
 code: `$userCooldown[dripmemecmd;3s;Cooldown has been triggered! Please, wait!

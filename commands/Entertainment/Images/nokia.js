@@ -3,7 +3,7 @@ name: "nokia",
 info: {
         description: "Puts your/users profile picture on a nokia phone.",
         usage: "`nokia (user)`",
-        perms: ["`SendMessages`","`AttachFiles`"]
+        perms: ["`SendMessages`", "`AttachFiles`"]
 },
 type: "messageCreate",
 code: `$userCooldown[nokiacmd;3s;Cooldown has been triggered! Please, wait!

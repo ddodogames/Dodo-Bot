@@ -2,7 +2,7 @@ module.exports = {
     name: "guess-the-pokemon",
     info: {
         description: "Starts a game of Guess The Pokemon. (currently disabled)",
-        perms: ["`SendMessages`"]
+        perms: ["`SendMessages`", "`EmbedLinks`"]
     },
     type: "messageCreate",
     disableConsoleErrors: true,

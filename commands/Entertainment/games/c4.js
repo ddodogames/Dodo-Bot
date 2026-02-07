@@ -3,7 +3,7 @@ name: "connect4",
 info: {
         description: "Starts a connect4 game.",
         usage: "`connect4 <user>`",
-        perms: ["`SendMessages`"]
+        perms: ["`SendMessages`", "`EmbedLinks`"]
 },
 aliases: ["c4", "connectfour"],
 type: "messageCreate",

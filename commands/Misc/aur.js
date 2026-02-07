@@ -3,7 +3,7 @@ module.exports = {
     info: {
         description: "Search packages in AUR (for Arch Linux).",
         usage: "`aur <package-name>`",
-        perms: ["`SendMessages`"]
+        perms: ["`SendMessages`", "`EmbedLinks`"]
     },
     type: "messageCreate",
     aliases: ["aur-search", "aursearch"],

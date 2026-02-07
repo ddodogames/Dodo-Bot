@@ -3,7 +3,7 @@ name: "leveling",
 type: "messageCreate",
 info: {
     description: "Setup and manage Leveling feature.",
-    perms: ["`SendMessages`", "`ManageChannels`"]
+    perms: ["`SendMessages`", "`EmbedLinks`", "`ManageChannels`"]
 },
 code: `
 $userCooldown[levelingcmd;2s;Cooldown has been triggered! Please, wait!

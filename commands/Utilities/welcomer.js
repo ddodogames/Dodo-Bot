@@ -3,7 +3,7 @@ name: "welcomer",
 type: "messageCreate",
 info: {
     description: "Setup and manage Welcomer feature.",
-    perms: ["`SendMessages`", "`ManageChannels`"]
+    perms: ["`SendMessages`", "`EmbedLinks`", "`ManageChannels`"]
 },
 aliases: ["welcome"],
 code: `$userCooldown[welcomercmd;2s;Cooldown has been triggered! Please, wait!

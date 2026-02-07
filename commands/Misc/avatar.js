@@ -3,7 +3,7 @@ name: "avatar",
 info: {
         description: "Returns your/users profile picture.",
         usage: "`avatar (user)`",
-        perms: ["`SendMessages`"]
+        perms: ["`SendMessages`", "`EmbedLinks`"]
 },
 type: "messageCreate",
 aliases: ["av", "useravatar", "pfp"],

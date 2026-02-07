@@ -2,7 +2,7 @@ module.exports = {
     name: "help",
     info: {
         description: "Let's you view commands list",
-        perms: ["`SendMessages`"]
+        perms: ["`SendMessages`", "`EmbedLinks`"]
     },
     type: "messageCreate",
     aliases: ["h"],

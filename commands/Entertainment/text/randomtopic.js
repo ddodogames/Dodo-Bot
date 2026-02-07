@@ -2,7 +2,7 @@ module.exports = {
 name: "randomtopic",
 info: {
         description: "Start a randomtopic in this server.",
-        perms: ["`SendMessages`"]
+        perms: ["`SendMessages`", "`EmbedLinks`"]
 },
 aliases: ["topic", "newtopic"],
 type: "messageCreate",

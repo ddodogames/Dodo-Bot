@@ -2,7 +2,7 @@ module.exports = {
     name: "canary",
     info: {
         description: "Returns information about Pre-release builds and how to try them.",
-        perms: ["`SendMessages`"]
+        perms: ["`SendMessages`", "`EmbedLinks`"]
     },
     aliases: ["devbuilds", "canarybuilds"],
     type: "messageCreate",
@@ -19,6 +19,6 @@ Alternatively, you can invite the official development bot by clicking the butto
 ]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
-$addButton[https://discord.com/api/oauth2/authorize?client_id=970481494797738016&scope=bot+applications.commands&permissions=36032;Invite Canary bot;Link]
+$addButton[https://discord.com/api/oauth2/authorize?client_id=970481494797738016&scope=bot+applications.commands&permissions=52416;Invite Canary bot;Link]
 `
 }

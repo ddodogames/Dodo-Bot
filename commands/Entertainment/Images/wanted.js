@@ -3,7 +3,7 @@ name: "wanted",
 info: {
         description: "Adds a wanted poster into user's profile picture.",
         usage: "`wanted (user)`",
-        perms: ["`SendMessages`","`AttachFiles`"]
+        perms: ["`SendMessages`", "`AttachFiles`"]
 },
 type: "messageCreate",
 code: `$userCooldown[wantedcmd;3s;Cooldown has been triggered! Please, wait!

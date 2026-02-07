@@ -10,7 +10,7 @@ $ephemeral
 $interactionUpdate[
 $title[Changes]
 $description[
-* Display banners as GIF if detected in \`banner\` command
+* Re-added support for GIF banners in \`banner\` command from v2
 ]
 $if[$getGlobalVar[pre_release]==on;
 $attachment[./assets/warning.png;warning.png]
@@ -39,6 +39,8 @@ $title[Bug Fixes]
 $description[
 * Fixed "Last updated on" text being displayed for released pre-releases builds like Alpha 0 in \`version\` command
 * (Devs only) Fixed outdated description of "Show build info" option seen in \`dev-panel\` command
+* Require \`EmbedLinks\` as a permission so that commands showing embed work properly
+  * It has been listed in \`perms\` command as a result of this
 ]
 $if[$getGlobalVar[pre_release]==on;
 $attachment[./assets/warning.png;warning.png]
@@ -68,6 +70,7 @@ $description[
 * (Pre-release only) Display version string on console instead of just the version number
   * Build numbers will also no longer show up for released builds
 * Completely remove version revisions in favor of small hotfix releases
+* Slightly change the description of "Why this exists?" button seen in \`perms\` command
 ]
 $if[$getGlobalVar[pre_release]==on;
 $attachment[./assets/warning.png;warning.png]

@@ -3,7 +3,7 @@ module.exports = [{
     info: {
         description: "Creates a pet GIF meme using user's profile picture.",
         usage: "`pet (user)`",
-        perms: ["`SendMessages`","`AttachFiles`"]
+        perms: ["`SendMessages`", "`AttachFiles`"]
     },
     type: "messageCreate",
     code: `$userCooldown[petcmd;3s;Cooldown has been triggered! Please, wait!

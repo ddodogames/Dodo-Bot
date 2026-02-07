@@ -148,7 +148,7 @@ $ephemeral
 
 $interactionReply[
 $title[Why this exists?]
-$description[Administrator permission is generally dangerous and should only be given to people you trust. It is always a good idea to only select the required permissions, which is why \`perms\` command exists to raise awareness about this.
+$description[Administrator permission is generally dangerous and should only be given to people you trust. It is always a good idea to only select the required permissions (something that is unfortunately ignored most of the time), which is why \`perms\` command exists to raise awareness about this.
 
 This is also to reduce the chances of raiding in case the bot gets hacked by having less dangerous permissions.
 ]

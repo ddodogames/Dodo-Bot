@@ -2,7 +2,7 @@ module.exports = {
 name: "setup-logs",
 info: {
     description: "Setup some logs in this server!",
-    perms: ["`SendMessages`", "`ManageChannels`"]
+    perms: ["`SendMessages`", "`EmbedLinks`", "`ManageChannels`"]
 },
 type: "messageCreate",
 code: `$userCooldown[setuplogscmd;3s;Cooldown has been triggered! Please, wait!

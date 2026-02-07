@@ -3,7 +3,7 @@ name: "invert",
 info: {
         description: "Adds invert effect to a image.",
         usage: "`invert (user)`",
-        perms: ["`SendMessages`","`AttachFiles`"]
+        perms: ["`SendMessages`", "`AttachFiles`"]
 },
 type: "messageCreate",
 code: `$userCooldown[invertcmd;3s;Cooldown has been triggered! Please, wait!

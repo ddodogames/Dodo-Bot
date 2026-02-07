@@ -2,7 +2,7 @@ module.exports = {
 name: "randomcolor",
 info: {
         description: "Returns Random Colors that you can use.",
-        perms: ["`SendMessages`"]
+        perms: ["`SendMessages`", "`EmbedLinks`"]
 },
 type: "messageCreate",
 aliases: ["randomhex"],

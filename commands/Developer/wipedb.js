@@ -2,7 +2,7 @@ module.exports = {
     name: "wipedb",
     info: {
         description: "Let's you delete the current entire database of the bot including cooldowns.",
-        perms: ["`SendMessages`"],
+        perms: ["`SendMessages`", "`EmbedLinks` (if `--now` flag isn't specified)"],
         dev: "true"
     },
     aliases: ["cleardb", "destroydb", "deletedb"],

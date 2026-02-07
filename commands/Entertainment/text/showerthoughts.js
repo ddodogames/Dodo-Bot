@@ -2,7 +2,7 @@ module.exports = {
     name: "showerthoughts",
     info: {
         description: "Get random Shower Thoughts!",
-        perms: ["`SendMessages`"]
+        perms: ["`SendMessages`", "`EmbedLinks`"]
     },
     type: "messageCreate",
     code: `$userCooldown[showerthoughtscmd;3s;Cooldown has been triggered! Please, wait!

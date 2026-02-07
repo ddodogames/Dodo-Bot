@@ -2,7 +2,7 @@ module.exports = {
 name: "update",
 info: {
     description: "Restarts commands to latest changes.",
-    perms: ["`SendMessages`"],
+    perms: ["`SendMessages`", "`EmbedLinks`"],
     dev: "true"
 },
 aliases: ["restartcmds", "reloadcmds", "reload"],

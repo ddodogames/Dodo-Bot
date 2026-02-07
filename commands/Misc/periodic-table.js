@@ -2,7 +2,7 @@ module.exports = {
     name: "periodic-table",
     info: {
         description: "Returns random periodic table.",
-        perms: ["`SendMessages`"]
+        perms: ["`SendMessages`", "`EmbedLinks`"]
     },
     type: "messageCreate",
     aliases: ["pt"],

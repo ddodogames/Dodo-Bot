@@ -2,7 +2,7 @@ module.exports = {
 name: "perms",
 info: {
         description: "Returns the permissions the bot needs.",
-        perms: ["`SendMessages`"]
+        perms: ["`SendMessages`", "`EmbedLinks`"]
     },
 type: "messageCreate",
 code: `$userCooldown[permscmd;2s;Cooldown has been triggered! Please, wait!
@@ -16,6 +16,7 @@ For safety reasons, do not give the bot administrator permission under any circu
 $addField[\`ViewChannel\`;Required so the bot can read the user's messages executing it's command.]
 $addField[\`SendMessages\`;The most basic permission needed.]
 $addField[\`AttachFiles\`;Required for image commands such as \`gun\`.]
+$addField[\`EmbedLinks\`;Required for commands that show embeds (basically the majority of them).]
 $addField[\`AddReactions\`;Required for \`suggest\` command.]
 $addField[\`ViewAuditLog\`;Required for logs such as moderation and Integration.]
 $color[$getGlobalVar[embedcolor]]

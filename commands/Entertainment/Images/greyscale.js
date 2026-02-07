@@ -3,7 +3,7 @@ module.exports = [{
     info: {
         description: "Puts the user's pfp in greyscale effect.",
         usage: "`greyscale (user)`",
-        perms: ["`SendMessages`","`AttachFiles`"]
+        perms: ["`SendMessages`", "`AttachFiles`"]
     },
     type: "messageCreate",
     code: `$userCooldown[greyscalecmd;3s;Cooldown has been triggered! Please, wait!

@@ -3,7 +3,7 @@ name: "shutdown",
 info: {
     description: "Returns a confirmation before shutting down the bot.",
     usage: "`shutdown (flag)`",
-    perms: ["`SendMessages`"],
+    perms: ["`SendMessages`", "`EmbedLinks` (if `--now` flag isn't specified)"],
     dev: "true"
 },
 type: "messageCreate",

@@ -2,7 +2,7 @@ module.exports = {
 name: "minesweeper",
 info: {
         description: "Starts a minesweeper game.",
-        perms: ["`SendMessages`"]
+        perms: ["`SendMessages`", "`EmbedLinks`"]
 },
 type: "messageCreate",
 code: `$userCooldown[minesweepercmd;3s;Cooldown has been triggered! Please, wait!

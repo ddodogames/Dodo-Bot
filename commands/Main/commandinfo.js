@@ -3,7 +3,7 @@ name: "commandinfo",
 info: {
         description: "The command says it all. What else do you expect?",
         usage: "`commmandinfo <command name>`",
-        perms: ["`SendMessages`"]
+        perms: ["`SendMessages`", "`EmbedLinks`"]
     },
 aliases: ["cmdinfo", "ci"],
 type: "messageCreate",

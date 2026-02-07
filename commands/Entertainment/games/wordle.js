@@ -2,7 +2,7 @@ module.exports = {
 name: "wordle",
 info: {
         description: "Starts a game of Wordle.",
-        perms: ["`SendMessages`"]
+        perms: ["`SendMessages`", "`EmbedLinks`"]
 },
 type: "messageCreate",
 code: `$userCooldown[wordlecmd;3s;Cooldown has been triggered! Please, wait!

@@ -3,7 +3,7 @@ name: "jail",
 info: {
         description: "Puts your/users profile picture into behind the bars.",
         usage: "`jail (user)`",
-        perms: ["`SendMessages`","`AttachFiles`"]
+        perms: ["`SendMessages`", "`AttachFiles`"]
 },
 type: "messageCreate",
 code: `$userCooldown[jailcmd;3s;Cooldown has been triggered! Please, wait!

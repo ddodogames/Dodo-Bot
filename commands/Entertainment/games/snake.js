@@ -2,7 +2,7 @@ module.exports = {
 name: "snake",
 info: {
         description: "Starts a game of snake.",
-        perms: ["`SendMessages`"]
+        perms: ["`SendMessages`", "`EmbedLinks`"]
 },
 type: "messageCreate",
 aliases: ["snek"],

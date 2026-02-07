@@ -1,4 +1,5 @@
 module.exports = {
+name: "Pre-release - Set release type",
 type: "clientReady",
 code: `$if[$getGlobalVar[pre_release]==on;
 $onlyIf[$getGlobalVar[release_type]!=$getGlobalVar[DevReleaseTypeToSet];]

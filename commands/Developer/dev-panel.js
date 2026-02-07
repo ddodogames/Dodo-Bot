@@ -2,7 +2,7 @@ module.exports = {
 name: "dev-panel",
 info: {
     description: "Allows you to access Developer panel!",
-    perms: ["`SendMessages`"],
+    perms: ["`SendMessages`", "`EmbedLinks`"],
     dev: "true"
 },
 aliases: ["devpanel", "developer-panel", "dev-settings"],

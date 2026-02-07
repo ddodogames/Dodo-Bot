@@ -3,7 +3,7 @@ name: "clown",
 info: {
         description: "Puts your/user's profile picture on a cutscene from Teen Titans Go.",
         usage: "`clown (user)`",
-        perms: ["`SendMessages`","`AttachFiles`"]
+        perms: ["`SendMessages`", "`AttachFiles`"]
 },
 type: "messageCreate",
 code: `$userCooldown[clowncmd;3s;Cooldown has been triggered! Please, wait!

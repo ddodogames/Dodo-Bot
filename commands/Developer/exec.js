@@ -3,7 +3,7 @@ name: "execute",
 info: {
     description: "Runs terminal commands directly in Discord.",
     usage: "`execute <command>`",
-    perms: ["`SendMessages`"],
+    perms: ["`SendMessages`", "`AttachFiles`"],
     dev: "true"
 },
 aliases: ["exec"],

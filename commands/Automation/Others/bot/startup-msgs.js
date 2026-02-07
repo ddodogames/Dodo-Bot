@@ -1,4 +1,5 @@
 module.exports = [{
+    name: "Startup message (Console)",
     type: "clientReady",
     code: `$if[$getGlobalVar[pre_release]==on;
 $chalkLog[Development build detected!
@@ -10,9 +11,10 @@ $log[Dodo-Bot v$get[version]$if[$getGlobalVar[showbuildinfo]==on; (build $getGlo
 
 $chalkLog[Tip: Found an issue? Report it here: https://github.com/ddodogames/Dodo-Bot/issues/new/choose;yellow]
 
-$chalkLog[Invite your bot here: $clientInvite[36032];cyan]
+$chalkLog[Invite your bot here: $clientInvite[52416];cyan]
 `
 },{
+name: "Startup message (Channel)",
 type: "clientReady",
 code: `$onlyIf[$getGlobalVar[startupsystem]==on;]
 $onlyIf[$getGlobalVar[startupchannel]!=;]

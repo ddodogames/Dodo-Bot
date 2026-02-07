@@ -3,7 +3,7 @@ name: "leave",
 type: "messageCreate",
 info: {
     description: "Setup and manage Leave feature.",
-    perms: ["`SendMessages`", "`ManageChannels`"]
+    perms: ["`SendMessages`", "`EmbedLinks`", "`ManageChannels`"]
 },
 aliases: ["leaver"],
 code: `$userCooldown[leavecmd;2s;Cooldown has been triggered! Please, wait!

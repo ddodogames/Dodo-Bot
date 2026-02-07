@@ -3,7 +3,7 @@ name: "tictactoe",
 info: {
         description: "Starts a tictactoe match with your opponent.",
         usage: "`tictactoe <user>`",
-        perms: ["`SendMessages`"]
+        perms: ["`SendMessages`", "`EmbedLinks`"]
 },
 aliases: ["ttt"],
 type: "messageCreate",

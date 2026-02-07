@@ -2,7 +2,7 @@ module.exports = [{
 name: "suggest-setup",
 info: {
         description: "Setup suggestions.",
-        perms: ["`SendMessages`", "`ManageChannels`"]
+        perms: ["`SendMessages`", "`EmbedLinks`", "`ManageChannels`"]
 },
 type: "messageCreate",
 aliases: ["suggest-set", "set-suggest"],
@@ -34,7 +34,7 @@ $addButton[suggestresetbutton_$authorID;Reset;Secondary]
     info: {
         description: "Starts a suggestion in this server (if the feature is setup).",
         usage: "`suggest <title/description>`",
-        perms: ["`SendMessages`", "`AddReactions`"]
+        perms: ["`SendMessages`", "`EmbedLinks`", "`AddReactions`"]
 },
     type: "messageCreate",
     code: `$userCooldown[suggestcmd;4s;Cooldown has been triggered! Please, wait!

@@ -3,7 +3,7 @@ name: "ad",
 info: {
         description: "Make yourself (or user's avatar) a ad.",
         usage: "`ad (user)`",
-        perms: ["`SendMessages`","`AttachFiles`"]
+        perms: ["`SendMessages`", "`AttachFiles`"]
 },
 type: "messageCreate",
 code: `$userCooldown[adcmd;3s;Cooldown has been triggered! Please, wait!

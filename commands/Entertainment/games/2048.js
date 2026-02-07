@@ -2,7 +2,7 @@ module.exports = {
 name: "2048",
 info: {
         description: "Starts a random game of 2048.",
-        perms: ["`SendMessages`"]
+        perms: ["`SendMessages`", "`EmbedLinks`"]
 },
 type: "messageCreate",
 code: `$userCooldown[2048cmd;3s;Cooldown has been triggered! Please, wait!

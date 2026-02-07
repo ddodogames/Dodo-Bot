@@ -3,7 +3,7 @@ name: "comment",
 info: {
         description: "Generates a parody image of YouTube comment with your username and profile picture.",
         usage: "`comment <text>`",
-        perms: ["`SendMessages`","`AttachFiles`"]
+        perms: ["`SendMessages`", "`AttachFiles`"]
 },
 type: "messageCreate",
 aliases: ["ytcomment"],
