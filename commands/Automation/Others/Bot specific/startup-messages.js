@@ -5,7 +5,7 @@ module.exports = [{
   code: `
 $djsEval[const chalk = require('chalk')
 
-console.log(chalk.cyan("Invite Your bot using this link: $getClientInvite[sendmessages;viewchannel;addreactions;attachfiles;viewauditlog]"))
+console.log(chalk.cyan("Invite Your bot using this link: $getClientInvite[sendmessages;viewchannel;addreactions;attachfiles;viewauditlog;embedlinks]"))
 ]
 $djsEval[const chalk = require('chalk')
 
