@@ -17,7 +17,7 @@ $addField[\`ViewChannel\`;Required so the bot can read the user's messages execu
 $addField[\`SendMessages\`;The most basic permission needed.]
 $addField[\`AttachFiles\`;Required for image commands such as \`gun\`.]
 $addField[\`EmbedLinks\`;Required for commands that show embeds (basically the majority of them).]
-$addField[\`AddReactions\`;Required for \`suggest\` command.]
+$addField[\`AddReactions\`;Required for \`suggest\` and \`poll\` command.]
 $addField[\`ViewAuditLog\`;Required for logs such as moderation and Integration.]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
