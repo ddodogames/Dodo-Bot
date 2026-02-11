@@ -10,8 +10,7 @@ $ephemeral
 $interactionUpdate[
 $title[Changes]
 $description[
-* Re-added support for GIF banners in \`banner\` command from v2
-* Added 2 new commands called \`greyscale\` and \`showerthoughts\`
+*No changes have been added yet*
 ]
 $if[$getGlobalVar[pre_release]==on;
 $attachment[./assets/warning.png;warning.png]
@@ -38,11 +37,7 @@ $ephemeral
 $interactionUpdate[
 $title[Bug Fixes]
 $description[
-* (Devs only) Fixed outdated description of "Show build info" option seen in \`dev-panel\` command
-* Require \`EmbedLinks\` as a permission so that commands showing embed work properly
-  * It has been listed in \`perms\` command as a result of this
-* (Pre-release only) Fixed how pre-releases are made by properly following $hyperlink[Semantic Versioning specification;https://semver.org/]
-  * This also makes version string in source code less confusing
+*No bug fixes have been added yet*
 ]
 $if[$getGlobalVar[pre_release]==on;
 $attachment[./assets/warning.png;warning.png]
@@ -69,13 +64,7 @@ $ephemeral
 $interactionUpdate[
 $title[Other]
 $description[
-* (Pre-release only) Display version string on console instead of just the version number
-  * Build numbers will also no longer show up for released builds
-* Completely remove version revisions in favor of small hotfix releases
-* Slightly change the description of "Why this exists?" button seen in \`perms\` command
-  * Also shorten the description of \`about\` command
-* (Source code) Slight changes to README such as replacing aoi EOL mentions with the sudden revival
-* (Source code) Bumped ForgeScript and \`@dotenvx/dotenvx\` to their latest version
+*No changes have been added yet*
 ]
 $if[$getGlobalVar[pre_release]==on;
 $attachment[./assets/warning.png;warning.png]
