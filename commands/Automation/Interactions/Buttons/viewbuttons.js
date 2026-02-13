@@ -187,7 +187,7 @@ $ephemeral
         $color[$getGlobalVar[embedcolor]]
         $ephemeral
         $addActionRow
-        $addButton[rolepermslistuncompactbutton_$get[botID];Uncompact;Secondary]
+        $addButton[rolepermslistuncompactbutton_$authorID_$get[roleID];Uncompact;Secondary]
     ]
     `
 },{
@@ -221,7 +221,7 @@ $ephemeral
         $color[$getGlobalVar[embedcolor]]
         $ephemeral
         $addActionRow
-        $addButton[rolepermslistcompactbutton_$get[botID];Compact;Secondary]
+        $addButton[rolepermslistcompactbutton_$authorID_$get[roleID];Compact;Secondary]
     ]
     `
 },{
@@ -255,7 +255,7 @@ $ephemeral
         $color[$getGlobalVar[embedcolor]]
         $ephemeral
         $addActionRow
-        $addButton[rolepermslistuncompactbutton_$get[botID];Uncompact;Secondary]
+        $addButton[rolepermslistuncompactbutton_$authorID_$get[roleID];Uncompact;Secondary]
     ]
     `
 }]
