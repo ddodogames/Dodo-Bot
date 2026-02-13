@@ -6,7 +6,7 @@ module.exports = {
     },
     aliases: ["devbuilds", "canarybuilds"],
     type: "messageCreate",
-    code: `$userCooldown[canarycmd;2s;Cooldown has been triggered! Please, wait!
+    code: `$userCooldown[canarycmd;2s;Cooldown has been triggered! Please wait!
 Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[canarycmd]];1000]]:R>]
 $title[About Canary]
 $addField[Introduction;Canary is a way to test pre-release builds of upcoming versions of Dodo-Bot before they're released as a stable version.

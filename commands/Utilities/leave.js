@@ -6,7 +6,7 @@ info: {
     perms: ["`SendMessages`", "`EmbedLinks`", "`ManageChannels`"]
 },
 aliases: ["leaver"],
-code: `$userCooldown[leavecmd;2s;Cooldown has been triggered! Please, wait!
+code: `$userCooldown[leavecmd;2s;Cooldown has been triggered! Please wait!
 Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[leavecmd]];1000]]:R>]
 $let[leavesystem;$advancedReplace[$getGuildVar[leavesystem];on;Enabled;off;Disabled]]
 

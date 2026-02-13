@@ -7,7 +7,7 @@ module.exports = [{
     type: "messageCreate",
     aliases: ["poll-set"],
     code: `
-$userCooldown[poll-setupcmd;2s;Cooldown has been triggered! Please, wait!
+$userCooldown[poll-setupcmd;2s;Cooldown has been triggered! Please wait!
 Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[poll-setupcmd]];1000]]:R>]
 $let[currentchannel;$advancedReplace[$checkCondition[$getGuildVar[pollchannel;$guildID;None]!=None];true;<#$getGuildVar[pollchannel;$guildID]> (\`$getGuildVar[pollchannel;$guildID]\`);false;No channel set]]
 
@@ -37,7 +37,7 @@ $addButton[pollresetbutton_$authorID;Reset;Secondary]
         perms: ["`SendMessages`", "`EmbedLinks`", "`AddReactions`"]
     },
     type: "messageCreate",
-    code: `$userCooldown[pollcmd;4s;Cooldown has been triggered! Please, wait!
+    code: `$userCooldown[pollcmd;4s;Cooldown has been triggered! Please wait!
 Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[pollcmd]];1000]]:R>]
 
 $arrayLoad[message;/;$message]

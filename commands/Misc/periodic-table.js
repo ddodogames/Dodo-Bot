@@ -6,7 +6,7 @@ module.exports = {
     },
     type: "messageCreate",
     aliases: ["pt"],
-    code: `$userCooldown[periodictablecmd;3s;Cooldown has been triggered! Please, wait!
+    code: `$userCooldown[periodictablecmd;3s;Cooldown has been triggered! Please wait!
 Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[periodictablecmd]];1000]]:R>]
 $let[status;$httpRequest[https://api.popcat.xyz/v2/periodic-table/random;get]]
 $onlyIf[$get[status]==200;Unable to fetch data for periodic table. Please try again later.]

@@ -7,7 +7,7 @@ info: {
 aliases: ["wyr"],
 type: "messageCreate",
 code: `
-$userCooldown[wyrcmd;3s;Cooldown has been triggered! Please, wait!
+$userCooldown[wyrcmd;3s;Cooldown has been triggered! Please wait!
 Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[wyrcmd]];1000]]:R>]
 $let[status;$httpRequest[https://api.popcat.xyz/v2/wyr;get]]
 $onlyIf[$get[status]==200;Unable to fetch data for wyr. Please try again later.]

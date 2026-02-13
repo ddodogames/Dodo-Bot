@@ -8,7 +8,7 @@ module.exports = {
     disableConsoleErrors: true,
     aliases: ["gtp"],
     code: `
-$userCooldown[gtpcmd;3s;Cooldown has been triggered! Please, wait!
+$userCooldown[gtpcmd;3s;Cooldown has been triggered! Please wait!
 Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[gtpcmd]];1000]]:R>]
 
 $let[status;$httpRequest[https://api-gamecord-e0cd45547eef.herokuapp.com/pokemon;get]]

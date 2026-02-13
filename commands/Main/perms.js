@@ -5,7 +5,7 @@ info: {
         perms: ["`SendMessages`", "`EmbedLinks`"]
     },
 type: "messageCreate",
-code: `$userCooldown[permscmd;2s;Cooldown has been triggered! Please, wait!
+code: `$userCooldown[permscmd;2s;Cooldown has been triggered! Please wait!
 Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[permscmd]];1000]]:R>]
 
 $title[Permissions]

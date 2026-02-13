@@ -6,7 +6,7 @@ module.exports = {
         perms: ["`SendMessages`", "`EmbedLinks`"]
     },
     aliases: ["bugreport"],
-    code: `$userCooldown[reportbugcmd;2s;Cooldown has been triggered! Please, wait!
+    code: `$userCooldown[reportbugcmd;2s;Cooldown has been triggered! Please wait!
 Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[reportbugcmd]];1000]]:R>]
 
 $title[Reporting bugs]

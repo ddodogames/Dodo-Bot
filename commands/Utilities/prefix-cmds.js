@@ -8,7 +8,7 @@ info: {
         perms: ["`SendMessages`", "`ManageGuild` (when changing prefix)"]
 },
 type: "messageCreate",
-code: `$userCooldown[prefixcmd;2s;Cooldown has been triggered! Please, wait!
+code: `$userCooldown[prefixcmd;2s;Cooldown has been triggered! Please wait!
 Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[prefixcmd]];1000]]:R>]
 
 $onlyIf[$message!=;Prefix: \`$getGuildVar[prefix;$guildID]\`
@@ -35,7 +35,7 @@ $setGuildVar[prefix;$get[newprefix]]
 },
     aliases: ["prefix-reset"],
     type: "messageCreate",
-    code: `$userCooldown[reset-prefixcmd;2s;Cooldown has been triggered! Please, wait!
+    code: `$userCooldown[reset-prefixcmd;2s;Cooldown has been triggered! Please wait!
 Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[reset-prefixcmd]];1000]]:R>]
 
 $onlyIf[$hasPerms[$guildID;$authorID;ManageGuild]==true;

@@ -8,7 +8,7 @@ module.exports = {
     type: "messageCreate",
     aliases: ["userbanner"],
     disableConsoleErrors: true,
-    code: `$userCooldown[avatarcmd;3s;Cooldown has been triggered! Please, wait!
+    code: `$userCooldown[avatarcmd;3s;Cooldown has been triggered! Please wait!
 Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[avatarcmd]];1000]]:R>]
 
 $let[user;$findUser[$message;true]]

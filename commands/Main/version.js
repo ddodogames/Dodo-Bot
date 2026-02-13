@@ -9,7 +9,7 @@ module.exports = {
     aliases: ["ver", "changelog", "release"],
     type: "messageCreate",
     code: `
-$userCooldown[versioncmd;2s;Cooldown has been triggered! Please, wait!
+$userCooldown[versioncmd;2s;Cooldown has been triggered! Please wait!
 Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[versioncmd]];1000]]:R>]
 
 $let[releasedatetype;$advancedReplace[$checkCondition[$getGlobalVar[showbuildinfo]==on];true;Last updated on;false;Released on]]

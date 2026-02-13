@@ -7,7 +7,7 @@ info: {
 },
 aliases: ["rock-paper-scissors"],
 type: "messageCreate",
-code: `$userCooldown[rpscmd;2s;Cooldown has been triggered! Please, wait!
+code: `$userCooldown[rpscmd;2s;Cooldown has been triggered! Please wait!
 Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[rpscmd]];1000]]:R>]
 $onlyIf[$mentioned[0]!=;Please mention a opponent to play with.
 

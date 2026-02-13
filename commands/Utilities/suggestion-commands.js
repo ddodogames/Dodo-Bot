@@ -7,7 +7,7 @@ info: {
 type: "messageCreate",
 aliases: ["suggest-set", "set-suggest"],
 code: `
-$userCooldown[suggest-setupcmd;2s;Cooldown has been triggered! Please, wait!
+$userCooldown[suggest-setupcmd;2s;Cooldown has been triggered! Please wait!
 Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[suggest-setupcmd]];1000]]:R>]
 $let[currentchannel;$advancedReplace[$checkCondition[$getGuildVar[suggestionchannel;$guildID;None]!=None];true;<#$getGuildVar[suggestionchannel;$guildID]> (\`$getGuildVar[suggestionchannel;$guildID]\`);false;No channel set]]
 
@@ -37,7 +37,7 @@ $addButton[suggestresetbutton_$authorID;Reset;Secondary]
         perms: ["`SendMessages`", "`EmbedLinks`", "`AddReactions`"]
 },
     type: "messageCreate",
-    code: `$userCooldown[suggestcmd;4s;Cooldown has been triggered! Please, wait!
+    code: `$userCooldown[suggestcmd;4s;Cooldown has been triggered! Please wait!
 Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[suggestcmd]];1000]]:R>]
 $arrayLoad[message;/;$message]
 $let[title;$arrayAt[message;0]]

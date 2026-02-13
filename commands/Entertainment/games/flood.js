@@ -7,7 +7,7 @@ info: {
         flags: ["`--settings`"]
 },
 type: "messageCreate",
-code: `$userCooldown[floodcmd;3s;Cooldown has been triggered! Please, wait!
+code: `$userCooldown[floodcmd;3s;Cooldown has been triggered! Please wait!
 Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[floodcmd]];1000]]:R>]
 
 $let[difficulty;$advancedReplace[$getUserVar[flood_difficulty];18;Hard;13;Normal;8;Easy]]

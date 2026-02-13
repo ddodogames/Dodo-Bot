@@ -5,7 +5,7 @@ info: {
         perms: ["`SendMessages`", "`EmbedLinks`"]
     },
 type: "messageCreate",
-code: `$userCooldown[invitecmd;2s;Cooldown has been triggered! Please, wait!
+code: `$userCooldown[invitecmd;2s;Cooldown has been triggered! Please wait!
 Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[invitecmd]];1000]]:R>]
 $title[Invite Dodo-Bot]
 $description[To invite the bot into a server, press the button below.]

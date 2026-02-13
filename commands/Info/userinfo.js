@@ -8,7 +8,7 @@ perms: ["`SendMessages`", "`EmbedLinks`"]
 type: "messageCreate",
 aliases: ["user", "usrinfo"],
 disableConsoleErrors: true,
-code: `$userCooldown[userinfocmd;2s;Cooldown has been triggered! Please, wait!
+code: `$userCooldown[userinfocmd;2s;Cooldown has been triggered! Please wait!
 Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[userinfocmd]];1000]]:R>]
 
 $let[user;$findUser[$message;true]]

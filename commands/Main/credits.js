@@ -5,7 +5,7 @@ module.exports = {
         perms: ["`SendMessages`", "`EmbedLinks`"]
     },
     type: "messageCreate",
-    code: `$userCooldown[creditscmd;2s;Cooldown has been triggered! Please, wait!
+    code: `$userCooldown[creditscmd;2s;Cooldown has been triggered! Please wait!
 Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[creditscmd]];1000]]:R>]
 $title[Dodo-Bot Credits]
 $description[

@@ -7,7 +7,7 @@ info: {
     perms: ["`SendMessages`", "`EmbedLinks`"]
     },
 aliases: ["lb", "leveling-lb", "leveling-leaderboard"],
-code: `$userCooldown[leveling-lbcmd;2s;Cooldown has been triggered! Please, wait!
+code: `$userCooldown[leveling-lbcmd;2s;Cooldown has been triggered! Please wait!
 Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[leveling-lbcmd]];1000]]:R>]
 $onlyIf[$getGuildVar[levelingsystem]==on;Leveling is not enabled currently.]
 

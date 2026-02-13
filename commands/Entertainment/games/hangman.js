@@ -8,7 +8,7 @@ info: {
 },
 aliases: ["hangguy"],
 type: "messageCreate",
-code: `$userCooldown[hangmancmd;3s;Cooldown has been triggered! Please, wait!
+code: `$userCooldown[hangmancmd;3s;Cooldown has been triggered! Please wait!
 Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[hangmancmd]];1000]]:R>]
 
 $if[$checkContains[$message;--settings;—settings;--themes;—themes]==true;

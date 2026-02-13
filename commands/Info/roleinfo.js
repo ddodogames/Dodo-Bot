@@ -7,15 +7,20 @@ module.exports = {
         perms: ["`SendMessages`", "`EmbedLinks`"]
     },
     aliases: ["role", "ri"],
-    code: `$userCooldown[roleinfocmd;3s;Cooldown has been triggered! Please, wait!
+    code: `$userCooldown[roleinfocmd;3s;Cooldown has been triggered! Please wait!
     Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[roleinfocmd]];1000]]:R>]
 
+$let[servericon;$advancedReplace[$checkCondition[$guildIcon==];true;$userDefaultAvatar[$clientID];false;$guildIcon]]
 $let[role;$findRole[$guildID;$message]]
 
-$onlyIf[$get[role]!=;Please mention a role to view it's information.]
+$onlyIf[$get[role]!=;Please specify a role (via mention, id or name) to view it's information.]
 
 $onlyIf[$roleExists[$guildID;$get[role]]==true;Please mention a valid role that exists in this server.]
 
- Not done yet.
+$author[About this role;$get[servericon];$get[servericon]]
+$title[$roleName[$guildID;$get[role]]]
+$description[*insert information here*]
+$color[$getGlobalVar[embedcolor]]
+
 `
 }

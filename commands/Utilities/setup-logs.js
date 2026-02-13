@@ -5,7 +5,7 @@ info: {
     perms: ["`SendMessages`", "`EmbedLinks`", "`ManageChannels`"]
 },
 type: "messageCreate",
-code: `$userCooldown[setuplogscmd;3s;Cooldown has been triggered! Please, wait!
+code: `$userCooldown[setuplogscmd;3s;Cooldown has been triggered! Please wait!
 Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[setuplogscmd]];1000]]:R>]
 
 $onlyIf[$hasPerms[$guildID;$authorID;ManageChannels]==true;

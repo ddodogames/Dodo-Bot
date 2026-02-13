@@ -7,7 +7,7 @@ info: {
 },
 aliases: ["c4", "connectfour"],
 type: "messageCreate",
-code: `$userCooldown[c4cmd;3s;Cooldown has been triggered! Please, wait!
+code: `$userCooldown[c4cmd;3s;Cooldown has been triggered! Please wait!
 Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[c4cmd]];1000]]:R>]
 $onlyIf[$mentioned[0]!=;Please mention a opponent to play with.]
 $onlyIf[$isBot[$mentioned[0]]==false;You cannot play with bots!]

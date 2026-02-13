@@ -6,7 +6,7 @@ module.exports = {
     },
     aliases: ["panel", "serversettings", "guildsettings"],
     type: "messageCreate",
-    code: `$userCooldown[settingscmd;2s;Cooldown has been triggered! Please, wait!
+    code: `$userCooldown[settingscmd;2s;Cooldown has been triggered! Please wait!
 Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[settingscmd]];1000]]:R>]
 
 $onlyIf[$hasPerms[$guildID;$authorID;ManageGuild]==true;

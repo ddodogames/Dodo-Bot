@@ -6,7 +6,7 @@ info: {
     perms: ["`SendMessages`", "`EmbedLinks`", "`ManageChannels`"]
 },
 code: `
-$userCooldown[levelingcmd;2s;Cooldown has been triggered! Please, wait!
+$userCooldown[levelingcmd;2s;Cooldown has been triggered! Please wait!
 Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[levelingcmd]];1000]]:R>]
 $let[levelingsystem;$advancedReplace[$getGuildVar[levelingsystem];on;Enabled;off;Disabled]]
 

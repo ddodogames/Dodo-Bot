@@ -7,7 +7,7 @@ module.exports = {
     aliases: ["ftf", "find-the-flag"],
     type: "messageCreate",
     code: `
-$userCooldown[ftfcmd;2s;Cooldown has been triggered! Please, wait!
+$userCooldown[ftfcmd;2s;Cooldown has been triggered! Please wait!
 Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[ftfcmd]];1000]]:R>]
 
 $title[🚩 | Find the flag!]

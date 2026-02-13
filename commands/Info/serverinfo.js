@@ -6,7 +6,7 @@ description: "Returns information about this server",
 perms: ["`SendMessages`", "`EmbedLinks`"]
 },
 aliases: ["guild", "guildinfo", "server", "si"],
-code: `$userCooldown[serverinfocmd;3s;Cooldown has been triggered! Please, wait!
+code: `$userCooldown[serverinfocmd;3s;Cooldown has been triggered! Please wait!
 Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[serverinfocmd]];1000]]:R>]
 
 $let[servericon;$advancedReplace[$checkCondition[$guildIcon==];true;$userDefaultAvatar[$clientID];false;$guildIcon]]

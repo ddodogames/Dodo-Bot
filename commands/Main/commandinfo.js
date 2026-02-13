@@ -7,7 +7,7 @@ info: {
     },
 aliases: ["cmdinfo", "ci"],
 type: "messageCreate",
-code: `$userCooldown[cmdinfolookercmd;2s;Cooldown has been triggered! Please, wait!
+code: `$userCooldown[cmdinfolookercmd;2s;Cooldown has been triggered! Please wait!
 Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[cmdinfolookercmd]];1000]]:R>]
 
 $onlyIf[$message!=;Please type a command name to look for it's information.]

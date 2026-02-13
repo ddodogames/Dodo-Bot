@@ -6,7 +6,7 @@ info: {
 },
 aliases: ["topic", "newtopic"],
 type: "messageCreate",
-code: `$userCooldown[randomtopic-cmd;3s;Cooldown has been triggered! Please, wait!
+code: `$userCooldown[randomtopic-cmd;3s;Cooldown has been triggered! Please wait!
 Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[randomtopic-cmd]];1000]]:R>]
 $title[Random Topic]
 $description[$callFunction[randomtopic]]

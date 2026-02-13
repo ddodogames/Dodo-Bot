@@ -8,7 +8,7 @@ info: {
 },
 aliases: ["triv"],
 type: "messageCreate",
-code: `$userCooldown[trivcmd;3s;Cooldown has been triggered! Please, wait!
+code: `$userCooldown[trivcmd;3s;Cooldown has been triggered! Please wait!
 Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[trivcmd]];1000]]:R>]
 
 $if[$checkContains[$message;--settings;—settings]==true;

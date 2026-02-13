@@ -6,7 +6,7 @@ info: {
     perms: ["`SendMessages`", "`EmbedLinks`", "`ManageChannels`"]
 },
 aliases: ["welcome"],
-code: `$userCooldown[welcomercmd;2s;Cooldown has been triggered! Please, wait!
+code: `$userCooldown[welcomercmd;2s;Cooldown has been triggered! Please wait!
 Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[welcomercmd]];1000]]:R>]
 $let[welcomersystem;$advancedReplace[$getGuildVar[welcomersystem];on;Enabled;off;Disabled]]
 

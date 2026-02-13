@@ -7,7 +7,7 @@ module.exports = {
     aliases: ["botstats", "statistics"],
     type: "messageCreate",
     code: `
-$userCooldown[statscmd;2s;Cooldown has been triggered! Please, wait!
+$userCooldown[statscmd;2s;Cooldown has been triggered! Please wait!
 Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[statscmd]];1000]]:R>]
 $let[uptime;<t:$round[$divide[$sub[$getTimestamp;$uptime];1000]]:R>]
 $let[fsversion;$advancedReplace[$checkCondition[$getGlobalVar[islibraryversiondev]==on];true;\`v$version\` (Dev);false;\`v$version\`]]

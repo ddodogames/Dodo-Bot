@@ -5,7 +5,7 @@ info: {
         perms: ["`SendMessages`", "`EmbedLinks`"]
 },
 type: "messageCreate",
-code: `$userCooldown[minesweepercmd;3s;Cooldown has been triggered! Please, wait!
+code: `$userCooldown[minesweepercmd;3s;Cooldown has been triggered! Please wait!
 Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[minesweepercmd]];1000]]:R>]
 $!djsEval[const { Minesweeper } = require('discord-gamecord');
 

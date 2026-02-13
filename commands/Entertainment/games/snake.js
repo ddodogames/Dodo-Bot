@@ -6,7 +6,7 @@ info: {
 },
 type: "messageCreate",
 aliases: ["snek"],
-code: `$userCooldown[snakecmd;3s;Cooldown has been triggered! Please, wait!
+code: `$userCooldown[snakecmd;3s;Cooldown has been triggered! Please wait!
 Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[snakecmd]];1000]]:R>]
 
 
