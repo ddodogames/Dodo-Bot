@@ -42,7 +42,6 @@ $interactionReply[
 $title[Permissions of this bot]
 $description[**$username[$get[botID]]** has the following permissions:
 
-
 $codeBlock[$memberPerms[$guildID;$get[botID]];markdown]
 ]
 $color[$getGlobalVar[embedcolor]]
@@ -73,7 +72,6 @@ $addButton[permslistuncompactbutton_$get[botID];Uncompact;Secondary]
         $title[Permissions of this bot]
         $description[**$username[$get[botID]]** has the following permissions:
 
-
         $callFunction[autoListText;$memberPerms[$guildID;$get[botID]];, ]
         ]
         $color[$getGlobalVar[embedcolor]]
@@ -102,7 +100,6 @@ $addButton[permslistuncompactbutton_$get[botID];Uncompact;Secondary]
     $interactionUpdate[
         $title[Permissions of this bot]
         $description[**$username[$get[botID]]** has the following permissions:
-
 
         $codeBlock[$memberPerms[$guildID;$get[botID]];markdown]
         ]
@@ -181,7 +178,6 @@ $ephemeral
         $title[Permissions of this role]
         $description[**$roleName[$guildID;$get[roleID]]** has the following permissions:
 
-
         $codeBlock[$rolePerms[$guildID;$get[roleID]];markdown]
         ]
         $color[$getGlobalVar[embedcolor]]
@@ -215,7 +211,6 @@ $ephemeral
         $title[Permissions of this role]
         $description[**$roleName[$guildID;$get[roleID]]** has the following permissions:
 
-
         $callFunction[autoListText;$rolePerms[$guildID;$get[roleID]];, ]
         ]
         $color[$getGlobalVar[embedcolor]]
@@ -248,7 +243,6 @@ $ephemeral
     $interactionReply[
         $title[Permissions of this role]
         $description[**$roleName[$guildID;$get[roleID]]** has the following permissions:
-
 
         $codeBlock[$rolePerms[$guildID;$get[roleID]];markdown]
         ]
