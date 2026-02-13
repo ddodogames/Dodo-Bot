@@ -17,9 +17,16 @@ $onlyIf[$get[role]!=;Please specify a role (via mention, id or name) to view it'
 
 $onlyIf[$roleExists[$guildID;$get[role]]==true;Please mention a valid role that exists in this server.]
 
+$arrayLoad[totalrolemembers;/;$roleMembers[$guildID;$get[role];/]]
+
 $author[About this role;$get[servericon];$get[servericon]]
 $title[$roleName[$guildID;$get[role]]]
-$description[*insert information here*]
+$addField[**General**;
+* **Created on:** <t:$trunc[$divide[$roleCreatedAt[$guildID;$get[role]];1000]]:f>
+* **Role members:** $arrayLength[totalrolemembers]
+* **ID:** $roleID[$guildID;$get[role]]
+* **Color:** $roleColor[$guildID;$get[role];]
+]
 $color[$getGlobalVar[embedcolor]]
 
 `
