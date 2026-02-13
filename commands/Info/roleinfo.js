@@ -20,7 +20,7 @@ $onlyIf[$roleExists[$guildID;$get[role]]==true;Please mention a valid role that 
 $onlyIf[$get[role]!=$guildID;You can only view custom-created roles at the moment.]
 
 $arrayLoad[totalrolemembers;/;$roleMembers[$guildID;$get[role];/]]
-$let[rolecolor;$advancedReplace[$checkCondition[$roleColor[$guildID;$get[role];Primary]]==;true;None;$roleColor[$guildID;$get[role];Primary]]]
+$let[rolecolor;$advancedReplace[$checkCondition[$roleColor[$guildID;$get[role];Primary]==];true;None;$roleColor[$guildID;$get[role];Primary]]]
 
 $author[About this role;$get[servericon];$get[servericon]]
 $title[$roleName[$guildID;$get[role]]]
