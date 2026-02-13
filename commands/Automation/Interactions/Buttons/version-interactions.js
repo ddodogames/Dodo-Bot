@@ -11,6 +11,7 @@ $interactionUpdate[
 $title[Changes]
 $description[
 * Added alias \`randomrgb\` for \`randomcolor\`
+* Added \`roleinfo\` command
 ]
 $if[$getGlobalVar[pre_release]==on;
 $attachment[./assets/warning.png;warning.png]
