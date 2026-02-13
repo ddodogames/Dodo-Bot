@@ -179,7 +179,7 @@ $ephemeral
 
     $interactionReply[
         $title[Permissions of this role]
-        $description[**$roleName[$get[roleID]]** has the following permissions:
+        $description[**$roleName[$guildID;$get[roleID]]** has the following permissions:
 
 
         $codeBlock[$rolePerms[$guildID;$get[roleID]];markdown]
@@ -213,7 +213,7 @@ $ephemeral
 
     $interactionReply[
         $title[Permissions of this role]
-        $description[**$roleName[$get[roleID]]** has the following permissions:
+        $description[**$roleName[$guildID;$get[roleID]]** has the following permissions:
 
 
         $callFunction[autoListText;$rolePerms[$guildID;$get[roleID]];, ]
@@ -247,7 +247,7 @@ $ephemeral
 
     $interactionReply[
         $title[Permissions of this role]
-        $description[**$roleName[$get[roleID]]** has the following permissions:
+        $description[**$roleName[$guildID;$get[roleID]]** has the following permissions:
 
 
         $codeBlock[$rolePerms[$guildID;$get[roleID]];markdown]
