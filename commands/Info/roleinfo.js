@@ -17,17 +17,24 @@ $onlyIf[$get[role]!=;Please specify a role (via mention, id or name) to view it'
 
 $onlyIf[$roleExists[$guildID;$get[role]]==true;Please mention a valid role that exists in this server.]
 
+$onlyIf[$get[role]!=$guildID;You can only view custom-created roles at the moment.]
+
 $arrayLoad[totalrolemembers;/;$roleMembers[$guildID;$get[role];/]]
+$let[rolecolor;$advancedReplace[$checkCondition[$roleColor[$guildID;$get[role];Primary]]==;true;None;$roleColor[$guildID;$get[role];Primary]]]
 
 $author[About this role;$get[servericon];$get[servericon]]
 $title[$roleName[$guildID;$get[role]]]
 $addField[**General**;
-* **Created on:** <t:$trunc[$divide[$roleCreatedAt[$guildID;$get[role]];1000]]:f>
 * **Role members:** $arrayLength[totalrolemembers]
-* **ID:** $roleID[$guildID;$get[role]]
-* **Color:** $roleColor[$guildID;$get[role];]
+* **ID:** $get[role]
+* **Color:** $get[rolecolor]
+* **Created on:** <t:$trunc[$divide[$roleCreatedAt[$guildID;$get[role]];1000]]:f>
 ]
 $color[$getGlobalVar[embedcolor]]
+$if[$rolePerms[$guildID;$get[role]]!=;
+$addActionRow
+$addButton[viewrolepermissions_$authorID_$get[role];Permissions;Secondary]
+]
 
 `
 }
