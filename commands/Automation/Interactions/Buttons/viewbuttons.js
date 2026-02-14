@@ -174,7 +174,7 @@ $ephemeral
     $ephemeral
     ]]
 
-    $interactionReply[
+    $interactionUpdate[
         $title[Permissions of this role]
         $description[**$roleName[$guildID;$get[roleID]]** has the following permissions:
 
@@ -207,7 +207,7 @@ $ephemeral
     $ephemeral
     ]]
 
-    $interactionReply[
+    $interactionUpdate[
         $title[Permissions of this role]
         $description[**$roleName[$guildID;$get[roleID]]** has the following permissions:
 
@@ -240,7 +240,7 @@ $ephemeral
     $ephemeral
     ]]
 
-    $interactionReply[
+    $interactionUpdate[
         $title[Permissions of this role]
         $description[**$roleName[$guildID;$get[roleID]]** has the following permissions:
 
