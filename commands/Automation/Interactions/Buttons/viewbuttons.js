@@ -174,7 +174,7 @@ $ephemeral
     $ephemeral
     ]]
 
-    $interactionUpdate[
+    $interactionReply[
         $title[Permissions of this role]
         $description[**$roleName[$guildID;$get[roleID]]** has the following permissions:
 
