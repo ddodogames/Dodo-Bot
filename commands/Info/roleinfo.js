@@ -17,7 +17,7 @@ $onlyIf[$get[role]!=;Please specify a role (via mention, id or name) to view it'
 
 $onlyIf[$roleExists[$guildID;$get[role]]==true;Please mention a valid role that exists in this server.]
 
-$onlyIf[$get[role]!=$guildID;You can only view custom-created roles at the moment.]
+$onlyIf[$get[role]!=$guildID;You can only view custom roles.]
 
 $arrayLoad[rolemembers;/;$roleMembers[$guildID;$get[role];/]]
 $arrayMap[rolemembers;a;
