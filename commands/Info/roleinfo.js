@@ -27,6 +27,9 @@ $return[$env[a]]
 ;totalrolemembers]
 
 $let[rolecolor;$advancedReplace[$checkCondition[$roleColor[$guildID;$get[role];Primary]==];true;None;$roleColor[$guildID;$get[role];Primary]]]
+$let[manageable;$advancedReplace[$checkCondition[$roleManageable[$guildID;$get[role]]==true];true;Yes;false;no]]
+$let[mentionable;$advancedReplace[$checkCondition[$roleMentionable[$guildID;$get[role]]==true];true;Yes;false;no]]
+$let[hoisted;$advancedReplace[$checkCondition[$roleHoisted[$guildID;$get[role]]==true];true;Yes;false;no]]
 
 $author[About this role;$get[servericon];$get[servericon]]
 $title[$roleName[$guildID;$get[role]]]
@@ -35,7 +38,12 @@ $addField[**General**;
 * **ID:** $get[role]
 * **Color:** $get[rolecolor]
 * **Created on:** <t:$trunc[$divide[$roleCreatedAt[$guildID;$get[role]];1000]]:f>
-]
+;true]
+$addField[**Other**;
+* **Manageable**: $get[manageable]
+* **Mentionable**: $get[mentionable]
+* **Hoisted**: $get[hoisted]
+;true]
 $color[$getGlobalVar[embedcolor]]
 $if[$rolePerms[$guildID;$get[role]]!=;
 $addActionRow
