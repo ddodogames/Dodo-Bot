@@ -27,9 +27,9 @@ $return[$env[a]]
 ;totalrolemembers]
 
 $let[rolecolor;$advancedReplace[$checkCondition[$roleColor[$guildID;$get[role];Primary]==];true;None;false;$roleColor[$guildID;$get[role];Primary]]]
-$let[manageable;$advancedReplace[$checkCondition[$roleManageable[$guildID;$get[role]]==true];true;Yes;false;no]]
-$let[mentionable;$advancedReplace[$checkCondition[$roleMentionable[$guildID;$get[role]]==true];true;Yes;false;no]]
-$let[hoisted;$advancedReplace[$checkCondition[$roleHoisted[$guildID;$get[role]]==true];true;Yes;false;no]]
+$let[manageable;$advancedReplace[$checkCondition[$roleManageable[$guildID;$get[role]]==true];true;Yes;false;No]]
+$let[mentionable;$advancedReplace[$checkCondition[$roleMentionable[$guildID;$get[role]]==true];true;Yes;false;No]]
+$let[hoisted;$advancedReplace[$checkCondition[$roleHoisted[$guildID;$get[role]]==true];true;Yes;false;No]]
 
 $author[About this role;$get[servericon];$get[servericon]]
 $title[$roleName[$guildID;$get[role]]]
