@@ -6,14 +6,14 @@ module.exports = [{
     name: "createuserapps",
     type: "awaited",
     code: `
-$createApplicationCommand[global;randomcolor;Returns a random color that you can use.;sendmessages;user;all;slash]
-$createApplicationCommand[global;invite;Returns a link to invite the bot;sendmessages;user;all;slash]
-$createApplicationCommand[global;report;Returns a link to report issues on Dodo-Bot's GitHub repo;sendmessages;user;all;slash]
-$createApplicationCommand[global;about;Returns information about Dodo-Bot;sendmessages;user;all;slash]
-$createApplicationCommand[global;ping;Returns the bot's Latency;sendmessages;user;all;slash]
+$createApplicationCommand[global;randomcolor;Returns a random color that you can use.;;user;all;slash]
+$createApplicationCommand[global;invite;Returns a link to invite the bot;;user;all;slash]
+$createApplicationCommand[global;report;Returns a link to report issues on Dodo-Bot's GitHub repo;;user;all;slash]
+$createApplicationCommand[global;about;Returns information about Dodo-Bot;;user;all;slash]
+$createApplicationCommand[global;ping;Returns the bot's Latency;;user;all;slash]
 
 
-$createApplicationCommand[global;banner;Returns your/users profile banner.;sendmessages;user;all;slash;[
+$createApplicationCommand[global;banner;Returns your/users profile banner.;;user;all;slash;[
   {
     "type": 6,
     "name": "user",
@@ -23,7 +23,7 @@ $createApplicationCommand[global;banner;Returns your/users profile banner.;sendm
 ]]
 
 
-$createApplicationCommand[global;avatar;Returns your/users profile picture.;sendmessages;user;all;slash;[
+$createApplicationCommand[global;avatar;Returns your/users profile picture.;;user;all;slash;[
   {
     "type": 6,
     "name": "user",
@@ -33,7 +33,7 @@ $createApplicationCommand[global;avatar;Returns your/users profile picture.;send
 ]]
 
 
-$createApplicationCommand[global;reverse;Let's you reverse text!;sendmessages;user;all;slash;[
+$createApplicationCommand[global;reverse;Let's you reverse text!;;user;all;slash;[
   {
     "type": 3,
     "name": "text",
@@ -42,7 +42,7 @@ $createApplicationCommand[global;reverse;Let's you reverse text!;sendmessages;us
   }
 ]]
 
-$createApplicationCommand[global;owoify;Makes text OWOifed;sendmessages;user;all;slash;[
+$createApplicationCommand[global;owoify;Makes text OWOifed;;user;all;slash;[
   {
     "type": 3,
     "name": "text",
@@ -51,7 +51,7 @@ $createApplicationCommand[global;owoify;Makes text OWOifed;sendmessages;user;all
   }
 ]]
 
-$createApplicationCommand[global;8ball;Ask a question to 8ball;sendmessages;user;all;slash;[
+$createApplicationCommand[global;8ball;Ask a question to 8ball;;user;all;slash;[
   {
     "type": 3,
     "name": "question",
