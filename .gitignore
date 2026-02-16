@@ -14,7 +14,7 @@ lerna-debug.log*
 .vscode/
 .history/
 
-# Env configs
+# Ignore Env files regardless of how it's used
 *.env
 
 
