@@ -28,7 +28,7 @@ This bot purely exists just because i got sick of some verified bot but you can 
 ### What about v2?
 When aoi.js was originally announced to be EOL on 3th December 2025 by one of it's devs, v3 became the default version as a way to make the bot not fall in the dead list.
 
-Apparently however, this was reversed later on 27th December of the same year above by the main owner of aoi.js which seemed pretty weird to me. As someone who saw aoi.js in a dying state constantly, i began to notice a weird pattern where it's like it desperately tries to stay alive while at the same time it fails doing so. By then, it was already too late for me to reverse my decision on making v3 the default and reviving v2.
+Apparently however, this was reversed later on 27th December of the same year above by the main owner of aoi.js which seemed pretty weird to me. As someone who saw aoi.js in a dying state constantly, i began to notice a weird pattern where it's like it desperately tries to stay alive while at the same time it fails doing so. By then, it was already too late for me to reverse my decision on making v3 the default version.
 
 Also, if aoi.js revival actually led to anywhere then it would have still contained breaking changes from say, some major version (like v7) that would make it still useless to maintain Dodo-Bot v2 because it relies on aoi.js v6 to offer the bot's features to users.
 

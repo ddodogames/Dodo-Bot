@@ -38,7 +38,8 @@ $ephemeral
 $interactionUpdate[
 $title[Bug Fixes]
 $description[
-*No bug fixes have been added yet*
+* Grammar fixes for error messages in \`leaderboard\` command
+  * They have also been added for \`about\` command as well
 ]
 $if[$getGlobalVar[pre_release]==on;
 $attachment[./assets/warning.png;warning.png]
