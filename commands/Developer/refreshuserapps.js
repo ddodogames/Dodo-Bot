@@ -8,7 +8,7 @@ module.exports = {
     aliases: ["restartslash", "refreshslash", "refreshapps", "restartuserapps", "restartapps"],
     code: `
     $editMessage[$get[messageID];Successfully refreshed user apps!]
-    $nonEscape[$awaitExecute[createuserapps]]
+    $eval[$awaitExecute[createuserapps]]
     $wait[2s]
     $deleteVar[isuserappsalreadysetup;;main]
     $let[messageID;$sendMessage[Refreshing user apps...;true]]
