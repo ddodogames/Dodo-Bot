@@ -10,7 +10,7 @@ $ephemeral
 $interactionUpdate[
 $title[Changes]
 $description[
-* Added alias \`randomrgb\` for \`randomcolor\`
+* Added alias \`randomrgb\` and \`botinfo\` for \`randomcolor\` and \`about\`
 * Added \`roleinfo\` command
 ]
 $if[$getGlobalVar[pre_release]==on;

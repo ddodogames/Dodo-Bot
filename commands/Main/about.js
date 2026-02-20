@@ -4,7 +4,7 @@ module.exports = {
         description: "Returns information about Dodo-Bot.",
         perms: ["`SendMessages`", "`EmbedLinks`"]
     },
-    aliases: ["info"],
+    aliases: ["info", "botinfo"],
     type: "messageCreate",
     code: `$userCooldown[aboutinfocmd;2s;Cooldown has been triggered! Please wait!
 Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[aboutinfocmd]];1000]]:R>]
