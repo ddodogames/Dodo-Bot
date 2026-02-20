@@ -6,11 +6,11 @@ module.exports = [{
     name: "createuserapps",
     type: "awaited",
     code: `
-$createApplicationCommand[global;randomcolor;Returns a random color that you can use.;;user;all;slash]
-$createApplicationCommand[global;invite;Returns a link to invite the bot;;user;all;slash]
-$createApplicationCommand[global;report;Returns a link to report issues on Dodo-Bot's GitHub repo;;user;all;slash]
-$createApplicationCommand[global;about;Returns information about Dodo-Bot;;user;all;slash]
-$createApplicationCommand[global;ping;Returns the bot's Latency;;user;all;slash]
+$createApplicationCommand[global;randomcolor;Returns a random color that you can use.;;user;all;slash;[]]
+$createApplicationCommand[global;invite;Returns a link to invite the bot;;user;all;slash;[]]
+$createApplicationCommand[global;report;Returns a link to report issues on Dodo-Bot's GitHub repo;;user;all;slash;[]]
+$createApplicationCommand[global;about;Returns information about Dodo-Bot;;user;all;slash;[]]
+$createApplicationCommand[global;ping;Returns the bot's Latency;;user;all;slash;[]]
 
 
 $createApplicationCommand[global;banner;Returns your/users profile banner.;;user;all;slash;[

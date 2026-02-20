@@ -4,7 +4,7 @@ info: {
     description: "Returns information about Dodo-Bot.",
     perms: ["`SendMessages`", "`EmbedLinks`"]
 },
-aliases: "info",
+aliases: ["info", "botinfo"],
 code: `
 $title[About Dodo-Bot]
 $description[Dodo-Bot is a personal project aiming to be an entertainment bot while at the same time providing a couple of useful features (e.g, the Welcomer feature)! It is basically a bot made in aoi.js v6!
