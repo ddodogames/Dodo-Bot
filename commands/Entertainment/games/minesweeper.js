@@ -2,7 +2,7 @@ module.exports = {
   name: "minesweeper",
   info: {
     description: "Starts a random minesweeper game.",
-    perms: ["`SendMessages`"]
+    perms: ["`SendMessages`", "`EmbedLinks`"]
   },
   code: `$djsEval[const { Minesweeper } = require('discord-gamecord');
 

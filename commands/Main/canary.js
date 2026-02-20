@@ -2,7 +2,7 @@ module.exports = {
     name: "canary",
     info: {
         description: "Returns information about Pre-release builds and how to try them.",
-        perms: ["`SendMessages`"]
+        perms: ["`SendMessages`", "`EmbedLinks`"]
     },
     aliases: ["devbuilds", "canarybuilds"],
     code: `$title[About Canary]

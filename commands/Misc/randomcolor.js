@@ -2,7 +2,7 @@ module.exports = {
 name: "randomcolor",
 info: {
     description: "Returns a random color that you can use.",
-    perms: ["`SendMessages`"]
+    perms: ["`SendMessages`", "`EmbedLinks`"]
 },
 aliases: ["randomhex", "randomrgb"],
 code: `$author[Random Color;https://us-east-1.tixte.net/uploads/dodogames.wants.solutions/paintlarger.png]

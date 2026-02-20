@@ -3,7 +3,7 @@ name: "howgamer",
 info: {
     description: "Check on how much gamer you're or the user mentioned.",
     usage: "`howgamer (user)`",
-    perms: ["`SendMessages`"]
+    perms: ["`SendMessages`", "`EmbedLinks`"]
 },
 code: `$title[HowGamer machine]
 $description[$get[target] $random[0;100]% Gamer]

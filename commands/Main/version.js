@@ -3,7 +3,7 @@ module.exports = [{
   info: {
     description: "Returns the current version of Dodo-Bot (with it's changelog).",
     usage: "`version (flag)`",
-    perms: "`SendMessages`",
+    perms: ["`SendMessages`", "`EmbedLinks`"],
     flags: ["`--buildinfo`"]
 },
   aliases: ["ver", "changelog", "updates"],

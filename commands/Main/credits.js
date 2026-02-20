@@ -2,7 +2,7 @@ module.exports = {
     name: "credits",
     info: {
         description: "Returns a list of credits for things that were introduced in Dodo-Bot.",
-        perms: ["`SendMessages`"]
+        perms: ["`SendMessages`", "`EmbedLinks`"]
     },
     code: `$title[Dodo-Bot Credits]
 $description[

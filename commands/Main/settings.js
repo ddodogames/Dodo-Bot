@@ -2,7 +2,7 @@ module.exports = {
   name: "settings",
   info: {
     description: "Let's you manage some options of Dodo-Bot.",
-    perms: ["`SendMessages`", "`ManageGuild`"]
+    perms: ["`SendMessages`", "`EmbedLinks`", "`ManageGuild`"]
 },
   aliases: ["panel", "guildsettings", "serversettings"],
   code: `$title[Settings]

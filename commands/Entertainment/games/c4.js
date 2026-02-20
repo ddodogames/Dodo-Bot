@@ -3,7 +3,7 @@ name: "connect4",
 info: {
   description: "Play connect4 with your opponent!",
   usage: "`connect4 <user>`",
-  perms: ["`SendMessages`"]
+  perms: ["`SendMessages`", "`EmbedLinks`"]
 },
 aliases: ["c4", "connectfour"],
 code: `$djsEval[const { Connect4 } = require('discord-gamecord');

@@ -3,7 +3,7 @@ module.exports = {
   info: {
     description: "Returns your/users profile picture.",
     usage: "`avatar (user)`",
-    perms: ["`SendMessages`"]
+    perms: ["`SendMessages`", "`EmbedLinks`"]
 },
   aliases: ["av","userav"],
   code: `$title[$get[username]'s Avatar]

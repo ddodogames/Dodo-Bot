@@ -3,7 +3,7 @@ name: "userinfo",
 info: {
     description: "Returns your/user's information.",
     usage: "`userinfo (user)`",
-    perms: ["`SendMessages`"]
+    perms: ["`SendMessages`", "`EmbedLinks`"],
 },
 $if: "old",
 aliases: ["user", "user-info"],

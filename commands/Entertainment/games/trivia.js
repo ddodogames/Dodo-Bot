@@ -3,7 +3,7 @@ module.exports = [{
   info: {
     description: "Starts a random Trivia game (pass the flag \`--settings\` to open up the settings).",
     usage: "`trivia (flag)`",
-    perms: ["`SendMessages`"],
+    perms: ["`SendMessages`", "`EmbedLinks`"],
     flags: ["`--settings`"]
   },
   aliases: "triv",

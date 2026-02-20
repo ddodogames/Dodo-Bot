@@ -2,7 +2,7 @@ module.exports = {
     name: "report",
     info: {
         description: "Returns a link to report issues on Dodo-Bot's GitHub repo.",
-        perms: ["`SendMessages`"]
+        perms: ["`SendMessages`", "`EmbedLinks`"]
     },
     aliases: "bugreport",
     code: `$title[Reporting bugs]

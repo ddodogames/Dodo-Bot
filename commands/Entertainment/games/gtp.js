@@ -2,7 +2,7 @@ module.exports = [{
     name: "guess-the-pokemon",
     info: {
       description: "Starts a game of guessing a Pokemon character. (currently disabled)",
-      perms: ["`SendMessages`"]
+      perms: ["`SendMessages`", "`EmbedLinks`"]
     },
     aliases: "gtp",
     code: `$awaitMessages[$channelID;$authorID;60s;everything;gtpawaited;{execute:gtptimeout}]

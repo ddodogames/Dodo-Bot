@@ -2,7 +2,7 @@ module.exports = {
 name: "stats",
 info: {
     description: "Returns statistics about the bot.",
-    perms: "`SendMessages`"
+    perms: ["`SendMessages`", "`EmbedLinks`"]
 },
 aliases: "botstats",
 code: `$title[$username[$clientID]'s Stats]

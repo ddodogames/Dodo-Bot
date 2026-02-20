@@ -2,14 +2,14 @@ module.exports = {
 name: "about",
 info: {
     description: "Returns information about Dodo-Bot.",
-    perms: ["`SendMessages`"]
+    perms: ["`SendMessages`", "`EmbedLinks`"]
 },
 aliases: "info",
 code: `
 $title[About Dodo-Bot]
 $description[Dodo-Bot is a personal project aiming to be an entertainment bot while at the same time providing a couple of useful features (e.g, the Welcomer feature)! It is basically a bot made in aoi.js v6!
 
-The project has existed since late 2021 and to this day, it continues to be developed with new improvements along with other type of updates as well!
+The project has been ongoing since late 2021, and it continues to be developed with new improvements along with other types of updates to this day!
 ]
 $color[$getVar[embedcolor]]
 $addButton[1;Source Code;5;https://github.com/ddodogames/Dodo-Bot;false]

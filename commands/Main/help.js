@@ -2,7 +2,7 @@ module.exports = {
   name: "help",
   info: {
     description: "View all available commands of the bot.",
-    perms: ["`SendMessages`"]
+    perms: ["`SendMessages`", "`EmbedLinks`"]
 },
   aliases: ["h"],
   code: `$title[Help Menu]

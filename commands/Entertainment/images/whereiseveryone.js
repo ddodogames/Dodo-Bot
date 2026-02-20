@@ -2,7 +2,7 @@ module.exports = {
     name: "whereiseveryone",
     info: {
         description: "Starts a short recreation of cut-scene from Shrek movie.",
-        perms: ["`SendMessages`"]
+        perms: ["`SendMessages`", "`EmbedLinks`"]
     },
     code: `$title["It's quiet..."]
 $image[https://us-east-1.tixte.net/uploads/dodogames.wants.solutions/whereiseveryone-part1.png]

@@ -3,7 +3,7 @@ name: "hangman",
 info: {
     description: "Starts a hangman game (pass the flag \`--themes\` to change the current theme).",
     usage: "`hangman (flag)`",
-    perms: ["`SendMessages`"],
+    perms: ["`SendMessages`", "`EmbedLinks`"],
     flags: ["`--themes`", "`--settings` (alias)"]
   },
 aliases: "hm",

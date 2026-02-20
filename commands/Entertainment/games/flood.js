@@ -3,7 +3,7 @@ module.exports = [{
   info: {
     description: "Starts a game of Flood (pass the flag \`--settings\` to open up the settings).",
     usage: "`flood (flag)`",
-    perms: ["`SendMessages`"],
+    perms: ["`SendMessages`", "`EmbedLinks`"],
     flags: ["`--settings`"]
   },
   code: `$ifAwaited[$checkContains[$message;--settings;—settings]==true;{execute:floodsettings};{execute:floodstart}]

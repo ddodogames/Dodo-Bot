@@ -2,7 +2,7 @@ module.exports = {
     name: "serverlist",
     info: {
         description: "Returns list of servers the bot is in.",
-        perms: ["`SendMessages`"],
+        perms: ["`SendMessages`", "`AttachFiles`"],
         dev: "true"
     },
     aliases: "guildlist",

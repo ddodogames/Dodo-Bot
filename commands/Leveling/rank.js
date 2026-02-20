@@ -3,7 +3,7 @@ module.exports ={
     info: {
         description: "View your or someone's current level.",
         usage: "`rank (user)`",
-        perms: ["`SendMessages`"]
+        perms: ["`SendMessages`", "`EmbedLinks`"],
     },
     aliases: ["level", "lvl"],
     code: `

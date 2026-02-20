@@ -2,7 +2,7 @@ module.exports = {
 name: "perms",
 info: {
         description: "Shows permissions the bot requires.",
-        perms: "`SendMessages`"
+        perms: ["`SendMessages`", "`EmbedLinks`"]
     },
 aliases: ["botperms"],
 code: `

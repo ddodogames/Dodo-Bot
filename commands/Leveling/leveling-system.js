@@ -2,7 +2,7 @@ module.exports = {
 name: "leveling",
 info: {
     description: "Setup and manage Leveling feature.",
-    perms: ["`SendMessages`", "`ManageChannels`"]
+    perms: ["`SendMessages`", "`EmbedLinks`", "`ManageChannels`"],
 },
 code: `
 $title[Leveling]

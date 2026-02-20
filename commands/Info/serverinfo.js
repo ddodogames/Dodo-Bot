@@ -2,7 +2,7 @@ module.exports = {
   name: "serverinfo",
   info: {
     description: "Returns information about this server.",
-    perms: ["`SendMessages`"]
+    perms: ["`SendMessages`", "`EmbedLinks`"],
 },
   aliases: ["server", "si", "guild", "guildinfo"],
   $if: "old",

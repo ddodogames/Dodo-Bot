@@ -2,7 +2,7 @@ module.exports = {
   name: "snake",
   info: {
     description: "Starts a snake game.",
-    perms: ["`SendMessages`"]
+    perms: ["`SendMessages`", "`EmbedLinks`"]
   },
   aliases: "snek",
   code: `$djsEval[const { Snake } = require('discord-gamecord');

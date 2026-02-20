@@ -3,7 +3,7 @@ name: "tictactoe",
 info: {
   description: "Play tictactoe with your opponent!",
   usage: "`tictactoe <user>`",
-  perms: ["`SendMessages`"]
+  perms: ["`SendMessages`", "`EmbedLinks`"]
 },
 aliases: "ttt",
 code: `$djsEval[const { TicTacToe } = require('discord-gamecord');

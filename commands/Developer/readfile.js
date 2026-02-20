@@ -3,7 +3,7 @@ module.exports = {
     info: {
       description: "Returns the contents of the file specified.",
       usage: "`readfile <path to file>`",
-      perms: ["`SendMessages`"],
+      perms: ["`SendMessages`", "`AttachFiles`"],
       dev: "true"
     },
     aliases: ["viewfile", "readcontent", "viewcontent"],

@@ -3,7 +3,7 @@ module.exports = {
     info: {
         description: "Returns your/users profile banner.",
         usage: "`banner (user)`",
-        perms: ["`SendMessages`"]
+        perms: ["`SendMessages`", "`EmbedLinks`"]
     },
     aliases: ["userbanner","usrbanner"],
     code: `$title[$get[username]'s Banner]

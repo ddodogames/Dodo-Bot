@@ -1,10 +1,7 @@
-const { SlashTypes, ContextTypes, IntegrationTypes } = require("../../utils/InteractionConstants.js");
-const { Permissions } = require("../../utils/Constants.js");
+  const { SlashTypes, ContextTypes, IntegrationTypes } = require("../../utils/InteractionConstants.js");
+  const { Permissions } = require("../../utils/Constants.js");
 
-/**
- * @param {import("..").Data} d
- */
-module.exports = async (d) => {
+  module.exports = async (d) => {
     const data = d.util.aoiFunc(d);
     if (data.err) return d.error(data.err);
 
@@ -14,32 +11,42 @@ module.exports = async (d) => {
     if (!guild && guildID !== "global") return d.aoiError.fnError(d, "guild", { inside: data.inside });
 
     const appContext = contexts === "all" || contexts.trim() === "" ? [ContextTypes.botdm, ContextTypes.dm, ContextTypes.guild] : contexts.split(",").map((x) => ContextTypes[x]);
+    if (appContext.includes(undefined)) return d.aoiError.fnError(d, "custom", { inside: data.inside }, "Invalid Context, valid options: " + Object.keys(ContextTypes).join(","));
 
     const appIntegrationType =
-        integrationType === "all" || integrationType.trim() === "" ? [IntegrationTypes.guild, IntegrationTypes.user] : integrationType.split(",").map((x) => IntegrationTypes[x]);
-
-    if (appContext.includes(undefined)) return d.aoiError.fnError(d, "custom", { inside: data.inside }, "Invalid Context, valid options: " + Object.keys(ContextTypes).join(","));
+      integrationType === "all" || integrationType.trim() === "" ? [IntegrationTypes.guild, IntegrationTypes.user] : integrationType.split(",").map((x) => IntegrationTypes[x]);
 
     const appPermissions = (defaultMemberPermissions.toLowerCase()).split(",").map((x) => Permissions[x]);
 
+    let parsedOptions;
+    try {
+      parsedOptions = options ? JSON.parse(options) : {};
+    } catch (err) {
+      return d.aoiError.fnError(d, "custom", {}, "Invalid JSON in options: " + err.message);
+    }
+
     const appData = {
-        data: {
-            name: name,
-            type: SlashTypes[type] || type,
-            ...(type === "slash" ? { description: description?.addBrackets() } : {}),
-            defaultMemberPermissions: appPermissions.includes(undefined) ? null : appPermissions,
-            contexts: appContext,
-            integrationTypes: appIntegrationType,
-            options: options ? JSON.parse(options) : []
-        },
-        guildID: guild?.id
+      data: {
+        name: name,
+        type: SlashTypes[type] || type,
+        ...(type === "slash" ? {
+          description: description?.addBrackets(),
+          ...("description_localizations" in parsedOptions ? { description_localizations: parsedOptions.description_localizations } : {}),
+          ...("name_localizations" in parsedOptions ? { name_localizations: parsedOptions.name_localizations } : {})
+        } : {}),
+        defaultMemberPermissions: appPermissions.includes(undefined) ? null : appPermissions,
+        contexts: appContext,
+        integrationTypes: appIntegrationType,
+        options: parsedOptions || []
+      },
+      guildID: guild?.id
     };
 
     await d.client.application.commands.create(appData.data, appData.guildID).catch((e) => {
-        d.aoiError.fnError(d, "custom", {}, "Failed To Create Application Command With Reason: " + e);
+      d.aoiError.fnError(d, "custom", {}, "Failed To Create Application Command With Reason: " + e);
     });
 
     return {
-        code: d.util.setCode(data)
+      code: d.util.setCode(data)
     };
-};
+  };

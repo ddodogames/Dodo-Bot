@@ -2,7 +2,7 @@ module.exports = {
   name: "coinflip",
   info: {
     description: "Starts a game of Coin Flip.",
-    perms: ["`SendMessages`"]
+    perms: ["`SendMessages`", "`EmbedLinks`"]
   },
   aliases: "cf",
   code: `

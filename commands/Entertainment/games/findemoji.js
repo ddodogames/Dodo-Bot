@@ -2,7 +2,7 @@ module.exports = {
 name: "findemoji",
 info: {
   description: "Starts a game of Find Emoji.",
-  perms: ["`SendMessages`"]
+  perms: ["`SendMessages`", "`EmbedLinks`"]
 },
 aliases: "find-emoji",
 code: `$djsEval[const { FindEmoji } = require('discord-gamecord');

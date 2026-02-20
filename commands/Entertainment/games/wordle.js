@@ -2,7 +2,7 @@ module.exports = {
     name: "wordle",
     info: {
     description: "Starts a game of wordle.",
-    perms: ["`SendMessages`"]
+    perms: ["`SendMessages`", "`EmbedLinks`"]
 },
     code: `
     $djsEval[const { Wordle } = require("discord-gamecord");

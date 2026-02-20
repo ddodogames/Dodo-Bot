@@ -2,7 +2,7 @@ module.exports = {
 name: "randomtopic",
 info: {
     description: "Start a random topic in this server.",
-    perms: ["`SendMessages`"]
+    perms: ["`SendMessages`", "`EmbedLinks`"]
 },
 aliases: ["newtopic", "topic"],
 code: `$title[Random topic]
