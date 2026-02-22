@@ -21,9 +21,9 @@ require('@dotenvx/dotenvx').config({path: ['.env.local', '.env'], ignore: ['MISS
 })
 
 // Handlers
-client.commands.load("./commands")
+client.functions.load("./handlers/functions/");
+client.commands.load("./commands/")
 ForgeDB.variables(require("./handlers/variables.js"));
-client.functions.add(...require("./handlers/functions.js"));
 // Your bot token
 client.login(process.env.BotToken || config.BotToken);
 

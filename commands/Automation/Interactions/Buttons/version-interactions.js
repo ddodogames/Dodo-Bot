@@ -66,7 +66,7 @@ $ephemeral
 $interactionUpdate[
 $title[Other]
 $description[
-*No changes have been added yet*
+* (Source code) Split custom functions into separate files for quicker updating
 ]
 $if[$getGlobalVar[pre_release]==on;
 $attachment[./assets/warning.png;warning.png]
