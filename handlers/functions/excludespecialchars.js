@@ -1,6 +1,10 @@
 module.exports = [{
     name: "excludespecialchars",
-    params: ["content"],
+    params: [{
+        'name': 'content',
+        'type': 'String',
+        'required': true
+    }],
     code: `
     $let[message;$advancedReplace[$env[content];+;;-;;/;;%;;&;;$;;#;;^;;(;;);;*;;!;;?;]]
 

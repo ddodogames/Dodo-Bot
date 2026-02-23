@@ -70,7 +70,7 @@ $addField[**General**;
 $addField[**Other**;
 * **Avatar:** $hyperlink[link;$userAvatar[$get[user]]]$if[$userBanner[$get[user]]!=;
 * **Banner:** $hyperlink[link;$userBanner[$get[user]]]]
-* **DMS:** $get[dmsstatus]
+* **DMs:** $get[dmsstatus]
 ;true]
 $thumbnail[$userAvatar[$get[user]]]
 $color[$getGlobalVar[embedcolor]]

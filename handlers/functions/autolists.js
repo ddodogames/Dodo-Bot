@@ -1,6 +1,14 @@
 module.exports = [{
     name: "autoListText",
-    params: ["variable", "sep"],
+    params: [{
+        'name': 'variable',
+        'type': 'String',
+        'required': true
+    },{
+        'name': 'sep',
+        'type': 'String',
+        'required': true
+    }],
     code: `
     $c[Let's create the array.]
     $arrayLoad[totalList;$env[sep];$env[variable]]
@@ -19,7 +27,15 @@ module.exports = [{
     `
 },{
     name: "autoListcategories",
-    params: ["variable", "sep"],
+    params: [{
+        'name': 'variable',
+        'type': 'String',
+        'required': true
+    },{
+        'name': 'sep',
+        'type': 'String',
+        'required': true
+    }],
     code: `
     $c[Let's create the array.]
     $arrayLoad[totalList;$env[sep];$env[variable]]
@@ -39,7 +55,15 @@ module.exports = [{
     `
 },{
     name: "autoListroles",
-    params: ["variable", "sep"],
+    params: [{
+        'name': 'variable',
+        'type': 'String',
+        'required': true
+    },{
+        'name': 'sep',
+        'type': 'String',
+        'required': true
+    }],
     code: `
     $c[Let's create the array.]
     $arrayLoad[totalList;$env[sep];$env[variable]]
@@ -59,7 +83,15 @@ module.exports = [{
     `
 },{
     name: "autoListchannels",
-    params: ["variable", "sep"],
+    params: [{
+        'name': 'variable',
+        'type': 'String',
+        'required': true
+    },{
+        'name': 'sep',
+        'type': 'String',
+        'required': true
+    }],
     code: `
     $c[Let's create the array.]
     $arrayLoad[totalList;$env[sep];$env[variable]]
@@ -79,7 +111,15 @@ module.exports = [{
     `
 },{
     name: "autoListServers",
-    params: ["variable", "sep"],
+    params: [{
+        'name': 'variable',
+        'type': 'String',
+        'required': true
+    },{
+        'name': 'sep',
+        'type': 'String',
+        'required': true
+    }],
     code: `
     $c[Let's create the array.]
     $arrayLoad[totalList;$env[sep];$env[variable]]
