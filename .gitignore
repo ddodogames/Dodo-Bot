@@ -17,7 +17,6 @@ lerna-debug.log*
 # Ignore Env files regardless of how it's used
 *.env
 
-
 # Main stuff to ignore
 database/
 package-lock.json
