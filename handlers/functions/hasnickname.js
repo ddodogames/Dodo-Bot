@@ -9,6 +9,7 @@ module.exports = [{
         'type': 'String',
         'required': false
     }],
+    brackets: false,
     code: `
     $let[user;$findUser[$env[userID];true]]
     $let[serverID;$advancedReplace[$checkCondition[$env[guildID]==];true;$guildID;false;$env[guildID]]]
