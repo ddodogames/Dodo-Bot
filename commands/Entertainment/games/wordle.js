@@ -8,6 +8,8 @@ type: "messageCreate",
 code: `$userCooldown[wordlecmd;3s;Cooldown has been triggered! Please wait!
 Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[wordlecmd]];1000]]:R>]
 
+$onlyIf[disabled!=disabled;This command has been temporarily disabled due to issues.]
+
 
 $!djsEval[const { Wordle } = require('discord-gamecord');
 
