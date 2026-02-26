@@ -67,6 +67,7 @@ $interactionUpdate[
 $title[Other]
 $description[
 * (Source code) Split custom functions into separate files for quicker updating
+* Temporarily disable \`wordle\` command since it stopped working
 ]
 $if[$getGlobalVar[pre_release]==on;
 $attachment[./assets/warning.png;warning.png]
