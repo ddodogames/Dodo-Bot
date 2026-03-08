@@ -10,8 +10,7 @@ $ephemeral
 $interactionUpdate[
 $title[Changes]
 $description[
-* Added alias \`randomrgb\` and \`botinfo\` for \`randomcolor\` and \`about\`
-* Added \`roleinfo\` command
+*No changes have been added yet*
 ]
 $if[$getGlobalVar[pre_release]==on;
 $attachment[./assets/warning.png;warning.png]
@@ -38,8 +37,7 @@ $ephemeral
 $interactionUpdate[
 $title[Bug Fixes]
 $description[
-* Grammar fixes for error messages in \`leaderboard\` command
-  * They have also been added for \`about\` command as well
+*No bug fixes have been added yet*
 ]
 $if[$getGlobalVar[pre_release]==on;
 $attachment[./assets/warning.png;warning.png]
@@ -66,8 +64,7 @@ $ephemeral
 $interactionUpdate[
 $title[Other]
 $description[
-* (Source code) Split custom functions into separate files for quicker updating
-* Temporarily disable \`wordle\` command since it stopped working
+* (Source code) Updated \`@dotenvx/dotenvx\` to version \`1.54.1\`
 ]
 $if[$getGlobalVar[pre_release]==on;
 $attachment[./assets/warning.png;warning.png]
