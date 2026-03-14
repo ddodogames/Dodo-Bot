@@ -10,7 +10,7 @@ $ephemeral
 $interactionUpdate[
 $title[Changes]
 $description[
-*No changes have been added yet*
+* Added a new command called \`channelinfo\`
 ]
 $if[$getGlobalVar[pre_release]==on;
 $attachment[./assets/warning.png;warning.png]
@@ -64,7 +64,7 @@ $ephemeral
 $interactionUpdate[
 $title[Other]
 $description[
-* (Source code) Updated \`@dotenvx/dotenvx\` to version \`1.54.1\`
+* (Source code) Updated \`@dotenvx/dotenvx\` to version \`1.55.1\`
 ]
 $if[$getGlobalVar[pre_release]==on;
 $attachment[./assets/warning.png;warning.png]
