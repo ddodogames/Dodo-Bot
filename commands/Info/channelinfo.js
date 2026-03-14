@@ -17,8 +17,16 @@ module.exports = {
 
     $onlyIf[$guildChannelExists[$guildID;$get[channel]]==true;Please mention a valid channel that exists in this server.]
 
+    $let[nsfw;$advancedReplace[$checkCondition[$channelNSFW[$get[channel]]==true];true;Yes;false;No]]
+
     $author[About this channel;$get[servericon];$get[servericon]]
     $title[$channelName[$get[channel]]]
+    $addField[**General**;
+* **ID:** $get[channel]
+* **Type:** $channelType[$get[channel]]
+* **NSFW:** $get[nsfw]
+* **Created on:** <t:$trunc[$divide[$channelCreatedAt[$get[channel]];1000]]:f>
+]
     $color[$getGlobalVar[embedcolor]]
     `
 }
