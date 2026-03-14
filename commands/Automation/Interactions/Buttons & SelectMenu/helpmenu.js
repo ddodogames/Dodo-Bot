@@ -97,7 +97,7 @@ $ephemeral
 \`suggest-setup\`, \`poll-set\`, \`setup-logs\`, \`welcomer\`, \`leave\`, \`prefix\`, \`reset-prefix\`
     ]
 $addField[**Info**;
-\`userinfo\`, \`roleinfo\`, \`serverinfo\`]
+\`userinfo\`, \`roleinfo\`, \`channelinfo\`, \`serverinfo\`]
 $addField[**Miscellaneous**;
 \`randomcolor\`, \`avatar\`, \`banner\`, \`morse\`, \`aur\`, \`periodic-table\`, \`suggest\`, \`poll\`]
     $color[$getGlobalVar[embedcolor]]
