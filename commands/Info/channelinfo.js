@@ -10,23 +10,24 @@ module.exports = {
     code: `$userCooldown[channelinfocmd;3s;Cooldown has been triggered! Please wait!
     Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[channelinfocmd]];1000]]:R>]
 
-    $let[servericon;$advancedReplace[$checkCondition[$guildIcon==];true;$userDefaultAvatar[$clientID];false;$guildIcon]]
-    $let[channel;$findChannel[$message;false]]
+$let[servericon;$advancedReplace[$checkCondition[$guildIcon==];true;$userDefaultAvatar[$clientID];false;$guildIcon]]
+$let[channel;$findChannel[$message;false]]
 
-    $onlyIf[$get[channel]!=;Please specify a channel (via mention, id or name) to view it's information.]
+$onlyIf[$get[channel]!=;Please specify a channel (via mention, id or name) to view it's information.]
 
-    $onlyIf[$guildChannelExists[$guildID;$get[channel]]==true;Please mention a valid channel that exists in this server.]
+$onlyIf[$guildChannelExists[$guildID;$get[channel]]==true;Please mention a valid channel that exists in this server.]
 
-    $let[nsfw;$advancedReplace[$checkCondition[$channelNSFW[$get[channel]]==true];true;Yes;false;No]]
+$let[nsfw;$advancedReplace[$checkCondition[$channelNSFW[$get[channel]]==true];true;Yes;false;No]]
+$let[channeltype;$advancedReplace[$channelType[$get[channel]];GuildText;Text;GuildVoice;Voice;GuildCategory;Category;GuildAnnouncement;Announcement;AnnouncementThread;Announcement (Thread);GuildStageVoice;Stage;GuildForum;Forum;GuildMedia;Media;GuildNews;News;GuildNewsThread;News (Thread)]]
 
-    $author[About this channel;$get[servericon];$get[servericon]]
-    $title[$channelName[$get[channel]]]
-    $addField[**General**;
+$author[About this channel;$get[servericon];$get[servericon]]
+$title[$channelName[$get[channel]]]
+$addField[**General**;
 * **ID:** $get[channel]
-* **Type:** $channelType[$get[channel]]
+* **Type:** $get[channeltype]
 * **NSFW:** $get[nsfw]
 * **Created on:** <t:$trunc[$divide[$channelCreatedAt[$get[channel]];1000]]:f>
 ]
-    $color[$getGlobalVar[embedcolor]]
+$color[$getGlobalVar[embedcolor]]
     `
 }
