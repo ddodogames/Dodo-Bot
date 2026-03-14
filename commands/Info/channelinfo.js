@@ -10,7 +10,7 @@ module.exports = {
     code: `$userCooldown[channelinfocmd;3s;Cooldown has been triggered! Please wait!
     Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[channelinfocmd]];1000]]:R>]
 
-    $let[channel;$findGuildChannel[$guildID;$message;false]]
+    $let[channel;$findChannel[$message;false]]
 
     $onlyIf[$get[channel]!=;Please specify a channel (via mention, id or name) to view it's information.]
 
