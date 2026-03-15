@@ -40,6 +40,7 @@ $addField[**General**;
 $addField[**Other**;
 * **Managed by Discord**: $get[manageable]
 * **Mentionable**: $get[mentionable]
+* **Position:** $ordinal[$rolePosition[$guildID;$get[role];true]]
 * **Hoisted**: $get[hoisted]
 ;true]
 $color[$getGlobalVar[embedcolor]]
