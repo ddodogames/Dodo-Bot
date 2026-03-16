@@ -18,7 +18,7 @@ $onlyIf[$get[channel]!=;Please specify a channel (via mention, id or name) to vi
 $onlyIf[$guildChannelExists[$guildID;$get[channel]]==true;Please mention a valid channel that exists in this server.]
 
 $let[nsfw;$advancedReplace[$checkCondition[$channelNSFW[$get[channel]]==true];true;Yes;false;No]]
-$let[channeltype;$advancedReplace[$channelType[$get[channel]];GuildText;Text;GuildVoice;Voice;GuildCategory;Category;GuildAnnouncement;Announcement;AnnouncementThread;Announcement (Thread);GuildStageVoice;Stage;GuildForum;Forum;GuildMedia;Media;GuildNews;News;GuildNewsThread;News (Thread)]]
+$let[channeltype;$advancedReplace[$#channelType[$get[channel]];GuildText;Text;GuildVoice;Voice;GuildCategory;Category;GuildAnnouncement;Announcement;AnnouncementThread;Announcement (Thread);GuildStageVoice;Stage;GuildForum;Forum;GuildMedia;Media;GuildNews;News;GuildNewsThread;News (Thread)]]
 $let[manageable;$advancedReplace[$checkCondition[$channelManageable[$get[channel]]==true];true;Yes;false;No]]
 $let[deletable;$advancedReplace[$checkCondition[$channelDeletable[$get[channel]]==true];true;Yes;false;No]]
 
@@ -26,7 +26,7 @@ $author[About this channel;$get[servericon];$get[servericon]]
 $title[$channelName[$get[channel]]]
 $addField[**General**;
 * **ID:** $get[channel]
-* **Type:** $get[channeltype]
+* **Type:** $if[$get[channeltype]!=;Failed to get the type ⚠️;$get[channeltype]]
 * **NSFW:** $get[nsfw]
 * **Created on:** <t:$trunc[$divide[$channelCreatedAt[$get[channel]];1000]]:f>
 ]
