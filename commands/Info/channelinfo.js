@@ -14,7 +14,7 @@ $let[servericon;$advancedReplace[$checkCondition[$guildIcon==];true;$userDefault
 $let[channel;$findChannel[$message;false]]
 
 $onlyIf[$get[channel]!=;Please specify a channel (via mention, id or name) to view it's information.
--# Threads are currently unsupported due to issues.
+-# Threads are supported but some of them may not work properly.
 ]
 
 $onlyIf[$guildChannelExists[$guildID;$get[channel]]==true;Please mention a valid channel that exists in this server.]
