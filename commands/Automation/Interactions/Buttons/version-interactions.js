@@ -65,6 +65,7 @@ $interactionUpdate[
 $title[Other]
 $description[
 * (Source code) Updated \`@dotenvx/dotenvx\` to version \`1.55.1\`
+* Show position of the role specified in \`roleinfo\` command
 ]
 $if[$getGlobalVar[pre_release]==on;
 $attachment[./assets/warning.png;warning.png]
