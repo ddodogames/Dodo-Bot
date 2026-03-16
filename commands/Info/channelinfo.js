@@ -26,7 +26,7 @@ $author[About this channel;$get[servericon];$get[servericon]]
 $title[$channelName[$get[channel]]]
 $addField[**General**;
 * **ID:** $get[channel]
-* **Type:** $if[$get[channeltype]!=;Failed to get the type ⚠️;$get[channeltype]]
+* **Type:** $if[$get[channeltype]!=;$get[channeltype];Failed to get the type ⚠️]
 * **NSFW:** $get[nsfw]
 * **Created on:** <t:$trunc[$divide[$channelCreatedAt[$get[channel]];1000]]:f>
 ]
