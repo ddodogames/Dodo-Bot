@@ -19,8 +19,10 @@ $onlyIf[$get[channel]!=;Please specify a channel (via mention, id or name) to vi
 
 $onlyIf[$guildChannelExists[$guildID;$get[channel]]==true;Please mention a valid channel that exists in this server.]
 
+$fetchThreads[$get[channel];true;true]
+
 $let[nsfw;$advancedReplace[$checkCondition[$channelNSFW[$get[channel]]==true];true;Yes;false;No]]
-$let[channeltype;$advancedReplace[$#channelType[$get[channel]];GuildText;Text;GuildVoice;Voice;GuildCategory;Category;GuildAnnouncement;Announcement;AnnouncementThread;Announcement (Thread);GuildStageVoice;Stage;GuildForum;Forum;GuildMedia;Media;GuildNews;News;GuildNewsThread;News (Thread)]]
+$let[channeltype;$advancedReplace[$#channelType[$get[channel]];GuildText;Text;GuildVoice;Voice;GuildCategory;Category;GuildAnnouncement;Announcement;AnnouncementThread;Announcement (Thread);GuildStageVoice;Stage;GuildForum;Forum;GuildMedia;Media;GuildDirectory;Directory;GuildNews;News;GuildNewsThread;News (Thread);GuildPublicThread;Threads (Public);GuildPrivateThread;Threads (Private)]]
 $let[manageable;$advancedReplace[$checkCondition[$channelManageable[$get[channel]]==true];true;Yes;false;No]]
 $let[deletable;$advancedReplace[$checkCondition[$channelDeletable[$get[channel]]==true];true;Yes;false;No]]
 
