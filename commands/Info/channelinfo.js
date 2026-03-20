@@ -34,11 +34,9 @@ $addField[**General**;
 ;true]
 $addField[**Other**;
 * **Managed by Discord:** $get[manageable]$if[$channelCategoryID[$get[channel]]!=;
-* **Belongs to:** $channelName[$channelCategoryID[$get[channel]]]
+* **Belongs to:** $channelName[$channelCategoryID[$get[channel]]]]
 * **Deletable:** $get[deletable]
 ;true]
-
-]
 $color[$getGlobalVar[embedcolor]]
     `
 }
