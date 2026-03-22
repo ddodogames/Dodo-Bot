@@ -1,5 +1,5 @@
 module.exports = [{
-    name: "Adminsonly",
+    name: "botAdminsOnly",
     params: [],
     code: `
     $return[

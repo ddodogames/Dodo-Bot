@@ -7,7 +7,7 @@ info: {
     dev: "true"
 },
 type: "messageCreate",
-code: `$callFunction[Devsonly]
+code: `$callFunction[botDevsOnly]
 
 $if[$checkContains[$message;--now;—now]==true;
 $clientDestroy;

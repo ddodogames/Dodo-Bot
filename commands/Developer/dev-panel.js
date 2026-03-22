@@ -7,7 +7,7 @@ info: {
 },
 aliases: ["devpanel", "developer-panel", "dev-settings"],
 type: "messageCreate",
-code: `$callFunction[Devsonly]
+code: `$callFunction[botDevsOnly]
 $title[Developer panel]
 $description[Welcome to Developer panel! This panel allows you to change some stuff in the bot!
 

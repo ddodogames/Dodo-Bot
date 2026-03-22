@@ -7,7 +7,7 @@ info: {
 },
 aliases: ["restartcmds", "reloadcmds", "reload"],
 type: "messageCreate",
-code: `$callFunction[Devsonly]
+code: `$callFunction[botDevsOnly]
 $updateCommands
 
 $let[total;$sum[$commandCount[messageCreate];$commandCount[interactionCreate]]]

@@ -7,7 +7,7 @@ module.exports = {
     },
     aliases: ["cleardb", "destroydb", "deletedb"],
     type: "messageCreate",
-    code: `$callFunction[Devsonly]
+    code: `$callFunction[botDevsOnly]
 
 $if[$checkContains[$message;--now;—now]==true
 $wipeDB

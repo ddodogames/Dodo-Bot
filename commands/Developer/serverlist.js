@@ -7,6 +7,6 @@ module.exports = {
     },
     aliases: ["guildlist"],
     type: "messageCreate",
-    code: `$callFunction[Devsonly]
+    code: `$callFunction[botDevsOnly]
 $attachment[$callFunction[autoListServers;$serverIDs;, ];allservers.md;true]`
 }

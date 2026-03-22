@@ -8,7 +8,7 @@ info: {
 },
 aliases: ["e"],
 type: "messageCreate",
-code: `$callFunction[Devsonly]
+code: `$callFunction[botDevsOnly]
 $onlyIf[$message!=;Please provide a code.]
 $eval[$message;true]`
 }
