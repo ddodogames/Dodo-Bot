@@ -22,7 +22,6 @@ $onlyIf[$guildChannelExists[$guildID;$get[channel]]==true;Please mention a valid
 $let[nsfw;$advancedReplace[$checkCondition[$channelNSFW[$get[channel]]==true];true;Yes;false;No]]
 $let[channeltype;$advancedReplace[$#channelType[$get[channel]];GuildText;Text;GuildVoice;Voice;GuildCategory;Category;GuildAnnouncement;Announcement;AnnouncementThread;Announcement (Thread);GuildStageVoice;Stage;GuildForum;Forum;GuildMedia;Media;GuildDirectory;Directory;GuildNews;News;GuildNewsThread;News (Thread);GuildPublicThread;Threads (Public);GuildPrivateThread;Threads (Private)]]
 $let[manageable;$advancedReplace[$checkCondition[$channelManageable[$get[channel]]==true];true;Yes;false;No]]
-$let[deletable;$advancedReplace[$checkCondition[$channelDeletable[$get[channel]]==true];true;Yes;false;No]]
 
 $author[About this channel;$get[servericon];$get[servericon]]
 $title[$channelName[$get[channel]]]
@@ -35,7 +34,6 @@ $addField[**General**;
 $addField[**Other**;
 * **Managed by Discord:** $get[manageable]$if[$channelCategoryID[$get[channel]]!=;
 * **Belongs to:** $channelName[$channelCategoryID[$get[channel]]]]
-* **Deletable:** $get[deletable]
 ;true]
 $color[$getGlobalVar[embedcolor]]
     `
