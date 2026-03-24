@@ -14,13 +14,13 @@ $let[servericon;$advancedReplace[$checkCondition[$guildIcon==];true;$userDefault
 $let[channel;$findChannel[$message;false]]
 
 $onlyIf[$get[channel]!=;Please specify a channel (via mention, id or name) to view it's information.
--# For Private Threads to work, ensure i'm a member in them.
+-# For private threads to work, ensure i'm a member in them.
 ]
 
 $onlyIf[$guildChannelExists[$guildID;$get[channel]]==true;Please mention a valid channel that exists in this server.]
 
 $let[nsfw;$advancedReplace[$checkCondition[$channelNSFW[$get[channel]]==true];true;Yes;false;No]]
-$let[channeltype;$advancedReplace[$#channelType[$get[channel]];GuildText;Text;GuildVoice;Voice;GuildCategory;Category;GuildAnnouncement;Announcement;AnnouncementThread;Announcement (Thread);GuildStageVoice;Stage;GuildForum;Forum;GuildMedia;Media;GuildDirectory;Directory;GuildNews;News;GuildNewsThread;News (Thread);GuildPublicThread;Threads (Public);GuildPrivateThread;Threads (Private)]]
+$let[channeltype;$advancedReplace[$#channelType[$get[channel]];GuildText;Text;GuildVoice;Voice;GuildCategory;Category;GuildAnnouncement;Announcement;AnnouncementThread;Announcement (Thread);GuildStageVoice;Stage;GuildForum;Forum;GuildMedia;Media;GuildDirectory;Directory;GuildNews;News;GuildNewsThread;News (Thread);GuildPublicThread;Threads (public);GuildPrivateThread;Threads (private)]]
 $let[manageable;$advancedReplace[$checkCondition[$channelManageable[$get[channel]]==true];true;Yes;false;No]]
 
 $author[About this channel;$get[servericon];$get[servericon]]
