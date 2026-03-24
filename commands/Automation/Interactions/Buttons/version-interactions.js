@@ -64,7 +64,7 @@ $ephemeral
 $interactionUpdate[
 $title[Other]
 $description[
-* (Source code) Updated \`@dotenvx/dotenvx\` to version \`1.57.1\`
+* (Source code) Updated \`@dotenvx/dotenvx\` to version \`1.57.2\`
 * Show position of the role specified in \`roleinfo\` command
 ]
 $if[$getGlobalVar[pre_release]==on;
