@@ -6,7 +6,7 @@ module.exports = {
         usage: "`channelinfo <channel>`",
         perms: ["`SendMessages`", "`EmbedLinks`"]
     },
-    aliases: ["channel"],
+    aliases: ["channel", "chi"],
     code: `$userCooldown[channelinfocmd;3s;Cooldown has been triggered! Please wait!
     Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[channelinfocmd]];1000]]:R>]
 

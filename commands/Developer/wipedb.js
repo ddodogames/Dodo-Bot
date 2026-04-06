@@ -13,8 +13,8 @@ $if[$checkContains[$message;--now;—now]==true
 $wipeDB
 Done!
 ;
-$title[Delete the database]
-$description[Are you sure you want to reset the database? You cannot undo this action once you do it.]
+$title[Delete database]
+$description[Are you sure you want to reset the database? This action cannot be undone once you do so.]
 $attachment[./assets/dangerous-sign.png;dangerous-sign.png]
 $thumbnail[attachment://dangerous-sign.png]
 $color[Red]

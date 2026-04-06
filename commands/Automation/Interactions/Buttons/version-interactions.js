@@ -64,7 +64,8 @@ $ephemeral
 $interactionUpdate[
 $title[Other]
 $description[
-* (Source code) Updated \`@dotenvx/dotenvx\` to version \`1.57.2\`
+* (Source code) Updated \`@dotenvx/dotenvx\` to version \`1.60.0\`
+* (Source code) Renamed the config option \`AllowBotManagers\` to \`AllowBotMembers\`
 * Show position of the role specified in \`roleinfo\` command
 ]
 $if[$getGlobalVar[pre_release]==on;

@@ -11,7 +11,7 @@ code: `$callFunction[botDevsOnly]
 $title[Developer panel]
 $description[Welcome to Developer panel! This panel allows you to change some stuff in the bot!
 
-To change something such as Embed color, use the select menu below.]  
+To change anything, use the select menu below.]
 $color[Yellow]
 $attachment[./assets/devsettings.png;devsettings.png]
 $thumbnail[attachment://devsettings.png]
