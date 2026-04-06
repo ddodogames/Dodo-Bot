@@ -60,7 +60,7 @@ If you're confused about the options, here is a description about what each opti
 | Embedcolor  | Color to use for the majority of commands returning embed.   | `#404060`  |
 | MobileStatus  | Sets the online icon of the bot to the mobile variant whenever it starts.   | `false`  |
 | disableConsoleErrors  | Whether or not disable console errors.   | `false`  |
-| AllowBotManagers  | Allows `Admin` and `Developer` members from developer portal to manage the bot if set to `true`.   | `false`  |
+| AllowBotMembers  | Allows members from developer portal to see the special commands (and use them for `Admin` and `Developer`) if set to `true`.   | `false`  |
 | respondOnEdit  | Allow responding to edited messages.   | `false`  |
 
 # Credits
