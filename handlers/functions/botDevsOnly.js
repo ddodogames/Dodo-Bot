@@ -3,7 +3,7 @@ module.exports = [{
     params: [],
     code: `
     $return[
-        $if[$and[$getGlobalVar[AllowBotManagers]==true;$botTeamID!=];
+        $if[$and[$getGlobalVar[AllowBotMembers]==true;$botTeamID!=];
         $arrayLoad[users;, ;$botTeamMembers[id]]
         $arrayLoad[roles;, ;$botTeamMembers[role]]
         $arrayLoad[membershipstate;, ;$botTeamMembers[membership]]
