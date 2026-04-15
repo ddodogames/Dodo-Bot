@@ -6,7 +6,7 @@ info: {
  usage: "`emojipasta <text>`",
  perms: ["`SendMessages`"]
 },
-aliases: ["emojispam", "emojip"]
+aliases: ["emojispam", "emojip"],
 code: `
 $userCooldown[emojipastacmd;2s;Cooldown has been triggered! Please wait!
 Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[emojipastacmd]];1000]]:R>]
