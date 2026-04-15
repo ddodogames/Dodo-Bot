@@ -44,7 +44,7 @@ This command requires you to have \`ManageGuild\` permission!
 
 $onlyIf[$getGuildVar[prefix]!=${config.prefix};Cannot reset when the prefix is default.]
 $deleteGuildVar[prefix]
-The prefix has been successfully reset. <3
+The prefix has been successfully reset! >⩊<
 
 `
 }]

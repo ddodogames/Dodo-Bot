@@ -57,7 +57,7 @@ $ephemeral
 ]]
 
 $onlyIf[$getGuildVar[suggestionchannel;$guildID]!=;$interactionReply[
-There's no channel set currently to reset.
+There's no channel currently set to reset.
 $ephemeral]]
 
 $deleteGuildVar[suggestionchannel;$guildID]

@@ -15,9 +15,9 @@ This command requires you to have \`ManageChannels\` permission!
 ]
 
 $title[Leveling]
-$description[Leveling is a feature that let's members of the server have their levels and xp based on how much they have been active in the server.
+$description[Leveling is a feature that allows server members to earn levels through XP based on their activity within the server.
 
-To get started, click on the "Toggle" button! To manage the settings regarding the said feature, press the "Settings" button.]
+To begin, click the "Toggle" button to enable/disable it! To adjust the settings for this feature, press the "Settings" button.]
 $addField[Current Setup;$get[levelingsystem]]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow

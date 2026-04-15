@@ -45,7 +45,7 @@ $let[currentchannel;$advancedReplace[$checkCondition[$getGuildVar[leavechannel;$
 
 $interactionReply[
 $title[Leave Settings]
-$description[Welcome to Leave settings! Select a option to change.
+$description[Welcome to Leave settings! Select an option to change.
 ]
 $addField[Current Setup;
 * **Leave channel:** $get[currentchannel]
@@ -69,7 +69,7 @@ $let[currentchannel;$advancedReplace[$checkCondition[$getGuildVar[leavechannel;$
 
 $interactionUpdate[
 $title[Leave Settings]
-$description[Welcome to Leave settings! Select a option to change.
+$description[Welcome to Leave settings! Select an option to change.
 ]
 $addField[Current Setup;
 * **Leave channel:** $get[currentchannel]
@@ -158,7 +158,7 @@ $onlyIf[$customID==leavechannelreset;]
 
 
 $onlyIf[$getGuildVar[leavechannel;$guildID]!=;$interactionReply[
-There's no channel set currently to reset.
+There's no channel currently set to reset.
 $ephemeral]]
 
 $deleteGuildVar[leavechannel;$guildID]
@@ -216,11 +216,11 @@ $onlyIf[$customID==leavemessagesetup;]
 $showModal
 $if[$getGuildVar[leavetype]==embed;
 $modal[leaveembedmodalsetup;Set Message]
-$addTextInput[messageInput;Message to use;Paragraph;true;e.g, Goodbye <user.username>!;$getGuildVar[leavemessage];0;3750]
-$addTextInput[embedcolorInput;Embed color to use;Short;true;e.g, #1F8B4C;$getGuildVar[leavemessageembedcolor];0;7]
+$addTextInput[messageInput;Message to use;Paragraph;true;e.g. Goodbye, <user.username>!;$getGuildVar[leavemessage];0;3750]
+$addTextInput[embedcolorInput;Embed color to use;Short;true;e.g. #1F8B4C;$getGuildVar[leavemessageembedcolor];0;7]
 ;
 $modal[leavetextmodalsetup;Set Message]
-$addTextInput[messageInput;Message to use;Paragraph;true;e.g, Goodbye <user.username>!;$getGuildVar[leavemessage];0;3750]
+$addTextInput[messageInput;Message to use;Paragraph;true;e.g. Goodbye, <user.username>!;$getGuildVar[leavemessage];0;3750]
 ]
 `
 },{

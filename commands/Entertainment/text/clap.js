@@ -2,7 +2,7 @@ module.exports = {
 name: "clap",
 type: "messageCreate",
 info: {
- description: "Makes 👏 the 👏 text 👏 look 👏 like 👏 this",
+ description: "Makes 👏 the 👏 text 👏 look 👏 like 👏 this!",
  usage: "`clap <text>`",
  perms: ["`SendMessages`"]
 },

@@ -47,7 +47,7 @@ $let[levelingresetonleave;$advancedReplace[$getGuildVar[levelingresetonleave];of
 
 $interactionReply[
 $title[Leveling Settings]
-$description[Welcome to Leveling settings! Select a option to change.
+$description[Welcome to Leveling settings! Select an option to change.
 ]
 $addField[Current Setup;
 * **Level up channel:** $get[currentchannel]
@@ -79,7 +79,7 @@ $let[levelingresetonleave;$advancedReplace[$getGuildVar[levelingresetonleave];of
 
 $interactionUpdate[
 $title[Leveling Settings]
-$description[Welcome to Leveling settings! Select a option to change.
+$description[Welcome to Leveling settings! Select an option to change.
 ]
 $addField[Current Setup;
 * **Level up channel:** $get[currentchannel]
@@ -204,7 +204,7 @@ $addButton[levelingresetbutton;Reset;Danger;⚠️]
 
     $showModal
     $modal[levelingresetuserIDmodal;Reset for specific user]
-    $addTextInput[idInput;Id of the user to reset;Short;true;e.g, $authorID;;0;200]
+    $addTextInput[idInput;Id of the user to reset;Short;true;e.g. $authorID;;0;200]
     `
     },{
     type: "interactionCreate",
@@ -310,7 +310,7 @@ $ephemeral
 $onlyIf[$customID==levelingmsgchannelreset;]
 
 $onlyIf[$getGuildVar[levelupmessagechannel;$guildID]!=;$interactionReply[
-There's no channel set currently to reset.
+There's no channel currently set to reset.
 $ephemeral]]
 
 $deleteGuildVar[levelupmessagechannel;$guildID]
@@ -403,7 +403,7 @@ $onlyIf[$customID==levelingmessagesetup;]
 
 $showModal
 $modal[levelingmessagemodalsetup;Set Message]
-$addTextInput[messageInput;Message to use;Paragraph;true;e.g, <user.username> has Leveled up!;$getGuildVar[levelingmessage];0;200]
+$addTextInput[messageInput;Message to use;Paragraph;true;e.g. <user.username> has Leveled up!;$getGuildVar[levelingmessage];0;200]
 
 `
 },{

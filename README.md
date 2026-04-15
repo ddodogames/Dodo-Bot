@@ -49,7 +49,7 @@ You can host v3 on any host as long as you meet the following Requirements:
 * A host ready to handle features of the bot (obviously)
 
 # Configuration
-Dodo-Bot allows you to change some options before turning it on. To do this, check out the `config.js` file present in the source code itself which contains available options to change from!
+Dodo-Bot allows you to change some options before turning it on. To do this, check out the `config.example.js` file present in the source code itself which contains available options to change from! Make sure to make a duplicate of the file as `config.js` to be able to set up the bot.
 
 If you're confused about the options, here is a description about what each option does:
 | Option | Description | Default |

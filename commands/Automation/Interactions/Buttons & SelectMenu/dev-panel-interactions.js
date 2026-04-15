@@ -11,7 +11,7 @@ $let[botinvitationmessage;$advancedReplace[$getGlobalVar[botinvitationmessage];o
 
 $interactionReply[
 $title[Bot Invitation Message]
-$description[When enabled, The bot will welcome the new servers it gets added to. By default, this is enabled in order to help the members know what's the bot's prefix is]
+$description[When enabled, the bot will send a greeting message to the new servers it gets added to. By default, this is enabled in order to help members know what the bot's prefix is.]
 $addField[Current Setup;$get[botinvitationmessage]]
 $color[Yellow]
 $addActionRow 
@@ -132,13 +132,13 @@ $let[fieldname;$getEmbeds[$channelID;$messageID;0;fieldName;0]]
 
 
 $onlyIf[$getGlobalVar[errorchannel]!=$selectMenuValues;
-$interactionReply[This channel is already used for Error messages. Select a different one instead.
+$interactionReply[This channel is already used for error messages. Select a different one instead.
 $ephemeral
 ]
 ]
 
 $onlyIf[$channelHasPerms[$selectMenuValues;$clientID;ViewChannel;SendMessages]==true;
-$interactionReply[You selected a channel that i do not have the required permissions for. To set a channel for Error Logging, i must have the following permissions for the selected channel:
+$interactionReply[You selected a channel that i do not have the required permissions for. To set a channel for error logging, i must have the following permissions for the selected channel:
 \`SendMessages\`
 \`ViewChannel\`
 $ephemeral
@@ -166,7 +166,7 @@ $addButton[errorloggingtoggle;Toggle;Secondary;🔄]
 $addButton[errorloggingchannelreset;Reset;Secondary]
 ]
 
-$interactionFollowUp[<#$selectMenuValues> will now be used for Error messages!
+$interactionFollowUp[<#$selectMenuValues> will now be used for error messages!
 $ephemeral
 ]
 
@@ -179,7 +179,7 @@ $ephemeral
 $onlyIf[$customID==errorloggingchannelreset;]
 
 $onlyIf[$getGlobalVar[errorchannel]!=;$interactionReply[
-There's no channel set currently to reset.
+There's no channel currently set to reset.
 $ephemeral]]
 
 $deleteGlobalVar[errorchannel]
@@ -228,7 +228,7 @@ $interactionReply[
 $title[Embed color]
 $description[This option allows you to change the current embed color used across all the commands of the bot!
 
--# You can also use "random" for the bot to set a random embed color instead
+-# You can also use "random" to set a random embed color instead.
 ]
 $addField[Current Setup;$getGlobalVar[embedcolor]]
 $color[Yellow]
@@ -342,9 +342,9 @@ $let[pre_release;$advancedReplace[$getGlobalVar[pre_release];off;Disabled;on;Ena
 
 $interactionReply[
 $title[Pre-release]
-$description[This option let's you decide on whether or not the current build should be marked as pre-release build. By default, it is enabled for development builds.
+$description[This option lets you decide on whether or not the current build should be marked as a pre-release build. By default, it is enabled for development builds.
 
-Disabling this option will cause all sorts of pre-release stuff to be absent such as the development warning on the console!]
+Disabling this option will cause all sorts of pre-release stuff to be absent, such as the development warning on the console!]
 $addField[Current Setup;$get[pre_release]]
 $color[Yellow]
 $addActionRow
@@ -470,13 +470,13 @@ $let[description;$getEmbeds[$channelID;$messageID;0;description;0]]
 $let[fieldname;$getEmbeds[$channelID;$messageID;0;fieldName;0]]
 
 $onlyIf[$getGlobalVar[startupchannel]!=$selectMenuValues;
-$interactionReply[This channel is already used for Startup messages. Select a different one instead.
+$interactionReply[This channel is already used for startup messages. Select a different one instead.
 $ephemeral
 ]
 ]
 
 $onlyIf[$channelHasPerms[$selectMenuValues;$clientID;ViewChannel;SendMessages]==true;
-$interactionReply[You selected a channel that i do not have the required permissions for. To set a channel for Startup, i must have the following permissions for the selected channel:
+$interactionReply[You selected a channel that i do not have the required permissions for. To set a channel for startup, i must have the following permissions for the selected channel:
 \`SendMessages\`
 \`ViewChannel\`
 $ephemeral
@@ -504,7 +504,7 @@ $addButton[startuptoggle;Toggle;Secondary;🔄]
 $addButton[startupchannelreset;Reset;Secondary]
 ]
 
-$interactionFollowUp[<#$selectMenuValues> will now be used for Startup messages!
+$interactionFollowUp[<#$selectMenuValues> will now be used for startup messages!
 $ephemeral
 ]
 
@@ -517,7 +517,7 @@ $ephemeral
 $onlyIf[$customID==startupchannelreset;]
 
 $onlyIf[$getGlobalVar[startupchannel]!=;$interactionReply[
-There's no channel set currently to reset.
+There's no channel currently set to reset.
 $ephemeral]]
 
 $deleteGlobalVar[startupchannel]
@@ -567,7 +567,7 @@ $interactionReply[
 $title[Show build info]
 $description[When enabled, \`--buildinfo\` flag for \`version\` command will be enabled which displays information about build such as it's number, GitHub branch and other. It will also show the build number on console. This is enabled by default for "Canary" version.
 
-If you don't want it enabled then press the "Toggle" button to disable it (if it was enabled by default).]
+If you don't want it enabled, then press the "Toggle" button to disable it (if it was enabled by default).]
 $addField[Current Setup;$get[showbuildinfo]]
 $color[Yellow]
 $addActionRow
@@ -638,7 +638,7 @@ $onlyIf[$customID==setmemberrequirement;]
 
 $showModal
 $modal[setmemberrequirementmodalsetup;Set Requirement]
-$addTextInput[numberInput;Minimum requirement to enforce;Short;true;e.g, 50;$getGlobalVar[servermemberrequirement];0;100]
+$addTextInput[numberInput;Minimum requirement to enforce;Short;true;e.g. 50;$getGlobalVar[servermemberrequirement];0;100]
 
 `
 },{
@@ -651,7 +651,7 @@ $let[description;$getEmbeds[$channelID;$messageID;0;description;0]]
 $let[fieldname;$getEmbeds[$channelID;$messageID;0;fieldName;0]]
 $let[input;$callFunction[excludespecialchars;$input[numberInput]]]
 
-$onlyIf[$isInteger[$get[input]]==true;$interactionReply[Number must not be a Integer.
+$onlyIf[$isInteger[$get[input]]==true;$interactionReply[The number must not be an integer.
 $ephemeral]
 ]
 
@@ -720,9 +720,9 @@ $interactionReply[
 $title[Backup Database]
 $addField[Why should i backup?;In general, it is recommended to create a backup of the database to always ensure that when something bad happens, you can use your previous copy of the database to restore all the lost data!
 ]
-$addField[Getting started;To make a quick backup, press the button "Create". A new duplicated file of your database will appear with date and time.
+$addField[Getting started;To make a quick backup, press the button "Create." A new duplicated file of your database will appear with the date and time in its name.
 ]
-$addField[How to use it?;To use your backup, rename the file to \`forge.db\` and replace the one in \`database\` folder with the backup file! Reboot the bot and the data should be there!
+$addField[How to use it?;To use your backup, rename the file to \`forge.db\` and replace the one in the \`database\` folder with the backup file! Reboot the bot and the data should be there!
 ]
 $color[Yellow]
 $addActionRow
@@ -751,7 +751,7 @@ $ephemeral
 
     $showModal
     $modal[leaveaservermodalprompt;Leave a server]
-    $addTextInput[numberInput;ID of the server to leave;Short;true;e.g, $randomGuildID;;0;100]
+    $addTextInput[numberInput;ID of the server to leave;Short;true;e.g. $randomGuildID;;0;100]
 
     `
 },{
@@ -773,7 +773,7 @@ $ephemeral
 
     $onlyIf[$checkContains[$guildIDs;$get[input]]==true;$interactionReply[I am not in the server you specified.
 
-    To see which servers i'm currently in, run \`$getGuildVar[prefix]serverlist\` to do so!
+    To see which servers I'm currently in, run \`$getGuildVar[prefix]serverlist\` to do so!
     $ephemeral
     ]]
 

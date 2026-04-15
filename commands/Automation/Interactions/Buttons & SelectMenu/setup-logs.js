@@ -12,7 +12,7 @@ $let[currentchannel;$advancedReplace[$checkCondition[$getGuildVar[msglogdeletech
 $interactionReply[
 $author[Message delete;$userAvatar[$clientID]]
 $title[Channel setup]
-$description[To setup the logs for Message delete, use the select menu below to choose a channel to do so.
+$description[To set up the logs for message deletion, use the select menu below to choose a channel to do so.
 
 **Tip**: Couldn't find the channel you're looking for? Try typing the channel name right into the menu.]
 $addField[Current channel;$get[currentchannel]]
@@ -33,13 +33,13 @@ $onlyIf[$customID==msglogdeletechannelsetup;]
 
 
 $onlyIf[$getGuildVar[msglogdeletechannel;$guildID]!=$selectMenuValues;
-$interactionReply[This channel is already used for Message delete. Select a different one instead.
+$interactionReply[This channel is already used for message delete logs. Select a different one instead.
 $ephemeral
 ]
 ]
 
 $onlyIf[$channelHasPerms[$selectMenuValues;$clientID;ViewChannel;SendMessages]==true;
-$interactionReply[You selected a channel that i do not have the required permissions for. To set a channel for message delete, i must have the following permissions for the selected channel:
+$interactionReply[You selected a channel that i do not have the required permissions for. To set a channel for message delete logs, i must have the following permissions for the selected channel:
 \`SendMessages\`
 \`ViewChannel\`
 $ephemeral
@@ -79,7 +79,7 @@ $ephemeral
 $onlyIf[$customID==msgdeletelogreset;]
 
 $onlyIf[$getGuildVar[msglogdeletechannel;$guildID]!=;$interactionReply[
-There's no channel set currently to reset.
+There's no channel currently set to reset.
 $ephemeral]]
 
 $deleteGuildVar[msglogdeletechannel;$guildID]
@@ -124,7 +124,7 @@ $let[currentchannel;$advancedReplace[$checkCondition[$getGuildVar[msglogeditchan
 $interactionReply[
 $author[Message Edit;$userAvatar[$clientID]]
 $title[Channel setup]
-$description[To setup the logs for Message Edit, use the select menu below to choose a channel to do so.
+$description[To setup the logs for message edit, use the select menu below to choose a channel to do so.
 
 **Tip**: Couldn't find the channel you're looking for? Try typing the channel name right into the menu.]
 $addField[Current channel;$get[currentchannel]]
@@ -149,13 +149,13 @@ $ephemeral
 ]]
 
 $onlyIf[$getGuildVar[msglogeditchannel;$guildID]!=$selectMenuValues;
-$interactionReply[This channel is already used for Message edit. Select a different one instead.
+$interactionReply[This channel is already used for message edit logs. Select a different one instead.
 $ephemeral
 ]
 ]
 
 $onlyIf[$channelHasPerms[$selectMenuValues;$clientID;ViewChannel;SendMessages]==true;
-$interactionReply[You selected a channel that i do not have the required permissions for. To set a channel for message edit, i must have the following permissions for the selected channel:
+$interactionReply[You selected a channel that i do not have the required permissions for. To set a channel for message edit logs, i must have the following permissions for the selected channel:
 \`SendMessages\`
 \`ViewChannel\`
 $ephemeral
@@ -195,7 +195,7 @@ $ephemeral
 $onlyIf[$customID==msgeditlogreset;]
 
 $onlyIf[$getGuildVar[msglogeditchannel;$guildID]!=;$interactionReply[
-There's no channel set currently to reset.
+There's no channel currently set to reset.
 $ephemeral]]
 
 $deleteGuildVar[msglogeditchannel;$guildID]
@@ -241,7 +241,7 @@ $let[currentchannel;$advancedReplace[$checkCondition[$getGuildVar[banlogschannel
 $interactionReply[
 $author[Ban logs;$userAvatar[$clientID]]
 $title[Channel setup]
-$description[To setup the logs for Ban logs, use the select menu below to choose a channel to do so.
+$description[To setup the logs for ban logs, use the select menu below to choose a channel to do so.
 
 **Tip**: Couldn't find the channel you're looking for? Try typing the channel name right into the menu.]
 $addField[Current channel;$get[currentchannel]]
@@ -266,13 +266,13 @@ $ephemeral
 ]]
 
 $onlyIf[$getGuildVar[banlogschannel;$guildID]!=$selectMenuValues;
-$interactionReply[This channel is already used for Ban logs. Select a different one instead.
+$interactionReply[This channel is already used for ban logs. Select a different one instead.
 $ephemeral
 ]
 ]
 
 $onlyIf[$channelHasPerms[$selectMenuValues;$clientID;ViewChannel;SendMessages]==true;
-$interactionReply[You selected a channel that i do not have the required permissions for. To set a channel for Ban logs, i must have the following permissions for the selected channel:
+$interactionReply[You selected a channel that i do not have the required permissions for. To set a channel for ban logs, i must have the following permissions for the selected channel:
 \`SendMessages\`
 \`ViewChannel\`
 $ephemeral
@@ -312,7 +312,7 @@ $ephemeral
 $onlyIf[$customID==memberbanlogreset;]
 
 $onlyIf[$getGuildVar[banlogschannel;$guildID]!=;$interactionReply[
-There's no channel set currently to reset.
+There's no channel currently set to reset.
 $ephemeral]]
 
 $deleteGuildVar[banlogschannel;$guildID]
@@ -357,7 +357,7 @@ $let[currentchannel;$advancedReplace[$checkCondition[$getGuildVar[unbanlogschann
 $interactionReply[
 $author[Un-Ban logs;$userAvatar[$clientID]]
 $title[Channel setup]
-$description[To setup the logs for Un-Ban logs, use the select menu below to choose a channel to do so.
+$description[To setup the logs for un-ban logs, use the select menu below to choose a channel to do so.
 
 **Tip**: Couldn't find the channel you're looking for? Try typing the channel name right into the menu.]
 $addField[Current channel;$get[currentchannel]]
@@ -382,13 +382,13 @@ $ephemeral
 ]]
 
 $onlyIf[$getGuildVar[unbanlogschannel;$guildID]!=$selectMenuValues;
-$interactionReply[This channel is already used for Un-Ban logs. Select a different one instead.
+$interactionReply[This channel is already used for un-ban logs. Select a different one instead.
 $ephemeral
 ]
 ]
 
 $onlyIf[$channelHasPerms[$selectMenuValues;$clientID;ViewChannel;SendMessages]==true;
-$interactionReply[You selected a channel that i do not have the required permissions for. To set a channel for Un-Ban logs, i must have the following permissions for the selected channel:
+$interactionReply[You selected a channel that i do not have the required permissions for. To set a channel for un-ban logs, i must have the following permissions for the selected channel:
 \`SendMessages\`
 \`ViewChannel\`
 $ephemeral
@@ -428,7 +428,7 @@ $ephemeral
 $onlyIf[$customID==memberunbanlogreset;]
 
 $onlyIf[$getGuildVar[unbanlogschannel;$guildID]!=;$interactionReply[
-There's no channel set currently to reset.
+There's no channel currently set to reset.
 $ephemeral]]
 
 $deleteGuildVar[unbanlogschannel;$guildID]
@@ -544,7 +544,7 @@ $ephemeral
 $onlyIf[$customID==integrationlogreset;]
 
 $onlyIf[$getGuildVar[integrationlogchannel;$guildID]!=;$interactionReply[
-There's no channel set currently to reset.
+There's no channel currently set to reset.
 $ephemeral]]
 
 $deleteGuildVar[integrationlogchannel;$guildID]

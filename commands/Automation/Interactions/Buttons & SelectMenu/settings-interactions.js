@@ -11,16 +11,16 @@ $let[autoreplyping;$advancedReplace[$getGuildVar[autoreplyping];off;Disabled;on;
 
 $interactionUpdate[
 $title[AutoReply ping]
-$description[This option let's the bot respond by just pinging. Doing so will return the current prefix set in this server.
+$description[This option lets the bot respond by just pinging. Doing so will return the current prefix set in this server.
 
 It is recommended to disable this if it's used for spamming.]
 $addField[Current Setup;$get[autoreplyping]]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
 $addStringSelectMenu[settingsmenu_$authorID;Select a category;false;1;1]
-$addOption[AutoReply ping;Automatically respond to ping!;autoreplypingoption;;false]
-$addOption[Include Bots;Whether or not to include bots in Message Logs;includebotsoption;;false]
-$addOption[Anonymous;Hide moderator name in Ban logs;anonymousoption;;false]
+$addOption[AutoReply ping;Automatically respond to pings!;autoreplypingoption;;false]
+$addOption[Include Bots;Whether or not to include bots in message logs;includebotsoption;;false]
+$addOption[Anonymous;Hide moderator name in ban logs;anonymousoption;;false]
 $addActionRow
 $addButton[autoreplypingtoggle_$authorID;Toggle;Secondary;🔄]
 ]
@@ -51,9 +51,9 @@ $addField[$get[fieldname];$get[autoreplyping]]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
 $addStringSelectMenu[settingsmenu_$authorID;Select a category;false;1;1]
-$addOption[AutoReply ping;Automatically respond to ping!;autoreplypingoption;;false]
-$addOption[Include Bots;Whether or not to include bots in Message Logs;includebotsoption;;false]
-$addOption[Anonymous;Hide moderator name in Ban logs;anonymousoption;;false]
+$addOption[AutoReply ping;Automatically respond to pings!;autoreplypingoption;;false]
+$addOption[Include Bots;Whether or not to include bots in message logs;includebotsoption;;false]
+$addOption[Anonymous;Hide moderator name in ban logs;anonymousoption;;false]
 $addActionRow
 $addButton[autoreplypingtoggle_$authorID;Toggle;Secondary;🔄]
 ]
@@ -84,9 +84,9 @@ $addField[Current Setup;$get[anonymous]]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
 $addStringSelectMenu[settingsmenu_$authorID;Select a category;false;1;1]
-$addOption[AutoReply ping;Automatically respond to ping!;autoreplypingoption;;false]
-$addOption[Include Bots;Whether or not to include bots in Message Logs;includebotsoption;;false]
-$addOption[Anonymous;Hide moderator name in Ban logs;anonymousoption;;false]
+$addOption[AutoReply ping;Automatically respond to pings!;autoreplypingoption;;false]
+$addOption[Include Bots;Whether or not to include bots in message logs;includebotsoption;;false]
+$addOption[Anonymous;Hide moderator name in ban logs;anonymousoption;;false]
 $addActionRow
 $addButton[anonymoustoggle_$authorID;Toggle;Secondary;🔄]
 ]
@@ -117,9 +117,9 @@ $addField[$get[fieldname];$get[anonymous]]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
 $addStringSelectMenu[settingsmenu_$authorID;Select a category;false;1;1]
-$addOption[AutoReply ping;Automatically respond to ping!;autoreplypingoption;;false]
-$addOption[Include Bots;Whether or not to include bots in Message Logs;includebotsoption;;false]
-$addOption[Anonymous;Hide moderator name in Ban logs;anonymousoption;;false]
+$addOption[AutoReply ping;Automatically respond to pings!;autoreplypingoption;;false]
+$addOption[Include Bots;Whether or not to include bots in message logs;includebotsoption;;false]
+$addOption[Anonymous;Hide moderator name in ban logs;anonymousoption;;false]
 $addActionRow
 $addButton[anonymoustoggle_$authorID;Toggle;Secondary;🔄]
 ]
@@ -150,9 +150,9 @@ $addField[Current Setup;$get[includebots]]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
 $addStringSelectMenu[settingsmenu_$authorID;Select a category;false;1;1]
-$addOption[AutoReply ping;Automatically respond to ping!;autoreplypingoption;;false]
-$addOption[Include Bots;Whether or not to include bots in Message Logs;includebotsoption;;false]
-$addOption[Anonymous;Hide moderator name in Ban logs;anonymousoption;;false]
+$addOption[AutoReply ping;Automatically respond to pings!;autoreplypingoption;;false]
+$addOption[Include Bots;Whether or not to include bots in message logs;includebotsoption;;false]
+$addOption[Anonymous;Hide moderator name in ban logs;anonymousoption;;false]
 $addActionRow
 $addButton[includebotstoggle_$authorID;Toggle;Secondary;🔄]
 ]
@@ -183,9 +183,9 @@ $addField[$get[fieldname];$get[includebots]]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
 $addStringSelectMenu[settingsmenu_$authorID;Select a category;false;1;1]
-$addOption[AutoReply ping;Automatically respond to ping!;autoreplypingoption;;false]
-$addOption[Include Bots;Whether or not to include bots in Message Logs;includebotsoption;;false]
-$addOption[Anonymous;Hide moderator name in Ban logs;anonymousoption;;false]
+$addOption[AutoReply ping;Automatically respond to pings!;autoreplypingoption;;false]
+$addOption[Include Bots;Whether or not to include bots in message logs;includebotsoption;;false]
+$addOption[Anonymous;Hide moderator name in ban logs;anonymousoption;;false]
 $addActionRow
 $addButton[includebotstoggle_$authorID;Toggle;Secondary;🔄]
 ]

@@ -10,7 +10,7 @@ $ephemeral
 $interactionUpdate[
 $title[Changes]
 $description[
-* Added a new command called \`channelinfo\`
+* Added 2 new commands called \`channelinfo\` and \`emojipasta\`
 ]
 $if[$getGlobalVar[pre_release]==on;
 $attachment[./assets/warning.png;warning.png]
@@ -37,7 +37,7 @@ $ephemeral
 $interactionUpdate[
 $title[Bug Fixes]
 $description[
-*No bug fixes have been added yet*
+* A couple of grammar fixes have been added.
 ]
 $if[$getGlobalVar[pre_release]==on;
 $attachment[./assets/warning.png;warning.png]
@@ -64,8 +64,10 @@ $ephemeral
 $interactionUpdate[
 $title[Other]
 $description[
-* (Source code) Updated \`@dotenvx/dotenvx\` to version \`1.60.0\`
+* (Source code) Updated \`@dotenvx/dotenvx\` to version \`1.61.0\`
 * (Source code) Renamed the config option \`AllowBotManagers\` to \`AllowBotMembers\`
+* (Source code) Renamed \`config.js\` to \`config.example.js\`
+  * This only affects new installs of the bot as \`config.js\` will need to be created
 * Show position of the role specified in \`roleinfo\` command
 ]
 $if[$getGlobalVar[pre_release]==on;
