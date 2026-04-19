@@ -12,7 +12,7 @@ code: `$callFunction[botDevsOnly]
 $if[$checkContains[$message;--now;—now]==true;
 $clientDestroy;
 $title[Shutdown]
-$description[Do you really want to shutdown the bot? This will simply stop your bot from running. To turn on the bot, you need to go through your host to start it again.]
+$description[Do you really want to shutdown the bot? This will stop your bot from running. To turn on the bot, you need to go through your host to start it again.]
 $attachment[./assets/dangerous-sign.png;dangerous-sign.png]
 $thumbnail[attachment://dangerous-sign.png]
 $color[Red]

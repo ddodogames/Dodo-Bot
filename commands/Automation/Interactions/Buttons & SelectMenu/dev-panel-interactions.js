@@ -720,9 +720,9 @@ $interactionReply[
 $title[Backup Database]
 $addField[Why should i backup?;In general, it is recommended to create a backup of the database to always ensure that when something bad happens, you can use your previous copy of the database to restore all the lost data!
 ]
-$addField[Getting started;To make a quick backup, press the button "Create." A new duplicated file of your database will appear with the date and time in its name.
+$addField[Getting started;To create a quick backup, press the "Create" button. A new duplicate file of your database will appear with the date and time included in its name.
 ]
-$addField[How to use it?;To use your backup, rename the file to \`forge.db\` and replace the one in the \`database\` folder with the backup file! Reboot the bot and the data should be there!
+$addField[How to use it?;To use your backup, rename any existing backup file to \`forge.db\` and replace the one in the \`database\` folder with the backup one! Restart the bot, and the data should be restored!
 ]
 $color[Yellow]
 $addActionRow
@@ -735,7 +735,7 @@ $ephemeral
     allowedInteractionTypes: ["button"],
     code: `$onlyIf[$customID==createdatabasebackupbutton;]
 
-    $copyFile[database/forge.db;backup-$month/$day/$year-$minute$second-forge.db]
+    $copyFile[database/forge.db;$month-$day-$year-$minute$second-forge.db]
     $interactionReply[Created a backup under your root directory!
     $ephemeral
     ]

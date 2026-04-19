@@ -37,7 +37,8 @@ $ephemeral
 $interactionUpdate[
 $title[Bug Fixes]
 $description[
-* A couple of grammar fixes have been added.
+* A couple of grammar fixes have been added (as well as a lot of wording changes).
+* (Devs only) Database backups will no longer use \`/\` to avoid issues on Windows
 ]
 $if[$getGlobalVar[pre_release]==on;
 $attachment[./assets/warning.png;warning.png]
@@ -64,7 +65,7 @@ $ephemeral
 $interactionUpdate[
 $title[Other]
 $description[
-* (Source code) Updated \`@dotenvx/dotenvx\` to version \`1.61.0\`
+* (Source code) Updated \`@dotenvx/dotenvx\` to version \`1.61.1\`
 * (Source code) Renamed the config option \`AllowBotManagers\` to \`AllowBotMembers\`
 * (Source code) Renamed \`config.js\` to \`config.example.js\`
   * This only affects new installs of the bot as \`config.js\` will need to be created
