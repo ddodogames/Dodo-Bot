@@ -22,6 +22,7 @@ $onlyIf[$guildChannelExists[$guildID;$get[channel]]==true;Please mention a valid
 $let[nsfw;$advancedReplace[$checkCondition[$channelNSFW[$get[channel]]==true];true;Yes;false;No]]
 $let[channeltype;$advancedReplace[$#channelType[$get[channel]];GuildText;Text;GuildVoice;Voice;GuildCategory;Category;GuildAnnouncement;Announcement;AnnouncementThread;Announcement (Thread);GuildStageVoice;Stage;GuildForum;Forum;GuildMedia;Media;GuildDirectory;Directory;GuildNews;News;GuildNewsThread;News (Thread);GuildPublicThread;Threads (public);GuildPrivateThread;Threads (private)]]
 $let[manageable;$advancedReplace[$checkCondition[$channelManageable[$get[channel]]==true];true;Yes;false;No]]
+$let[voicechanneljoinlimit;$advancedReplace[$checkCondition[$channelUserLimit[$get[channel]]==0];true;Infinite;false;$channelUserLimit[$get[channel]]]]
 
 $author[About this channel;$get[servericon];$get[servericon]]
 $title[$channelName[$get[channel]]]
@@ -33,7 +34,9 @@ $addField[**General**;
 ;true]
 $addField[**Other**;
 * **Managed by Discord:** $get[manageable]$if[$channelCategoryID[$get[channel]]!=;
-* **Belongs to:** $channelName[$channelCategoryID[$get[channel]]]]
+* **Belongs to:** $channelName[$channelCategoryID[$get[channel]]]]$if[$get[channeltype]==Voice;
+* **User Limit:** $get[voicechanneljoinlimit]
+]
 ;true]
 $color[$getGlobalVar[embedcolor]]
     `
