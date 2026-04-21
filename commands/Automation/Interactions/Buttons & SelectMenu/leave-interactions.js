@@ -92,7 +92,7 @@ $onlyIf[$customID==leavechannelsetup;]
 $let[currentchannel;$advancedReplace[$checkCondition[$getGuildVar[leavechannel;$guildID]!=];true;<#$getGuildVar[leavechannel;$guildID]> (\`$getGuildVar[leavechannel;$guildID]\`);false;No channel set]]
 
 $interactionUpdate[$title[Channel Setup]
-$description[Choose a channel for Leave messages to be sent in. Use the select menu below for the channel to use!
+$description[Select a channel for sending leave messages. Use the select menu below to choose your preferred channel.
 
 **Tip:** Unable to find the channel you're looking for? Try typing the channel name right into the select menu instead!]
 $addField[Current channel;$get[currentchannel]]
@@ -112,13 +112,13 @@ $onlyIf[$customID==leavechannelselectmenusetup;]
 
 
 $onlyIf[$getGuildVar[leavechannel;$guildID]!=$selectMenuValues;
-$interactionReply[This channel is already used for Leave messages. Select a different one instead.
+$interactionReply[This channel is already used for leave messages. Select a different one instead.
 $ephemeral
 ]
 ]
 
 $onlyIf[$channelHasPerms[$selectMenuValues;$clientID;ViewChannel;SendMessages]==true;
-$interactionReply[You selected a channel that i do not have the required permissions for. To set a channel for Leave, i must have the following permissions for the selected channel:
+$interactionReply[You selected a channel that i do not have the required permissions for. To set a channel for leave messages, i must have the following permissions for the selected channel:
 \`SendMessages\`
 \`ViewChannel\`
 $ephemeral
@@ -146,7 +146,7 @@ $addButton[leavesettingshome;Go Back;Secondary;↩️]
 $addButton[leavechannelreset;Reset;Secondary]
 ]
 
-$interactionFollowUp[<#$selectMenuValues> will now be used for Leave messages!
+$interactionFollowUp[<#$selectMenuValues> will now be used for leave messages!
 $ephemeral
 ]
 `
@@ -196,13 +196,13 @@ $onlyIf[$customID==leavemessagecategory;]
 
 $interactionUpdate[
 $title[Message]
-$description[Welcome to options under the \`Message\` category! Select any option to modify]
+$description[Welcome to options under the \`Message\` category! Select any option to modify.]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
 $addButton[leavesettingshome;Go Back;Secondary;↩️]
 $addButton[leavemessagesetup;Set Message;Secondary]
 $addButton[leavemessagepreview;Preview Message;Secondary]
-$addButton[leavemessagetypesetting;Message Type;Secondary]
+$addButton[leavemessagetypesetting;Message type;Secondary]
 
 ]
 `
@@ -273,10 +273,10 @@ $onlyIf[$customID==leavemessagetypesetting;]
 
 
 $interactionUpdate[
-$title[Message Type]
-$description[This setting is dedicated to embed mode for Leave message! Enabling this will display a simple embed for Leave message otherwise just text for the same message. To switch between the two types, press the "Toggle" button below!
+$title[Message type]
+$description[This option is for enabling embed mode for the leave message. When enabled, a simple embed will appear for the leave message. If not, then the message will simply appear as plain text. To switch between the types, click the "Toggle" button below!
 
-**Note:** If the Leave message is over 2000 characters then embed mode will be forced enabled by default due to Discord's limits.]
+**Note:** If the leave message is over 2000 characters, then embed mode will be force-enabled by default due to Discord's limits.]
 $addField[Current type;
 \`$toTitleCase[$getGuildVar[leavetype]]\`]
 $color[$getGlobalVar[embedcolor]]
@@ -324,9 +324,8 @@ $ephemeral
     code: `
 $onlyIf[$customID==leaveplaceholderlist;]
 
-
 $interactionUpdate[$title[Placeholders]
-$description[Placeholders are a way to make Leave messages unique! Choose a one available from this list.]
+$description[Placeholders are a way to make the leave message unique! Below are the available options you can use.]
 $addField[Member-related;
 \`<user.username>\` - Returns the member's username
 \`<user.mention>\` - Pings the member

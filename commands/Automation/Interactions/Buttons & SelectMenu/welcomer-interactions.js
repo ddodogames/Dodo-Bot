@@ -92,7 +92,7 @@ $onlyIf[$customID==welcomerchannelsetup;]
 $let[currentchannel;$advancedReplace[$checkCondition[$getGuildVar[welcomerchannel;$guildID]!=];true;<#$getGuildVar[welcomerchannel;$guildID]> (\`$getGuildVar[welcomerchannel;$guildID]\`);false;No channel set]]
 
 $interactionUpdate[$title[Channel Setup]
-$description[Choose a channel for Welcomer messages to be sent in. Use the select menu below for the channel to use!
+$description[Select a channel for sending welcomer messages. Use the select menu below to choose your preferred channel.
 
 **Tip:** Unable to find the channel you're looking for? Try typing the channel name right into the select menu instead!]
 $addField[Current channel;$get[currentchannel]]
@@ -111,13 +111,13 @@ $addButton[welcomerchannelreset;Reset;Secondary]
 $onlyIf[$customID==welcomerchannelselectmenusetup;]
 
 $onlyIf[$getGuildVar[welcomerchannel;$guildID]!=$selectMenuValues;
-$interactionReply[This channel is already used for Welcomer messages. Select a different one instead.
+$interactionReply[This channel is already used for welcomer messages. Select a different one instead.
 $ephemeral
 ]
 ]
 
 $onlyIf[$channelHasPerms[$selectMenuValues;$clientID;ViewChannel;SendMessages]==true;
-$interactionReply[You selected a channel that i do not have the required permissions for. To set a channel for Welcomer, i must have the following permissions for the selected channel:
+$interactionReply[You selected a channel that i do not have the required permissions for. To set a channel for welcomer messages, i must have the following permissions for the selected channel:
 \`SendMessages\`
 \`ViewChannel\`
 $ephemeral
@@ -145,7 +145,7 @@ $addButton[welcomersettingshome;Go Back;Secondary;↩️]
 $addButton[welcomerchannelreset;Reset;Secondary]
 ]
 
-$interactionFollowUp[<#$selectMenuValues> will now be used for Welcomer messages!
+$interactionFollowUp[<#$selectMenuValues> will now be used for welcomer messages!
 $ephemeral
 ]
 `
@@ -194,13 +194,13 @@ $onlyIf[$customID==welcomermessagecategory;]
 
 $interactionUpdate[
 $title[Message]
-$description[Welcome to options under the \`Message\` category! Select any option to modify]
+$description[Welcome to options under the \`Message\` category! Select any option to modify.]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
 $addButton[welcomersettingshome;Go Back;Secondary;↩️]
 $addButton[welcomermessagesetup;Set Message;Secondary]
 $addButton[welcomermessagepreview;Preview Message;Secondary]
-$addButton[welcomermessagetypesetting;Message Type;Secondary]
+$addButton[welcomermessagetypesetting;Message type;Secondary]
 
 ]
 `
@@ -242,7 +242,7 @@ $ephemeral]
 
 $setGuildVar[welcomermessageembedcolor;$input[embedcolorInput]]
 $setGuildVar[welcomermessage;$input[messageInput]]
-$interactionReply[Successfully set the Welcomer message!
+$interactionReply[Successfully set the welcomer message!
 $ephemeral]`
 },{
     type: "interactionCreate",
@@ -272,10 +272,10 @@ $onlyIf[$customID==welcomermessagetypesetting;]
 
 
 $interactionUpdate[
-$title[Message Type]
-$description[This setting is dedicated to embed mode for Welcomer message! Enabling this will display a simple embed for Welcomer message otherwise just text for the same message. To switch between the two types, press the "Toggle" button below!
+$title[Message type]
+$description[This option is for enabling embed mode for the welcomer message. When enabled, a simple embed will appear for the welcomer message. If not, then the message will simply appear as plain text. To switch between the types, click the "Toggle" button below!
 
-**Note:** If the Welcomer message is over 2000 characters then embed mode will be forced enabled by default due to Discord's limits.]
+**Note:** If the welcomer message is over 2000 characters, then embed mode will be force-enabled by default due to Discord's limits.]
 $addField[Current type;
 \`$toTitleCase[$getGuildVar[welcomertype]]\`]
 $color[$getGlobalVar[embedcolor]]
@@ -323,7 +323,7 @@ $ephemeral
 $onlyIf[$customID==welcomerplaceholderlist;]
 
 $interactionUpdate[$title[Placeholders]
-$description[Placeholders are a way to make Welcomer messages unique! Choose a one available from this list.]
+$description[Placeholders are a way to make the welcomer message unique! Below are the available options you can use.]
 $addField[Member-related;
 \`<user.username>\` - Returns the member's username
 \`<user.mention>\` - Pings the member

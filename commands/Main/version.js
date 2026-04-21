@@ -23,7 +23,7 @@ $title[Build info]
 $addField[About the build;
 * **Dodo-Bot**: v$getGlobalVar[version]
 * **Codename**: $getGlobalVar[versionCodename]
-* **Build Branch**: $hyperlink[**$getGlobalVar[buildBranch]**;https://github.com/ddodogames/Dodo-Bot/tree/$getGlobalVar[buildBranch]]
+* **GitHub branch**: $hyperlink[**$getGlobalVar[buildBranch]**;https://github.com/ddodogames/Dodo-Bot/tree/$getGlobalVar[buildBranch]]
 * **Build number**: $getGlobalVar[buildNumber]
 ;true]
 $addField[Progress;

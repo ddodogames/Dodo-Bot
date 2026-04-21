@@ -13,7 +13,7 @@ module.exports = {
 $let[servericon;$advancedReplace[$checkCondition[$guildIcon==];true;$userDefaultAvatar[$clientID];false;$guildIcon]]
 $let[role;$findRole[$guildID;$message]]
 
-$onlyIf[$get[role]!=;Please specify a role (via mention, id or name) to view it's information.]
+$onlyIf[$get[role]!=;Please specify a role (via mention, ID, or name) to view its information.]
 
 $onlyIf[$roleExists[$guildID;$get[role]]==true;Please mention a valid role that exists in this server.]
 

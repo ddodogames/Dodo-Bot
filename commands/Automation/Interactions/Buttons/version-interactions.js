@@ -39,6 +39,8 @@ $title[Bug Fixes]
 $description[
 * A couple of grammar fixes have been added (as well as a lot of wording changes).
 * (Devs only) Database backups will no longer use \`/\` to avoid issues on Windows
+* Fixed an issue where a misleading message appeared when turning off anonymous option
+* Fixed an issue where the description for placeholders in the \`leveling\` command mentions welcomer message instead of leveling one
 ]
 $if[$getGlobalVar[pre_release]==on;
 $attachment[./assets/warning.png;warning.png]

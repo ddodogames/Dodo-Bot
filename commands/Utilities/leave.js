@@ -15,7 +15,7 @@ This command requires you to have \`ManageChannels\` permission!
 ]
 
 $title[Leave]
-$description[Leave just like Welcomer is a way to setup an channel where the bot says goodbye to members leaving your server!
+$description[Leave allows you to create a channel where the bot bids farewell to members who are leaving your server!
 
 To begin, click the "Toggle" button to enable/disable it! To adjust the settings for this feature, press the "Settings" button.]
 $addField[Current Setup;$get[leavesystem]]

@@ -20,12 +20,12 @@ $let[botverified;$advancedReplace[$checkCondition[$isBotVerified[$get[user]]==tr
 $title[$get[username]'s information;$callFunction[userURL;$get[user]]]
 $addField[**General**;
 * **Joined Discord on:** <t:$trunc[$divide[$userCreatedAt[$get[user]];1000]]:f>
-* **Account type:** $get[accounttype]$if[$isBot[$get[user]]==true;
-* **Bot Verified:** $get[botverified]]
+* **Account type:** $get[accounttype] $if[$isBot[$get[user]]==true;
+* **Bot verified:** $get[botverified]]
 * **ID:** $get[user]
 ;true]
 $addField[**Other**;
-* **Avatar:** $hyperlink[link;$userAvatar[$get[user]]]$if[$userBanner[$get[user]]!=;
+* **Avatar:** $hyperlink[link;$userAvatar[$get[user]]] $if[$userBanner[$get[user]]!=;
 * **Banner:** $hyperlink[link;$userBanner[$get[user]]]]
 * **DMs:** $get[dmsstatus]
 ;true]
@@ -34,7 +34,7 @@ $color[$getGlobalVar[embedcolor]]
 $if[$memberExists[$guildID;$get[user]]==true;
 $addActionRow
 $addButton[generalmeminfo_$authorID_$get[user];General info;Secondary;;true]
-$addButton[memberservinfo_$authorID_$get[user];Member's Server info;Secondary]
+$addButton[memberservinfo_$authorID_$get[user];Member's server info;Secondary]
 ]
 `
 }

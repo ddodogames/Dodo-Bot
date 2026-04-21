@@ -13,7 +13,7 @@ module.exports = {
 $let[servericon;$advancedReplace[$checkCondition[$guildIcon==];true;$userDefaultAvatar[$clientID];false;$guildIcon]]
 $let[channel;$findChannel[$message;false]]
 
-$onlyIf[$get[channel]!=;Please specify a channel (via mention, id or name) to view it's information.
+$onlyIf[$get[channel]!=;Please specify a channel (via mention, ID, or name) to view its information.
 -# For private threads to work, ensure i'm a member in them.
 ]
 
@@ -33,9 +33,9 @@ $addField[**General**;
 * **Created on:** <t:$trunc[$divide[$channelCreatedAt[$get[channel]];1000]]:f>
 ;true]
 $addField[**Other**;
-* **Managed by Discord:** $get[manageable]$if[$channelCategoryID[$get[channel]]!=;
-* **Belongs to:** $channelName[$channelCategoryID[$get[channel]]]]$if[$get[channeltype]==Voice;
-* **User Limit:** $get[voicechanneljoinlimit]
+* **Managed by Discord:** $get[manageable] $if[$channelCategoryID[$get[channel]]!=;
+* **Belongs to:** $channelName[$channelCategoryID[$get[channel]]]] $if[$get[channeltype]==Voice;
+* **User limit:** $get[voicechanneljoinlimit]
 ]
 ;true]
 $color[$getGlobalVar[embedcolor]]
