@@ -10,7 +10,8 @@ $ephemeral
 $interactionUpdate[
 $title[Changes]
 $description[
-* Added 2 new commands called \`channelinfo\` and \`emojipasta\`
+* Added 3 commands called \`channelinfo\`, \`roleinfo\` and \`emojipasta\`
+* Added alias \`randomrgb\` and \`botinfo\` for \`randomcolor\` and \`about\`
 ]
 $if[$getGlobalVar[pre_release]==on;
 $attachment[./assets/warning.png;warning.png]
@@ -67,11 +68,12 @@ $ephemeral
 $interactionUpdate[
 $title[Other]
 $description[
-* (Source code) Updated \`@dotenvx/dotenvx\` to version \`1.61.1\`
+* (Source code) Updated \`@dotenvx/dotenvx\` to version \`1.63.0\`
 * (Source code) Renamed the config option \`AllowBotManagers\` to \`AllowBotMembers\`
 * (Source code) Renamed \`config.js\` to \`config.example.js\`
   * This only affects new installs of the bot as \`config.js\` will need to be created
-* Show position of the role specified in \`roleinfo\` command
+* (Source code) Split custom functions into separate files for quicker updating
+* Temporarily disable \`wordle\` command since it stopped working
 ]
 $if[$getGlobalVar[pre_release]==on;
 $attachment[./assets/warning.png;warning.png]

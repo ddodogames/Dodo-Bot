@@ -77,7 +77,7 @@ $let[anonymous;$advancedReplace[$getGuildVar[anonymous];off;Disabled;on;Enabled]
 
 $interactionUpdate[
 $title[Anonymous]
-$description[This option allows you to hide the moderator name in ban logs! This feature can be useful to avoid harassment for server staff.
+$description[This option allows you to hide the moderator name in ban logs! It can be useful to avoid harassment towards server staff.
 
 To prevent potential abuse, this option is only exclusive to ban logs!]
 $addField[Current Setup;$get[anonymous]]

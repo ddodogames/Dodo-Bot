@@ -64,7 +64,7 @@ $let[currentchannel;$advancedReplace[$checkCondition[$getGlobalVar[errorchannel]
 
 $interactionReply[
 $title[Error Logging]
-$description[This option is dedicated to logging errors to the channel specified in case something went wrong on the bot!]
+$description[This option is dedicated to logging errors to the channel specified in case something went wrong!]
 $addField[Current Setup;
 **Error logging:** $get[errorlogging]
 **Error logging channel:** $get[currentchannel]
@@ -565,7 +565,7 @@ $let[showbuildinfo;$advancedReplace[$getGlobalVar[showbuildinfo];off;Disabled;on
 
 $interactionReply[
 $title[Show build info]
-$description[When enabled, \`--buildinfo\` flag for \`version\` command will be enabled which displays information about build such as it's number, GitHub branch and other. It will also show the build number on console. This is enabled by default for "Canary" version.
+$description[When enabled, \`--buildinfo\` flag for \`version\` command will be enabled which displays information about build such as its number, GitHub branch and other. It will also show the build number on console. This is enabled by default for "Canary" version.
 
 If you don't want it enabled, then press the "Toggle" button to disable it (if it was enabled by default).]
 $addField[Current Setup;$get[showbuildinfo]]
@@ -618,7 +618,7 @@ $ephemeral
 
 $interactionReply[
 $title[Member requirement]
-$description[This option let's you configure how many members are needed for a server so that the bot can join there.
+$description[This option lets you configure how many members are needed for a server so that the bot can join there.
 
 When the requirement is not met, the bot will simply leave the server.
 ]

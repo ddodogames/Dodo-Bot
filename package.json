@@ -1,6 +1,6 @@
 {
   "name": "Dodo-Bot",
-  "version": "3.0.4-alpha.1",
+  "version": "3.0.4-canary",
   "description": "A personal bot project made in ForgeScript aiming to both entertain and provide users some features to use.",
   "main": "index.js",
   "homepage": "https://github.com/ddodogames/Dodo-Bot",
@@ -21,7 +21,7 @@
     "@tryforge/forge.db": "^2.1.1",
     "@tryforge/forgescript": "^2.6.0",
     "discord-gamecord": "^4.4.4",
-    "@dotenvx/dotenvx": "^1.61.1",
+    "@dotenvx/dotenvx": "^1.63.0",
     "better-sqlite3": "^12.5.0"
   },
   "devDependencies": {

@@ -30,7 +30,7 @@ $setGuildVar[prefix;$get[newprefix]]
 },{
     name: "reset-prefix",
     info: {
-        description: "Resets the prefix to it's default state in this server.",
+        description: "Resets the prefix to its default state in this server.",
         perms: ["`SendMessages`", "`ManageGuild`"]
 },
     aliases: ["prefix-reset"],

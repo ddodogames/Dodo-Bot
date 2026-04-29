@@ -10,7 +10,7 @@ type: "messageCreate",
 code: `$userCooldown[cmdinfolookercmd;2s;Cooldown has been triggered! Please wait!
 Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[cmdinfolookercmd]];1000]]:R>]
 
-$onlyIf[$message!=;Please type a command name to look for it's information.]
+$onlyIf[$message!=;Please type a command name to look for its information.]
 
 $let[command;$commandInfo[messageCreate;$toLowerCase[$message]]]
 $onlyIf[$isJSON[$get[command]]==true;The command specified does not appear to exist. Try entering a command that exists within the bot itself.]

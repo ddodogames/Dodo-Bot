@@ -39,9 +39,9 @@ $title[Packages]
 $description[
 * **@tryforge/forgescript** - The entire project basically! Dodo-Bot is made in fs!
 * **@tryforge/forge.db** - For enabling variables in fs.
-* **discord-gamecord** - Most of the game commands were made using this package
+* **discord-gamecord** - Most of the game commands were made using this package.
 * **better-sqlite3** - Database used in the bot.
-* **@dotenvx/dotenvx** - For enabling environment variables support in local hosting
+* **@dotenvx/dotenvx** - For enabling environment variables support in local hosting.
 ]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
