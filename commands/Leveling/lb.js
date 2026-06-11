@@ -21,9 +21,9 @@ $let[leaderboard;$memberLeaderboard[level;$guildID;desc;20;$get[page];
 ;leaderboard;position;$return[$switch[$env[position];$case[1;🥇] $case[2;🥈] $case[3;🥉]] $env[position] - $username[$env[leaderboard;id]] - Level $env[leaderboard;value]]]]
 $let[servericon;$advancedReplace[$checkCondition[$guildIcon==];true;$userDefaultAvatar[$clientID];false;$guildIcon]]
 
-$onlyIf[$get[leaderboard]!=;The leaderboard is currently not available. The reasons are the following:
-* Members do not have level 2 and higher. Please wait for someone to level up first, then try again.
-* The specified page has not yet registered any members. Wait for a couple of members to level up, then try again.
+$onlyIf[$get[leaderboard]!=;The leaderboard is currently not available. The reasons are either:
+1. Members do not have level 2 and higher. Please wait for someone to level up first, then try again.
+2. The specified page has not yet registered any members. Wait for a couple of members to level up, then try again.
 ]
 
 $author[$guildName;$get[servericon]]

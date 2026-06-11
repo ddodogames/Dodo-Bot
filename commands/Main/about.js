@@ -16,8 +16,8 @@ Dodo-Bot is a personal project aiming to be an entertainment bot while at the sa
 The project has been ongoing since late 2021, and it continues to be developed with new improvements along with other types of updates to this day!
 ]
 $color[$getGlobalVar[embedcolor]]
-$attachment[./assets/dodo-bot-logo.png;dodobot-logo.png]
-$thumbnail[attachment://dodobot-logo.png]
+$attachment[./assets/dodo-bot-logo.png;dodo-bot-logo.png]
+$thumbnail[attachment://dodo-bot-logo.png]
 $addActionRow
 $addButton[https://github.com/ddodogames/Dodo-Bot;Source code;Link]
     `

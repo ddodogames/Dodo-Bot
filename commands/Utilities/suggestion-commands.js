@@ -43,7 +43,7 @@ $arrayLoad[message;/;$message]
 $let[title;$arrayAt[message;0]]
 $let[message;$arrayAt[message;1]]
 
-$onlyIf[$or[$get[title]==;$get[message]==]==false;Hey there! Your usage seems to be wrong. Make sure it's correct!
+$onlyIf[$or[$get[title]==;$get[message]==]==false;Hey! It seems that your usage is incorrect. Please check it is correct and try again!
 
 Here's the usage:
 \`$getGuildVar[prefix]suggest <title/description>\`

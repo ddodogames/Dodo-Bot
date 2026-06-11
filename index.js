@@ -2,7 +2,7 @@ const config = require("./config.js");
 
 const { ForgeClient } = require("@tryforge/forgescript")
 const { ForgeDB } = require("@tryforge/forge.db")
-require('@dotenvx/dotenvx').config({path: ['.env.local', '.env'], ignore: ['MISSING_ENV_FILE'], strict: false, quiet: true, opsOff: true}) // Enable env support in local hosting
+require('@dotenvx/dotenvx').config({path: ['.env.local', '.env'], ignore: ['MISSING_ENV_FILE'], strict: false, quiet: true, noOps: true}) // Enable env support in local hosting
 
 // Client initialization
    const client = new ForgeClient({

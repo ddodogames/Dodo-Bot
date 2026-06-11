@@ -1,6 +1,9 @@
+<div align="center">
+  
 # Dodo-Bot
 A personal bot project made in ForgeScript aiming to both entertain and provide users some features to use.
 
+</div>
 
 # What is this
 Dodo-Bot is a personal project that started in late 2021. It was mainly made for entertainment with some features added to it. It is mostly made with the goal mindset of reducing the number of bots needed to do each stuff.
@@ -57,7 +60,7 @@ If you're confused about the options, here is a description about what each opti
 | prefix  | Prefix to use to execute any bot command.  | `d!`  |
 | prefixCaseInsensitive  | Whether or not to type prefix as case-insensitive (e.g `d!` can be also typed as `D!` if this is enabled).   | `true`  |
 | BotToken  | Token of the bot to use to run the project.   | none (obviously)  |
-| Embedcolor  | Color to use for the majority of commands returning embed.   | `#404060`  |
+| Embedcolor  | Color to use for the majority of commands returning embed.   | `#5484D8` or `#FEE75C` for Canary  |
 | MobileStatus  | Sets the online icon of the bot to the mobile variant whenever it starts.   | `false`  |
 | disableConsoleErrors  | Whether or not disable console errors.   | `false`  |
 | AllowBotMembers  | Allows members from developer portal to see the special commands (and use them for `Admin` and `Developer`) if set to `true`.   | `false`  |

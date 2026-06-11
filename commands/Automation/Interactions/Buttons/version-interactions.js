@@ -12,6 +12,8 @@ $title[Changes]
 $description[
 * Added 3 commands called \`channelinfo\`, \`roleinfo\` and \`emojipasta\`
 * Added alias \`randomrgb\` and \`botinfo\` for \`randomcolor\` and \`about\`
+* Added also alias \`dev\` and \`unstable\` for \`canary\`
+* Starting from this version, the Canary version will now have its own unique embed color to disgustinguish them from Stable releases
 ]
 $if[$getGlobalVar[pre_release]==on;
 $attachment[./assets/warning.png;warning.png]
@@ -68,12 +70,13 @@ $ephemeral
 $interactionUpdate[
 $title[Other]
 $description[
-* (Source code) Updated \`@dotenvx/dotenvx\` to version \`1.63.0\`
+* (Source code) Updated \`@dotenvx/dotenvx\` to version \`1.69.2\`
 * (Source code) Renamed the config option \`AllowBotManagers\` to \`AllowBotMembers\`
 * (Source code) Renamed \`config.js\` to \`config.example.js\`
   * This only affects new installs of the bot as \`config.js\` will need to be created
 * (Source code) Split custom functions into separate files for quicker updating
-* Temporarily disable \`wordle\` command since it stopped working
+* Temporarily disable \`wordle\` command since it stopped working and some other changes as well
+* (Source code) Dodo-Bot can now be run on Node.js v26 (aka the upcoming LTS release)
 ]
 $if[$getGlobalVar[pre_release]==on;
 $attachment[./assets/warning.png;warning.png]

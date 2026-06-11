@@ -61,12 +61,10 @@ $ephemeral
 
 $interactionUpdate[
 $title[Use of Source code]
-$addField[For public bots;If creating a modified instance of Dodo-Bot that is public, then it is recommended to give credit to the original work done by me in this project. 
+$description[As long as credit is given, I have no problems with people looking at my code and taking stuff from it.
 
-While that may not stop you from claiming that the work is supposedly done by yours, it would be respectful for me as a person spending his time coding on his personal project.]
-$addField[For private bots;If you're going to host Dodo-Bot (or have a modified instance) for specific private servers, then giving credit is optional as private bots aren't a big deal to me (using the project for also learning is fine). 
-
-You may still give credit in cases where you claim it's your work.]
+Even though there's nothing stopping you from claiming it is your work, it would be respectable to credit the original work done by me in this project.
+]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
 $addButton[credits_$authorID;Main Credits;Secondary;;false]

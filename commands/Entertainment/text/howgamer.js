@@ -1,7 +1,7 @@
 module.exports = {
 name: "howgamer",
 info: {
-        description: "Rates a user on how Gamer they're from 0 to 100 percent.",
+        description: "Rates a user how gamer they are from 0 to 100%.",
         usage: "`howgamer (user)`",
         perms: ["`SendMessages`", "`EmbedLinks`"]
 },

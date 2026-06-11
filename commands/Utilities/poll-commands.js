@@ -45,7 +45,7 @@ $let[content;$arrayAt[message;0]]
 $let[choice1;$arrayAt[message;1]]
 $let[choice2;$arrayAt[message;2]]
 
-$onlyIf[$or[$get[content]==;$get[choice1]==;$get[choice2]==]==false;Hey there! Your usage seems to be wrong. Make sure it's correct!
+$onlyIf[$or[$get[content]==;$get[choice1]==;$get[choice2]==]==false;Hey! It seems that your usage is incorrect. Please check it is correct and try again!
 
 Here's the usage:
 \`$getGuildVar[prefix]poll <content/choice 1/choice 2>\`

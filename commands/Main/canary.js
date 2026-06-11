@@ -4,7 +4,7 @@ module.exports = {
         description: "Returns information about Pre-release builds and how to try them.",
         perms: ["`SendMessages`", "`EmbedLinks`"]
     },
-    aliases: ["devbuilds", "canarybuilds"],
+    aliases: ["devbuilds", "canarybuilds", "dev", "unstable"],
     type: "messageCreate",
     code: `$userCooldown[canarycmd;2s;Cooldown has been triggered! Please wait!
 Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[canarycmd]];1000]]:R>]
