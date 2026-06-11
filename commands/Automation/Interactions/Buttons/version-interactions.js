@@ -13,7 +13,7 @@ $description[
 * Added 3 commands called \`channelinfo\`, \`roleinfo\` and \`emojipasta\`
 * Added alias \`randomrgb\` and \`botinfo\` for \`randomcolor\` and \`about\`
 * Added also alias \`dev\` and \`unstable\` for \`canary\`
-* Starting from this version, the Canary version will now have its own unique embed color to disgustinguish them from Stable releases
+* Starting from this version, the Canary version will now have its own unique embed color to distinguish them from Stable releases
 ]
 $if[$getGlobalVar[pre_release]==on;
 $attachment[./assets/warning.png;warning.png]
