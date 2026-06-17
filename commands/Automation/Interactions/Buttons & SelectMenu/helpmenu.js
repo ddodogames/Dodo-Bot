@@ -38,7 +38,7 @@ $ephemeral
     $interactionUpdate[
     $title[Entertainment]
     $addField[**Games**;
-\`rps\`, \`tictactoe\`, \`findtheflag\`, \`matchpairs\`, \`findemoji\`, \`hangman\`, \`snake\`, \`c4\`, \`2048\`, \`minesweeper\`, \`trivia\`, \`coinflip\`, \`flood\`, \`wordle\`, \`gtp\`, \`wyr\`
+\`rps\`, \`tictactoe\`, \`findtheflag\`, \`matchpairs\`, \`findemoji\`, \`hangman\`, \`snake\`, \`c4\`, \`2048\`, \`minesweeper\`, \`trivia\`, \`coinflip\`, \`flood\`, \`wordle\`, \`wyr\`
  ]
    $addField[**Text**;
 \`howgamer\`, \`whoasked\`, \`8ball\`, \`say\`, \`reverse\`, \`randomtopic\`, \`joke\`, \`clap\`, \`emojipasta\`, \`mock\`, \`yesorno\`, \`lulcat\`, \`fact\`, \`showerthoughts\`
