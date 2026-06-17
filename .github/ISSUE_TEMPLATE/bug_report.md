@@ -20,12 +20,12 @@ A clear and concise description of what you expected to happen.
 If applicable, add attachments to help explain your problem (like screenshots).
 
 ### **Build information (please complete the following information):**
- - Build number: [e.g. 2164] 
- - Github Branch: [e.g. v2, canary, rebase]
- - Release type: [e.g. Stable, Pre-release, Canary]
- - Version [e.g. 2.1.9]
+ - Build number (only if you use Canary): [e.g. 2425] 
+ - Github Branch: [e.g. v3, canary]
+ - Release type: [e.g. Stable, Canary, Alpha, etc]
+ - Version [e.g. 3.0.4]
 
-#### Specifying "Build number" is optional if using a stable release
+#### Specifying "Build number" is optional if not using Canary
 
 ### **Additional context**
 Add any other context about the problem here.
