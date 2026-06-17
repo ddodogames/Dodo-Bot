@@ -25,7 +25,7 @@ If applicable, add attachments to help explain your problem (like screenshots).
  - Release type: [e.g. Stable, Canary, Alpha, etc]
  - Version [e.g. 3.0.4]
 
-#### Specifying "Build number" is optional if not using Canary
+#### Note: Specifying "Build number" is optional if not using Canary
 
 ### **Additional context**
 Add any other context about the problem here.
