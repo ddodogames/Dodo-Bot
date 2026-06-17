@@ -40,7 +40,7 @@ module.exports = [{
         $addButton[wipedbdeny_$authorID;No;Secondary;;true]
     ]
 
-    $interactionFollowUp[Alright, the DB will continue to exist then.
+    $interactionFollowUp[Alright, the current DB will continue to exist then.
     $ephemeral
     ]
     `

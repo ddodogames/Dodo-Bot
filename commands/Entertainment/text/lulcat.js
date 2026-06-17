@@ -7,7 +7,7 @@ info: {
 },
 type: "messageCreate",
 aliases: ["lolcat"],
-code: `$userCooldown[lulcatcmd;3s;Cooldown has been triggered! Please, wait!
+code: `$userCooldown[lulcatcmd;3s;Cooldown has been triggered! Please wait!
 Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[lulcatcmd]];1000]]:R>]
 $disableAllMentions
 $onlyIf[$message!=;Please provide a text.]

@@ -8,7 +8,7 @@ info: {
 },
 aliases: ["exec"],
 type: "messageCreate",
-code: `$callFunction[Devsonly]
+code: `$callFunction[botDevsOnly]
 $onlyIf[$message!=;Please provide a command.]
 $if[$charCount[$exec[$message]]>=2000;
 $attachment[$exec[$message];output.txt;true]

@@ -6,7 +6,7 @@ module.exports = [{
         perms: ["`SendMessages`", "`AttachFiles`"]
     },
     type: "messageCreate",
-    code: `$userCooldown[couldreadcmd;3s;Cooldown has been triggered! Please, wait!
+    code: `$userCooldown[couldreadcmd;3s;Cooldown has been triggered! Please wait!
 Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[couldreadcmd]];1000]]:R>]
 
 $onlyIf[$message!=;Please provide a text.]

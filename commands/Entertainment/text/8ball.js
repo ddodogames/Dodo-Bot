@@ -7,7 +7,7 @@ info: {
  perms: ["`SendMessages`", "`EmbedLinks`"]
 },
 code: `
-$userCooldown[8ballcmd;2s;Cooldown has been triggered! Please, wait!
+$userCooldown[8ballcmd;2s;Cooldown has been triggered! Please wait!
 Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[8ballcmd]];1000]]:R>]
 
 $onlyIf[$message!=;Please provide a text.]

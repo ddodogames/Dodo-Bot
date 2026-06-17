@@ -2,7 +2,7 @@ const config = require("./config.js");
 
 const { ForgeClient } = require("@tryforge/forgescript")
 const { ForgeDB } = require("@tryforge/forge.db")
-require('@dotenvx/dotenvx').config({path: ['.env.local', '.env'], ignore: ['MISSING_ENV_FILE'], strict: false, quiet: true, opsOff: true}) // Enable env support in local hosting
+require('@dotenvx/dotenvx').config({path: ['.env.local', '.env'], ignore: ['MISSING_ENV_FILE'], strict: false, quiet: true, noArmor: true}) // Enable env support in local hosting
 
 // Client initialization
    const client = new ForgeClient({
@@ -21,9 +21,9 @@ require('@dotenvx/dotenvx').config({path: ['.env.local', '.env'], ignore: ['MISS
 })
 
 // Handlers
-client.commands.load("./commands")
+client.functions.load("./handlers/functions/");
+client.commands.load("./commands/")
 ForgeDB.variables(require("./handlers/variables.js"));
-client.functions.add(...require("./handlers/functions.js"));
 // Your bot token
 client.login(process.env.BotToken || config.BotToken);
 

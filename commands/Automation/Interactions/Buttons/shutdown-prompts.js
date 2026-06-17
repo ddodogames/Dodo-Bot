@@ -15,7 +15,7 @@ $color[Yellow]
 $wait[5000]
 $interactionReply[
     $title[Done!]
-    $description[The bot has been successfully shutdown!]
+    $description[The bot has been successfully shut down!]
     $color[DarkGreen]
     $attachment[./assets/checkmark.png;checkmark.png]
     $thumbnail[attachment://checkmark.png]

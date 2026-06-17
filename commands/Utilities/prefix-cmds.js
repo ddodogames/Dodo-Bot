@@ -8,7 +8,7 @@ info: {
         perms: ["`SendMessages`", "`ManageGuild` (when changing prefix)"]
 },
 type: "messageCreate",
-code: `$userCooldown[prefixcmd;2s;Cooldown has been triggered! Please, wait!
+code: `$userCooldown[prefixcmd;2s;Cooldown has been triggered! Please wait!
 Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[prefixcmd]];1000]]:R>]
 
 $onlyIf[$message!=;Prefix: \`$getGuildVar[prefix;$guildID]\`
@@ -30,12 +30,12 @@ $setGuildVar[prefix;$get[newprefix]]
 },{
     name: "reset-prefix",
     info: {
-        description: "Resets the prefix to it's default state in this server.",
+        description: "Resets the prefix to its default state in this server.",
         perms: ["`SendMessages`", "`ManageGuild`"]
 },
     aliases: ["prefix-reset"],
     type: "messageCreate",
-    code: `$userCooldown[reset-prefixcmd;2s;Cooldown has been triggered! Please, wait!
+    code: `$userCooldown[reset-prefixcmd;2s;Cooldown has been triggered! Please wait!
 Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[reset-prefixcmd]];1000]]:R>]
 
 $onlyIf[$hasPerms[$guildID;$authorID;ManageGuild]==true;
@@ -44,7 +44,7 @@ This command requires you to have \`ManageGuild\` permission!
 
 $onlyIf[$getGuildVar[prefix]!=${config.prefix};Cannot reset when the prefix is default.]
 $deleteGuildVar[prefix]
-The prefix has been successfully reset. <3
+The prefix has been successfully reset! >⩊<
 
 `
 }]

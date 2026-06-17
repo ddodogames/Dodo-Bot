@@ -6,7 +6,7 @@ info: {
 },
 type: "messageCreate",
 aliases: ["match-pairs", "mp"],
-code: `$userCooldown[matchpairscmd;3s;Cooldown has been triggered! Please, wait!
+code: `$userCooldown[matchpairscmd;3s;Cooldown has been triggered! Please wait!
 Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[matchpairscmd]];1000]]:R>]
 
 

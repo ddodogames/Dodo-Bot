@@ -8,19 +8,19 @@ info: {
 },
 aliases: ["triv"],
 type: "messageCreate",
-code: `$userCooldown[trivcmd;3s;Cooldown has been triggered! Please, wait!
+code: `$userCooldown[trivcmd;3s;Cooldown has been triggered! Please wait!
 Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[trivcmd]];1000]]:R>]
 
 $if[$checkContains[$message;--settings;—settings]==true;
 $title[Trivia settings]
-$description[Welcome to Trivia's settings! Select a option to change!]
+$description[Welcome to Trivia's settings! Select an option to change!]
 $addField[Current Setup;
 **Type:** $toTitleCase[$getUserVar[trivia_type]]
 **Difficulty:** $toTitleCase[$getUserVar[trivia_difficulty]]
 ]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
-$addStringSelectMenu[triviasettings_$authorID;Select a option;false;1;1]
+$addStringSelectMenu[triviasettings_$authorID;Select an option;false;1;1]
 $addOption[Type;How the game should start?;triviatypeoption;;false]
 $addOption[Difficulty;How hard the game should be?;triviadifficultyoption;;false]
 ;

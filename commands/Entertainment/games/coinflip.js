@@ -7,7 +7,7 @@ info: {
 aliases: ["cf"],
 type: "messageCreate",
 code: `
-$userCooldown[coinflipcmd;3s;Cooldown has been triggered! Please, wait!
+$userCooldown[coinflipcmd;3s;Cooldown has been triggered! Please wait!
 Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[coinflipcmd]];1000]]:R>]
 
 $let[number;$and[$randomNumber[1;100;false]>=38;$randomNumber[1;100;false]<89]]

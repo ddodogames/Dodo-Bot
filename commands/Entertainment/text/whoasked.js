@@ -6,7 +6,7 @@ info: {
  perms: ["`SendMessages`"]
 },
 code: `
-$userCooldown[whoaskedcmd;2s;Cooldown has been triggered! Please, wait!
+$userCooldown[whoaskedcmd;2s;Cooldown has been triggered! Please wait!
 Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[whoaskedcmd]];1000]]:R>]
 $let[messageID;$sendMessage[$channelID;Searching for Askers... (0%);true]]
 $wait[5000]

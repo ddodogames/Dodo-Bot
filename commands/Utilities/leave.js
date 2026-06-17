@@ -6,7 +6,7 @@ info: {
     perms: ["`SendMessages`", "`EmbedLinks`", "`ManageChannels`"]
 },
 aliases: ["leaver"],
-code: `$userCooldown[leavecmd;2s;Cooldown has been triggered! Please, wait!
+code: `$userCooldown[leavecmd;2s;Cooldown has been triggered! Please wait!
 Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[leavecmd]];1000]]:R>]
 $let[leavesystem;$advancedReplace[$getGuildVar[leavesystem];on;Enabled;off;Disabled]]
 
@@ -15,9 +15,9 @@ This command requires you to have \`ManageChannels\` permission!
 ]
 
 $title[Leave]
-$description[Leave just like Welcomer is a way to setup an channel where the bot says goodbye to members leaving your server!
+$description[Leave allows you to create a channel where the bot bids farewell to members who are leaving your server!
 
-To get started, click on the "Toggle" button! To manage the settings regarding the said feature, press the "Settings" button.]
+To begin, press the "Toggle" button to enable/disable it! To adjust the settings for this feature, press the "Settings" button.]
 $addField[Current Setup;$get[leavesystem]]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow

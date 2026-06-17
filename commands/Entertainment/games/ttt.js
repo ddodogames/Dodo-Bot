@@ -7,7 +7,7 @@ info: {
 },
 aliases: ["ttt"],
 type: "messageCreate",
-code: `$userCooldown[tttcmd;3s;Cooldown has been triggered! Please, wait!
+code: `$userCooldown[tttcmd;3s;Cooldown has been triggered! Please wait!
 Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[tttcmd]];1000]]:R>]
 $onlyIf[$mentioned[0]!=;Please mention a opponent to play with.]
 $onlyIf[$isBot[$mentioned[0]]==false;You cannot play with bots!]

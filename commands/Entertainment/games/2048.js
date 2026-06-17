@@ -5,7 +5,7 @@ info: {
         perms: ["`SendMessages`", "`EmbedLinks`"]
 },
 type: "messageCreate",
-code: `$userCooldown[2048cmd;3s;Cooldown has been triggered! Please, wait!
+code: `$userCooldown[2048cmd;3s;Cooldown has been triggered! Please wait!
 Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[2048cmd]];1000]]:R>]
 $!djsEval[const { TwoZeroFourEight } = require('discord-gamecord');
 

@@ -8,7 +8,7 @@ module.exports = {
     },
     aliases: ["djseval"],
     type: "messageCreate",
-    code: `$callFunction[Devsonly]
+    code: `$callFunction[botDevsOnly]
     $onlyIf[$message!=;Please provide a code.]
     $djsEval[$message]`
 }

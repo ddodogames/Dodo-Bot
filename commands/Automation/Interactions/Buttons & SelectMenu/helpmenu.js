@@ -41,7 +41,7 @@ $ephemeral
 \`rps\`, \`tictactoe\`, \`findtheflag\`, \`matchpairs\`, \`findemoji\`, \`hangman\`, \`snake\`, \`c4\`, \`2048\`, \`minesweeper\`, \`trivia\`, \`coinflip\`, \`flood\`, \`wordle\`, \`gtp\`, \`wyr\`
  ]
    $addField[**Text**;
-\`howgamer\`, \`whoasked\`, \`8ball\`, \`say\`, \`reverse\`, \`randomtopic\`, \`joke\`, \`clap\`, \`mock\`, \`yesorno\`, \`lulcat\`, \`fact\`, \`showerthoughts\`
+\`howgamer\`, \`whoasked\`, \`8ball\`, \`say\`, \`reverse\`, \`randomtopic\`, \`joke\`, \`clap\`, \`emojipasta\`, \`mock\`, \`yesorno\`, \`lulcat\`, \`fact\`, \`showerthoughts\`
 ]
     $addField[**Images**;
 \`gun\`, \`jail\`, \`couldread\`, \`nokia\`, \`greyscale\`, \`ad\`, \`drip\`, \`invert\`, \`pet\`, \`wanted\`, \`comment\`, \`whereiseveryone\`, \`clown\`
@@ -97,7 +97,7 @@ $ephemeral
 \`suggest-setup\`, \`poll-set\`, \`setup-logs\`, \`welcomer\`, \`leave\`, \`prefix\`, \`reset-prefix\`
     ]
 $addField[**Info**;
-\`userinfo\`, \`serverinfo\`]
+\`userinfo\`, \`roleinfo\`, \`channelinfo\`, \`serverinfo\`]
 $addField[**Miscellaneous**;
 \`randomcolor\`, \`avatar\`, \`banner\`, \`morse\`, \`aur\`, \`periodic-table\`, \`suggest\`, \`poll\`]
     $color[$getGlobalVar[embedcolor]]
@@ -124,7 +124,7 @@ $ephemeral
     $interactionUpdate[
     $title[Developer]
     $addField[**Tools**;
-\`eval\`, \`exec\`, \`update\`, \`serverlist\`, \`jseval\`, \`readfile\`
+\`eval\`, \`jseval\`, \`readfile\`, \`exec\`, \`update\`, \`serverlist\`
     ]
 $addField[**Bot Management**;
 \`dev-panel\`, \`wipedb\`, \`shutdown\`, \`set-customstatus\`]

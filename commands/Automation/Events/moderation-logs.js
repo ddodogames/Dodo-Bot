@@ -15,7 +15,7 @@ $let[accounttype;$advancedReplace[$checkCondition[$isBot==false];true;Member;fal
     $sendMessage[$getGuildVar[banlogschannel];
     $author[Member banned!;$userAvatar]
     $description[
-**$get[accounttype]:** $username <@$authorID>
+**Offender ($get[accounttype]):** $username <@$authorID>
 **Moderator:** $get[getmoderatorname]
 **Reason:** $get[reason]
 ]
@@ -37,7 +37,7 @@ $let[accounttype;$advancedReplace[$checkCondition[$isBot==false];true;Member;fal
     $sendMessage[$getGuildVar[unbanlogschannel];
     $author[Member unbanned!;$userAvatar]
     $description[
-**$get[accounttype]:** $username <@$authorID>
+**Offender ($get[accounttype]):** $username <@$authorID>
 **Moderator:** $get[moderator] $if[$get[reason]!=;
 **Reason:** $get[reason]]
 ]

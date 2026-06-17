@@ -7,7 +7,7 @@ info: {
  perms: ["`SendMessages`"]
 },
 code: `
-$userCooldown[yesornocmd;2s;Cooldown has been triggered! Please, wait!
+$userCooldown[yesornocmd;2s;Cooldown has been triggered! Please wait!
 Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[yesornocmd]];1000]]:R>]
 $disableAllMentions
 $onlyIf[$message!=;Please provide a text.]

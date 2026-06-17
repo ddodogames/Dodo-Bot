@@ -6,7 +6,7 @@ info: {
         perms: ["`SendMessages`", "`AttachFiles`"]
 },
 type: "messageCreate",
-code: `$userCooldown[adcmd;3s;Cooldown has been triggered! Please, wait!
+code: `$userCooldown[adcmd;3s;Cooldown has been triggered! Please wait!
 Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[adcmd]];1000]]:R>]
 $onlyIf[$channelHasPerms[$channelID;$clientID;AttachFiles]==true;I must have \`AttachFiles\` permission in order to proceed in this channel. Please grant me the permission and try again.]
 $let[user;$findUser[$message[0];true]]

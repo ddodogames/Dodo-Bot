@@ -6,7 +6,7 @@ description: "Returns information about this server",
 perms: ["`SendMessages`", "`EmbedLinks`"]
 },
 aliases: ["guild", "guildinfo", "server", "si"],
-code: `$userCooldown[serverinfocmd;3s;Cooldown has been triggered! Please, wait!
+code: `$userCooldown[serverinfocmd;3s;Cooldown has been triggered! Please wait!
 Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[serverinfocmd]];1000]]:R>]
 
 $let[servericon;$advancedReplace[$checkCondition[$guildIcon==];true;$userDefaultAvatar[$clientID];false;$guildIcon]]
@@ -23,7 +23,7 @@ $addField[Members;
 ]
 $addField[General;
 **Created on:** <t:$trunc[$divide[$guildCreatedAt;1000]]:f>
-**Server Owner:** $hyperLink[**$username[$guildOwnerID]**;$callFunction[userURL;$guildOwnerID]] (\`$guildOwnerID\`)
+**Server owner:** $hyperLink[**$username[$guildOwnerID]**;$callFunction[userURL;$guildOwnerID]] (\`$guildOwnerID\`)
 **Roles:** $guildRoleCount
 **Boosts:** $guildBoostCount
 **Emojis:** $guildEmojiCount
@@ -37,8 +37,8 @@ $addField[Channels;
 **Categories:** $guildChannelCount[$guildID;GuildCategory]
 ]
 $addField[Other;
-**Verification Level:** $guildVerificationLevel
-**Content Filter:** $guildExplicitContentFilter
+**Verification level:** $guildVerificationLevel
+**Content filter:** $guildExplicitContentFilter
 **Verified:** $get[serververified]
 ]
 $thumbnail[$get[servericon]]

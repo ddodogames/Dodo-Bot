@@ -47,7 +47,7 @@ $let[levelingresetonleave;$advancedReplace[$getGuildVar[levelingresetonleave];of
 
 $interactionReply[
 $title[Leveling Settings]
-$description[Welcome to Leveling settings! Select a option to change.
+$description[Welcome to leveling settings! Select an option to change.
 ]
 $addField[Current Setup;
 * **Level up channel:** $get[currentchannel]
@@ -57,7 +57,7 @@ $addField[Current Setup;
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
 $addStringSelectMenu[levelingextraoptionsmenu;More options;false;1;1]
-$addOption[Exclusions;Manage on what to exclude from gaining xp;exclusionsoption;;false]
+$addOption[Exclusions;What to exclude from gaining XP;exclusionsoption;;false]
 $addOption[Reset on Leave;Whether or not to reset user's level upon leaving the server;resetonleaveoption;;false]
 $addActionRow
 $addButton[levelingchannelsetup;Channel;Secondary]
@@ -79,7 +79,7 @@ $let[levelingresetonleave;$advancedReplace[$getGuildVar[levelingresetonleave];of
 
 $interactionUpdate[
 $title[Leveling Settings]
-$description[Welcome to Leveling settings! Select a option to change.
+$description[Welcome to leveling settings! Select an option to change.
 ]
 $addField[Current Setup;
 * **Level up channel:** $get[currentchannel]
@@ -89,7 +89,7 @@ $addField[Current Setup;
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
 $addStringSelectMenu[levelingextraoptionsmenu;More options;false;1;1]
-$addOption[Exclusions;Manage on what to exclude from gaining xp;exclusionsoption;;false]
+$addOption[Exclusions;What to exclude from gaining XP;exclusionsoption;;false]
 $addOption[Reset on Leave;Whether or not to reset user's level upon leaving the server;resetonleaveoption;;false]
 $addActionRow
 $addButton[levelingchannelsetup;Channel;Secondary]
@@ -204,7 +204,7 @@ $addButton[levelingresetbutton;Reset;Danger;⚠️]
 
     $showModal
     $modal[levelingresetuserIDmodal;Reset for specific user]
-    $addTextInput[idInput;Id of the user to reset;Short;true;e.g, $authorID;;0;200]
+    $addTextInput[idInput;Id of the user to reset;Short;true;e.g. $authorID;;0;200]
     `
     },{
     type: "interactionCreate",
@@ -217,13 +217,13 @@ $addButton[levelingresetbutton;Reset;Danger;⚠️]
     $ephemeral
     ]]
 
-    $onlyIf[$isBot[$get[input]]==false;$interactionReply[Bots do not have any Leveling data.
+    $onlyIf[$isBot[$get[input]]==false;$interactionReply[Bots do not have any leveling data.
     $ephemeral
     ]]
 
     $jsonLoad[datachecker;$searchDB[xp;$get[input];member;;$guildID]]
 
-    $onlyIf[$env[datachecker;0;value]!=;$interactionReply[This user does not seem to have Leveling data in this server.
+    $onlyIf[$env[datachecker;0;value]!=;$interactionReply[This user does not seem to have leveling data on this server.
     $ephemeral
     ]]
 
@@ -245,7 +245,7 @@ $onlyIf[$customID==levelingchannelsetup;]
 $let[currentchannel;$advancedReplace[$checkCondition[$getGuildVar[levelupmessagechannel;$guildID]!=];true;<#$getGuildVar[levelupmessagechannel;$guildID]> (\`$getGuildVar[levelupmessagechannel;$guildID]\`);false;No channel set]]
 
 $interactionUpdate[$title[Channel Setup]
-$description[Choose a channel for Level up messages to be sent in. Use the select menu below for the channel to use!
+$description[Select a channel for sending level up messages. Use the select menu below to choose your preferred channel.
 
 **Tip:** Unable to find the channel you're looking for? Try typing the channel name right into the select menu instead!]
 $addField[Current channel;$get[currentchannel]]
@@ -265,13 +265,13 @@ $onlyIf[$customID==levelingchannelselectmenusetup;]
 
 
 $onlyIf[$getGuildVar[levelupmessagechannel;$guildID]!=$selectMenuValues;
-$interactionReply[This channel is already used for Level up messages. Select a different one instead.
+$interactionReply[This channel is already used for level up messages. Select a different one instead.
 $ephemeral
 ]
 ]
 
 $onlyIf[$channelHasPerms[$selectMenuValues;$clientID;ViewChannel;SendMessages]==true;
-$interactionReply[You selected a channel that i do not have the required permissions for. To set a channel for Level up messages, i must have the following permissions for the selected channel:
+$interactionReply[You selected a channel that i do not have the required permissions for. To set a channel for level up messages, i must have the following permissions for the selected channel:
 \`SendMessages\`
 \`ViewChannel\`
 $ephemeral
@@ -299,7 +299,7 @@ $addButton[levelingsettingshome;Go Back;Secondary;↩️]
 $addButton[levelingmsgchannelreset;Reset;Secondary]
 ]
 
-$interactionFollowUp[<#$selectMenuValues> will now be used for Level up messages!
+$interactionFollowUp[<#$selectMenuValues> will now be used for level up messages!
 $ephemeral
 ]
 `
@@ -310,7 +310,7 @@ $ephemeral
 $onlyIf[$customID==levelingmsgchannelreset;]
 
 $onlyIf[$getGuildVar[levelupmessagechannel;$guildID]!=;$interactionReply[
-There's no channel set currently to reset.
+There's no channel currently set to reset.
 $ephemeral]]
 
 $deleteGuildVar[levelupmessagechannel;$guildID]
@@ -349,7 +349,7 @@ $let[levelingmessagefeature;$advancedReplace[$getGuildVar[levelingmessagefeature
 
 $interactionUpdate[
 $title[Message]
-$description[Welcome to options under the \`Message\` category! Select any option to modify]
+$description[Welcome to options under the \`Message\` category! Select any option to modify.]
 $addField[Current Setup;* **Level up message:** $get[levelingmessagefeature]]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
@@ -375,7 +375,7 @@ $let[settingdecide;$advancedReplace[$checkCondition[$getGuildVar[levelingmessage
 $setGuildVar[levelingmessagefeature;$get[settingdecide];$guildID]
 $let[levelingmessagefeature;$advancedReplace[$getGuildVar[levelingmessagefeature];off;Disabled;on;Enabled]]
 
-$let[statements;$advancedReplace[$checkCondition[$getGuildVar[levelingmessagefeature]==on];true;Successfully enabled Level up message!;false;Successfully disabled Level up message!]]
+$let[statements;$advancedReplace[$checkCondition[$getGuildVar[levelingmessagefeature]==on];true;Successfully enabled level up message!;false;Successfully disabled level up message!]]
 
 
 $interactionUpdate[
@@ -403,7 +403,7 @@ $onlyIf[$customID==levelingmessagesetup;]
 
 $showModal
 $modal[levelingmessagemodalsetup;Set Message]
-$addTextInput[messageInput;Message to use;Paragraph;true;e.g, <user.username> has Leveled up!;$getGuildVar[levelingmessage];0;200]
+$addTextInput[messageInput;Message to use;Paragraph;true;e.g. <user.username> has leveled up!;$getGuildVar[levelingmessage];0;200]
 
 `
 },{
@@ -411,7 +411,7 @@ $addTextInput[messageInput;Message to use;Paragraph;true;e.g, <user.username> ha
     allowedInteractionTypes: ["modal"],
     code: `$onlyIf[$customID==levelingmessagemodalsetup;]
 $setGuildVar[levelingmessage;$input[messageInput]]
-$interactionReply[Successfully set the Leveling message!
+$interactionReply[Successfully set the leveling message!
 $ephemeral]`
 },{
     type: "interactionCreate",
@@ -435,7 +435,7 @@ $let[levelingresetonleave;$advancedReplace[$getGuildVar[levelingresetonleave];of
 
 $interactionUpdate[
 $title[Reset on Leave]
-$description[This option let's you decide whether or not the user who leaves this server will have their level progress erased. By default, it is disabled but you can choose to enable it.]
+$description[This option lets you decide whether or not the user who leaves this server will have their level progress erased. By default, it is disabled, but you can choose to enable it.]
 $addField[Current Setup;
 $get[levelingresetonleave]
 ]
@@ -490,9 +490,9 @@ $onlyIf[$and[$customID==levelingextraoptionsmenu;$selectMenuValues==exclusionsop
 
 $interactionUpdate[
 $title[Exclusions]
-$description[In this category, you can choose on what should be excluded from allowing members to gain xp by default.
+$description[In this category, you can choose what should be excluded from allowing members to gain XP by default.
 
-To manage a specific setting, click on one of the buttons below dedicated to this category such as "Roles" for example.]
+To manage an option, click on one of the buttons below dedicated to this category, such as "Roles" for example.]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
 $addButton[levelingsettingshome;Go Back;Secondary;↩️]
@@ -508,7 +508,7 @@ $addButton[levelingexclusionchannelcategories;Categories;Secondary]
 $onlyIf[$customID==levelingexclusionroles;]
 
 $interactionUpdate[$title[Exclude Roles]
-$description[Use the menu below to select Roles to exclude from xp. You can select up to 10 Roles within the menu.]
+$description[Use the menu below to select roles to exclude from XP. You can select up to 10 roles within the menu.]
 $addField[Current Role(s);
 $callFunction[autoListroles;$getGuildVar[levelingexcludedroles];, ]
 ]
@@ -543,7 +543,7 @@ $addButton[levelingexclusionpage;Go Back;Secondary;↩️]
 $addButton[levelingresetexcludedroles;Reset;Secondary]
 ]
 
-$interactionFollowUp[Successfully Saved changes!
+$interactionFollowUp[Successfully saved changes!
 $ephemeral
 ]
 
@@ -576,7 +576,7 @@ $addButton[levelingexclusionpage;Go Back;Secondary;↩️]
 $addButton[levelingresetexcludedroles;Reset;Secondary]
 ]
 
-$interactionFollowUp[Current Setup has been reset!
+$interactionFollowUp[Current setup has been reset!
 $ephemeral
 ]
 
@@ -588,7 +588,7 @@ $ephemeral
 $onlyIf[$customID==levelingexclusionchannels;]
 
 $interactionUpdate[$title[Exclude Channels]
-$description[Use the menu below to select Channels to exclude from xp. You can select up to 10 Channels within the menu.]
+$description[Use the menu below to select channels to exclude from XP. You can select up to 10 channels within the menu.]
 $addField[Current Channel(s);
 $callFunction[autoListchannels;$getGuildVar[levelingexcludedchannels];, ]
 ]
@@ -627,7 +627,7 @@ $addButton[levelingexclusionpage;Go Back;Secondary;↩️]
 $addButton[levelingresetexcludedchannels;Reset;Secondary]
 ]
 
-$interactionFollowUp[Successfully Saved changes!
+$interactionFollowUp[Successfully saved changes!
 $ephemeral
 ]
 
@@ -661,7 +661,7 @@ $addButton[levelingexclusionpage;Go Back;Secondary;↩️]
 $addButton[levelingresetexcludedchannels;Reset;Secondary]
 ]
 
-$interactionFollowUp[Current Setup has been reset!
+$interactionFollowUp[Current setup has been reset!
 $ephemeral
 ]
 
@@ -673,7 +673,7 @@ $ephemeral
 $onlyIf[$customID==levelingexclusionchannelcategories;]
 
 $interactionUpdate[$title[Exclude Categories]
-$description[Use the menu below to select channel Categories to exclude from xp. You can select up to 10 Categories within the menu.]
+$description[Use the menu below to select channel categories to exclude from XP. You can select up to 10 categories within the menu.]
 $addField[Current Categories;
 $callFunction[autoListcategories;$getGuildVar[levelingexcludedcategories];, ]
 ]
@@ -712,7 +712,7 @@ $addButton[levelingexclusionpage;Go Back;Secondary;↩️]
 $addButton[levelingresetexcludedcategories;Reset;Secondary]
 ]
 
-$interactionFollowUp[Successfully Saved changes!
+$interactionFollowUp[Successfully saved changes!
 $ephemeral
 ]
 
@@ -746,7 +746,7 @@ $addButton[levelingexclusionpage;Go Back;Secondary;↩️]
 $addButton[levelingresetexcludedcategories;Reset;Secondary]
 ]
 
-$interactionFollowUp[Current Setup has been reset!
+$interactionFollowUp[Current setup has been reset!
 $ephemeral
 ]
 
@@ -758,7 +758,7 @@ $ephemeral
 $onlyIf[$customID==levelingplaceholderlist;]
 
 $interactionUpdate[$title[Placeholders]
-$description[Placeholders are a way to make Welcomer messages unique! Choose a one available from this list.]
+$description[Placeholders are a way to make the leveling message unique! Below are the available options you can use.]
 $addField[Member-related;
 \`<user.username>\` - Returns the member's username
 \`<user.mention>\` - Pings the member

@@ -6,7 +6,7 @@ info: {
 },
 type: "messageCreate",
 aliases: ["find-emoji", "fe"],
-code: `$userCooldown[findemojicmd;3s;Cooldown has been triggered! Please, wait!
+code: `$userCooldown[findemojicmd;3s;Cooldown has been triggered! Please wait!
 Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[findemojicmd]];1000]]:R>]
 
 

@@ -10,11 +10,11 @@ $ephemeral
 
 $interactionUpdate[
 $title[Type]
-$description[This will decide how Trivia will start. **Multiple** means the game will start with 4 answers. **Single** means the game will start with a "true" or "false" as the only answers!]
+$description[This option decides how trivia should start. "Multiple" means the game will start with 4 answers while "Single" means the game will start with "true" and "false" as the only answers!]
 $addField[Current Setup;$toTitleCase[$getUserVar[trivia_type]]]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
-$addStringSelectMenu[triviasettings_$authorID;Select a option;false;1;1]
+$addStringSelectMenu[triviasettings_$authorID;Select an option;false;1;1]
 $addOption[Type;How the game should start?;triviatypeoption;;false]
 $addOption[Difficulty;How hard the game should be?;triviadifficultyoption;;false]
 $addActionRow
@@ -44,7 +44,7 @@ $description[$get[description]]
 $addField[$get[fieldname];$toTitleCase[$getUserVar[trivia_type]]]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
-$addStringSelectMenu[triviasettings_$authorID;Select a option;false;1;1]
+$addStringSelectMenu[triviasettings_$authorID;Select an option;false;1;1]
 $addOption[Type;How the game should start?;triviatypeoption;;false]
 $addOption[Difficulty;How hard the game should be?;triviadifficultyoption;;false]
 $addActionRow
@@ -69,11 +69,11 @@ $ephemeral
 
 $interactionUpdate[
 $title[Difficulty]
-$description[This option is dedicated to changing current difficulty for Trivia. Choose a difficulty-set available below.]
+$description[This option is dedicated to changing the current difficulty for trivia. Choose a difficulty setting available below.]
 $addField[Current Setup;$toTitleCase[$getUserVar[trivia_difficulty]]]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
-$addStringSelectMenu[triviasettings_$authorID;Select a option;false;1;1]
+$addStringSelectMenu[triviasettings_$authorID;Select an option;false;1;1]
 $addOption[Type;How the game should start?;triviatypeoption;;false]
 $addOption[Difficulty;How hard the game should be?;triviadifficultyoption;;false]
 $addActionRow
@@ -94,7 +94,7 @@ $ephemeral
 $let[difficultychooser;$advancedReplace[$advancedTextSplit[$customID;_;0];triviaeasyoption;easy;triviamediumoption;medium;triviahardoption;hard]]
 
 $onlyIf[$get[difficultychooser]!=$getUserVar[trivia_difficulty];
-$interactionReply[This Difficulty-set is already used
+$interactionReply[This difficulty setting is already used.
 $ephemeral
 ]]
 
@@ -111,7 +111,7 @@ $description[$get[description]]
 $addField[$get[fieldname];$toTitleCase[$getUserVar[trivia_difficulty]]]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
-$addStringSelectMenu[triviasettings_$authorID;Select a option;false;1;1]
+$addStringSelectMenu[triviasettings_$authorID;Select an option;false;1;1]
 $addOption[Type;How the game should start?;triviatypeoption;;false]
 $addOption[Difficulty;How hard the game should be?;triviadifficultyoption;;false]
 $addActionRow
@@ -139,11 +139,11 @@ $let[difficulty;$advancedReplace[$getUserVar[flood_difficulty];18;Hard;13;Normal
 
 $interactionUpdate[
 $title[Difficulty]
-$description[This option is dedicated to changing current Difficulty for Flood. Choose a Difficulty-set available below. ]
+$description[This option is dedicated to changing the current difficulty for flood. Choose a difficulty setting available below.]
 $addField[Current Setup;$get[difficulty]]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
-$addStringSelectMenu[floodsettings_$authorID;Select a option;false;1;1]
+$addStringSelectMenu[floodsettings_$authorID;Select an option;false;1;1]
 $addOption[Difficulty;How hard the game should be?;flooddifficultyoption;;false]
 $addActionRow
 $addButton[floodeasyoption_$authorID;Easy;Secondary]
@@ -163,7 +163,7 @@ $ephemeral
 $let[difficultychooser;$advancedReplace[$advancedTextSplit[$customID;_;0];floodhardoption;18;floodmediumoption;13;floodeasyoption;8]]
 
 $onlyIf[$get[difficultychooser]!=$getUserVar[flood_difficulty];
-$interactionReply[This Difficulty-set is already used
+$interactionReply[This difficulty setting is already used.
 $ephemeral
 ]]
 
@@ -181,7 +181,7 @@ $description[$get[description]]
 $addField[$get[fieldname];$get[difficulty]]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
-$addStringSelectMenu[floodsettings_$authorID;Select a option;false;1;1]
+$addStringSelectMenu[floodsettings_$authorID;Select an option;false;1;1]
 $addOption[Difficulty;How hard the game should be?;flooddifficultyoption;;false]
 $addActionRow
 $addButton[floodeasyoption_$authorID;Easy;Secondary]

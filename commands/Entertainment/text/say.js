@@ -9,7 +9,7 @@ module.exports = {
     type: "messageCreate",
     disableConsoleErrors: true,
     code: `
-$userCooldown[saycmd;3s;Cooldown has been triggered! Please, wait!
+$userCooldown[saycmd;3s;Cooldown has been triggered! Please wait!
 Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[saycmd]];1000]]:R>]
 
 $disableAllMentions

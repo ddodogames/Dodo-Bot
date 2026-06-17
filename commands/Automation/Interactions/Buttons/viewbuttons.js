@@ -42,7 +42,6 @@ $interactionReply[
 $title[Permissions of this bot]
 $description[**$username[$get[botID]]** has the following permissions:
 
-
 $codeBlock[$memberPerms[$guildID;$get[botID]];markdown]
 ]
 $color[$getGlobalVar[embedcolor]]
@@ -73,7 +72,6 @@ $addButton[permslistuncompactbutton_$get[botID];Uncompact;Secondary]
         $title[Permissions of this bot]
         $description[**$username[$get[botID]]** has the following permissions:
 
-
         $callFunction[autoListText;$memberPerms[$guildID;$get[botID]];, ]
         ]
         $color[$getGlobalVar[embedcolor]]
@@ -102,7 +100,6 @@ $addButton[permslistuncompactbutton_$get[botID];Uncompact;Secondary]
     $interactionUpdate[
         $title[Permissions of this bot]
         $description[**$username[$get[botID]]** has the following permissions:
-
 
         $codeBlock[$memberPerms[$guildID;$get[botID]];markdown]
         ]
@@ -156,4 +153,103 @@ $color[$getGlobalVar[embedcolor]]
 $ephemeral
 ]
 `
+},{
+    type: "interactionCreate",
+    allowedInteractionTypes: ["button"],
+    code: `
+    $onlyIf[$advancedTextSplit[$customID;_;0]==viewrolepermissions;]
+    $onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+    $ephemeral
+    ]]
+
+    $let[roleID;$advancedTextSplit[$customID;_;2]]
+
+    $onlyIf[$roleExists[$guildID;$get[roleID]]==true;
+    $interactionReply[This role no longer exists in this server.
+    $ephemeral
+    ]]
+
+    $onlyIf[$rolePerms[$guildID;$get[roleID]]!=;
+    $interactionReply[This role no longer has permissions in this server.
+    $ephemeral
+    ]]
+
+    $interactionReply[
+        $title[Permissions of this role]
+        $description[**$roleName[$guildID;$get[roleID]]** has the following permissions:
+
+        $codeBlock[$rolePerms[$guildID;$get[roleID]];markdown]
+        ]
+        $color[$getGlobalVar[embedcolor]]
+        $ephemeral
+        $addActionRow
+        $addButton[rolepermslistuncompactbutton_$authorID_$get[roleID];Uncompact;Secondary]
+    ]
+    `
+},{
+    type: "interactionCreate",
+    allowedInteractionTypes: ["button"],
+    code: `
+    $onlyIf[$advancedTextSplit[$customID;_;0]==rolepermslistuncompactbutton;]
+    $onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+    $ephemeral
+    ]]
+
+    $let[roleID;$advancedTextSplit[$customID;_;2]]
+
+    $onlyIf[$roleExists[$guildID;$get[roleID]]==true;
+    $interactionReply[This role no longer exists in this server.
+    $ephemeral
+    ]]
+
+    $onlyIf[$rolePerms[$guildID;$get[roleID]]!=;
+    $interactionReply[This role no longer has permissions in this server.
+    $ephemeral
+    ]]
+
+    $interactionUpdate[
+        $title[Permissions of this role]
+        $description[**$roleName[$guildID;$get[roleID]]** has the following permissions:
+
+        $callFunction[autoListText;$rolePerms[$guildID;$get[roleID]];, ]
+        ]
+        $color[$getGlobalVar[embedcolor]]
+        $ephemeral
+        $addActionRow
+        $addButton[rolepermslistcompactbutton_$authorID_$get[roleID];Compact;Secondary]
+    ]
+    `
+},{
+    type: "interactionCreate",
+    allowedInteractionTypes: ["button"],
+    code: `
+    $onlyIf[$advancedTextSplit[$customID;_;0]==rolepermslistcompactbutton;]
+    $onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+    $ephemeral
+    ]]
+
+    $let[roleID;$advancedTextSplit[$customID;_;2]]
+
+    $onlyIf[$roleExists[$guildID;$get[roleID]]==true;
+    $interactionReply[This role no longer exists in this server.
+    $ephemeral
+    ]]
+
+    $onlyIf[$rolePerms[$guildID;$get[roleID]]!=;
+    $interactionReply[This role no longer has permissions in this server.
+    $ephemeral
+    ]]
+
+    $interactionUpdate[
+        $title[Permissions of this role]
+        $description[**$roleName[$guildID;$get[roleID]]** has the following permissions:
+
+        $codeBlock[$rolePerms[$guildID;$get[roleID]];markdown]
+        ]
+        $color[$getGlobalVar[embedcolor]]
+        $ephemeral
+        $addActionRow
+        $addButton[rolepermslistuncompactbutton_$authorID_$get[roleID];Uncompact;Secondary]
+    ]
+    `
 }]

@@ -6,7 +6,7 @@ info: {
  perms: ["`SendMessages`", "`EmbedLinks`"]
 },
 code: `
-$userCooldown[whereiseveryonecmd;2s;Cooldown has been triggered! Please, wait!
+$userCooldown[whereiseveryonecmd;2s;Cooldown has been triggered! Please wait!
 Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[whereiseveryonecmd]];1000]]:R>]
 
 

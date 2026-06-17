@@ -1,6 +1,9 @@
+<div align="center">
+  
 # Dodo-Bot
 A personal bot project made in ForgeScript aiming to both entertain and provide users some features to use.
 
+</div>
 
 # What is this
 Dodo-Bot is a personal project that started in late 2021. It was mainly made for entertainment with some features added to it. It is mostly made with the goal mindset of reducing the number of bots needed to do each stuff.
@@ -28,7 +31,7 @@ This bot purely exists just because i got sick of some verified bot but you can 
 ### What about v2?
 When aoi.js was originally announced to be EOL on 3th December 2025 by one of it's devs, v3 became the default version as a way to make the bot not fall in the dead list.
 
-Apparently however, this was reversed later on 27th December of the same year above by the main owner of aoi.js which seemed pretty weird to me. As someone who saw aoi.js in a dying state constantly, i began to notice a weird pattern where it's like it desperately tries to stay alive while at the same time it fails doing so. By then, it was already too late for me to reverse my decision on making v3 the default and reviving v2.
+Apparently however, this was reversed later on 27th December of the same year above by the main owner of aoi.js which seemed pretty weird to me. As someone who saw aoi.js in a dying state constantly, i began to notice a weird pattern where it's like it desperately tries to stay alive while at the same time it fails doing so. By then, it was already too late for me to reverse my decision on making v3 the default version.
 
 Also, if aoi.js revival actually led to anywhere then it would have still contained breaking changes from say, some major version (like v7) that would make it still useless to maintain Dodo-Bot v2 because it relies on aoi.js v6 to offer the bot's features to users.
 
@@ -49,7 +52,7 @@ You can host v3 on any host as long as you meet the following Requirements:
 * A host ready to handle features of the bot (obviously)
 
 # Configuration
-Dodo-Bot allows you to change some options before turning it on. To do this, check out the `config.js` file present in the source code itself which contains available options to change from!
+Dodo-Bot allows you to change some options before turning it on. To do this, check out the `config.example.js` file present in the source code itself which contains available options to change from! Make sure to make a duplicate of the file as `config.js` to be able to set up the bot.
 
 If you're confused about the options, here is a description about what each option does:
 | Option | Description | Default |
@@ -57,10 +60,10 @@ If you're confused about the options, here is a description about what each opti
 | prefix  | Prefix to use to execute any bot command.  | `d!`  |
 | prefixCaseInsensitive  | Whether or not to type prefix as case-insensitive (e.g `d!` can be also typed as `D!` if this is enabled).   | `true`  |
 | BotToken  | Token of the bot to use to run the project.   | none (obviously)  |
-| Embedcolor  | Color to use for the majority of commands returning embed.   | `#404060`  |
+| Embedcolor  | Color to use for the majority of commands returning embed.   | `#3C4F68` or `#FEE75C` for Canary  |
 | MobileStatus  | Sets the online icon of the bot to the mobile variant whenever it starts.   | `false`  |
 | disableConsoleErrors  | Whether or not disable console errors.   | `false`  |
-| AllowBotManagers  | Allows `Admin` and `Developer` members from developer portal to manage the bot if set to `true`.   | `false`  |
+| AllowBotMembers  | Allows members from developer portal to see the special commands (and use them for `Admin` and `Developer`) if set to `true`.   | `false`  |
 | respondOnEdit  | Allow responding to edited messages.   | `false`  |
 
 # Credits
