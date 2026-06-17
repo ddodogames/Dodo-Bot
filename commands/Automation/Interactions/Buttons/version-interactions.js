@@ -11,6 +11,7 @@ $interactionUpdate[
 $title[Changes]
 $description[
 * Updated Forgescript to 2.7.0 dev Temporarily
+* Removed the \`gtp\` command due to the api still being dead with no alternatives available
 ]
 $if[$getGlobalVar[pre_release]==on;
 $attachment[./assets/warning.png;warning.png]
