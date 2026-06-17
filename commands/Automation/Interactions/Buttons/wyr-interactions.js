@@ -10,7 +10,7 @@ You have already voted.
 ]]
 
 $jsonLoad[wyrdata;$getMessageVar[wyr;$messageID]]
-$!jsonSet[wyrdata;upvotes;$sum[$env[wyrdata;upvotes];1]]
+$!jsonSet[wyrdata;upvotes;"$sum[$env[wyrdata;upvotes];1]"]
 $setMessageVar[wyr;$env[wyrdata];$messageID]
 
 $let[wyr1-votes;$env[wyrdata;upvotes]]
@@ -38,7 +38,7 @@ You have already voted.
 ]]
 
 $jsonLoad[wyrdata;$getMessageVar[wyr;$messageID]]
-$!jsonSet[wyrdata;downvotes;$sum[$env[wyrdata;downvotes];1]]
+$!jsonSet[wyrdata;downvotes;"$sum[$env[wyrdata;downvotes];1]"]
 $setMessageVar[wyr;$env[wyrdata];$messageID]
 
 $let[wyr1-votes;$env[wyrdata;upvotes]]
