@@ -20,7 +20,7 @@ A clear and concise description of what you expected to happen.
 If applicable, add attachments to help explain your problem (like screenshots).
 
 ### **Release information (please complete the following information):**
- - Build number (only if you use Canary): [e.g. 2425] 
+ - Build number: [e.g. 2425] 
  - Github Branch: [e.g. v3, canary]
  - Release type: [e.g. Stable, Canary, Alpha, etc]
  - Version [e.g. 3.0.4]
