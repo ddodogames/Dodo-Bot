@@ -47,7 +47,7 @@ $let[levelingresetonleave;$advancedReplace[$getGuildVar[levelingresetonleave];of
 
 $interactionReply[
 $title[Leveling Settings]
-$description[Welcome to Leveling settings! Select an option to change.
+$description[Welcome to leveling settings! Select an option to change.
 ]
 $addField[Current Setup;
 * **Level up channel:** $get[currentchannel]
@@ -79,7 +79,7 @@ $let[levelingresetonleave;$advancedReplace[$getGuildVar[levelingresetonleave];of
 
 $interactionUpdate[
 $title[Leveling Settings]
-$description[Welcome to Leveling settings! Select an option to change.
+$description[Welcome to leveling settings! Select an option to change.
 ]
 $addField[Current Setup;
 * **Level up channel:** $get[currentchannel]
@@ -223,7 +223,7 @@ $addButton[levelingresetbutton;Reset;Danger;⚠️]
 
     $jsonLoad[datachecker;$searchDB[xp;$get[input];member;;$guildID]]
 
-    $onlyIf[$env[datachecker;0;value]!=;$interactionReply[This user does not seem to have leveling data in this server.
+    $onlyIf[$env[datachecker;0;value]!=;$interactionReply[This user does not seem to have leveling data on this server.
     $ephemeral
     ]]
 
@@ -492,7 +492,7 @@ $interactionUpdate[
 $title[Exclusions]
 $description[In this category, you can choose what should be excluded from allowing members to gain XP by default.
 
-To manage a specific option, click on one of the buttons below dedicated to this category, such as "Roles" for example.]
+To manage an option, click on one of the buttons below dedicated to this category, such as "Roles" for example.]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
 $addButton[levelingsettingshome;Go Back;Secondary;↩️]

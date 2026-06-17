@@ -45,7 +45,7 @@ $let[currentchannel;$advancedReplace[$checkCondition[$getGuildVar[leavechannel;$
 
 $interactionReply[
 $title[Leave Settings]
-$description[Welcome to Leave settings! Select an option to change.
+$description[Welcome to leave settings! Select an option to change.
 ]
 $addField[Current Setup;
 * **Leave channel:** $get[currentchannel]
@@ -69,7 +69,7 @@ $let[currentchannel;$advancedReplace[$checkCondition[$getGuildVar[leavechannel;$
 
 $interactionUpdate[
 $title[Leave Settings]
-$description[Welcome to Leave settings! Select an option to change.
+$description[Welcome to leave settings! Select an option to change.
 ]
 $addField[Current Setup;
 * **Leave channel:** $get[currentchannel]
@@ -274,9 +274,9 @@ $onlyIf[$customID==leavemessagetypesetting;]
 
 $interactionUpdate[
 $title[Message type]
-$description[This option is for enabling embed mode for the leave message. When enabled, a simple embed will appear for the leave message. If not, then the message will simply appear as plain text. To switch between the types, click the "Toggle" button below!
+$description[This option is for enabling embed mode for the leave message. When enabled, a simple embed will appear for the leave message. If not, then the message will simply appear as plain text. To switch between the types, press the "Toggle" button below!
 
-**Note:** If the leave message is over 2000 characters, then embed mode will be force-enabled by default due to Discord's limits.]
+**Note:** If the leave message is over 2000 characters, then embed mode will always be used by default due to Discord's limits.]
 $addField[Current type;
 \`$toTitleCase[$getGuildVar[leavetype]]\`]
 $color[$getGlobalVar[embedcolor]]

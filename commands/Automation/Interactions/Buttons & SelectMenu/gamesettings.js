@@ -10,7 +10,7 @@ $ephemeral
 
 $interactionUpdate[
 $title[Type]
-$description[This option determines how trivia will start. "Multiple" means the game will start with 4 answers. "Single" means the game will start with "true" and "false" as the only answers!]
+$description[This option decides how trivia should start. "Multiple" means the game will start with 4 answers while "Single" means the game will start with "true" and "false" as the only answers!]
 $addField[Current Setup;$toTitleCase[$getUserVar[trivia_type]]]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
@@ -139,7 +139,7 @@ $let[difficulty;$advancedReplace[$getUserVar[flood_difficulty];18;Hard;13;Normal
 
 $interactionUpdate[
 $title[Difficulty]
-$description[This option is dedicated to changing the current difficulty for flood. Choose a difficulty set available below.]
+$description[This option is dedicated to changing the current difficulty for flood. Choose a difficulty setting available below.]
 $addField[Current Setup;$get[difficulty]]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow

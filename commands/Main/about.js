@@ -13,7 +13,7 @@ $title[About Dodo-Bot]
 $description[
 Dodo-Bot is a personal project aiming to be an entertainment bot while at the same time providing a couple of useful features! It is basically a bot made in ForgeScript!
 
-The project has been ongoing since late 2021, and it continues to be developed with new improvements along with other types of updates to this day!
+The project has been active since late 2021, and it continues to be developed with new improvements along with other types of updates to this day!
 ]
 $color[$getGlobalVar[embedcolor]]
 $attachment[./assets/dodo-bot-logo.png;dodo-bot-logo.png]

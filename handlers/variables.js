@@ -3,17 +3,17 @@ const { version } = require('../package.json');
 
 module.exports = {
 // Main variables (don't touch unless you know what you're doing)
-version: "3.0.4",
-versionCodename: "Cadmium",
+version: "3.0.5",
+versionCodename: "Starry Gate",
 versionString: version,
-islibraryversiondev: "off",
+islibraryversiondev: "on",
 release_type: "Stable",
 pre_release: "on",
 DevReleaseTypeToSet: "Canary",
-buildNumber: "2425",
+buildNumber: "2428",
 buildStatus: "Incomplete",
 buildBranch: "canary",
-buildDate: "1781222328289",
+buildDate: "1781733871383",
 showbuildinfo: "on",
 AllowBotMembers: config.AllowBotMembers,
 prefix: config.prefix,

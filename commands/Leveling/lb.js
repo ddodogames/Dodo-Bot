@@ -15,9 +15,9 @@ $let[page;$advancedReplace[$checkCondition[$message==];true;1;false;$callFunctio
 $onlyIf[$isNumber[$get[page]]==true;Please be sure to enter an actual number.]
 $onlyIf[$isInteger[$get[page]]==true;An invalid page has been entered. Please specify an existing page.]
 $onlyIf[$get[page]>=1;You can't go less than page 1.]
-$onlyIf[$get[page]<=20;You can only switch up to page 20.]
+$onlyIf[$get[page]<=25;You can only go up to page 25.]
 
-$let[leaderboard;$memberLeaderboard[level;$guildID;desc;20;$get[page];
+$let[leaderboard;$memberLeaderboard[level;$guildID;desc;25;$get[page];
 ;leaderboard;position;$return[$switch[$env[position];$case[1;🥇] $case[2;🥈] $case[3;🥉]] $env[position] - $username[$env[leaderboard;id]] - Level $env[leaderboard;value]]]]
 $let[servericon;$advancedReplace[$checkCondition[$guildIcon==];true;$userDefaultAvatar[$clientID];false;$guildIcon]]
 
@@ -29,7 +29,7 @@ $onlyIf[$get[leaderboard]!=;The leaderboard is currently not available. The reas
 $author[$guildName;$get[servericon]]
 $title[Leaderboard]
 $description[$get[leaderboard]]
-$footer[Page $get[page]/20]
+$footer[Page $get[page]/25]
 $color[$getGlobalVar[embedcolor]]
 
 

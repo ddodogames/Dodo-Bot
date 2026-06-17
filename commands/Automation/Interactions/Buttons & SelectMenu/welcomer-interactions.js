@@ -46,7 +46,7 @@ $let[currentchannel;$advancedReplace[$checkCondition[$getGuildVar[welcomerchanne
 
 $interactionReply[
 $title[Welcomer Settings]
-$description[Welcome to Welcomer settings! Select an option to change.
+$description[Welcome to welcomer settings! Select an option to change.
 ]
 $addField[Current Setup;
 * **Welcomer channel:** $get[currentchannel]
@@ -70,7 +70,7 @@ $let[currentchannel;$advancedReplace[$checkCondition[$getGuildVar[welcomerchanne
 
 $interactionUpdate[
 $title[Welcomer Settings]
-$description[Welcome to Welcomer settings! Select an option to change.
+$description[Welcome to welcomer settings! Select an option to change.
 ]
 $addField[Current Setup;
 * **Welcomer channel:** $get[currentchannel]
@@ -273,9 +273,9 @@ $onlyIf[$customID==welcomermessagetypesetting;]
 
 $interactionUpdate[
 $title[Message type]
-$description[This option is for enabling embed mode for the welcomer message. When enabled, a simple embed will appear for the welcomer message. If not, then the message will simply appear as plain text. To switch between the types, click the "Toggle" button below!
+$description[This option is for enabling embed mode for the welcomer message. When enabled, a simple embed will appear for the welcomer message. If not, then the message will simply appear as plain text. To switch between the types, press the "Toggle" button below!
 
-**Note:** If the welcomer message is over 2000 characters, then embed mode will be force-enabled by default due to Discord's limits.]
+**Note:** If the welcomer message is over 2000 characters, then embed mode will always be used by default due to Discord's limits.]
 $addField[Current type;
 \`$toTitleCase[$getGuildVar[welcomertype]]\`]
 $color[$getGlobalVar[embedcolor]]

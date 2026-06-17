@@ -14,7 +14,7 @@ $wipeDB
 Done!
 ;
 $title[Delete database]
-$description[Are you sure you want to reset the database? This action cannot be undone once you do so.]
+$description[Are you sure you want to reset the database? There is no going back once you do so.]
 $attachment[./assets/dangerous-sign.png;dangerous-sign.png]
 $thumbnail[attachment://dangerous-sign.png]
 $color[Red]

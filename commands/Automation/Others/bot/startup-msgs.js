@@ -3,7 +3,7 @@ module.exports = [{
     type: "clientReady",
     code: `$if[$getGlobalVar[pre_release]==on;
 $chalkLog[Development build detected!
-Using development builds is not recommended for public use because they may contain bugs, and as such, it is advised to use them for testing purposes only!;bold;red]
+Using development builds is not recommended for normal usage because they may contain bugs. It is advised to use them for testing purposes only!;bold;red]
 ]
 $wait[2000]
 $let[version;$advancedReplace[$checkCondition[$getGlobalVar[pre_release]==on];true;$getGlobalVar[versionString];false;$getGlobalVar[version]]]
