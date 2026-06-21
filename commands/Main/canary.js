@@ -14,6 +14,7 @@ $addField[Introduction;Canary is the unstable branch for developing upcoming ver
 Builds released from this branch are incomplete and may have bugs as a result, so it is not recommended to use them for normal usage.
 ]
 $addField[How to test?;For those who want to run the latest build on their bots. Check out the instructions $hyperlink[here;https://dodo-bot-project.github.io/advanced/canary].
+
 Alternatively, you can invite the official Canary bot by clicking the button below to do so.
 ]
 $color[$getGlobalVar[embedcolor]]
