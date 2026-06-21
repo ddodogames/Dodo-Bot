@@ -12,6 +12,7 @@ $title[Changes]
 $description[
 * Updated Forgescript to 2.7.0 dev Temporarily
 * Removed the \`gtp\` command due to the api still being dead with no alternatives available
+  * \`wordle\` has also been removed for the same reason above
 ]
 $if[$getGlobalVar[pre_release]==on;
 $attachment[./assets/warning.png;warning.png]
@@ -65,7 +66,8 @@ $ephemeral
 $interactionUpdate[
 $title[Other]
 $description[
-*No changes have been added yet*
+* (Source code) Bumped \`@dotenvx/dotenvx\` package to \`v1.75.1\`
+* Include a link in \`canary\` for users who want to run the latest Canary build on their bots
 ]
 $if[$getGlobalVar[pre_release]==on;
 $attachment[./assets/warning.png;warning.png]
