@@ -1,3 +1,5 @@
+# Currently unused. It will be used one day when i eventually figure out what to do.
+
 module.exports = [{
     name: "botAdminsOnly",
     params: [],
