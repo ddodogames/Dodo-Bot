@@ -45,7 +45,7 @@ Despite this however, v2 will be temporarily maintained for a period of time sin
 | [**v1**](https://github.com/ddodogames/Dodo-Bot/tree/v1)  | The discontinued version of Dodo-Bot. It had a bad start with bunch of bugs due to me being newbie in aoi.js at the time.  | Discontinued  |
 | [**v2**](https://github.com/ddodogames/Dodo-Bot/tree/v2)  | The version 2 of the bot. Based on aoi.js v6!  | Maintained, sorta of (in LTS state)  |
 | [**v3 (current)**](https://github.com/ddodogames/Dodo-Bot/tree/v3)  | The current version of the bot. Gets both fixes and improvements!  | Maintained  |
-| [**canary**](https://github.com/ddodogames/Dodo-Bot/tree/canary)  | Development builds of v3. Not recommended for general use. More information can be found [here](https://ddodogames.github.io/dodo-bot-site/advanced/canary/).  | Maintained  |
+| [**canary**](https://github.com/ddodogames/Dodo-Bot/tree/canary)  | Development builds of v3. Not recommended for general use. More information can be found [here](https://dodo-bot-project.github.io/advanced/canary/).  | Maintained  |
 
 # Requirements
 You can host v3 on any host as long as you meet the following Requirements:
