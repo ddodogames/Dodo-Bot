@@ -6,7 +6,7 @@ A personal bot project made in ForgeScript aiming to both entertain and provide 
 
 </div>
 
-# What is this
+# What is this?
 Dodo-Bot is a personal project that started in late 2021. It was mainly made for entertainment with some features added to it. It is mostly made with the goal mindset of reducing the number of bots needed to do each stuff.
 
 This version of the bot aka v3 is based on the (now abandoned and silently discontinued) CupcakeX codebase albeit with improvements and new stuff for the sake of learning.
@@ -70,4 +70,4 @@ If you're confused about the options, here is a description about what each opti
 # Credits
 Most of the code and stuff belongs to me (besides the ones credited in credits command). You can also credit me using my discord username: "dodogames".
 
-In case of using my code for development purposes, you may agree to not claim that you made the bot; otherwise, I may ask you for credit. Further information about the use of source code is explained in the credits command.
+In case of using my code for development purposes, you may agree to not claim that you made the bot; otherwise, I may ask you for credit.
