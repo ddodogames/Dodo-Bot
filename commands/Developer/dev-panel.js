@@ -5,7 +5,7 @@ info: {
     perms: ["`SendMessages`", "`EmbedLinks`"],
     dev: "true"
 },
-aliases: ["devpanel", "developer-panel", "dev-settings"],
+aliases: ["devpanel", "developer-panel", "dev-settings", "devsettings"],
 type: "messageCreate",
 code: `$callFunction[botDevsOnly]
 $title[Developer panel]
