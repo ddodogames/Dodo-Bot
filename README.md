@@ -1,5 +1,5 @@
 <div align="center">
-<img src="https://raw.githubusercontent.com/ddodogames/Dodo-Bot/refs/heads/canary/assets/dodo-bot-logo.png" alt="Dodo-Bot Logo" width="150"/>
+<img src="assets/dodo-bot-logo.png" alt="Dodo-Bot Logo" width="150"/>
   
 # Dodo-Bot
 A personal bot project made in ForgeScript aiming to both entertain and provide users some features to use.
