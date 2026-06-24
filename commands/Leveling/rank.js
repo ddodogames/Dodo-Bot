@@ -18,7 +18,7 @@ $title[$username[$get[user]]'s Rank]
 $addField[Progress;
 * **Level:** \`$getMemberVar[level;$get[user]]\`
 * **XP:** \`$getMemberVar[xp;$get[user]]\`/\`$getMemberVar[xpLimit;$get[user]]\`
-\`($bar[$getMemberVar[xp;$get[user]];$getMemberVar[xpLimit;$get[user]];15;=;-])\`
+\`($advancedBar[$getMemberVar[xp;$get[user]];$getMemberVar[xpLimit;$get[user]];15;-;#;=])\`
 ]
 $if[$getMemberLeaderboardValue[level;asc;$get[user]]!=0;
 $footer[Rank on LB: #$getMemberLeaderboardValue[level;asc;$get[user]]]
