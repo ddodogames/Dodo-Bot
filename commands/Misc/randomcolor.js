@@ -12,7 +12,7 @@ $let[status;$httpRequest[https://api.popcat.xyz/v2/color/$callFunction[randomCol
 $onlyIf[$get[status]==200;Unable to fetch data for a random color. Please try again later.]
 
 $attachment[./assets/paint.png;paint.png]
-$author[Random Color;attachment://paint.png]
+$author[Random color;attachment://paint.png]
 $title[There you go!]
 $addField[**Hex code**;$httpResult[message;hex]]
 $addField[**Number**;$hexToInt[$httpResult[message;hex]]]
