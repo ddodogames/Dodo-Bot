@@ -69,7 +69,7 @@ $description[
 * (Source code) Bumped \`@dotenvx/dotenvx\` package to \`v1.75.1\`
 * The progressbar in \`rank\` cmd has been slightly updated to sometimes include \`#\` at some points
 * Include a link in \`canary\` for users who want to run the latest Canary build on their bots
-* (Source code) Temporarily update \`discord-gamecord\` to DeusDrizzyy's fork to test stuff
+* (Source code) Temporarily update \`discord-gamecord\` to DeusDrizzyy's fork to test stuff (which includes changes to some cmds here)
 ]
 $if[$getGlobalVar[pre_release]==on;
 $attachment[./assets/warning.png;warning.png]
