@@ -14,6 +14,7 @@ $description[
 * Removed the \`gtp\` command due to the api still being dead with no alternatives available
   * \`wordle\` has also been removed for the same reason above
 * Temporarily disable \`showerthoughts\` as it stopped working
+* Added an early version of \`translate\` command
 ]
 $if[$getGlobalVar[pre_release]==on;
 $attachment[./assets/warning.png;warning.png]
