@@ -30,7 +30,7 @@ The purpose of this version is to keep Dodo-Bot alive without relying on aoi.js 
 This bot purely exists just because i got sick of some verified bot but you can use this project and also learn from it if you happen to be using ForgeScript!
 
 ### What about v2?
-When aoi.js was originally announced to be EOL on 3th December 2025 by one of it's devs, v3 became the default version as a way to make the bot not fall in the dead list.
+When aoi.js was originally announced to be EOL on 3th December 2025 by one of its devs, v3 became the default version as a way to make the bot not fall in the dead list.
 
 Apparently however, this was reversed later on 27th December of the same year above by the main owner of aoi.js which seemed pretty weird to me. As someone who saw aoi.js in a dying state constantly, i began to notice a weird pattern where it's like it desperately tries to stay alive while at the same time it fails doing so. By then, it was already too late for me to reverse my decision on making v3 the default version.
 
