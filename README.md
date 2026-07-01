@@ -48,9 +48,9 @@ Despite this however, v2 will be temporarily maintained for a period of time sin
 | [**canary**](https://github.com/ddodogames/Dodo-Bot/tree/canary)  | Development builds of v3. Not recommended for general use. More information can be found [here](https://dodo-bot-project.github.io/advanced/canary/).  | Maintained  |
 
 # Requirements
-You can host v3 on any host as long as you meet the following Requirements:
+You can host v3 on any server as long as you meet the following requirements:
 * Node.js v20 or later is required as older versions are not supported
-* A host ready to handle features of the bot (obviously)
+* A server with enough resources ready to handle the bot
 
 # Configuration
 Dodo-Bot allows you to change some options before turning it on. To do this, check out the `config.example.js` file present in the source code itself which contains available options to change from! Make sure to make a duplicate of the file as `config.js` to be able to set up the bot.
