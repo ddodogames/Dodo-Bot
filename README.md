@@ -58,14 +58,14 @@ Dodo-Bot allows you to change some options before turning it on. To do this, che
 If you're confused about the options, here is a description about what each option does:
 | Option | Description | Default |
 | :------- | :------: | -------: |
-| prefix  | Prefix to use to execute any bot command.  | `d!`  |
-| prefixCaseInsensitive  | Whether or not to type prefix as case-insensitive (e.g. `d!` can be also typed as `D!` if this is enabled).   | `false`  |
-| BotToken  | Token of the bot to use to run the project.   | none (obviously)  |
-| Embedcolor  | Color to use for the majority of commands returning embed.   | `#3C4F68` or `#FEE75C` for Canary  |
-| MobileStatus  | Sets the online icon of the bot to the mobile variant whenever it starts.   | `false`  |
-| disableConsoleErrors  | Whether or not disable console errors.   | `false`  |
-| AllowBotMembers  | Allows members from developer portal to see the special commands (and use them for `Admin` and `Developer` members) if set to `true`.   | `false`  |
-| respondOnEdit  | Allow responding to edited messages.   | `false`  |
+| `prefix`  | Prefix to use to execute any bot command.  | `d!`  |
+| `prefixCaseInsensitive`  | Whether or not to type prefix as case-insensitive (e.g. `d!` can be also typed as `D!` if this is enabled).   | `false`  |
+| `BotToken`  | Token of the bot to use to run the project.   | none (obviously)  |
+| `Embedcolor`  | Color to use for the majority of commands returning embed.   | `#3C4F68` or `#FEE75C` for Canary  |
+| `MobileStatus`  | Sets the online icon of the bot to the mobile variant whenever it starts.   | `false`  |
+| `disableConsoleErrors`  | Whether or not disable console errors.   | `false`  |
+| `AllowBotMembers`  | Allows members from developer portal to see the special commands (and use them for `Admin` and `Developer` members) if set to `true`.   | `false`  |
+| `respondOnEdit`  | Allow responding to edited messages.   | `false`  |
 
 # Credits
 Most of the code and stuff belongs to me (besides the ones credited in credits command). You can also credit me using my discord username: "dodogames".
