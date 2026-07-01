@@ -43,7 +43,7 @@ Despite this however, v2 will be temporarily maintained for a period of time sin
 | Release | Description | Status |
 | :------- | :------: | -------: |
 | [**v1**](https://github.com/ddodogames/Dodo-Bot/tree/v1)  | The discontinued version of Dodo-Bot. It had a bad start with bunch of bugs due to me being newbie in aoi.js at the time.  | Discontinued  |
-| [**v2**](https://github.com/ddodogames/Dodo-Bot/tree/v2)  | The version 2 of the bot. Based on aoi.js v6!  | Maintained, sorta of (in LTS state)  |
+| [**v2**](https://github.com/ddodogames/Dodo-Bot/tree/v2)  | The version 2 of the bot. Based on aoi.js v6!  | Maintained (in LTS-like state)  |
 | [**v3 (current)**](https://github.com/ddodogames/Dodo-Bot/tree/v3)  | The current version of the bot. Gets both fixes and improvements!  | Maintained  |
 | [**canary**](https://github.com/ddodogames/Dodo-Bot/tree/canary)  | Development builds of v3. Not recommended for general use. More information can be found [here](https://dodo-bot-project.github.io/advanced/canary/).  | Maintained  |
 
@@ -59,7 +59,7 @@ If you're confused about the options, here is a description about what each opti
 | Option | Description | Default |
 | :------- | :------: | -------: |
 | prefix  | Prefix to use to execute any bot command.  | `d!`  |
-| prefixCaseInsensitive  | Whether or not to type prefix as case-insensitive (e.g `d!` can be also typed as `D!` if this is enabled).   | `true`  |
+| prefixCaseInsensitive  | Whether or not to type prefix as case-insensitive (e.g. `d!` can be also typed as `D!` if this is enabled).   | `true`  |
 | BotToken  | Token of the bot to use to run the project.   | none (obviously)  |
 | Embedcolor  | Color to use for the majority of commands returning embed.   | `#3C4F68` or `#FEE75C` for Canary  |
 | MobileStatus  | Sets the online icon of the bot to the mobile variant whenever it starts.   | `false`  |
