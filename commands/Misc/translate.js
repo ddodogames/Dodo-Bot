@@ -11,15 +11,15 @@ module.exports = {
 
 
 $onlyIf[$message!=;Please include the language you want to use for translation.]
-$let[status;$httpRequest[https://api.popcat.xyz/v2/translate?to=$message&text=$encodeURI[$messageSlice];get]]
+$let[status;$httpRequest[https://api.popcat.xyz/v2/translate?to=$message&text=$encodeURI[$messageSlice[0]];get]]
 $onlyIf[$get[status]==200;Unable to translate. The reasons are either:
 1. I am unable to get the translated output. Please try again later.
 2. The language you want to translate the text to is not supported.
 ]
-$onlyIf[$messageSlice!=;Please type the text you want to translate.]
+$onlyIf[$messageSlice[0]!=;Please type the text you want to translate.]
 
 $title[Translation]
-$addField[Input;$codeBlock[$messageSlice]]
+$addField[Input;$codeBlock[$messageSlice[0]]]
 $addField[Output;$codeBlock[$httpResult[message;translated]]]
 $color[$getGlobalVar[embedcolor]]
 $footer[$username;$userAvatar]
