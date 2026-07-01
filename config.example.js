@@ -1,6 +1,6 @@
 module.exports = {
     prefix: "d!",
-    prefixCaseInsensitive: true,
+    prefixCaseInsensitive: false,
     BotToken: "",
     Embedcolor: "#FEE75C",
     MobileStatus: false,

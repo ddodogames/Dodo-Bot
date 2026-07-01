@@ -72,6 +72,7 @@ $description[
 * The progressbar in \`rank\` cmd has been slightly updated to sometimes include \`#\` at some points
 * Include a link in \`canary\` for users who want to run the latest Canary build on their bots
 * (Source code) Temporarily update \`discord-gamecord\` to DeusDrizzyy's fork to test stuff (which includes changes to some cmds here)
+* (Source code) Set \`prefixCaseInsensitive\` to \`false\` by default in \`config.example.js\` file for new installs
 ]
 $if[$getGlobalVar[pre_release]==on;
 $attachment[./assets/warning.png;warning.png]
