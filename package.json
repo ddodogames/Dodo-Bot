@@ -21,7 +21,7 @@
     "@tryforge/forge.db": "^2.1.1",
     "@tryforge/forgescript": "github:tryforge/forgescript#c6bc5b1",
     "discord-gamecord": "github:DeusDrizzyy/Gamecord#d2cb882",
-    "@dotenvx/dotenvx": "^2.0.0",
+    "@dotenvx/dotenvx": "^2.4.1",
     "better-sqlite3": "^12.10.0"
   },
   "devDependencies": {

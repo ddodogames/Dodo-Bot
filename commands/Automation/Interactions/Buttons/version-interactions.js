@@ -14,7 +14,7 @@ $description[
 * Removed the \`gtp\` command due to the api still being dead with no alternatives available
   * \`wordle\` has also been removed for the same reason above
 * Temporarily disable \`showerthoughts\` as it stopped working
-* Added an early version of \`translate\` command
+* Added a command called \`github\`
 ]
 $if[$getGlobalVar[pre_release]==on;
 $attachment[./assets/warning.png;warning.png]
@@ -68,7 +68,7 @@ $ephemeral
 $interactionUpdate[
 $title[Other]
 $description[
-* (Source code) Bumped \`@dotenvx/dotenvx\` package to \`v2.0.0\`
+* (Source code) Bumped \`@dotenvx/dotenvx\` package to \`v2.4.1\`
 * The progressbar in \`rank\` cmd has been slightly updated to sometimes include \`#\` at some points
 * Include a link in \`canary\` for users who want to run the latest Canary build on their bots
 * (Source code) Temporarily update \`discord-gamecord\` to DeusDrizzyy's fork to test stuff (which includes changes to some cmds here)
