@@ -20,7 +20,7 @@ $onlyIf[$get[status]==200;Unable to check the profile. The reasons are either:
 
 $attachment[./assets/github.png;github.png]
 $author[GitHub;attachment://github.png]
-$title[$httpResult[message;username];$httpResult[message;url]]
+$title[$httpResult[message;name];$httpResult[message;url]]
 $addField[General;
 * **Public repos:** $httpResult[message;public_repos]
 * **Public gists:** $httpResult[message;public_gists]
