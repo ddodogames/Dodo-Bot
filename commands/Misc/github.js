@@ -26,7 +26,7 @@ $addField[General;
 * **Public gists:** $httpResult[message;public_gists]
 * **Type:** $httpResult[message;account_type]
 * **Followers:** $httpResult[message;followers]
-* **Created at:** $httpResult[message;created_at]
+* **Created at:** <t:$trunc[$divide[$unparseDate[$httpResult[message;created_at]];1000]]:f>
 ;true]
 $addField[Other;
 * **Public email:** $httpResult[message;email]
