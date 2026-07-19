@@ -40,7 +40,7 @@ $ephemeral
 $interactionUpdate[
 $title[Bug Fixes]
 $description[
-*No bug fixes have been added yet*
+* The bot's source code will now be set up peacefully again with npm v12 installations
 ]
 $if[$getGlobalVar[pre_release]==on;
 $attachment[./assets/warning.png;warning.png]
