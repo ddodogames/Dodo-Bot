@@ -26,5 +26,12 @@
   },
   "devDependencies": {
     "typescript": "^5.5.4"
+  },
+  "allowScripts": {
+    "@tryforge/forgescript": true,
+    "@tryforge/forge.db": true,
+    "better-sqlite3": true,
+    "typescript": true,
+    "@dotenvx/dotenvx": true
   }
 }
