@@ -10,9 +10,8 @@ $ephemeral
 $interactionUpdate[
 $title[Changes]
 $description[
-* Updated Forgescript to 2.7.0 dev Temporarily
 * Removed the \`gtp\` command due to the api still being dead with no alternatives available
-  * \`wordle\` has also been removed for the same reason above
+  * \`wordle\` has also been removed for the same reason as mentioned above
 * Temporarily disable \`showerthoughts\` as it stopped working
 * Added a command called \`github\`
 ]
@@ -68,10 +67,9 @@ $ephemeral
 $interactionUpdate[
 $title[Other]
 $description[
-* (Source code) Bumped \`@dotenvx/dotenvx\` package to \`v2.7.3\`
+* (Source code) Bumped \`@dotenvx/dotenvx\` package to \`v2.14.0\`
 * The progressbar in \`rank\` cmd has been slightly updated to sometimes include \`#\` at some points
 * Include a link in \`canary\` for users who want to run the latest Canary build on their bots
-* (Source code) Temporarily update \`discord-gamecord\` to DeusDrizzyy's fork to test stuff (which includes changes to some cmds here)
 * (Source code) Set \`prefixCaseInsensitive\` to \`false\` by default in \`config.example.js\` file for new installs
 ]
 $if[$getGlobalVar[pre_release]==on;

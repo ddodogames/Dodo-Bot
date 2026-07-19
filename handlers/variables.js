@@ -6,7 +6,7 @@ module.exports = {
 version: "3.0.5",
 versionCodename: "Starry Gate",
 versionString: version,
-islibraryversiondev: "on",
+isforgescriptdev: "off",
 release_type: "Stable",
 pre_release: "on",
 DevReleaseTypeToSet: "Canary",
