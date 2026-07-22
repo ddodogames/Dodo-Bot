@@ -30,6 +30,7 @@ $addField[General;
 ;true]
 $addField[Other;
 * **Public email:** $httpResult[message;email]
+* **Blog:** $httpResult[message;blog]
 * **Company:** $httpResult[message;company]
 * **Following:** $httpResult[message;following]
 ;true]
