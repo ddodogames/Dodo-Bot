@@ -18,6 +18,8 @@ $onlyIf[$get[status]==200;Unable to check the profile. The reasons are either:
 2. The URL for checking the accounts is currently down. Please try again later.
 ]
 
+$let[githubblog;$advancedReplace[$checkCondition[$httpResult[message;blog]==None];true;None;false;$hyperlink[click here;$httpResult[message;blog]]]]
+
 $attachment[./assets/github.png;github.png]
 $author[GitHub;attachment://github.png]
 $title[$httpResult[message;name];$httpResult[message;url]]
@@ -30,7 +32,7 @@ $addField[General;
 ;true]
 $addField[Other;
 * **Public email:** $httpResult[message;email]
-* **Blog:** $httpResult[message;blog]
+* **Blog:** $get[githubblog]
 * **Company:** $httpResult[message;company]
 * **Following:** $httpResult[message;following]
 ;true]
