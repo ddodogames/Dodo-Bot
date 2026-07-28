@@ -40,7 +40,7 @@ $ephemeral
 $interactionUpdate[
 $title[Bug Fixes]
 $description[
-* The bot's source code will now be set up peacefully again for npm v12 installations
+* The bot's source code can now be set up peacefully again for npm v12 installations
 ]
 $if[$getGlobalVar[pre_release]==on;
 $attachment[./assets/warning.png;warning.png]
@@ -67,7 +67,7 @@ $ephemeral
 $interactionUpdate[
 $title[Other]
 $description[
-* (Source code) Bumped \`@dotenvx/dotenvx\` package to \`v2.14.0\`
+* (Source code) Bumped \`@dotenvx/dotenvx\` package to \`v2.19.0\`
 * The progressbar in \`rank\` cmd has been slightly updated to sometimes include \`#\` at some points
 * Include a link in \`canary\` for users who want to run the latest Canary build on their bots
 * (Source code) Set \`prefixCaseInsensitive\` to \`false\` by default in \`config.example.js\` file for new installs
