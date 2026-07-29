@@ -12,7 +12,6 @@ $title[Changes]
 $description[
 * Removed the \`gtp\` command due to the api still being dead with no alternatives available
   * \`wordle\` has also been removed for the same reason as mentioned above
-* Temporarily disable \`showerthoughts\` as it stopped working
 * Added a command called \`github\`
 ]
 $if[$getGlobalVar[pre_release]==on;
