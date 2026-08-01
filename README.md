@@ -1,5 +1,5 @@
 <div align="center">
-<img src="assets/dodo-bot-logo.png" alt="Dodo-Bot Logo" width="150"/>
+<img src="https://raw.githubusercontent.com/ddodogames/Dodo-Bot/refs/heads/canary/assets/dodo-bot-logo.png" alt="Dodo-Bot logo" width="150"/>
   
 # Dodo-Bot
 A personal bot project made in ForgeScript aiming to both entertain and provide users some features to use.
@@ -61,7 +61,7 @@ If you're confused about the options, here is a description about what each opti
 | `prefix`  | Prefix to use to execute any bot command.  | `d!`  |
 | `prefixCaseInsensitive`  | Whether or not to type prefix as case-insensitive (e.g. `d!` can be also typed as `D!` if this is enabled).   | `false`  |
 | `BotToken`  | Token of the bot to use to run the project.   | none (obviously)  |
-| `Embedcolor`  | Color to use for the majority of commands returning embed.   | `#3C4F68` or `#FEE75C` for Canary  |
+| `Embedcolor`  | Color to use for the majority of commands returning embed.   | `#3450D1` or `#FEE75C` for Canary  |
 | `MobileStatus`  | Sets the online icon of the bot to the mobile variant whenever it starts.   | `false`  |
 | `disableConsoleErrors`  | Whether or not disable console errors.   | `false`  |
 | `AllowBotMembers`  | Allows members from developer portal to see the special commands (and use them for `Admin` and `Developer` members) if set to `true`.   | `false`  |

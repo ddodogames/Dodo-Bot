@@ -10,7 +10,7 @@ $ephemeral
 $interactionUpdate[
 $title[Changes]
 $description[
-* Removed the \`gtp\` command due to the api still being dead with no alternatives available
+* Removed the \`gtp\` command due to the API still being dead with no alternatives available
   * \`wordle\` has also been removed for the same reason as mentioned above
 * Added a command called \`github\`
 ]
@@ -66,10 +66,11 @@ $ephemeral
 $interactionUpdate[
 $title[Other]
 $description[
-* (Source code) Bumped \`@dotenvx/dotenvx\` package to \`v2.19.0\`
+* (Source code) Bumped \`@dotenvx/dotenvx\` package to \`2.19.1\`
 * The progressbar in \`rank\` cmd has been slightly updated to sometimes include \`#\` at some points
 * Include a link in \`canary\` for users who want to run the latest Canary build on their bots
 * (Source code) Set \`prefixCaseInsensitive\` to \`false\` by default in \`config.example.js\` file for new installs
+* Changed the default embed color to \`#3450D1\`
 ]
 $if[$getGlobalVar[pre_release]==on;
 $attachment[./assets/warning.png;warning.png]
