@@ -65,6 +65,7 @@ $interactionUpdate[
 $title[Other]
 $description[
 * (Source code) Bumped \`@dotenvx/dotenvx\` to \`v2.20.1\`
+* (Source code) Bumped \`better-sqlite3\` to \`v13.0.3\`
 * (Source code) Node.js 22 or later is now required to use the bot
 ]
 $if[$getGlobalVar[pre_release]==on;
