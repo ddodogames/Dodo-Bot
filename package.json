@@ -12,7 +12,7 @@
     "UpdateandStart": "git pull && node index.js"
   },
   "engines": {
-    "node": ">=20.x"
+    "node": ">=22.x"
   },
   "keywords": [],
   "author": "dodoGames",
@@ -21,8 +21,8 @@
     "@tryforge/forge.db": "^2.1.1",
     "@tryforge/forgescript": "^2.6.0",
     "discord-gamecord": "^4.4.4",
-    "@dotenvx/dotenvx": "^2.19.2",
-    "better-sqlite3": "^12.10.0"
+    "@dotenvx/dotenvx": "^2.20.1",
+    "better-sqlite3": "^13.0.3"
   },
   "devDependencies": {
     "typescript": "^5.5.4"
