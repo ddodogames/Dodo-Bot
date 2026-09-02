@@ -15,8 +15,8 @@ $onlyIf[$channelHasPerms[$channelID;$clientID;AttachFiles]==true;I must have \`A
 $let[author;$authorID]
 $let[apilink;https://some-random-api.com/canvas/misc/youtube-comment?username=$username&avatar=$userAvatar[$get[author];4096;png]&comment=$encodeURI[$message]]
 $let[status;$httpRequest[$get[apilink];get]]
-$onlyIf[$get[status]==200;Looks like there're issues with processing the image. Please, try again later.]
-$onlyIf[$charCount[$message]<=56;Your comment can't be longer than 56 characters!]
+$onlyIf[$get[status]==200;Looks like there're issues with processing the image. Please try again later.]
+$onlyIf[$charCount[$message]<=56;Your text can't be longer than 56 characters!]
 $attachment[$get[apilink];comment.png]
 
 `

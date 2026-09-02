@@ -43,13 +43,13 @@ Despite this however, v2 will be temporarily maintained for a period of time sin
 | Release | Description | Status |
 | :------- | :------: | -------: |
 | [**v1**](https://github.com/ddodogames/Dodo-Bot/tree/v1)  | The discontinued version of Dodo-Bot. It had a bad start with bunch of bugs due to me being newbie in aoi.js at the time.  | Discontinued  |
-| [**v2**](https://github.com/ddodogames/Dodo-Bot/tree/v2)  | The version 2 of the bot. Based on aoi.js v6!  | Maintained (in LTS-like state)  |
+| [**v2**](https://github.com/ddodogames/Dodo-Bot/tree/v2)  | The version 2 of the bot. Based on aoi.js v6!  | Discontinued  |
 | [**v3 (current)**](https://github.com/ddodogames/Dodo-Bot/tree/v3)  | The current version of the bot. Gets both fixes and improvements!  | Maintained  |
 | [**canary**](https://github.com/ddodogames/Dodo-Bot/tree/canary)  | Development builds of v3. Not recommended for general use. More information can be found [here](https://dodo-bot-project.github.io/advanced/canary/).  | Maintained  |
 
 # Requirements
 You can host v3 on any server as long as you meet the following requirements:
-* Node.js v20 or later is required as older versions are not supported
+* Node.js v22 or later is required as older versions are not supported
 * A server with enough resources ready to handle the bot
 
 # Configuration
@@ -61,7 +61,7 @@ If you're confused about the options, here is a description about what each opti
 | `prefix`  | Prefix to use to execute any bot command.  | `d!`  |
 | `prefixCaseInsensitive`  | Whether or not to type prefix as case-insensitive (e.g. `d!` can be also typed as `D!` if this is enabled).   | `false`  |
 | `BotToken`  | Token of the bot to use to run the project.   | none (obviously)  |
-| `Embedcolor`  | Color to use for the majority of commands returning embed.   | `#3450D1` or `#FEE75C` for Canary  |
+| `Embedcolor`  | Color to use for the majority of commands returning embed.   | `#3A6EA5` or `#FEE75C` for Canary  |
 | `MobileStatus`  | Sets the online icon of the bot to the mobile variant whenever it starts.   | `false`  |
 | `disableConsoleErrors`  | Whether or not disable console errors.   | `false`  |
 | `AllowBotMembers`  | Allows members from developer portal to see the special commands (and use them for `Admin` and `Developer` members) if set to `true`.   | `false`  |

@@ -10,7 +10,7 @@ $ephemeral
 $interactionUpdate[
 $title[Changes]
 $description[
-*No changes have been added yet*
+* Added a new image command called \`achievement\`
 ]
 $if[$getGlobalVar[pre_release]==on;
 $attachment[./assets/warning.png;warning.png]
@@ -37,7 +37,7 @@ $ephemeral
 $interactionUpdate[
 $title[Bug Fixes]
 $description[
-*No bug fixes have been added yet*
+* Made sure that \`whereiseveryone\` command follows the current embed color used
 ]
 $if[$getGlobalVar[pre_release]==on;
 $attachment[./assets/warning.png;warning.png]
@@ -64,9 +64,10 @@ $ephemeral
 $interactionUpdate[
 $title[Other]
 $description[
-* (Source code) Bumped \`@dotenvx/dotenvx\` to \`v2.21.0\`
+* (Source code) Bumped \`@dotenvx/dotenvx\` to \`v2.23.0\`
 * (Source code) Bumped \`better-sqlite3\` to \`v13.0.3\`
 * (Source code) Node.js 22 or later is now required to use the bot
+* Settle on using the embed color \`#3A6EA5\` for non-canary versions instead
 ]
 $if[$getGlobalVar[pre_release]==on;
 $attachment[./assets/warning.png;warning.png]

@@ -24,15 +24,15 @@ $attachment[./assets/github.png;github.png]
 $author[GitHub;attachment://github.png]
 $title[$httpResult[message;name];$httpResult[message;url]]
 $addField[General;
-* **Public repos:** $httpResult[message;public_repos]
-* **Public gists:** $httpResult[message;public_gists]
+* **Public Repos:** $httpResult[message;public_repos]
+* **Public Gists:** $httpResult[message;public_gists]
 * **Type:** $httpResult[message;account_type]
 * **Followers:** $httpResult[message;followers]
 * **Created at:** <t:$trunc[$divide[$unparseDate[$httpResult[message;created_at]];1000]]:f>
 ;true]
 $addField[Other;
 * **Public email:** $httpResult[message;email]
-* **Blog:** $get[githubblog]
+* **Website:** $get[githubblog]
 * **Company:** $httpResult[message;company]
 * **Following:** $httpResult[message;following]
 ;true]

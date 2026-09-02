@@ -12,7 +12,7 @@ module.exports = [{
     $let[user;$findUser[$message[0];true]]
     $let[apilink;https://api.popcat.xyz/v2/greyscale?image=$userAvatar[$get[user];4096;png]]
     $let[status;$httpRequest[$get[apilink];get]]
-    $onlyIf[$get[status]==200;Looks like there're issues with processing the image. Please, try again later.]
+    $onlyIf[$get[status]==200;Looks like there're issues with processing the image. Please try again later.]
     $attachment[$get[apilink];greyscale.png]
 
     `

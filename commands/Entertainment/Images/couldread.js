@@ -13,7 +13,7 @@ $onlyIf[$message!=;Please provide a text.]
 $onlyIf[$channelHasPerms[$channelID;$clientID;AttachFiles]==true;I must have \`AttachFiles\` permission in order to proceed in this channel. Please grant me the permission and try again.]
 $let[apilink;https://api.popcat.xyz/v2/couldread?text=$encodeURI[$message]]
 $let[status;$httpRequest[$get[apilink];get]]
-$onlyIf[$get[status]==200;Looks like there're issues with processing the image. Please, try again later.]
+$onlyIf[$get[status]==200;Looks like there're issues with processing the image. Please try again later.]
 $onlyIf[$charCount[$message]<=86;Your comment can't be longer than 86 characters!]
 $attachment[$get[apilink];couldread.png]
 
