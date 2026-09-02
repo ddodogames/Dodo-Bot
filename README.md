@@ -36,8 +36,7 @@ Apparently however, this was reversed later on 27th December of the same year ab
 
 Also, if aoi.js revival actually led to anywhere then it would have still contained breaking changes from say, some major version (like v7) that would make it still useless to maintain Dodo-Bot v2 because it relies on aoi.js v6 to offer the bot's features to users.
 
-Despite this however, v2 will be temporarily maintained for a period of time since apparently the migration to other alternatives were not instant.
-
+As a result, v2 has been discontinued and it won't receive any updates or bug fixes anymore. The source code for it will remain up intact in its own GitHub but it won't be touched anymore due to obvious reasons.
 
 # Versions
 | Release | Description | Status |
