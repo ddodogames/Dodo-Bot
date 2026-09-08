@@ -8,8 +8,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "setup": "npm install",
     "start": "node index.js",
-    "startWithoutDeprecations": "node index.js -- --no-deprecation",
-    "UpdateandStart": "git pull && node index.js"
+    "startwithoutdeprecation": "node index.js -- --no-deprecation",
+    "updateandstart": "git pull && node index.js"
   },
   "engines": {
     "node": ">=22.x"
