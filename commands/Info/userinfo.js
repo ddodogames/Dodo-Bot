@@ -17,7 +17,7 @@ $let[accounttype;$advancedReplace[$checkCondition[$isBot[$get[user]]==true];true
 $let[dmsstatus;$advancedReplace[$checkCondition[$isUserDMEnabled[$get[user]]==true];true;Enabled;false;Disabled]]
 $let[botverified;$advancedReplace[$checkCondition[$isBotVerified[$get[user]]==true];true;Yes;false;No]]
 
-$title[$get[username]'s information;$callFunction[userURL;$get[user]]]
+$title[$get[username]'s information;$userURL[$get[user]]]
 $addField[**General**;
 * **Joined Discord on:** <t:$trunc[$divide[$userCreatedAt[$get[user]];1000]]:f>
 * **Account type:** $get[accounttype] $if[$isBot[$get[user]]==true;

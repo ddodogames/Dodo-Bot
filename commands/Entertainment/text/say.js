@@ -25,13 +25,13 @@ $let[links;$randomText[https://www.youtube.com/watch?v=dQw4w9WgXcQ;$clientInvite
 $onlyIf[$get[clearembedmodewords]!=;You cannot activate embed mode without providing a text first.]
 
 $sendMessage[$channelID;$if[$or[$checkContains[$get[content];--embed;—embed]==true;$charCount[$get[content]]>=2000];
-$author[$username;$userAvatar;$callFunction[userURL;$authorID]]
+$author[$username;$userAvatar;$userURL[$authorID]]
 $title[Say cmd;$get[links]]
 $description[$get[clearembedmodewords]]
 $color[$callFunction[randomColor]]
 ;$get[clearembedmodewords]
 
-From $hyperlink[\`$username\`;<$callFunction[userURL;$authorID]>]
+From $hyperlink[\`$username\`;<$userURL[$authorID]>]
 ]]
     `
 }

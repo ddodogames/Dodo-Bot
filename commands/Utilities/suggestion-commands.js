@@ -82,7 +82,7 @@ Alright, your suggestion has been sent to <#$getGuildVar[suggestionchannel]>!
 ]
 
 $let[messageID;$sendMessage[$getGuildVar[suggestionchannel];
-$author[Suggestion from $username;$userAvatar;$callFunction[userURL;$authorID]]
+$author[Suggestion from $username;$userAvatar;$userURL[$authorID]]
 $title[$get[title]]
 $description[$get[message]]
 $color[$getGlobalVar[embedcolor]]

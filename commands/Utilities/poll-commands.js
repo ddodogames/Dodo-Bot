@@ -87,7 +87,7 @@ Alright, your poll has been sent to <#$getGuildVar[pollchannel]>!
 ]
 
 $let[messageID;$sendMessage[$getGuildVar[pollchannel];
-$author[Poll by $username;$userAvatar;$callFunction[userURL;$authorID]]
+$author[Poll by $username;$userAvatar;$userURL[$authorID]]
 $description[$get[content]
 
 1️⃣: **$get[choice1]**
