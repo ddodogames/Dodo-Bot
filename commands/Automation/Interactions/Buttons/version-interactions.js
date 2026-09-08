@@ -11,6 +11,7 @@ $interactionUpdate[
 $title[Changes]
 $description[
 * Added a new image command called \`achievement\`
+* Updated ForgeScript to 2.7.1 which indirectly includes improvements to the bot
 ]
 $if[$getGlobalVar[pre_release]==on;
 $attachment[./assets/warning.png;warning.png]
