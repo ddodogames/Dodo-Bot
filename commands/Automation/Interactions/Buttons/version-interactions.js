@@ -65,7 +65,7 @@ $ephemeral
 $interactionUpdate[
 $title[Other]
 $description[
-* (Source code) Bumped \`@dotenvx/dotenvx\` to \`v2.24.1\`
+* (Source code) Bumped \`@dotenvx/dotenvx\` to \`v2.28.0\`
 * (Source code) Bumped \`better-sqlite3\` to \`v13.0.3\`
 * (Source code) Node.js 22 or later is now required to use the bot
 * Settle on using the embed color \`#3A6EA5\` for non-canary versions instead
