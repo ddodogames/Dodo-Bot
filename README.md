@@ -1,5 +1,5 @@
 <div align="center">
-<img src="https://raw.githubusercontent.com/ddodogames/Dodo-Bot/refs/heads/canary/assets/dodo-bot-logo.png" alt="Dodo-Bot logo" width="150"/>
+<img src="https://raw.githubusercontent.com/ddodogames/Dodo-Bot/refs/heads/v3/assets/dodo-bot-logo.png" alt="Dodo-Bot logo" width="150"/>
   
 # Dodo-Bot
 A personal bot project made in ForgeScript aiming to both entertain and provide users some features to use.
@@ -25,7 +25,7 @@ It wasn't until towards the final months of 2023 that i discovered a fitting alt
 
 During the early days of development (while at the same time 2.1.0 was being worked on), v3 was originally going to replace v2 once it's released but this was later delayed and it got renamed to "Rebase". This was finally reversed around the release of 3.0.2 as it became clear that things had to eventually change.
 
-The purpose of this version is to keep Dodo-Bot alive without relying on aoi.js given that it's pretty much now in "not so good" state. Being based on ForgeScript, advanced stuff can finally be done in the bot as it was previously not possible in v2 and older.
+The purpose of this version is to keep Dodo-Bot alive without relying on aoi.js given that it's pretty much now dead. Being based on ForgeScript, advanced stuff can finally be done in the bot as it was previously not possible in v2 and older.
 
 This bot purely exists just because i got sick of some verified bot but you can use this project and also learn from it if you happen to be using ForgeScript!
 
@@ -36,7 +36,7 @@ Apparently however, this was reversed later on 27th December of the same year ab
 
 Also, if aoi.js revival actually led to anywhere then it would have still contained breaking changes from say, some major version (like v7) that would make it still useless to maintain Dodo-Bot v2 because it relies on aoi.js v6 to offer the bot's features to users.
 
-As a result, v2 has been discontinued and it won't receive any updates or bug fixes anymore. The source code for it will remain up intact in its own GitHub but it won't be touched anymore due to obvious reasons.
+As a result, v2 has been discontinued and it won't receive any updates or bug fixes anymore. The source code for it will remain up intact in its own GitHub branch but it won't be touched anymore due to obvious reasons.
 
 # Versions
 | Release | Description | Status |
